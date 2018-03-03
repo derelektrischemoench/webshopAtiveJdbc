@@ -6,23 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Article.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ArticleFamily.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ArticleGroup.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ArticleSelection.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Catalogue.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Image.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Invoice.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ShoppingCart.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/webshop.iml" afterPath="$PROJECT_DIR$/webshop.iml" />
-    </list>
+    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -496,12 +480,20 @@
       <updated>1519913825246</updated>
       <workItem from="1519913828816" duration="1868000" />
       <workItem from="1519987696134" duration="1549000" />
-      <workItem from="1520083301445" duration="3915000" />
+      <workItem from="1520083301445" duration="4035000" />
     </task>
+    <task id="LOCAL-00001" summary="fuck this shit">
+      <created>1520087241759</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1520087241759</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7332000" />
+    <option name="totallyTimeSpent" value="7452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -552,6 +544,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fuck this shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fuck this shit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
