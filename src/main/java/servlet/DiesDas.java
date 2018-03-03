@@ -10,7 +10,7 @@ import java.io.IOException;
 public class DiesDas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/diesdas.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/diesdas.jsp");
         rd.forward(req, resp);
     }
 }
