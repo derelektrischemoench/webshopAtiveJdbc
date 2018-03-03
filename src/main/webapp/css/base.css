@@ -6,8 +6,7 @@
   height: 150px;
   background: #000;
   font-family: 'Krona One', sans-serif;
-  color: #fff;
-  margin-bottom: 50px; }
+  color: #fff; }
   .header div.col-xs-6.right {
     background: fuchsia;
     width: 50%;
@@ -104,6 +103,9 @@
   .footer a:hover {
     text-decoration: none;
     color: #cccccc; }
+
+.adminLogin {
+  margin-top: 50px; }
 
 body {
   font-family: 'Mina', sans-serif; }

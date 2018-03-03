@@ -32,4 +32,13 @@
         <url-pattern>/adminLogin</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CreateAdminAccount</servlet-name>
+        <servlet-class>servlet.CreateAdminAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateAdminAccount</servlet-name>
+        <url-pattern>/createAdminAccount</url-pattern>
+    </servlet-mapping>
+
 </web-app>
