@@ -1,0 +1,43 @@
+
+.slick-slider {
+  height: 200px;
+
+  .slick-arrow {
+    position: absolute;
+    z-index: 2000;
+    color: transparent;
+    font-size: 30px;
+
+  }
+
+  .slick-prev {
+    left: 20px;
+    top: 40%;
+    border: none;
+    background: transparent;
+
+    &::before {
+      content: "\f2ca";
+      font-family: Ionicons;
+      color: #000;
+    }
+  }
+
+  .slick-next {
+    right: 20px;
+    top: 40%;
+    border: none;
+    background: transparent;
+
+    &::before {
+      content: "\f30f";
+      font-family: Ionicons;
+      color: #000;
+      float: right;
+    }
+  }
+
+  .slick-slide {
+    background: #888;
+  }
+}

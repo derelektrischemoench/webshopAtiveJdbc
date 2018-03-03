@@ -1,18 +1,77 @@
 .header {
   height: 150px;
-  background: #1d2124;
+  background: #000;
   font-family: 'Krona One', sans-serif;
   color: #fff;
 
   div.col-xs-6.right {
-    background: #fff;
+    background: fuchsia;
     width: 50%;
     border: 5px solid #000;
-    background-image: url("imgs/record.png");
+    background-image: url("imgs/record_transparent.png");
     background-position: 25% 30%;
+    animation: myfirst 5s;
+    -moz-animation: myfirst 5s infinite; /* Firefox */
+    -webkit-animation: myfirst 5s infinite; /* Safari and Chrome */
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+      0% {
+        background-color: red;
+      }
+      50% {
+        background-color: yellow;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+
+    @-webkit-keyframes myfirst /* Firefox */
+    {
+      0% {
+        background-color: red;
+      }
+      50% {
+        background-color: yellow;
+      }
+      100% {
+        background-color: red;
+      }
+    }
   }
 
   div.col-xs-6.left {
     width: 50%;
   }
+}
+
+.logo {
+  font-family: 'Mina', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 80px;
+
+  .col-xs-10 {
+    position: relative;
+    left: 100px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .col-xs-2 {
+    margin-left: 20px;
+
+    div {
+      transform: rotate(90deg);
+      font-size: 5em;
+      position: relative;
+      right: 25px;
+      top: 8px;
+    }
+  }
+
+
 }

@@ -1,21 +1,89 @@
 @import url(bootstrap/css/bootstrap-reboot.min.css);
 @import url(bootstrap/css/bootstrap.css);
 @import url(bootstrap/css/bootstrap-grid.css);
+@import url(bower_components/Ionicons/scss/_ionicons.css);
 .header {
   height: 150px;
-  background: #1d2124;
+  background: #000;
   font-family: 'Krona One', sans-serif;
   color: #fff; }
   .header div.col-xs-6.right {
-    background: #fff;
+    background: fuchsia;
     width: 50%;
     border: 5px solid #000;
-    background-image: url("imgs/record.png");
-    background-position: 25% 30%; }
+    background-image: url("imgs/record_transparent.png");
+    background-position: 25% 30%;
+    animation: myfirst 5s;
+    -moz-animation: myfirst 5s infinite;
+    /* Firefox */
+    -webkit-animation: myfirst 5s infinite;
+    /* Safari and Chrome */ }
+@-moz-keyframes myfirst /* Firefox */ {
+  0% {
+    background-color: red; }
+  50% {
+    background-color: yellow; }
+  100% {
+    background-color: red; } }
+@-webkit-keyframes myfirst /* Firefox */ {
+  0% {
+    background-color: red; }
+  50% {
+    background-color: yellow; }
+  100% {
+    background-color: red; } }
   .header div.col-xs-6.left {
     width: 50%; }
 
+.logo {
+  font-family: 'Mina', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 80px; }
+  .logo .col-xs-10 {
+    position: relative;
+    left: 100px; }
+    .logo .col-xs-10 p {
+      margin-bottom: 0; }
+  .logo .col-xs-2 {
+    margin-left: 20px; }
+    .logo .col-xs-2 div {
+      transform: rotate(90deg);
+      font-size: 5em;
+      position: relative;
+      right: 25px;
+      top: 8px; }
+
+.slick-slider {
+  height: 200px; }
+  .slick-slider .slick-arrow {
+    position: absolute;
+    z-index: 2000;
+    color: transparent;
+    font-size: 30px; }
+  .slick-slider .slick-prev {
+    left: 20px;
+    top: 40%;
+    border: none;
+    background: transparent; }
+    .slick-slider .slick-prev::before {
+      content: "\f2ca";
+      font-family: Ionicons;
+      color: #000; }
+  .slick-slider .slick-next {
+    right: 20px;
+    top: 40%;
+    border: none;
+    background: transparent; }
+    .slick-slider .slick-next::before {
+      content: "\f30f";
+      font-family: Ionicons;
+      color: #000;
+      float: right; }
+  .slick-slider .slick-slide {
+    background: #888; }
+
 h1 {
-  color: fuchsia; }
+  color: red; }
 
 /*# sourceMappingURL=base.css.map */

@@ -3,7 +3,9 @@
 @import "bootstrap/css/bootstrap-grid.css";
 @import "partials/header";
 @import "variables/variables";
+@import "slider/slider";
+@import "bower_components/Ionicons/scss/_ionicons.css";
 
 h1 {
-  color: fuchsia;
+  color: red;
 }
