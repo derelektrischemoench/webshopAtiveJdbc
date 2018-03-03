@@ -1,0 +1,22 @@
+.footer {
+  font-family: 'Mina', sans-serif;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  background: #117a8b;
+  color: #fff;
+
+  .footercol {
+    font-size: 2em;
+    text-align: center;
+    height: 100%;
+
+    p {
+      margin: auto;
+      line-height: 100px;
+
+    }
+
+
+  }
+}

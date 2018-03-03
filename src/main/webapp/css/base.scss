@@ -5,6 +5,12 @@
 @import "variables/variables";
 @import "slider/slider";
 @import "bower_components/Ionicons/scss/_ionicons.css";
+@import "partials/footer";
+@import "partials/links";
+
+body {
+  font-family: 'Mina', sans-serif;
+}
 
 h1 {
   color: red;

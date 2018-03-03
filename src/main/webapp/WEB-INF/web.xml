@@ -23,4 +23,13 @@
         <url-pattern>/diesdas</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminLogin</servlet-name>
+        <servlet-class>servlet.AdminLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogin</servlet-name>
+        <url-pattern>/adminLogin</url-pattern>
+    </servlet-mapping>
+
 </web-app>

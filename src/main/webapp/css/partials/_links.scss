@@ -1,0 +1,10 @@
+.footer {
+  a {
+    color: $footerFontColor;
+
+    &:hover {
+      text-decoration: none;
+      color: darken($footerFontColor, 20%);
+    }
+  }
+}
