@@ -1,0 +1,18 @@
+.header {
+  height: 150px;
+  background: #1d2124;
+  font-family: 'Krona One', sans-serif;
+  color: #fff;
+
+  div.col-xs-6.right {
+    background: #fff;
+    width: 50%;
+    border: 5px solid #000;
+    background-image: url("imgs/record.png");
+    background-position: 25% 30%;
+  }
+
+  div.col-xs-6.left {
+    width: 50%;
+  }
+}

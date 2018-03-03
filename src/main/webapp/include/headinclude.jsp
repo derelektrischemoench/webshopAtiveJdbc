@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link link rel="stylesheet" type="text/css"href="css/base.css" />
+    <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
 
 </head>
 <body>
+<div class="container-fluid">
+    <jsp:include page="header.jsp" />
+</div>
+
