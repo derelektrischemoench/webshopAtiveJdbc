@@ -1,8 +1,13 @@
 package servlet;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import model.Account;
 import org.javalite.activejdbc.Base;
 import org.javalite.common.Base64;
+import org.mindrot.jbcrypt.BCrypt;
+
+import java.nio.charset.Charset;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,42 +34,34 @@ public class CreateAdminAccount extends HttpServlet {
         //connect to database:
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
-        String salt = getInitParameter("adminAccSalt");
-        System.out.println("adminaccountSalt from webxml: " + salt);
-        
         String username = req.getParameter("adminSignup__username");
         String password = req.getParameter("adminSignup__password1");
         String password2 = req.getParameter("adminSignup__password2");
         
         //input passwords match
         if (password.equals(password2)) {
-            String saltedPassword = password + salt;
-            MessageDigest digest;
-            try {
-                digest = MessageDigest.getInstance("SHA-256");
-                
-                String passwordBase64 = Base64.getEncoder().encodeToString(digest.digest(saltedPassword.getBytes()));
-                //check if name is available:
-                Account a = Account.findFirst("user_name = ?", username);
-                if (a==null) {
-                    //the account is available, continue adding the user
-                    Account.createIt("first_name", "",
-                                     "last_name", "",
-                                     "user_name", username,
-                                     "hashed_password", passwordBase64,
-                                     "is_admin", 1);
-                } else {
-                    // An account with this username is already taken, render error msg
-                    String errorMessage = "This username is already taken, please choose another one";
-                    req.setAttribute("errorMsg", errorMessage);
-                    RequestDispatcher rd = req.getRequestDispatcher("/createAdminAccount.jsp");
-                    rd.forward(req, resp);
-                }
-                
-                
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
+            
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            
+            System.out.println("Hashed password: " + hashedPassword);
+            
+            //check if name is available:
+            Account a = Account.findFirst("user_name = ?", username);
+            if (a == null) {
+                //the account is available, continue adding the user
+                Account.createIt("first_name", "",
+                                 "last_name", "",
+                                 "user_name", username,
+                                 "hashed_password", hashedPassword,
+                                 "is_admin", 1);
+            } else {
+                // An account with this username is already taken, render error msg
+                String errorMessage = "This username is already taken, please choose another one";
+                req.setAttribute("errorMsg", errorMessage);
+                RequestDispatcher rd = req.getRequestDispatcher("/createAdminAccount.jsp");
+                rd.forward(req, resp);
             }
+            
         } else {
             //passwords no match
             String errorMessage = "Your passwords do not match. Please try again";

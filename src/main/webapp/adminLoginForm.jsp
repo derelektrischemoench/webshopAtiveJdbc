@@ -13,6 +13,7 @@
                 <label for="exampleInputEmail1">Username</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                        placeholder="Enter username" name="adminLogin__username">
+                <span class="passwordErrorMessage">${errorMsg}</span>
 
             </div>
             <div class="form-group">
