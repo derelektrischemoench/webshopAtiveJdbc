@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mina:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Anton|Karma:400,600|Oswald:300,400,600|Open+Sans:300,400|Open+Sans+Condensed:300,700|Roboto:300,400,600|Roboto+Condensed:300" rel="stylesheet">
 
     <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

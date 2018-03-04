@@ -2,7 +2,7 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container">
+<div class="container adminLogin">
     <div class="row">
         <div class="col-sm-12">
             <h1>Login</h1>
@@ -25,6 +25,12 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="createAdminAccount">Create admin account</a>
+        </div>
+    </div>
 </div>
 
 

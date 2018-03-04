@@ -7,11 +7,18 @@
 @import "bower_components/Ionicons/scss/_ionicons.css";
 @import "partials/footer";
 @import "partials/links";
+@import "partials/adminLogin";
 
 body {
-  font-family: 'Mina', sans-serif;
+  font-family: 'Roboto', serif;
+  font-weight: 400;
 }
 
 h1 {
-  color: red;
+  font-weight: 300;
+  font-size: 4rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  left: -20px;
+  top: -15px;
 }

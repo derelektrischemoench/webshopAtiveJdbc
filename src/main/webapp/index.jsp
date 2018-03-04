@@ -4,13 +4,8 @@
 
 <div class="container-fluid">
     <div class="row logo">
-        <div class="col-xs-2">
-            <div>to</div>
-        </div>
-        <div class="col-xs-10">
-            <p><span>t</span>ight </p>
-            <p><span>s</span>hit</p>
-            <p><span>r</span>ecords</p>
+        <div class="col-sm-12">
+            <h1>TSR</h1>
         </div>
     </div>
 
