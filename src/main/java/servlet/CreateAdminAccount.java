@@ -52,7 +52,8 @@ public class CreateAdminAccount extends HttpServlet {
                 Account.createIt("first_name", "",
                                  "last_name", "",
                                  "user_name", username,
-                                 "hashed_password", passwordBase64);
+                                 "hashed_password", passwordBase64,
+                                 "is_admin", 1);
                 
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();

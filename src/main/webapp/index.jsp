@@ -4,8 +4,13 @@
 
 <div class="container-fluid">
     <div class="row logo">
-        <div class="col-sm-12">
+        <div class="col-6">
             <h1>TSR</h1>
+        </div>
+        <div class="col-6 right">
+            <p>tight</p>
+            <p>shit</p>
+            <p>records</p>
         </div>
     </div>
 
