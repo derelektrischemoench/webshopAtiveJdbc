@@ -1,7 +1,6 @@
 package servlet;
 
 import model.Account;
-import model.Admin;
 import org.javalite.activejdbc.Base;
 import org.javalite.common.Base64;
 
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -26,8 +24,6 @@ public class CreateAdminAccount extends HttpServlet {
         rd.forward(req, resp);
     }
     
-    
-    //TODO: try with mysql
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //connect to database:
@@ -48,12 +44,23 @@ public class CreateAdminAccount extends HttpServlet {
                 digest = MessageDigest.getInstance("SHA-256");
                 
                 String passwordBase64 = Base64.getEncoder().encodeToString(digest.digest(saltedPassword.getBytes()));
-                System.out.println(passwordBase64);
-                Account.createIt("first_name", "",
-                                 "last_name", "",
-                                 "user_name", username,
-                                 "hashed_password", passwordBase64,
-                                 "is_admin", 1);
+                //check if name is available:
+                Account a = Account.findFirst("user_name = ?", username);
+                if (a==null) {
+                    //the account is available, continue adding the user
+                    Account.createIt("first_name", "",
+                                     "last_name", "",
+                                     "user_name", username,
+                                     "hashed_password", passwordBase64,
+                                     "is_admin", 1);
+                } else {
+                    // An account with this username is already taken, render error msg
+                    String errorMessage = "This username is already taken, please choose another one";
+                    req.setAttribute("errorMsg", errorMessage);
+                    RequestDispatcher rd = req.getRequestDispatcher("/createAdminAccount.jsp");
+                    rd.forward(req, resp);
+                }
+                
                 
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();

@@ -1,5 +1,8 @@
 package servlet;
 
+import model.Account;
+import org.javalite.activejdbc.Base;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +21,17 @@ public class AdminLogin extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //open db connection:
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        
+        System.out.println("adminligon dopost");
         String username = req.getParameter("adminLogin__username");
         String password = req.getParameter("adminLogin__password");
     
-        System.out.println(username);
-        System.out.println(password);
+        // find admin acc:
+        Account a = Account.findFirst("user_name = ?", username);
+        System.out.println("Found account " + a.get("user_name"));
+        
+        Base.close();
     }
 }
