@@ -24,6 +24,7 @@
             <label for="exampleInputPassword2">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"
                    name="adminSignup__password2">
+            <span class="passwordErrorMessage">${errorMsg}</span>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

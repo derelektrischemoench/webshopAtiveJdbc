@@ -1,13 +1,18 @@
 .header {
   height: 150px;
   background: #000;
-  font-family: 'Krona One', sans-serif;
   color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  h2 {
+    font-size: 4em;
+  }
 
   div.col-xs-6.right {
     background: fuchsia;
     width: 50%;
     border: 5px solid #000;
+    border-left: 0;
     background-image: url("imgs/record_transparent.png");
     background-position: 25% 30%;
     animation: myfirst 5s;
@@ -43,13 +48,14 @@
 
   div.col-xs-6.left {
     width: 50%;
+    border-bottom: 5px solid #fff;
   }
 }
 
 .logo {
   font-family: 'Mina', sans-serif;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   height: 80px;
 
   .col-xs-10 {
@@ -60,18 +66,5 @@
       margin-bottom: 0;
     }
   }
-
-  .col-xs-2 {
-    margin-left: 20px;
-
-    div {
-      transform: rotate(90deg);
-      font-size: 5em;
-      position: relative;
-      right: 25px;
-      top: 8px;
-    }
-  }
-
 
 }

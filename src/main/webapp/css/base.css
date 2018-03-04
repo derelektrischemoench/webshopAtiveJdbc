@@ -5,12 +5,15 @@
 .header {
   height: 150px;
   background: #000;
-  font-family: 'Krona One', sans-serif;
-  color: #fff; }
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif; }
+  .header h2 {
+    font-size: 4em; }
   .header div.col-xs-6.right {
     background: fuchsia;
     width: 50%;
     border: 5px solid #000;
+    border-left: 0;
     background-image: url("imgs/record_transparent.png");
     background-position: 25% 30%;
     animation: myfirst 5s;
@@ -33,26 +36,19 @@
   100% {
     background-color: red; } }
   .header div.col-xs-6.left {
-    width: 50%; }
+    width: 50%;
+    border-bottom: 5px solid #fff; }
 
 .logo {
   font-family: 'Mina', sans-serif;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   height: 80px; }
   .logo .col-xs-10 {
     position: relative;
     left: 100px; }
     .logo .col-xs-10 p {
       margin-bottom: 0; }
-  .logo .col-xs-2 {
-    margin-left: 20px; }
-    .logo .col-xs-2 div {
-      transform: rotate(90deg);
-      font-size: 5em;
-      position: relative;
-      right: 25px;
-      top: 8px; }
 
 .slick-slider {
   height: 200px; }
@@ -104,13 +100,16 @@
     text-decoration: none;
     color: #cccccc; }
 
-.adminLogin {
-  margin-top: 50px; }
-
 body {
-  font-family: 'Mina', sans-serif; }
+  font-family: 'Roboto', serif;
+  font-weight: 400; }
 
 h1 {
-  color: red; }
+  font-weight: 300;
+  font-size: 4rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  left: -20px;
+  top: -15px; }
 
 /*# sourceMappingURL=base.css.map */
