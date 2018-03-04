@@ -8,13 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/model/Admin.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CreateAdminAccount.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/CreateAdminAccount.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.scss" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.scss" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -119,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="531">
-              <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+              <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -669,11 +662,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520114898928</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="admin account creation works">
+      <created>1520149963725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520149963725</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42642000" />
+    <option name="totallyTimeSpent" value="42664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,7 +711,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24353448" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24353448" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -757,7 +757,8 @@
     <MESSAGE value="bootstrap, includes and shit" />
     <MESSAGE value="styles and such" />
     <MESSAGE value="add models, trying to make activejdbc work to no avail so far" />
-    <option name="LAST_COMMIT_MESSAGE" value="add models, trying to make activejdbc work to no avail so far" />
+    <MESSAGE value="admin account creation works" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin account creation works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1093,7 +1094,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
-          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+          <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
           <folding />
         </state>
       </provider>
