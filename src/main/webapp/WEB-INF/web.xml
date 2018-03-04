@@ -49,4 +49,13 @@
         <url-pattern>/createAdminAccount</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminAlreadyLoggedIn</servlet-name>
+        <jsp-file>/adminLoginSuccessful</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAlreadyLoggedIn</servlet-name>
+        <url-pattern>/adminAlreadyLoggedIn</url-pattern>
+    </servlet-mapping>
+
 </web-app>

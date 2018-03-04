@@ -42,9 +42,6 @@ public class CreateAdminAccount extends HttpServlet {
         if (password.equals(password2)) {
             
             String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-            
-            System.out.println("Hashed password: " + hashedPassword);
-            
             //check if name is available:
             Account a = Account.findFirst("user_name = ?", username);
             if (a == null) {
