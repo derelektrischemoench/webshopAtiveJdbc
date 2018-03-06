@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 
 <jsp:include page="include/headinclude.jsp"/>
 
@@ -17,16 +19,8 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <a href="">
-                <button class="btn btn-outline-primary">Add records</button>
-            </a>
-            <a href="">
-            <button class="btn btn-outline-primary">Kick users</button>
-        </a><a href="">
-            <button class="btn btn-outline-primary">???</button>
-        </a>
-            <a href="">
-                <button class="btn btn-outline-primary">Profit</button>
+            <a href="/webshop/adminLogin/addRecord">
+                <button class='btn btn-outline-primary'>Add Record</button>
             </a>
         </div>
     </div>

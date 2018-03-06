@@ -20,12 +20,14 @@ public class AdminLogin extends HttpServlet {
         
         //if there is a session with an admin name and the username is not null
         if (s.getAttribute("isAdmin") != null && s.getAttribute("username") != null) {
+            System.out.println(s.getAttribute("username"));
+            System.out.println(s.getAttribute("isAdmin"));
             RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
             rd.forward(req, resp);
             return;
         } else {
             //render signup form
-            System.out.println("doget in adminlogin");
+            System.out.println("doget in admindlogin");
             RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
             rd.forward(req, resp);
         }

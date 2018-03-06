@@ -58,4 +58,13 @@
         <url-pattern>/adminAlreadyLoggedIn</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddRecord</servlet-name>
+        <servlet-class>servlet.AddRecord</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddRecord</servlet-name>
+        <url-pattern>/adminLogin/addRecord</url-pattern>
+    </servlet-mapping>
+
 </web-app>

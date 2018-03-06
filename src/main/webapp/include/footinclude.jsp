@@ -4,14 +4,11 @@
         <div class="col-sm-12 footercol">
             <p>
                 <c:if test="${cookie.username.value eq 'admin'}">
-                    <a href="adminLogout">Logout</a>
+                    <a href="adminLogout">Logout ${cookie.username.value} </a>
                 </c:if>
                 <c:if test="${cookie.username.value ne 'admin'}">
                     <a href="adminLogin">Admin login</a>
                 </c:if>
-
-                <c:out value="${cookie.username.value}"></c:out>
-
             </p>
         </div>
     </div>
