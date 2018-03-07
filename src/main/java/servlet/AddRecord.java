@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContext;
@@ -46,19 +44,10 @@ public class AddRecord extends HttpServlet {
         //upload ze file:
         for (Part part : request.getParts()) {
           
-            String disposition = part.getHeader("Content-Disposition");
-            String filename = getFileName(part);
-            String filenameTrimmed = filename.replace(" ", "_");
+            String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+            String filename = timestamp + getFileName(part);
          
-            //create file:
-            System.out.println("disposition part: " + disposition);
-            System.out.println("Filename: " + filename);
-            
-            filename = new File(filename).getName();
-            System.out.println("filename from getFilename  " + getFileName(part) );
             part.write(filename);
-            System.out.println("wrote part " + savePath + filename);
-            
         }
     }
     
@@ -66,7 +55,7 @@ public class AddRecord extends HttpServlet {
         for (String cd : part.getHeader("content-disposition").split(";")) {
             if (cd.trim().startsWith("filename")) {
                 return cd.substring(cd.indexOf('=') + 1).trim()
-                         .replace("\"", "");
+                         .replace("\"", "").replace(" ", "");
             }
         }
         return null;

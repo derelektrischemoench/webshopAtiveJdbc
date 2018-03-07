@@ -28,25 +28,29 @@ public class AddArtist extends HttpServlet {
         String artistLastName = request.getParameter("createArtist__artistLastName");
         
         String savePath = "/";
-        
-        //System.out.println("apppath " + appPath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop
-        //System.out.println("savepath " + savePath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop/uploadFiles
-        
+      
         //create fileDir if !exists:
         File saveDir = new File(savePath);
         if (!saveDir.exists()) {
             saveDir.mkdir();
         }
         
-        //upload ze file:
+        String filename = null;
+        
+        //we can get the single image like so:
+        //todo: optimize this below. by getting only the image part of the request. right now it contains the empty form fields as well and creates an empty file for them
+        Part artistImage = request.getPart("createArtist__artistImage");
+        
         for (Part part : request.getParts()) {
             //also add an upload timestamp:
-            Date date = new Date();
+            System.out.println("name of the request part: " + part.getName());
             String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-            String filename = timestamp + getFileName(part);
-            System.out.println("timestamp on filename: " + filename);
+            filename = timestamp + getFileName(part);
             part.write(filename);
         }
+        
+        String file = saveDir.getAbsolutePath();
+        System.out.println("savedir for file " + file);
     }
     
     private String getFileName(Part part) {
@@ -56,7 +60,7 @@ public class AddArtist extends HttpServlet {
                          .replace("\"", "").replace(" ", "");
             }
         }
-        return "file";
+        return null;
     }
 }
 

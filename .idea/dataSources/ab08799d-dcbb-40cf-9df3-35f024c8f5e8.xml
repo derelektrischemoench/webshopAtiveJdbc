@@ -1026,45 +1026,51 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="253" parent="234" name="artists_id_uindex">
+    <column id="253" parent="234" name="artist_img_path">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="254" parent="234" name="artists_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="254" parent="234" name="PRIMARY">
+    <key id="255" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="255" parent="234" name="artists_id_uindex">
+    <key id="256" parent="234" name="artists_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>artists_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="256" parent="235" name="id">
+    <column id="257" parent="235" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="235" name="date">
+    <column id="258" parent="235" name="date">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="258" parent="235" name="orders_id_uindex">
+    <index id="259" parent="235" name="orders_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="259" parent="235" name="PRIMARY">
+    <key id="260" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="260" parent="235" name="orders_id_uindex">
+    <key id="261" parent="235" name="orders_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>orders_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="261" parent="235" name="orders_accounts_id_fk">
+    <foreign-key id="262" parent="235" name="orders_accounts_id_fk">
       <ColNames>id</ColNames>
       <RefSchemaName>wpr_webshop</RefSchemaName>
       <RefTableName>accounts</RefTableName>
@@ -1072,7 +1078,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="262" parent="235" name="orders_records_id_fk">
+    <foreign-key id="263" parent="235" name="orders_records_id_fk">
       <ColNames>id</ColNames>
       <RefSchemaName>wpr_webshop</RefSchemaName>
       <RefTableName>records</RefTableName>
@@ -1080,44 +1086,44 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="263" parent="236" name="id">
+    <column id="264" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="236" name="title">
+    <column id="265" parent="236" name="title">
       <Position>2</Position>
       <DataType>varchar(512)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="236" name="label">
+    <column id="266" parent="236" name="label">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="236" name="img_file_path">
+    <column id="267" parent="236" name="img_file_path">
       <Position>4</Position>
       <DataType>varchar(512)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="267" parent="236" name="records_id_uindex">
+    <index id="268" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="268" parent="236" name="PRIMARY">
+    <key id="269" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="269" parent="236" name="records_id_uindex">
+    <key id="270" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>records_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="270" parent="236" name="records_artists_id_fk">
+    <foreign-key id="271" parent="236" name="records_artists_id_fk">
       <ColNames>id</ColNames>
       <RefSchemaName>wpr_webshop</RefSchemaName>
       <RefTableName>artists</RefTableName>
