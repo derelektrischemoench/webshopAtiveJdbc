@@ -20,7 +20,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@MultipartConfig(fileSizeThreshold = 1024*1024*2, maxFileSize = 1024*1024*10, maxRequestSize = 1024*1024*50)
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
 public class AddRecord extends HttpServlet {
     private static final String SAVE_DIR = "uploadFiles";
     
@@ -34,47 +34,44 @@ public class AddRecord extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String appPath = request.getServletContext().getRealPath("");
         String savePath = "/";
-    
+        
         System.out.println("apppath " + appPath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop
         System.out.println("savepath " + savePath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop/uploadFiles
         
         //create fileDir if !exists:
         File saveDir = new File(savePath);
-        if(!saveDir.exists()) {
+        if (!saveDir.exists()) {
             saveDir.mkdir();
         }
         
         //upload ze file:
-        for(Part part : request.getParts()) {
-            
-            //String filename = extractFileName(part);
-            
-            Collection<String> headers = part.getHeaders("content-disposition");
-            
+        for (Part part : request.getParts()) {
+          
             String disposition = part.getHeader("Content-Disposition");
-            String filename = disposition.replaceFirst("(?i)^*filename=\"?([^\"]+)\"?.*$", "$1");
+            String filename = getFileName(part);
             String filenameTrimmed = filename.replace(" ", "_");
-            
-            //TODO: optimize this, this is uplaoded to the server as: "form-data; name="createRecord__recordImage"; Screen Shot 2018-02-27 at 07.29.03.png"
-            
+         
             //create file:
+            System.out.println("disposition part: " + disposition);
             System.out.println("Filename: " + filename);
-            System.out.println("trimmed filename " + filenameTrimmed);
+            
             filename = new File(filename).getName();
-            part.write(savePath + File.separator + filename);
+            System.out.println("filename from getFilename  " + getFileName(part) );
+            part.write(filename);
             System.out.println("wrote part " + savePath + filename);
+            
         }
     }
     
-    private String extractFileName(final Part part) {
-        //return "diesdas";
-        String contentDisp = part.getHeader("content-disposition");
-        System.out.println("header content disposition:  " + contentDisp);
-        Collection <String> headers = part.getHeaders("content-disposition");
-        
-        
-        String filename = "diesdas";
-        
-        return filename;
+    private String getFileName(Part part) {
+        for (String cd : part.getHeader("content-disposition").split(";")) {
+            if (cd.trim().startsWith("filename")) {
+                return cd.substring(cd.indexOf('=') + 1).trim()
+                         .replace("\"", "");
+            }
+        }
+        return null;
     }
+    
+    
 }
