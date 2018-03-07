@@ -1,5 +1,8 @@
 package servlet;
 
+import model.Artist;
+import org.javalite.activejdbc.Base;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -12,6 +15,8 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+//TODO: NOTE: files are save in domains/domain1/generated/jsp/webshop
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
 public class AddArtist extends HttpServlet {
@@ -27,30 +32,54 @@ public class AddArtist extends HttpServlet {
         String artistFirstName = request.getParameter("createArtist__artistFirstName");
         String artistLastName = request.getParameter("createArtist__artistLastName");
         
+        //open database connection:
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        
         String savePath = "/";
-      
+        //IMAGE SHIT
         //create fileDir if !exists:
-        File saveDir = new File(savePath);
-        if (!saveDir.exists()) {
-            saveDir.mkdir();
-        }
+        File uploadedImage = new File(savePath);
+        /*if (!uploadedImage.exists()) {
+            uploadedImage.mkdir();
+        }*/
         
         String filename = null;
         
         //we can get the single image like so:
         //todo: optimize this below. by getting only the image part of the request. right now it contains the empty form fields as well and creates an empty file for them
-        Part artistImage = request.getPart("createArtist__artistImage");
-        
+       
         for (Part part : request.getParts()) {
             //also add an upload timestamp:
-            System.out.println("name of the request part: " + part.getName());
+            System.out.println("part.getName" + part.getName()); //form field name
+            System.out.println("part.getSubmittedFilename" + part.getSubmittedFileName()); //file name
             String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
             filename = timestamp + getFileName(part);
+            
+            //check which part is named like the image and thenwrite this
+            //apparently the image cant be written without the other part of the request for fucks sake
             part.write(filename);
+    
+            System.out.println("getNamecreateArtist__artistImage content " + part.getName());
+            
         }
         
-        String file = saveDir.getAbsolutePath();
-        System.out.println("savedir for file " + file);
+        //TODO: this should be the absolute path to the image
+        System.out.println("url of thess image: " + uploadedImage.getAbsolutePath() + filename);
+        String fileLocationForDB = uploadedImage.getAbsolutePath() + filename;
+        
+        //CREATE ARTIST
+        Artist.createIt("artist_name", artistName,
+                        "first_name", artistFirstName,
+                        "last_name", artistLastName,
+                        "label", "placeholder in artistCreateIt in AddArtist",
+                        "artist_img_path", fileLocationForDB);
+        System.out.println("artist object created");
+        
+        Base.close();
+        System.out.println("database connection closed");
+        
+        
+        
     }
     
     private String getFileName(Part part) {
