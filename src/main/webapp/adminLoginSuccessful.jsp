@@ -13,14 +13,21 @@
 
     <div class="row">
         <div class="col-sm-12">
-            Do admin stuff:
+            <h3>Do admin stuff:</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <a href="/webshop/adminLogin/addRecord">
+            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/addRecord" />">
                 <button class='btn btn-outline-primary'>Add Record</button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/addArtist" />">
+                <button class='btn btn-outline-primary'>Add Artist</button>
             </a>
         </div>
     </div>

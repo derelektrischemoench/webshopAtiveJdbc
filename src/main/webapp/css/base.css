@@ -102,6 +102,9 @@
     text-decoration: none;
     color: #cccccc; }
 
+.btn {
+  margin: 5px; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400; }

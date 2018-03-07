@@ -1093,20 +1093,31 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="236" name="records_id_uindex">
+    <column id="265" parent="236" name="label">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="236" name="img_file_path">
+      <Position>4</Position>
+      <DataType>varchar(512)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="267" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="266" parent="236" name="PRIMARY">
+    <key id="268" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="267" parent="236" name="records_id_uindex">
+    <key id="269" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>records_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="268" parent="236" name="records_artists_id_fk">
+    <foreign-key id="270" parent="236" name="records_artists_id_fk">
       <ColNames>id</ColNames>
       <RefSchemaName>wpr_webshop</RefSchemaName>
       <RefTableName>artists</RefTableName>

@@ -71,4 +71,13 @@
         <url-pattern>/adminLogin/addRecord</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddArtist</servlet-name>
+        <servlet-class>servlet.AddArtist</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddArtist</servlet-name>
+        <url-pattern>/adminLogin/addArtist</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -22,8 +22,7 @@ import javax.servlet.annotation.WebListener;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
 public class AddRecord extends HttpServlet {
-    private static final String SAVE_DIR = "uploadFiles";
-    
+   
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
