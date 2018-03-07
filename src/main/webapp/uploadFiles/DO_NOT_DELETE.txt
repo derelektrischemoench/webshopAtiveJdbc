@@ -1,0 +1,1 @@
+This file is required for maven to build the uploadFiles dir into the war. If it were empty it would simply be ignored which would suck shit

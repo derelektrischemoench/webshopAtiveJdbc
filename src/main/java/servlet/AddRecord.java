@@ -9,80 +9,72 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.io.output.*;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-        maxFileSize = 1024 * 1024 * 20,      // 20MB
-        maxRequestSize = 1024 * 1024 * 50)   // 50MB
-
+@MultipartConfig(fileSizeThreshold = 1024*1024*2, maxFileSize = 1024*1024*10, maxRequestSize = 1024*1024*50)
 public class AddRecord extends HttpServlet {
-    
-    private static final long serialVersionUID = 1L;
-    private ServletFileUpload uploader = null;
-    
-    @Override
-	public void init() throws ServletException{
-		DiskFileItemFactory fileFactory = new DiskFileItemFactory();
-		File filesDir = (File) getServletContext().getAttribute("FILES_DIR_FILE");
-		fileFactory.setRepository(filesDir);
-		this.uploader = new ServletFileUpload(fileFactory);
-	}
-    
+    private static final String SAVE_DIR = "uploadFiles";
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("dogetAddrecord");
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         rd.forward(req, resp);
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!ServletFileUpload.isMultipartContent(request)) {
-            throw new ServletException("Content type is not multipart/form-data");
+        String appPath = request.getServletContext().getRealPath("");
+        String savePath = "/";
+    
+        System.out.println("apppath " + appPath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop
+        System.out.println("savepath " + savePath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop/uploadFiles
+        
+        //create fileDir if !exists:
+        File saveDir = new File(savePath);
+        if(!saveDir.exists()) {
+            saveDir.mkdir();
         }
         
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.write("<html><head></head><body>");
-        try {
-            List<FileItem> fileItemsList = uploader.parseRequest(request);
-            Iterator<FileItem> fileItemsIterator = fileItemsList.iterator();
-            while (fileItemsIterator.hasNext()) {
-                FileItem fileItem = fileItemsIterator.next();
-                System.out.println("FieldName=" + fileItem.getFieldName());
-                System.out.println("FileName=" + fileItem.getName());
-                System.out.println("ContentType=" + fileItem.getContentType());
-                System.out.println("Size in bytes=" + fileItem.getSize());
-                
-                File file = new File("imgs" + File.separator + fileItem.getName());
-                System.out.println("Absolute Path at server=" + file.getAbsolutePath());
-                fileItem.write(file);
-                out.write("File " + fileItem.getName() + " uploaded successfully.");
-                out.write("<br>");
-                out.write("<a href=\"UploadDownloadFileServlet?fileName=" + fileItem.getName() + "\">Download " + fileItem.getName() + "</a>");
-            }
-        } catch (FileUploadException e) {
-            out.write("Exception in uploading file.");
-            out.write(e.getMessage());
-        } catch (Exception e) {
-            out.write("Exception in uploading file.");
+        //upload ze file:
+        for(Part part : request.getParts()) {
+            
+            //String filename = extractFileName(part);
+            
+            Collection<String> headers = part.getHeaders("content-disposition");
+            
+            String disposition = part.getHeader("Content-Disposition");
+            String filename = disposition.replaceFirst("(?i)^*filename=\"?([^\"]+)\"?.*$", "$1");
+            String filenameTrimmed = filename.replace(" ", "_");
+            
+            //TODO: optimize this, this is uplaoded to the server as: "form-data; name="createRecord__recordImage"; Screen Shot 2018-02-27 at 07.29.03.png"
+            
+            //create file:
+            System.out.println("Filename: " + filename);
+            System.out.println("trimmed filename " + filenameTrimmed);
+            filename = new File(filename).getName();
+            part.write(savePath + File.separator + filename);
+            System.out.println("wrote part " + savePath + filename);
         }
-        out.write("</body></html>");
     }
     
-    
+    private String extractFileName(final Part part) {
+        //return "diesdas";
+        String contentDisp = part.getHeader("content-disposition");
+        System.out.println("header content disposition:  " + contentDisp);
+        Collection <String> headers = part.getHeaders("content-disposition");
+        
+        
+        String filename = "diesdas";
+        
+        return filename;
+    }
 }
