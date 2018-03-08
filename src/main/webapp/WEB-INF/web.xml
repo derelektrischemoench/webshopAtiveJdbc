@@ -29,7 +29,7 @@
 
     <servlet>
         <servlet-name>AdminLogin</servlet-name>
-        <servlet-class>servlet.AdminLogin</servlet-class>
+        <servlet-class>servlet.adminServlets.AdminLogin</servlet-class>
         <init-param>
             <param-name>adminAccSalt</param-name>
             <param-value>6usrq7D5VYRtYgHSPCjZfU8SPWe8BMFn668fhFYM7JcmvudA</param-value>
@@ -42,7 +42,7 @@
 
     <servlet>
         <servlet-name>CreateAdminAccount</servlet-name>
-        <servlet-class>servlet.CreateAdminAccount</servlet-class>
+        <servlet-class>servlet.adminServlets.CreateAdminAccount</servlet-class>
         <init-param>
             <param-name>adminAccSalt</param-name>
             <param-value>6usrq7D5VYRtYgHSPCjZfU8SPWe8BMFn668fhFYM7JcmvudA</param-value>
@@ -63,21 +63,39 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>AdminRecordsOverview</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminRecordsOverview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRecordsOverview</servlet-name>
+        <url-pattern>/adminLogin/AdminRecordsOverview</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AddRecord</servlet-name>
-        <servlet-class>servlet.AddRecord</servlet-class>
+        <servlet-class>servlet.adminServlets.AddRecord</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddRecord</servlet-name>
-        <url-pattern>/adminLogin/addRecord</url-pattern>
+        <url-pattern>/adminLogin/AdminRecordsOverview/addRecord</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminArtistsOverview</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminArtistsOverview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminArtistsOverview</servlet-name>
+        <url-pattern>/adminLogin/AdminArtistsOverview</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>AddArtist</servlet-name>
-        <servlet-class>servlet.AddArtist</servlet-class>
+        <servlet-class>servlet.adminServlets.AddArtist</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddArtist</servlet-name>
-        <url-pattern>/adminLogin/addArtist</url-pattern>
+        <url-pattern>/adminLogin/AdminArtistsOverview/addArtist</url-pattern>
     </servlet-mapping>
 
 </web-app>

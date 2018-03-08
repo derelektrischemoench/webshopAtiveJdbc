@@ -1,4 +1,4 @@
-package servlet;
+package servlet.adminServlets;
 
 import model.Artist;
 import org.javalite.activejdbc.Base;
@@ -28,10 +28,10 @@ public class AddArtist extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doPost in addArtist");
         String artistName = request.getParameter("createArtist__artistName");
         String artistFirstName = request.getParameter("createArtist__artistFirstName");
         String artistLastName = request.getParameter("createArtist__artistLastName");
-        
         //open database connection:
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
@@ -39,8 +39,6 @@ public class AddArtist extends HttpServlet {
         //IMAGE SHIT
         //create fileDir if !exists:
         File uploadedImage = new File(savePath);
-        
-        
         String filename = null;
         
         //we can get the single image like so:
@@ -49,27 +47,16 @@ public class AddArtist extends HttpServlet {
         for (Part part : request.getParts()) {
             //also add an upload timestamp:
             String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-            
-            
             //check which part is named like the image and thenwrite this
             //apparently the image cant be written without the other part of the request for fucks sake
-            //part.write(filename);
-            //this is the image part of the form; write it
             if(part.getName().contains("Image")) {
                 filename = timestamp + part.getSubmittedFileName().replace(" ", "");
                 part.write(filename);
-                //TODO: extract the filename from this here and write it to the object in the db
-                System.out.println("part with image name " + filename + " written");
-                
-                
             }
             
         }
         
-        
-        System.out.println("filelocation for db: " + filename);
-        
-        //CREATE ARTIST
+        //CREATE ARTIST, save to db, yada yada
         Artist.createIt("artist_name", artistName,
                         "first_name", artistFirstName,
                         "last_name", artistLastName,
@@ -77,20 +64,10 @@ public class AddArtist extends HttpServlet {
                         "artist_img_path", filename);
         
         Base.close();
-        System.out.println("database connection closed");
-        
-        
-        
+        request.setAttribute("artistName", artistName);
+        RequestDispatcher rd = request.getRequestDispatcher("/artistSuccessfullyAdded.jsp");
+        rd.forward(request, resp);
     }
-    
-    private String getFileName(Part part) {
-        for (String cd : part.getHeader("content-disposition").split(";")) {
-            if (cd.trim().startsWith("filename")) {
-                return cd.substring(cd.indexOf('=') + 1).trim()
-                         .replace("\"", "").replace(" ", "");
-            }
-        }
-        return null;
-    }
+
 }
 

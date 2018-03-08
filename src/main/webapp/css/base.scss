@@ -9,19 +9,11 @@
 @import "partials/links";
 @import "partials/adminLogin";
 @import "partials/buttons";
+@import "partials/fontStuff";
 
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
 }
 
-h1 {
-  font-weight: 300;
-  font-size: 4rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  position: relative;
-  left: -18px;
-  top: -5px;
-  margin-bottom: 15px;
-  line-height: 50px;
-}
+

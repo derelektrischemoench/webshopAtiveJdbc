@@ -1,4 +1,4 @@
-package servlet;
+package servlet.adminServlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -25,6 +25,7 @@ public class AddRecord extends HttpServlet {
    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doget addrecord");
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         rd.forward(req, resp);
     }

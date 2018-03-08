@@ -1,4 +1,4 @@
-package servlet;
+package servlet.adminServlets;
 
 import model.Account;
 import org.javalite.activejdbc.Base;

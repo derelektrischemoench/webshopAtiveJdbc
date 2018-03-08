@@ -1,4 +1,4 @@
-package servlet;
+package servlet.adminServlets;
 
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hashing;
@@ -14,13 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import java.io.IOException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class CreateAdminAccount extends HttpServlet {
     @Override
