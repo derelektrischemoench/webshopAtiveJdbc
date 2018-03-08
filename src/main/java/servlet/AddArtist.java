@@ -48,25 +48,23 @@ public class AddArtist extends HttpServlet {
        
         for (Part part : request.getParts()) {
             //also add an upload timestamp:
-            System.out.println("Name of the uploaded part: " + part.getName());
             String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-            filename = timestamp + getFileName(part);
+            filename = null;
             
             //check which part is named like the image and thenwrite this
             //apparently the image cant be written without the other part of the request for fucks sake
             //part.write(filename);
-    
-            System.out.println("getNamecreateArtist__artistImage content " + part.getName());
             //this is the image part of the form; write it
             if(part.getName().contains("Image")) {
+                filename = timestamp + part.getSubmittedFileName().replace(" ", "");
                 part.write(filename);
                 //TODO: extract the filename from this here and write it to the object in the db
+                System.out.println("part with image name " + filename + " written");
             }
             
         }
         
         //TODO: this should be the absolute path to the image
-        System.out.println("url of thess image: " + uploadedImage.getAbsolutePath() + filename);
         String fileLocationForDB = uploadedImage.getAbsolutePath() + filename;
         
         //CREATE ARTIST
@@ -75,7 +73,6 @@ public class AddArtist extends HttpServlet {
                         "last_name", artistLastName,
                         "label", "placeholder in artistCreateIt in AddArtist",
                         "artist_img_path", fileLocationForDB);
-        System.out.println("artist object created");
         
         Base.close();
         System.out.println("database connection closed");
