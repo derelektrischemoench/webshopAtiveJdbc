@@ -39,9 +39,7 @@ public class AddArtist extends HttpServlet {
         //IMAGE SHIT
         //create fileDir if !exists:
         File uploadedImage = new File(savePath);
-        /*if (!uploadedImage.exists()) {
-            uploadedImage.mkdir();
-        }*/
+        
         
         String filename = null;
         
@@ -50,16 +48,20 @@ public class AddArtist extends HttpServlet {
        
         for (Part part : request.getParts()) {
             //also add an upload timestamp:
-            System.out.println("part.getName" + part.getName()); //form field name
-            System.out.println("part.getSubmittedFilename" + part.getSubmittedFileName()); //file name
+            System.out.println("Name of the uploaded part: " + part.getName());
             String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
             filename = timestamp + getFileName(part);
             
             //check which part is named like the image and thenwrite this
             //apparently the image cant be written without the other part of the request for fucks sake
-            part.write(filename);
+            //part.write(filename);
     
             System.out.println("getNamecreateArtist__artistImage content " + part.getName());
+            //this is the image part of the form; write it
+            if(part.getName().contains("Image")) {
+                part.write(filename);
+                //TODO: extract the filename from this here and write it to the object in the db
+            }
             
         }
         
