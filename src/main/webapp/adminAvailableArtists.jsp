@@ -13,10 +13,15 @@
     <div class="row">
         <div class="col-sm-6 col-md-3">
             <ul>
+                <img src="<c:out value="${pageContext.request.contextPath}" />/20180308190817IMG_20171031_164220.jpg " alt="">
+
                 <c:forEach items="${artists}" var="artist">
                     <li>
+                        img path: <c:out value="${artist.get('artist_img_path')}" />
                         <c:out value="${artist.get('first_name')}" />
                         <c:out value="${artist.get('last_name')}" />
+
+
 
                     </li>
                 </c:forEach>
@@ -35,4 +40,8 @@
 
 </div>
 
+                <img src="angebote.png" />
+
+<!--TODO: WHERE THE FUCK SHOULD IMAGES GO??? fuck this shit-->
+<!-- TODO: -->
 <jsp:include page="include/footinclude.jsp"/>

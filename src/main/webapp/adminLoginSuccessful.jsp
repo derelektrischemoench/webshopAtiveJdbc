@@ -19,14 +19,6 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/addRecord" />">
-                <button class='btn btn-outline-primary'>Add Record(void)</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6 col-md-3">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminRecordsOverview"/>" />
                 <button class="btn btn-outline-primary">Records</button>
             </a>
