@@ -98,4 +98,12 @@
         <url-pattern>/adminLogin/AdminArtistsOverview/addArtist</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SimplePostTest</servlet-name>
+        <servlet-class>servlet.SimplePostTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimplePostTest</servlet-name>
+        <url-pattern>/simple</url-pattern>
+    </servlet-mapping>
 </web-app>

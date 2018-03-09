@@ -40,8 +40,6 @@
 
 </div>
 
-                <img src="angebote.png" />
-
 <!--TODO: WHERE THE FUCK SHOULD IMAGES GO??? fuck this shit-->
 <!-- TODO: -->
 <jsp:include page="include/footinclude.jsp"/>

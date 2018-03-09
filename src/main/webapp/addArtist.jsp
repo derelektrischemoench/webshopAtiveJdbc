@@ -12,23 +12,21 @@
         <div class="col-sm-8 offset-sm-2">
             <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview/addArtist" />" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="artistName">Artist name:</label><br>
-                    <input id="artistName" type="text" name="createArtist__artistName">
+                    <label for="artistAlias">Artist alias</label><br>
+                    <input type="text" name="artistAlias" id="artistAlias" />
+                </div>
+                <div class="form-group">
+                    <label for="artistFirstname">Artist first name</label><br>
+                    <input type="text" name="artistFirstname" id="artistFirstname" />
+                </div>
+                <div class="form-group">
+                    <label for="artistLastname">Artist last name</label><br>
+                    <input type="text" name="artistLastname" id="artistLastname" />
                 </div>
 
                 <div class="form-group">
-                    <label for="artistFirstName">First name:</label><br>
-                    <input id="artistFirstName" type="text" name="createArtist__artistFirstName">
-                </div>
-
-                <div class="form-group">
-                    <label for="artistLastName">Last name:</label><br>
-                    <input id="artistLastName" type="text" name="createArtist__artistLastName">
-                </div>
-
-                <div class="form-group">
-                    <label for="recordImage">Upload artist image</label><br>
-                    <input id="recordImage" name="createArtist__artistImage" type="file" size="50" accept="image/*" class="btn btn-outline-secondary">
+                    <label for="artistImage">Upload artist image</label><br>
+                    <input id="artistImage" name="artistImage" type="file" size="50" accept="image/*" class="btn btn-outline-secondary">
                 </div>
 
 

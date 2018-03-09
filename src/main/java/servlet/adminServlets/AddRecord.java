@@ -30,39 +30,5 @@ public class AddRecord extends HttpServlet {
         rd.forward(req, resp);
     }
     
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String appPath = request.getServletContext().getRealPath("");
-        String savePath = "/";
-        
-        System.out.println("apppath " + appPath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop
-        System.out.println("savepath " + savePath); ///home/chris/IdeaProjects/webshop_javalite/target/webshop/uploadFiles
-        
-        //create fileDir if !exists:
-        File saveDir = new File(savePath);
-        if (!saveDir.exists()) {
-            saveDir.mkdir();
-        }
-        
-        //upload ze file:
-        for (Part part : request.getParts()) {
-          
-            String timestamp =  new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-            String filename = timestamp + getFileName(part);
-         
-            part.write(filename);
-        }
-    }
-    
-    private String getFileName(Part part) {
-        for (String cd : part.getHeader("content-disposition").split(";")) {
-            if (cd.trim().startsWith("filename")) {
-                return cd.substring(cd.indexOf('=') + 1).trim()
-                         .replace("\"", "").replace(" ", "");
-            }
-        }
-        return null;
-    }
-    
     
 }
