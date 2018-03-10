@@ -2,17 +2,7 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container-fluid">
-    <div class="row logo">
-        <div class="col-6">
-            <h1>TSR</h1>
-        </div>
-        <div class="col-6 right">
-            <p>tight</p>
-            <p>shit</p>
-            <p>records</p>
-        </div>
-    </div>
+<div class="container-fluid main">
 
     <div class="slider row" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
         <div><h3>1</h3></div>

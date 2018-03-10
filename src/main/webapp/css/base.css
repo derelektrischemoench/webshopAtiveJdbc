@@ -3,18 +3,36 @@
 @import url(bootstrap/css/bootstrap-grid.css);
 @import url(bower_components/Ionicons/scss/_ionicons.css);
 .header {
-  height: 150px;
-  background: #000;
+  width: 100%;
   color: #fff;
-  font-family: 'Open Sans Condensed', sans-serif; }
+  font-family: 'Open Sans Condensed', sans-serif;
+  z-index: -10;
+  background-image: url("imgs/recordHeaderImage.jpeg");
+  background-size: cover;
+  background-position-x: 10%;
+  height: 172px;
+  overflow-x: hidden; }
+  .header .left {
+    background-size: cover;
+    background-position: 10% 45%; }
   .header h2 {
-    font-size: 4em; }
+    font-size: 4em;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    width: 50%; }
+    .header h2.right {
+      line-height: 25px;
+      font-size: 2em;
+      top: 88px;
+      right: -20; }
+    .header h2.left {
+      left: 0; }
   .header div.col-xs-6.right {
     background: fuchsia;
     width: 50%;
     border: 5px solid #000;
     border-left: 0;
-    background-image: url("imgs/record_transparent.png");
     background-position: 25% 30%;
     animation: myfirst 5s;
     -moz-animation: myfirst 5s infinite;
@@ -126,6 +144,19 @@ h2 {
 
 body {
   font-family: 'Roboto', serif;
-  font-weight: 400; }
+  font-weight: 400;
+  overflow-x: hidden; }
+
+.main {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  padding-top: 172px;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #546dff 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #718dff 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #7d92ff 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 /*# sourceMappingURL=base.css.map */

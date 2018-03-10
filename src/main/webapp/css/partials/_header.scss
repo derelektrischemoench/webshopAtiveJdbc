@@ -1,11 +1,38 @@
 .header {
-  height: 150px;
-  background: #000;
+  width: 100%;
   color: #fff;
   font-family: 'Open Sans Condensed', sans-serif;
+  z-index: -10;
+  background-image: url("imgs/recordHeaderImage.jpeg");
+  background-size: cover;
+  background-position-x: 10%;
+  height: 172px;
+  overflow-x: hidden;
+
+
+  .left {
+
+    background-size: cover;
+    background-position: 10% 45%;
+  }
 
   h2 {
     font-size: 4em;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    width: 50%;
+
+    &.right {
+      line-height: 25px;
+      font-size: 2em;
+      top: 88px;
+      right: -20;
+    }
+
+    &.left {
+      left: 0;
+    }
   }
 
   div.col-xs-6.right {
@@ -13,7 +40,6 @@
     width: 50%;
     border: 5px solid #000;
     border-left: 0;
-    background-image: url("imgs/record_transparent.png");
     background-position: 25% 30%;
     animation: myfirst 5s;
     -moz-animation: myfirst 5s infinite; /* Firefox */

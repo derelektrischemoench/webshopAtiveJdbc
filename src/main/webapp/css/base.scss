@@ -14,6 +14,16 @@
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
+.main {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  padding-top: 172px;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%,  rgb(84, 109, 255) 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgb(113, 141, 255) 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgb(125, 146, 255) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 
