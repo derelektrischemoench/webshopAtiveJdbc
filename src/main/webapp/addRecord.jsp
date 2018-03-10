@@ -23,6 +23,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="recordLabel">Record published by label::</label><br>
+                    <input id="recordLabel" type="text" name="createRecord__recordLabel">
+                </div>
+
+                <div class="form-group">
                     <label for="recordImage">Upload record image</label><br>
                     <input id="recordImage" name="createRecord__recordImage" type="file" size="50" accept="image/*"
                            class="btn btn-outline-secondary">
