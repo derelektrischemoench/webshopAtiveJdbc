@@ -70,6 +70,9 @@
       margin-bottom: -10px;
       font-size: 1.3em; }
 
+@media all and (min-width: 428px) {
+  .header .right {
+    right: 0; } }
 .slick-slider {
   height: 200px; }
   .slick-slider .slick-arrow {
