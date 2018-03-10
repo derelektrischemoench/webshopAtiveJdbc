@@ -1,6 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="include/headinclude.jsp"/>
+<c:out value="${pageContext.request.getContextPath()}" />
 
 <div class="container-fluid main">
 

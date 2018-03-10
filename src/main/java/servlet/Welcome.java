@@ -11,7 +11,7 @@ public class Welcome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("asdasd");
-        RequestDispatcher rd = req.getRequestDispatcher("diesdas.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
         rd.forward(req, resp);
     }
 }
