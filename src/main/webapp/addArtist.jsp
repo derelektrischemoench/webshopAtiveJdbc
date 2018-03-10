@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview/addArtist" />" method="post" enctype="multipart/form-data">
+                <!-- IMPORTANT ! DO NOT CHANGE FORM NAMES OR VALS-->
                 <div class="form-group">
                     <label for="artistAlias">Artist alias</label><br>
                     <input type="text" name="artistAlias" id="artistAlias" />
