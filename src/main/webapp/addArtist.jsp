@@ -23,6 +23,10 @@
                     <label for="artistLastname">Artist last name</label><br>
                     <input type="text" name="artistLastname" id="artistLastname" />
                 </div>
+                <div class="form-group">
+                    <label for="artistLabel">Artist label</label><br>
+                    <input type="text" name="artistLabel" id="artistLabel" />
+                </div>
 
                 <div class="form-group">
                     <label for="artistImage">Upload artist image</label><br>

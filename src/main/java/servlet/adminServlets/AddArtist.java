@@ -69,17 +69,35 @@ public class AddArtist extends HttpServlet {
         String artistAlias = "";
         String artistFirstName = "";
         String artistLastName = "";
+        String artistLabel = "";
         
         try {
             // Parse the request
             List items = upload.parseRequest(request);
             Iterator iter = items.iterator();
+            System.out.println("amount of form items: " + items.size());
             
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
-                if(item.isFormField()) {
+                if (item.isFormField()) {
                     System.out.println("regular formField:");
                     System.out.println(item.getFieldName() + " " + item.getString());
+                    
+                    String fieldname = item.getFieldName();
+                    
+                    if (item.getFieldName().equals("artistAlias")) {
+                        System.out.println("artist alias " + item.getString());
+                        artistAlias = item.getString();
+                    } else if (item.getFieldName().equals("artistFirstName")) {
+                        System.out.println("Artist first name " + item.getString());
+                        artistFirstName = item.getString();
+                    } else if (item.getFieldName().equals("artistLastName")) {
+                        System.out.println("Artist last name " + item.getString());
+                        artistLastName = item.getString();
+                    } else if (item.getFieldName().equals("artistLabel")) {
+                        System.out.println("Artist label " + item.getString());
+                        artistLabel = item.getString();
+                    }
                 }
                 
                 if (!item.isFormField()) {
@@ -93,26 +111,7 @@ public class AddArtist extends HttpServlet {
                     imageFilePath = uploadedFile.getPath();
                     System.out.println("location of the image file = " + imageFilePath);
                 }
-                
-                if (item.getFieldName().equals("artistAlias")) {
-                    System.out.println("artista alias " + item.getString());
-                    artistAlias = item.getString();
-                }
-                
-                if (item.getFieldName().equals("artistFirstName")) {
-                    System.out.println("Artist first name " + item.getString());
-                    artistFirstName = item.getString();
-                }
-                
-                if (item.getFieldName().equals("artistLastName")) {
-                    System.out.println("Artist last name " + item.getString() );
-                    artistLastName = item.getString();
-                }
-                
-                
             }
-            
-            System.out.println("extracted the following values from the form: " + artistAlias + " " + artistFirstName + " " + artistLastName);
             
             if (imageFilePath.length() < 1) {
                 throw new Exception("something went wrong, the imagepath is na");
@@ -120,15 +119,15 @@ public class AddArtist extends HttpServlet {
             
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-
-            /*Artist.createIt("artist_name", artistName,
+            
+            Artist.createIt("artist_name", artistAlias,
                             "first_name", artistFirstName,
                             "last_name", artistLastName,
                             "label", "placeholder in artistCreateIt in AddArtist",
                             "artist_img_path", imageFilePath);
             
             Base.close();
-            request.setAttribute("artistName", artistName);*/
+            request.setAttribute("artistName", artistAlias);
             
             // displays done.jsp page after upload finished
             getServletContext().getRequestDispatcher("/done.jsp").forward(
