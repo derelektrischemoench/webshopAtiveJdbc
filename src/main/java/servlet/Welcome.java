@@ -22,14 +22,14 @@ public class Welcome extends HttpServlet {
         RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
         
         //query most recent records, put them in the slider
-        List<Record> mostRecentRecords = Record.findAll().limit(20).orderBy("id asc");
+        List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
         for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
             Record r = (Record) i.next();
             System.out.println(r.get("title"));
         }
         
-        
         Base.close();
+        req.setAttribute("mostRecentRecords", mostRecentRecords);
         rd.forward(req, resp);
     }
 }
