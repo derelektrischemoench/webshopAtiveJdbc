@@ -58,23 +58,6 @@
         <url-pattern>/adminAlreadyLoggedIn</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>AdminRecordsOverview</servlet-name>
-        <servlet-class>servlet.adminServlets.AdminRecordsOverview</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AdminRecordsOverview</servlet-name>
-        <url-pattern>/adminLogin/AdminRecordsOverview</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AddRecord</servlet-name>
-        <servlet-class>servlet.adminServlets.AddRecord</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddRecord</servlet-name>
-        <url-pattern>/adminLogin/AdminRecordsOverview/addRecord</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>AdminArtistsOverview</servlet-name>
@@ -93,4 +76,23 @@
         <servlet-name>AddArtist</servlet-name>
         <url-pattern>/adminLogin/AdminArtistsOverview/addArtist</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminRecordsOverview</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminRecordsOverview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRecordsOverview</servlet-name>
+        <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddRecord</servlet-name>
+        <servlet-class>servlet.adminServlets.AddRecord</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddRecord</servlet-name>
+        <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord</url-pattern>
+    </servlet-mapping>
+
 </web-app>

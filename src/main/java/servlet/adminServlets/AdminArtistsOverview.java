@@ -15,25 +15,23 @@ import java.util.List;
 public class AdminArtistsOverview extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doget in adminartistsoverview");
+        
         //db connection duh
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-
-        System.out.println("doget in artistsoverview");
-    
-        List<Artist> artists = Artist.findAll();
-    
-        Iterator arIter = artists.iterator();
-        while (arIter.hasNext()){
-            Artist a = (Artist)arIter.next();
-            System.out.println(a.get("artist_name") + " " + a.get("first_name") + " " + a.get("last_name") + " ");
-
+        try {
+            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+            System.out.println("successfully made connection");
+            List<Artist> artists = Artist.findAll();
+            req.setAttribute("artists", artists);
+            RequestDispatcher rd = req.getRequestDispatcher("/adminAvailableArtists.jsp");
+            rd.forward(req, resp);
+            
+        } catch (Exception e) {
+            System.out.println("unable to open connection");
         }
         
-        RequestDispatcher rd = req.getRequestDispatcher("/adminAvailableArtists.jsp");
         Base.close();
         
-        req.setAttribute("artists", artists);
-
-        rd.forward(req, resp);
+        /*rd.forward(req, resp);*/
     }
 }

@@ -11,17 +11,14 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-12">
             <ul>
                 <c:forEach items="${artists}" var="artist">
                     <li>
-                        imgs path: <c:out value="${artist.get('artist_img_path')}" />
-                        <c:out value="${artist.get('first_name')}" />
-                        <c:out value="${artist.get('last_name')}" />
-                        <img src="<c:out value="${artist.get('artist_img_path')}" />" alt="jo" />
-                        <img src="/uploadFiles/artistImages/kill_processes.png" alt="asdasd"/>
-
+                        <!--imgs path: <c:out value="${artist.get('artist_img_path')}" />-->
+                        Artist name: <c:out value="${artist.get('artist_name')}" />
                     </li>
+                    <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview" />?artistId=${artist.get('id')}">show records of artist</a>
                 </c:forEach>
             </ul>
         </div>

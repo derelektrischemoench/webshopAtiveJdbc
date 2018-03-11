@@ -9,7 +9,7 @@
         <module name="webshop" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="webshop" target="1.8" />
     </bytecodeTargetLevel>
   </component>

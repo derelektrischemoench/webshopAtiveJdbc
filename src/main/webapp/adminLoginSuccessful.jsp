@@ -19,15 +19,6 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-3">
-            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminRecordsOverview"/>" />
-                <button class="btn btn-outline-primary">Records</button>
-            </a>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-sm-6 col-md-3">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview" />">
                 <button class='btn btn-outline-primary'>Artists</button>
             </a>

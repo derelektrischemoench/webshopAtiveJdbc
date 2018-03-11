@@ -5,17 +5,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Add records</h1>
+            <h1>Add record for ${artistName}</h1>
+            <h2></h2>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-10">
-            <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/addRecord" />" method="post"
+            <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord" />"
+                  method="post"
                   enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="artistName">Artist name:</label><br>
-                    <input id="artistName" type="text" name="createRecord__artistName">
-                </div>
+
+                <input id="artistName" type="hidden" name="createRecord__artistName" value="${artistName}">
+
 
                 <div class="form-group">
                     <label for="recordName">Name of the record:</label><br>

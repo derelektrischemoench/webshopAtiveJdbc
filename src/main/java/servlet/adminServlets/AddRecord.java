@@ -38,14 +38,19 @@ public class AddRecord extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doget addrecord");
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        String artistId = req.getParameter("artist_id");
+        Artist a = Artist.findFirst("id = ?", artistId);
+        req.setAttribute("artistName", a.get("artist_name"));
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
+        Base.close();
         rd.forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         // Check that we have a file upload request
+        System.out.println("dopost addrecord");
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         
         if (!isMultipart) {
@@ -68,8 +73,7 @@ public class AddRecord extends HttpServlet {
         System.out.println(DEBUGTAG + "getservletcontext.getrealpath : " + getServletContext().getRealPath(""));
         System.out.println(DEBUGTAG + "location of upload folder: " + uploadFolder);
         System.out.println(DEBUGTAG + "location of data dir uploadFiles/artistImages (FINAL): " + DATA_DIRECTORY);
-        System.out.println(DEBUGTAG + "other available dirs (contextpath: " + getServletContext().getContextPath() );
-        
+        System.out.println(DEBUGTAG + "other available dirs (contextpath: " + getServletContext().getContextPath());
         
         
         // Create a new file upload handler
@@ -89,7 +93,7 @@ public class AddRecord extends HttpServlet {
             // Parse the request
             List items = upload.parseRequest(request);
             Iterator iter = items.iterator();
-           
+            
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
@@ -107,6 +111,7 @@ public class AddRecord extends HttpServlet {
                 }
                 
                 if (!item.isFormField()) {
+                    System.out.println("processing file in addRecord");
                     //the input here is a file and not a reqular form field
                     
                     String fileName = new File(item.getName()).getName();
@@ -130,16 +135,32 @@ public class AddRecord extends HttpServlet {
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             
-            Record.createIt("title", recordName,
-                            "label", recordLabel,
-                            "img_file_path", imageFilePath);
+            //locate the id of the artist from the database to make the fk
+            try {
+                Artist a = Artist.findFirst("artist_name= ?", artistAlias);
+                Object artistIdObj = a.get("id");
+                int ArtistObjInt = (Integer)artistIdObj; //artist id as an int
+                
+                Record.createIt("artist_id", ArtistObjInt,
+                                "title", recordName,
+                                "label", recordLabel,
+                                "img_file_path", imageFilePath);
+                
+                request.setAttribute("recordName", recordName);
+                System.out.println("added record with : " + artistAlias + " " + recordLabel + " " + recordName);
+                
+            } catch (Exception e) {
+                //the corresponding artist couldn't be found
+                String errormsg = "Artist not found";
+                System.out.println(errormsg);
+                request.setAttribute("errormsg", errormsg);
+                e.printStackTrace();
+            }
             
             Base.close();
-            request.setAttribute("recordName", recordName);
-            System.out.println("added record with : " + artistAlias + " " + recordLabel + " " + recordName);
             
             // displays done.jsp page after upload finished
-            getServletContext().getRequestDispatcher("/done.jsp").forward(
+            getServletContext().getRequestDispatcher("/recordSuccessfullyAdded.jsp").forward(
                     request, resp);
             
         } catch (FileUploadException ex) {
