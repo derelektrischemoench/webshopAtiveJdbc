@@ -1,28 +1,35 @@
+<%@ page import="java.util.Iterator" %>
+<%@ page import="model.Record" %>
+<%@ page import="model.Artist" %>
+<%@ page import="org.javalite.activejdbc.Base" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="include/headinclude.jsp"/>
-<c:out value="${pageContext.request.getContextPath()}"/>
-
-<!--<div class="container-fluid main">
-
-<div class="slider row" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
-<div><h3>1</h3></div>
-<div><h3>2</h3></div>
-<div><h3>3</h3></div>
-<div><h3>4</h3></div>
-<div><h3>5</h3></div>
-<div><h3>6</h3></div>
-</div>
-</div>-->
-
 <div class="container-fluid main">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>
+                New in stock
+            </h2>
+        </div>
+    </div>
     <div class="slider row" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
         <c:forEach items="${mostRecentRecords}" var="record">
             <div>
-                <h3>New in stock</h3>
-                record name: <c:out value="${record.get('title')}"/>
-                <c:out value="${record.get('img_file_path')}"/>
+                <div class="imageFrame">
+                    <img class="img-fluid" src="<c:out value="${record.get('img_file_path')}"/>" alt="recordImg"/>
+                </div>
+                <div class="imageSliderRecordDesc">
+
+                    <span>
+
+                        <c:out value="${record.class}" /> <br>
+                        <c:out value="${record.get('title')}"/>
+                        <c:out value="${record.parent(Artist.class).get('title')}" />
+                    </span>
+                </div>
             </div>
         </c:forEach>
     </div>

@@ -1,6 +1,15 @@
+.slick-list {
+  padding-top: 25px !important;
+  padding-bottom: 35px !important;
+
+  .slick-track {
+    background: $color4;
+  }
+}
 
 .slick-slider {
-  height: 200px;
+  height: 226px;
+  top: -25px;
 
   .slick-arrow {
     position: absolute;
@@ -9,7 +18,6 @@
     font-size: 30px;
 
   }
-
   .slick-prev {
     left: 20px;
     top: 40%;
@@ -38,6 +46,35 @@
   }
 
   .slick-slide {
-    background: #888;
+    color: #fff;
+
+    .imageFrame {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      -webkit-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+      -o-transform: rotate(15deg);
+      transform: rotate(15deg);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .imageSliderRecordDesc {
+      position: relative;
+      width: 80%;
+      top: 180px;
+      background: $color1;
+      font-family: 'Karma', sans-serif;
+      font-weight: 600;
+      left: 15px;
+      padding: 10px 0 5px 10px;
+      font-size: 22px;
+    }
   }
 }

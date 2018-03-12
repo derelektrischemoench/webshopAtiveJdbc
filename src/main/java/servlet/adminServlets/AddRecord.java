@@ -87,6 +87,7 @@ public class AddRecord extends HttpServlet {
         String artistAlias = "";
         String recordName = "";
         String recordLabel = "";
+        String embedurl = "";
         
         
         try {
@@ -123,7 +124,7 @@ public class AddRecord extends HttpServlet {
                     item.write(uploadedFile);
                     imageFilePath = uploadedFile.getPath();
                     //DATA_DIRECTORY = uploadFiles/artistImages
-                    String embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + fileName;
+                    embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + fileName;
                     System.out.println(DEBUGTAG + "final constructed embed path: " + embedurl);
                 }
             }
@@ -144,7 +145,7 @@ public class AddRecord extends HttpServlet {
                 Record.createIt("artist_id", ArtistObjInt,
                                 "title", recordName,
                                 "label", recordLabel,
-                                "img_file_path", imageFilePath);
+                                "img_file_path", embedurl);
                 
                 request.setAttribute("recordName", recordName);
                 System.out.println("added record with : " + artistAlias + " " + recordLabel + " " + recordName);

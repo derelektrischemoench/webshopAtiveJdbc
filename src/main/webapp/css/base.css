@@ -73,8 +73,21 @@
 @media all and (min-width: 428px) {
   .header .right {
     right: 0; } }
+/* Coolors Exported Palette - coolors.co/042a2b-420039-136f63-e89005-ff570a */
+/*$color1: #f4e8c1;
+$color2: #a0c1b8;
+$color3: #709fb0;
+$color4: #726a95;
+$color5: #351f39;*/
+.slick-list {
+  padding-top: 25px !important;
+  padding-bottom: 35px !important; }
+  .slick-list .slick-track {
+    background: #2b4251; }
+
 .slick-slider {
-  height: 200px; }
+  height: 226px;
+  top: -25px; }
   .slick-slider .slick-arrow {
     position: absolute;
     z-index: 2000;
@@ -100,14 +113,37 @@
       color: #000;
       float: right; }
   .slick-slider .slick-slide {
-    background: #888; }
+    color: #fff; }
+    .slick-slider .slick-slide .imageFrame {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      -webkit-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+      -o-transform: rotate(15deg);
+      transform: rotate(15deg); }
+      .slick-slider .slick-slide .imageFrame img {
+        width: 100%;
+        height: auto; }
+    .slick-slider .slick-slide .imageSliderRecordDesc {
+      position: relative;
+      width: 80%;
+      top: 180px;
+      background: #91b3bc;
+      font-family: 'Karma', sans-serif;
+      font-weight: 600;
+      left: 15px;
+      padding: 10px 0 5px 10px;
+      font-size: 22px; }
 
 .footer {
   font-family: 'Mina', sans-serif;
   position: absolute;
   bottom: 0;
   height: 100px;
-  background: #3D4777;
+  background: #91b3bc;
   color: #fff; }
   .footer .footercol {
     font-size: 2em;
@@ -155,11 +191,6 @@ body {
   z-index: 100;
   top: 0;
   padding-top: 172px;
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #546dff 99%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #718dff 99%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #7d92ff 99%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+  min-height: 100vh; }
 
 /*# sourceMappingURL=base.css.map */
