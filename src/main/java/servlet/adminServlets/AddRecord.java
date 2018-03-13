@@ -124,7 +124,7 @@ public class AddRecord extends HttpServlet {
                     item.write(uploadedFile);
                     imageFilePath = uploadedFile.getPath();
                     //DATA_DIRECTORY = uploadFiles/artistImages
-                    embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + fileName;
+                    embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + filenameSpacesTruncated;
                     System.out.println(DEBUGTAG + "final constructed embed path: " + embedurl);
                 }
             }
