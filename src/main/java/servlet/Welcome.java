@@ -30,8 +30,6 @@ public class Welcome extends HttpServlet {
             //TODO: use custom tag, pass record to function called in custom tag
             Record r = (Record) i.next();
             Artist a = r.parent(Artist.class);
-            
-            System.out.println("artist of record: " + a.get("artist_name"));
         }
         
         Base.close();

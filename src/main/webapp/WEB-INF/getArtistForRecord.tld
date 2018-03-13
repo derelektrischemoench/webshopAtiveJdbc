@@ -1,12 +1,11 @@
 <taglib>
     <tlib-version>1.0</tlib-version>
     <jsp-version>2.0</jsp-version>
-    <short-name>gafr</short-name>
-    <uri>customArtistTag</uri>
+    <short-name>getArtistForRecord</short-name>
 <!-- TODO: custom tag-->
     <tag>
         <name>getArtistForRecord</name>
-        <tag-class>tags.getArtistForRecord</tag-class>
+        <tag-class>customTags.getArtistForRecord</tag-class>
         <body-content>empty</body-content>
             <attribute>
                 <name>inputArtist</name>

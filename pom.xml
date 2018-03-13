@@ -118,7 +118,7 @@
             <version>1.19.4</version>
         </dependency>
 
-        <!-- JSP custom tags -->
+        <!-- JSP custom customTags -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
