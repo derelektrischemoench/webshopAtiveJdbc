@@ -1,0 +1,17 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>myTaglib</short-name>
+    <!-- TODO: custom tag-->
+    <tag>
+        <name>getArtistForRecord</name>
+        <tag-class>customTags.getArtistForRecord</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>inputArtist</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue> <!--- apparently this makes it accept params-->
+            <!--<type>java.lang.String</type> - Maybe we have to declare a type here -->
+        </attribute>
+    </tag>
+</taglib>

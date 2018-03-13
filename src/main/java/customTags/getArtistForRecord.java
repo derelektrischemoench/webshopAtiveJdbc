@@ -5,21 +5,22 @@ import java.io.IOException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class getArtistForRecord extends SimpleTagSupport {
-    private String inputArtist;
+    String inputArtist = "";
     
-    public void doTag() throws JspException, IOException {
-        System.out.println("tag called....");
+    public void doTag(String inputArtist) throws JspException, IOException {
+        //TODO: as soon as we pass a string here the tag fucks up
+        System.out.println("tag called with " + inputArtist);
+        //System.out.println("asdasd with: " + inputArtist);
         final JspWriter out = getJspContext().getOut();
         out.println("custom tag yey");
         
     }
     
-    
-   public String getInputArtist() {
-        return inputArtist;
+    public void setInputArtist(String artistName) {
+        this.inputArtist = artistName;
     }
     
-    public void setInputArtist(String inputArtist) {
-        this.inputArtist = inputArtist;
+    public String getInputArtist() {
+        return inputArtist;
     }
 }

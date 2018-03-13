@@ -4,7 +4,7 @@
 <%@ page import="org.javalite.activejdbc.Base" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="/WEB-INF/getArtistForRecord.tld" prefix="gafr" %>
+<%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="include/headinclude.jsp"/>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="imageSliderRecordDesc">
                     <!-- TODO: use custom tag-->
-                    <gafr:getArtistForRecord inputArtist="Diesdas"/>
+                    <mytaglib:getArtistForRecord inputArtist="Diesdas"/>
                 </div>
             </div>
         </c:forEach>
