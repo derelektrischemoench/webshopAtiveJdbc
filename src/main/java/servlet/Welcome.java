@@ -27,6 +27,7 @@ public class Welcome extends HttpServlet {
         
         
         for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
+            //TODO: use custom tag, pass record to function called in custom tag
             Record r = (Record) i.next();
             Artist a = r.parent(Artist.class);
             

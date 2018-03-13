@@ -4,6 +4,7 @@
 <%@ page import="org.javalite.activejdbc.Base" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="gafr" uri="customArtistTag" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="include/headinclude.jsp"/>
@@ -15,6 +16,9 @@
             </h2>
         </div>
     </div>
+
+    <%%>
+
     <div class="slider row" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
         <c:forEach items="${mostRecentRecords}" var="record">
             <div>
@@ -24,10 +28,8 @@
                 <div class="imageSliderRecordDesc">
 
                     <span>
-
-                        <c:out value="${record.class}" /> <br>
-                        <c:out value="${record.get('title')}"/>
-                        <c:out value="${record.parent(Artist.class).get('title')}" />
+                        <!-- TODO: use custom tag-->
+                        <gafr:getArtistForRecord inputArtist="asdaksjld" />
                     </span>
                 </div>
             </div>

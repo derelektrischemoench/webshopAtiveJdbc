@@ -17,12 +17,9 @@ public class AdminLogin extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //if the user is not signed in render signinform else redirect to adminloginSuccessful
         HttpSession s = req.getSession();
-        System.out.println("adminlogin doget");
         
         //if there is a session with an admin name and the username is not null
         if (s.getAttribute("isAdmin") != null && s.getAttribute("username") != null) {
-            System.out.println(s.getAttribute("username"));
-            System.out.println(s.getAttribute("isAdmin"));
             RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
             rd.forward(req, resp);
             return;
