@@ -25,7 +25,7 @@
                 </div>
                 <div class="imageSliderRecordDesc">
                     <!-- TODO: use custom tag-->
-                    <mytaglib:getArtistForRecord inputArtist="Diesdas"/>
+                    <mytaglib:getArtistForRecord inputArtist="${record.get('artist_id')}"/> - <c:out value="${record.get('title')}" />
                 </div>
             </div>
         </c:forEach>

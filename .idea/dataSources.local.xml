@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="wpr_webshop@localhost" uuid="ab08799d-dcbb-40cf-9df3-35f024c8f5e8">
+    <data-source name="wpr_webshop@localhost" uuid="a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1">
       <database-info product="MySQL" version="5.7.21-0ubuntu0.17.10.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
