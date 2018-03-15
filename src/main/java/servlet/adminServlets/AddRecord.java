@@ -28,6 +28,8 @@ import javax.servlet.annotation.WebListener;
 
 //TODO: NOTE: files are save in domains/domain1/generated/jsp/webshop
 
+// TODO after reverting the changes that fucked up; fix image save pathg
+
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
 public class AddRecord extends HttpServlet {
     private static final String DATA_DIRECTORY = "uploadFiles/recordImages";
@@ -119,6 +121,7 @@ public class AddRecord extends HttpServlet {
                     String filenameSpacesTruncated = fileName.replace(" ", "");
                     String filePath = uploadFolder + File.separator + filenameSpacesTruncated;
                     File uploadedFile = new File(filePath);
+                    System.out.println("created 'uploadedFile' in " + uploadedFile.getPath()); //points to /target in compiler out dir.
                     System.out.println(DEBUGTAG + "Filepath of uploaded file: " + filePath);
                     // saves the file to upload directory
                     item.write(uploadedFile);

@@ -144,7 +144,8 @@ $color5: #351f39;*/
   bottom: 0;
   height: 100px;
   background: #91b3bc;
-  color: #fff; }
+  color: #fff;
+  z-index: 100; }
   .footer .footercol {
     font-size: 2em;
     text-align: center;
