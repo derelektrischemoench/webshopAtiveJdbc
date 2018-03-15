@@ -53,7 +53,6 @@ public class AddRecord extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         // Check that we have a file upload request
-        System.out.println("dopost addrecord");
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         
         if (!isMultipart) {
@@ -71,21 +70,60 @@ public class AddRecord extends HttpServlet {
         // java
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
         
-        // constructs the folder where uploaded file will be stored
-        //String uploadFolder = getServletContext().getRealPath("") + File.separator + DATA_DIRECTORY;
-        String uploadFolder = "webshop/uploadFiles/recordImages"; //TODO: locate this save dir outside of the target dir
-        System.out.println(DEBUGTAG + "getservletcontext.getrealpath : " + getServletContext().getRealPath(""));
-        System.out.println(DEBUGTAG + "location of upload folder: " + uploadFolder);
-        System.out.println(DEBUGTAG + "location of data dir uploadFiles/artistImages (FINAL): " + DATA_DIRECTORY);
-        System.out.println(DEBUGTAG + "other available dirs (contextpath: " + getServletContext().getContextPath());
-        
         
         // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
         
-        // Set overall request size constraint
-        upload.setSizeMax(MAX_REQUEST_SIZE);
-        String imageFilePath = "";
+        //List of file items from the upload:
+        try {
+            List<FileItem> items = upload.parseRequest(request);
+            
+            Iterator ItemIter = items.iterator();
+            while (ItemIter.hasNext()) {
+                FileItem i = (FileItem)ItemIter.next();
+                
+                if(i.isFormField()) {
+                    //TODO: process form field here:
+                    System.out.println("form field name name: " + i.getFieldName() + "value : " + i.getString());
+                } else {
+                    //this is the file
+                    String filename = i.getName();
+                    String contentType = i.getContentType();
+                    long sizeInBytes = i.getSize();
+                    System.out.println("located the file:" + sizeInBytes + "(size) " + filename);
+                    
+                    //uploaded files are kept in ram and have to be saved to a file:
+                    String currentDir = new java.io.File( "." ).getCanonicalPath();
+                    System.out.println("current dir: " + currentDir);
+                    System.out.println("ContextPath: " + request.getContextPath());
+                    System.out.println("Realpath " + request.getRealPath("/"));
+                    File uploadedFile = new File("/home/chris/Desktop/" + filename);
+                    
+                    /*
+                    * DES RÄTSELS LÖSUNG:
+                    *man kann hier scheinbar nur mit absoluten Pfaden arbeiten. Da request.contexPath immer auf /target zeigt ist das bekactk
+                    *
+                    *
+                    *-> absoute Pfade verwenden...FFFFFUUUUUUCCCK
+                    *
+                    *
+                    * */
+                    //File uploadedFile = new File(request.getContextPath() + "/" + filename);  //-> müsste nach build/webapp hochladen
+                    
+                    try {
+                        i.write(uploadedFile);
+                        System.out.println("wrote file to: + " + uploadedFile.getAbsolutePath());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("error trying to write fule");
+                    }
+                    
+                    
+                }
+            }
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+        }
         
         //initialize the string values for the record properties
         String artistAlias = "";
@@ -94,50 +132,7 @@ public class AddRecord extends HttpServlet {
         String embedurl = "";
         
         
-        try {
-            // Parse the request
-            List items = upload.parseRequest(request);
-            Iterator iter = items.iterator();
-            
-            while (iter.hasNext()) {
-                FileItem item = (FileItem) iter.next();
-                if (item.isFormField()) {
-                    System.out.println(item.getFieldName() + " " + item.getString());
-                    
-                    String fieldname = item.getFieldName();
-                    
-                    if (fieldname.equals("createRecord__artistName")) {
-                        artistAlias = item.getString();
-                    } else if (fieldname.equals("createRecord__recordName")) {
-                        recordName = item.getString();
-                    } else if (fieldname.equals("createRecord__recordLabel")) {
-                        recordLabel = item.getString();
-                    }
-                }
-                
-                if (!item.isFormField()) {
-                    System.out.println("processing file in addRecord");
-                    //the input here is a file and not a reqular form field
-                    
-                    String fileName = new File(item.getName()).getName();
-                    String filenameSpacesTruncated = fileName.replace(" ", "");
-                    String filePath = uploadFolder + File.separator + filenameSpacesTruncated;
-                    File uploadedFile = new File(filePath);
-                    System.out.println("created 'uploadedFile' in " + uploadedFile.getPath()); //points to /target in compiler out dir.
-                    System.out.println(DEBUGTAG + "Filepath of uploaded file: " + filePath);
-                    // saves the file to upload directory
-                    item.write(uploadedFile);
-                    imageFilePath = uploadedFile.getPath();
-                    //DATA_DIRECTORY = uploadFiles/artistImages
-                    embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + filenameSpacesTruncated;
-                    System.out.println(DEBUGTAG + "final constructed embed path: " + embedurl);
-                }
-            }
-            
-            if (imageFilePath.length() < 1) {
-                throw new Exception("something went wrong, the imagepath is na");
-            }
-            
+        /*try {
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             
@@ -168,10 +163,8 @@ public class AddRecord extends HttpServlet {
             getServletContext().getRequestDispatcher("/recordSuccessfullyAdded.jsp").forward(
                     request, resp);
             
-        } catch (FileUploadException ex) {
-            throw new ServletException(ex);
         } catch (Exception ex) {
             throw new ServletException(ex);
-        }
+        }*/
     }
 }
