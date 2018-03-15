@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.servlet.http.Part;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -26,11 +27,11 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-//TODO: NOTE: files are save in domains/domain1/generated/jsp/webshop
 
-// TODO after reverting the changes that fucked up; fix image save pathg
-
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2,
+        maxFileSize = 1024 * 1024 * 10,
+        maxRequestSize = 1024 * 1024 * 50)
+//TODO: ! IMPORTANT : aparently one can specify the location of the image file here... try its
 public class AddRecord extends HttpServlet {
     private static final String DATA_DIRECTORY = "uploadFiles/recordImages";
     private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
@@ -71,7 +72,8 @@ public class AddRecord extends HttpServlet {
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
         
         // constructs the folder where uploaded file will be stored
-        String uploadFolder = getServletContext().getRealPath("") + File.separator + DATA_DIRECTORY;
+        //String uploadFolder = getServletContext().getRealPath("") + File.separator + DATA_DIRECTORY;
+        String uploadFolder = "webshop/uploadFiles/recordImages"; //TODO: locate this save dir outside of the target dir
         System.out.println(DEBUGTAG + "getservletcontext.getrealpath : " + getServletContext().getRealPath(""));
         System.out.println(DEBUGTAG + "location of upload folder: " + uploadFolder);
         System.out.println(DEBUGTAG + "location of data dir uploadFiles/artistImages (FINAL): " + DATA_DIRECTORY);
@@ -143,7 +145,7 @@ public class AddRecord extends HttpServlet {
             try {
                 Artist a = Artist.findFirst("artist_name= ?", artistAlias);
                 Object artistIdObj = a.get("id");
-                int ArtistObjInt = (Integer)artistIdObj; //artist id as an int
+                int ArtistObjInt = (Integer) artistIdObj; //artist id as an int
                 
                 Record.createIt("artist_id", ArtistObjInt,
                                 "title", recordName,
@@ -156,7 +158,6 @@ public class AddRecord extends HttpServlet {
             } catch (Exception e) {
                 //the corresponding artist couldn't be found
                 String errormsg = "Artist not found";
-                System.out.println(errormsg);
                 request.setAttribute("errormsg", errormsg);
                 e.printStackTrace();
             }

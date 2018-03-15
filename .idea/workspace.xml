@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="calling the tag works">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ab08799d-dcbb-40cf-9df3-35f024c8f5e8.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,11 +81,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddRecord.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddRecord.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="123" column="135" lean-forward="false" selection-start-line="123" selection-start-column="135" selection-end-line="123" selection-end-column="135" />
+            <state relative-caret-position="460">
+              <caret line="75" column="120" lean-forward="false" selection-start-line="75" selection-start-column="120" selection-end-line="75" selection-end-column="120" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,19 +106,38 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1269">
-              <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+            <state relative-caret-position="1746">
+              <caret line="97" column="3" lean-forward="false" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2682">
+              <caret line="149" column="26" lean-forward="false" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="records" pinned="false" current-in-tab="false">
+        <entry file="das://table:/b17b9a4a/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.records">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -210,8 +225,8 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/Welcome.java" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
       </list>
     </option>
   </component>
@@ -292,6 +307,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -308,9 +325,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -357,23 +371,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -410,10 +407,46 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="webshop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="webshop" type="462c0819:PsiDirectoryNode" />
+              <item name="uploadFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="webshop" type="462c0819:PsiDirectoryNode" />
+              <item name="uploadFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="recordImages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -693,6 +726,7 @@
       <workItem from="1520960191951" duration="74000" />
       <workItem from="1521095072903" duration="371000" />
       <workItem from="1521099588291" duration="444000" />
+      <workItem from="1521112986991" duration="1565000" />
     </task>
     <task id="LOCAL-00001" summary="fuck this shit">
       <created>1520087241759</created>
@@ -880,7 +914,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201921000" />
+    <option name="totallyTimeSpent" value="203648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -897,7 +931,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30064654" sideWeight="0.50235295" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15107913" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15107913" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
@@ -914,9 +948,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32004312" sideWeight="0.49764705" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26293105" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14331897" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20531267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20752628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1179,8 +1213,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="125" column="27" lean-forward="false" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
+        <state relative-caret-position="2682">
+          <caret line="149" column="26" lean-forward="false" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1268,8 +1302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="123" column="135" lean-forward="false" selection-start-line="123" selection-start-column="135" selection-end-line="123" selection-end-column="135" />
+        <state relative-caret-position="460">
+          <caret line="75" column="120" lean-forward="false" selection-start-line="75" selection-start-column="120" selection-end-line="75" selection-end-column="120" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1286,8 +1320,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+        <state relative-caret-position="1746">
+          <caret line="97" column="3" lean-forward="false" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="3" />
           <folding />
         </state>
       </provider>
