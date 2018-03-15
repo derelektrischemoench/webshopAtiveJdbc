@@ -1,5 +1,6 @@
 package servlet.adminServlets;
 
+import com.oracle.webservices.internal.api.message.PropertySet;
 import model.Artist;
 import model.Record;
 import org.apache.commons.fileupload.FileItem;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.servlet.http.Part;
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Level;
@@ -98,6 +101,9 @@ public class AddRecord extends HttpServlet {
                     System.out.println("ContextPath: " + request.getContextPath());
                     System.out.println("Realpath " + request.getRealPath("/"));
                     File uploadedFile = new File("/home/chris/Desktop/" + filename);
+    
+                    System.out.println("user home" + System.getProperty("user.dir"));
+                    
                     
                     /*
                     * DES RÄTSELS LÖSUNG:
