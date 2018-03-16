@@ -105,5 +105,7 @@
         <url-pattern>/registerUser</url-pattern>
     </servlet-mapping>
 
-
+    <listener>
+        <listener-class>utils.InitContextListener</listener-class>
+    </listener>
 </web-app>

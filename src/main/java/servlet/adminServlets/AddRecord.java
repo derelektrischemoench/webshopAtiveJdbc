@@ -65,8 +65,9 @@ public class AddRecord extends HttpServlet {
         
         // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
-        
+        String filename = "";
         //List of file items from the upload:
+        String artistName = "";
         try {
             List<FileItem> items = upload.parseRequest(request);
             
@@ -76,35 +77,20 @@ public class AddRecord extends HttpServlet {
                 
                 if(i.isFormField()) {
                     //TODO: process form field here:
+                    if (i.getFieldName().equals("createRecord__artistName")) {
+                        artistName = i.getString();
+                    }
                     System.out.println("form field name name: " + i.getFieldName() + "value : " + i.getString());
+                    
                 } else {
                     //this is the file
-                    String filename = i.getName();
-                    String contentType = i.getContentType();
+                    filename = i.getName();
                     long sizeInBytes = i.getSize();
                     System.out.println("located the file:" + sizeInBytes + "(size) " + filename);
                     
-                    //uploaded files are kept in ram and have to be saved to a file:
-                    String currentDir = new java.io.File( "." ).getCanonicalPath();
-                    System.out.println("current dir: " + currentDir);
-                    System.out.println("ContextPath: " + request.getContextPath());
-                    System.out.println("Realpath " + request.getRealPath("/"));
-                    File uploadedFile = new File("/home/chris/Desktop/" + filename);
+                  
+                    File uploadedFile = new File(getServletContext().getRealPath("uploadFiles/recordImages") + "/" + filename);
     
-                    System.out.println("user home" + System.getProperty("user.dir"));
-                    
-                    
-                    /*
-                    * DES RÄTSELS LÖSUNG:
-                    *man kann hier scheinbar nur mit absoluten Pfaden arbeiten. Da request.contexPath immer auf /target zeigt ist das bekactk
-                    *
-                    *
-                    *-> absoute Pfade verwenden...FFFFFUUUUUUCCCK
-                    *
-                    *
-                    * */
-                    //File uploadedFile = new File(request.getContextPath() + "/" + filename);  //-> müsste nach build/webapp hochladen
-                    
                     try {
                         i.write(uploadedFile);
                         System.out.println("wrote file to: + " + uploadedFile.getAbsolutePath());
@@ -112,8 +98,6 @@ public class AddRecord extends HttpServlet {
                         e.printStackTrace();
                         System.out.println("error trying to write fule");
                     }
-                    
-                    
                 }
             }
         } catch (FileUploadException e) {
@@ -124,20 +108,18 @@ public class AddRecord extends HttpServlet {
         String artistAlias = "";
         String recordName = "";
         String recordLabel = "";
-        String embedurl = "";
+        String embedurl = "/webapp/uploadFiles/recordImages/" + filename;
         
-        
-        /*try {
+        try {
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        Artist a = Artist.findFirst("artist_name = ?", artistName);
             
             //locate the id of the artist from the database to make the fk
             try {
-                Artist a = Artist.findFirst("artist_name= ?", artistAlias);
-                Object artistIdObj = a.get("id");
-                int ArtistObjInt = (Integer) artistIdObj; //artist id as an int
+                int artistId = (Integer) a.get("id"); //artist id as an int
                 
-                Record.createIt("artist_id", ArtistObjInt,
+                Record.createIt("artist_id", artistId,
                                 "title", recordName,
                                 "label", recordLabel,
                                 "img_file_path", embedurl);
@@ -160,6 +142,6 @@ public class AddRecord extends HttpServlet {
             
         } catch (Exception ex) {
             throw new ServletException(ex);
-        }*/
+        }
     }
 }
