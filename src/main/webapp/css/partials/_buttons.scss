@@ -1,3 +1,17 @@
 .btn {
   margin: 5px;
 }
+
+.btn-primary {
+  background: $color1;
+  border: 1px solid $color1;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: $color2;
+  }
+}

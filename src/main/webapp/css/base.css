@@ -1,10 +1,16 @@
 @import url(bootstrap/css/bootstrap-reboot.min.css);
 @import url(bootstrap/css/bootstrap.css);
 @import url(bootstrap/css/bootstrap-grid.css);
+/* Coolors Exported Palette - coolors.co/042a2b-420039-136f63-e89005-ff570a */
+/*$color1: #f4e8c1;
+$color2: #a0c1b8;
+$color3: #709fb0;
+$color4: #726a95;
+$color5: #351f39;*/
 @import url(bower_components/Ionicons/scss/_ionicons.css);
 .header {
   width: 100%;
-  color: #fff;
+  color: #A4031F;
   font-family: 'Open Sans Condensed', sans-serif;
   background-image: url("imgs/recordHeaderImage.jpeg");
   background-size: cover;
@@ -101,7 +107,7 @@ $color5: #351f39;*/
   padding-top: 25px !important;
   padding-bottom: 35px !important; }
   .slick-list .slick-track {
-    background: #2b4251; }
+    background: #A4031F; }
 
 .slick-slider {
   height: 226px;
@@ -149,7 +155,7 @@ $color5: #351f39;*/
       position: relative;
       width: 80%;
       top: 180px;
-      background: #91b3bc;
+      background: #40476D;
       font-family: 'Karma', sans-serif;
       font-weight: 600;
       left: 15px;
@@ -181,6 +187,17 @@ $color5: #351f39;*/
 .btn {
   margin: 5px; }
 
+.btn-primary {
+  background: #91b3bc;
+  border: 1px solid #91b3bc;
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out; }
+  .btn-primary:hover {
+    background-color: #5b7d87; }
+
 h1 {
   font-weight: 300;
   font-size: 4rem;
@@ -202,8 +219,8 @@ h2 {
 
 .customerLoginForm {
   position: absolute;
-  background: #555;
-  color: #4ad6ff;
+  background: #2b4251;
+  color: #91b3bc;
   z-index: 1000;
   padding: 10px;
   height: 100vh;
@@ -216,7 +233,7 @@ h2 {
   .customerLoginForm.active {
     left: 0; }
   .customerLoginForm a {
-    color: #4ad6ff; }
+    color: #91b3bc; }
 
 .passwordErrorMessage {
   color: red; }

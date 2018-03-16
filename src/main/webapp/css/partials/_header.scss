@@ -1,6 +1,8 @@
+@import "../variables/palette";
+
 .header {
   width: 100%;
-  color: #fff;
+  color: $color9;
   font-family: 'Open Sans Condensed', sans-serif;
   background-image: url("imgs/recordHeaderImage.jpeg");
   background-size: cover;
