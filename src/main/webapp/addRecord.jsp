@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="include/headinclude.jsp"/>
-<div class="container">
+<div class="container main">
     <div class="row">
         <div class="col-sm-12">
             <h1>Add record for ${artistName}</h1>

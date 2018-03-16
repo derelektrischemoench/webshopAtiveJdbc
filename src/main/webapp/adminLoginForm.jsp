@@ -2,7 +2,7 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container adminLogin">
+<div class="container adminLogin main">
     <div class="row">
         <div class="col-sm-12">
             <h1>Login</h1>

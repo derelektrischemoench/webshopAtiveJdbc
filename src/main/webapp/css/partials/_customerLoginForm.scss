@@ -1,0 +1,23 @@
+.customerLoginForm {
+  position: absolute;
+  background: $loginMenuBackground;
+  color: $loginMenuFontColor;
+  z-index: 1000;
+  padding: 10px;
+  height: 100vh;
+  width: 280px;
+  left: -290px;
+  transition: left .4s ease-in;
+
+  -webkit-box-shadow: 3px 0px 5px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 0px 5px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 0px 5px -2px rgba(0, 0, 0, 0.75);
+
+  &.active {
+    left: 0;
+  }
+
+  a {
+  color: $loginMenuFontColor;
+  }
+}

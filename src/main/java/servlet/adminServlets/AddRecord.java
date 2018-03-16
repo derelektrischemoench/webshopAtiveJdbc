@@ -1,6 +1,4 @@
 package servlet.adminServlets;
-
-import com.oracle.webservices.internal.api.message.PropertySet;
 import model.Artist;
 import model.Record;
 import org.apache.commons.fileupload.FileItem;
@@ -16,19 +14,10 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import javax.servlet.http.Part;
+
 import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
+
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2,
