@@ -95,4 +95,15 @@
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord</url-pattern>
     </servlet-mapping>
 
+    <!-- USER servlets -->
+    <servlet>
+        <servlet-name>RegisterUser</servlet-name>
+        <servlet-class>servlet.useraccountServlets.RegisterUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterUser</servlet-name>
+        <url-pattern>/registerUser</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

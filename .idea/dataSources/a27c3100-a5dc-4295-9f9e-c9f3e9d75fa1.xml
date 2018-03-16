@@ -943,13 +943,11 @@
     <column id="238" parent="233" name="first_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="239" parent="233" name="last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="240" parent="233" name="user_name">
@@ -972,25 +970,21 @@
     <column id="243" parent="233" name="street">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="244" parent="233" name="house_number">
       <Position>8</Position>
       <DataType>int(10)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="245" parent="233" name="zip">
       <Position>9</Position>
       <DataType>varchar(128)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="246" parent="233" name="city">
       <Position>10</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="247" parent="233" name="PRIMARY">

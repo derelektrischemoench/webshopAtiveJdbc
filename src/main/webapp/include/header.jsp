@@ -11,7 +11,7 @@
 
 <div class="customerLoginForm">
     <h3>Login</h3>
-    <form action="">
+    <form action="loginUser" method="post">
         <div class="form-group">
             <label for="customerLogin__username">Username</label>
             <input type="text" class="form-control" id="customerLogin__username" aria-describedby="emailHelp"
@@ -27,7 +27,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         <br>
 
-        <a href="">Don't have an account yet? Click here to sign up</a>
+        <a href="registerUser">Don't have an account yet? Click here to sign up</a>
 
     </form>
 </div>

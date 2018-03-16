@@ -218,6 +218,9 @@ h2 {
   .customerLoginForm a {
     color: #4ad6ff; }
 
+.passwordErrorMessage {
+  color: red; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
