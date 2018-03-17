@@ -1,3 +1,9 @@
+/* Coolors Exported Palette - coolors.co/042a2b-420039-136f63-e89005-ff570a */
+/*$color1: #f4e8c1;
+$color2: #a0c1b8;
+$color3: #709fb0;
+$color4: #726a95;
+$color5: #351f39;*/
 @import url(bootstrap/css/bootstrap-reboot.min.css);
 @import url(bootstrap/css/bootstrap.css);
 @import url(bootstrap/css/bootstrap-grid.css);
@@ -97,17 +103,9 @@ $color5: #351f39;*/
 @media all and (min-width: 428px) {
   .header .right {
     right: 0; } }
-/* Coolors Exported Palette - coolors.co/042a2b-420039-136f63-e89005-ff570a */
-/*$color1: #f4e8c1;
-$color2: #a0c1b8;
-$color3: #709fb0;
-$color4: #726a95;
-$color5: #351f39;*/
 .slick-list {
   padding-top: 25px !important;
   padding-bottom: 35px !important; }
-  .slick-list .slick-track {
-    background: #A4031F; }
 
 .slick-slider {
   height: 226px;
@@ -161,6 +159,17 @@ $color5: #351f39;*/
       left: 15px;
       padding: 10px 0 5px 10px;
       font-size: 22px; }
+
+.slider-card {
+  margin: 0 20px;
+  background-size: cover !important;
+  display: flex !important;
+  flex-direction: column-reverse !important; }
+  .slider-card .mdl-card__title {
+    background-color: rgba(255, 255, 255, 0.7); }
+
+.index.slider {
+  margin-bottom: 25px; }
 
 .footer {
   font-family: 'Mina', sans-serif;
@@ -270,6 +279,8 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     height: 150px; }
     .itemCard .titleImage .mdl-card__title {
       flex: 2; }
+      .itemCard .titleImage .mdl-card__title .mdl-card__title-text {
+        align-self: flex-start; }
     .itemCard .titleImage .imagepart {
       width: 150px;
       background-size: cover; }
@@ -277,22 +288,34 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .mdl-textfield__label:after {
   bottom: 13px !important; }
 
+.search {
+  margin-top: 50px;
+  text-align: center; }
+  .search .mdl-textfield input {
+    font-size: 40px; }
+  .search .mdl-textfield label {
+    font-size: 24px;
+    top: 40px; }
+  .search .mdl-textfield .mdl-textfield__label {
+    color: #5b7d87; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
   overflow-x: hidden; }
 
 .main {
-  position: absolute;
   z-index: 100;
   top: 0;
-  padding-top: 172px;
-  min-height: 100vh; }
+  padding-top: 172px; }
 
 .notIndex {
   padding-top: 172px; }
 
 .container:last-of-type {
   margin-bottom: 50px; }
+
+h1, h2, h3, h4, h5, h6, p, span {
+  color: #5d5d5d; }
 
 /*# sourceMappingURL=base.css.map */

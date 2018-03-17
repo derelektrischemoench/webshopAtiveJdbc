@@ -11,6 +11,10 @@
 
     .mdl-card__title {
       flex:2;
+
+      .mdl-card__title-text {
+        align-self: flex-start;
+      }
     }
 
     .imagepart {

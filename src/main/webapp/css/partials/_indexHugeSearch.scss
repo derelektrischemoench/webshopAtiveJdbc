@@ -1,0 +1,20 @@
+
+.search {
+  margin-top: 50px;
+  text-align: center;
+
+  .mdl-textfield {
+    input {
+      font-size:40px;
+    }
+
+    label {
+      font-size: 24px;
+      top: 40px;
+    }
+
+    .mdl-textfield__label {
+      color: $color2;
+    }
+  }
+}

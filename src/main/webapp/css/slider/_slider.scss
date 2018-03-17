@@ -1,10 +1,6 @@
 .slick-list {
   padding-top: 25px !important;
   padding-bottom: 35px !important;
-
-  .slick-track {
-    background: $color9;
-  }
 }
 
 .slick-slider {
@@ -77,4 +73,21 @@
       font-size: 22px;
     }
   }
+}
+
+.slider-card {
+  margin: 0 20px;
+  background-size: cover !important;
+  display: flex !important;
+  flex-direction: column-reverse !important;
+
+  .mdl-card__title {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+//extraw0rscht für den slider auf /
+
+.index.slider {
+  margin-bottom: 25px;
 }
