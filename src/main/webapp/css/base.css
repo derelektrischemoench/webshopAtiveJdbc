@@ -198,13 +198,15 @@ $color5: #351f39;*/
   .btn-primary:hover {
     background-color: #5b7d87; }
 
+.mdl-button--delete {
+  background-color: #FE5F55 !important;
+  color: #fff; }
+
 h1 {
   font-weight: 300;
   font-size: 4rem;
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
-  left: -18px;
-  top: -5px;
   margin-bottom: 15px;
   line-height: 50px; }
 
@@ -252,6 +254,9 @@ h2 {
       width: 150px;
       background-size: cover; }
 
+.mdl-textfield__label:after {
+  bottom: 13px !important; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
@@ -266,5 +271,8 @@ body {
 
 .notIndex {
   padding-top: 172px; }
+
+.container:last-of-type {
+  margin-bottom: 50px; }
 
 /*# sourceMappingURL=base.css.map */

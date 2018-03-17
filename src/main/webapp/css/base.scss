@@ -13,6 +13,7 @@
 @import "partials/customerLoginForm";
 @import "partials/signupForms";
 @import "partials/cards";
+@import "partials/mdlOverrides";
 
 body {
   font-family: 'Roboto', serif;
@@ -30,5 +31,9 @@ body {
 
 .notIndex {
   padding-top: 172px;
+}
+
+.container:last-of-type {
+  margin-bottom: 50px;
 }
 

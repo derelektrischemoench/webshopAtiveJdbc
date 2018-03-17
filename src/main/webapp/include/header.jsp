@@ -12,19 +12,23 @@
 <div class="customerLoginForm">
     <h3>Login</h3>
     <form action="loginUser" method="post">
-        <div class="form-group">
-            <label for="customerLogin__username">Username</label>
-            <input type="text" class="form-control" id="customerLogin__username" aria-describedby="emailHelp"
-                   placeholder="Enter username" name="customerLogin__username">
-            <span class="passwordErrorMessage">${errorMsg}</span>
 
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3" name="customerLogin__username">
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+            <span class="mdl-textfield__error">${errorMsg}</span>
         </div>
-        <div class="form-group">
-            <label for="customerLogin__password">Password</label>
-            <input type="password" class="form-control" id="customerLogin__password" placeholder="Password"
-                   name="customerLogin__password">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="customerLogin__password" name="customerLogin__password">
+            <label class="mdl-textfield__label" for="customerLogin__password">Password</label>
+            <span class="mdl-textfield__error">${errorMsg}</span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <button type="submit"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Submit
+        </button>
         <br>
 
         <a href="registerUser">Don't have an account yet? Click here to sign up</a>

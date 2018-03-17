@@ -8,24 +8,28 @@
             <h1>Login</h1>
         </div>
     </div>
-        <form action="adminLogin" method="post">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Enter username" name="adminLogin__username">
-                <span class="passwordErrorMessage">${errorMsg}</span>
+    <form action="adminLogin" method="post">
 
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="adminLogin__password">
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3" name="adminLogin__username">
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+            <span class="mdl-textfield__error">${errorMsg}</span>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="adminLogin__password" name="adminLogin__password">
+            <label class="mdl-textfield__label" for="adminLogin__password">Password</label>
+            <!--<span class="mdl-textfield__error">${errorMsg}</span>-->
+        </div>
+
+        <button type="submit"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Submit
+        </button>
+
+
+    </form>
 
     <div class="row">
         <div class="col-sm-12">

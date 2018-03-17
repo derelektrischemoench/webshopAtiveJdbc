@@ -3,7 +3,7 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container-fluid notIndex">
+<div class="container notIndex">
     <div class="row">
         <div class="col-sm-12">
             <h1>Available Records for <c:out value="${artist.get('artist_name')}"/>:</h1>
@@ -29,24 +29,33 @@
                         Aenan convallis.
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            View Updates
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                        href="">
+                            Edit record
                         </a>
+                        <a class="mdl-button mdl-button--delete mdl-js-button mdl-js-ripple-effect">
+                            Delete record
+                        </a>
+
                     </div>
                 </div>
-
-
             </div>
         </c:forEach>
     </div>
+</div>
 
 
-    <!-- TODO: list available records-->
-
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord"></c:out>?artist_id=<c:out value="${artist.get('id')}" />">Add
-                record for <c:out value="${artist.get('artist_name')}"></c:out> </a>
+            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord"></c:out>?artist_id=<c:out value="${artist.get('id')}" />">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">add</i>
+                </button>
+                <span>Add
+                record for <c:out value="${artist.get('artist_name')}"></c:out></span>
+
+            </a>
 
         </div>
     </div>

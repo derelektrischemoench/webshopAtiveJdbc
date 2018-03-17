@@ -14,11 +14,34 @@
         <div class="col-sm-12">
             <ul>
                 <c:forEach items="${artists}" var="artist">
-                    <li>
-                        <!--imgs path: <c:out value="${artist.get('artist_img_path')}" />-->
-                        Artist name: <c:out value="${artist.get('artist_name')}" />
-                    </li>
-                    <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview" />?artistId=${artist.get('id')}">show records of artist</a>
+                    <div class="col-sm-6">
+                        <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
+                            <div class="titleImage">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <h2 class="mdl-card__title-text">Artist Name: <br> <c:out
+                                            value="${artist.get('artist_name')}"/>
+                                    </h2>
+                                </div>
+                                <div class="imagepart">
+                                    here be image
+                                </div>
+                            </div>
+
+                            <div class="mdl-card__supporting-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aenan convallis.
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                                   href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview" />?artistId=${artist.get('id')}">show
+                                    records of artist
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </c:forEach>
             </ul>
         </div>
@@ -31,8 +54,4 @@
             </a>
         </div>
     </div>
-
-
 </div>
-
-<jsp:include page="include/footinclude.jsp"/>
