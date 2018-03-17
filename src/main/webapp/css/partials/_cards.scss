@@ -1,0 +1,22 @@
+.itemCard {
+
+  margin-bottom: 20px;
+  background-color: lighten($color1, 20%) !important;
+  width: 90% !important;
+
+  .titleImage {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+
+    .mdl-card__title {
+      flex:2;
+    }
+
+    .imagepart {
+      width: 150px;
+      background-size:cover;
+    }
+  }
+
+}

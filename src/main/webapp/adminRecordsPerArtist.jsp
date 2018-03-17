@@ -3,22 +3,41 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container createAdminAccount main">
+<div class="container-fluid notIndex">
     <div class="row">
         <div class="col-sm-12">
             <h1>Available Records for <c:out value="${artist.get('artist_name')}"/>:</h1>
         </div>
     </div>
-
+</div>
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12">
-            <c:forEach items="${artistsRecords}" var="record">
-                    <li>
-                        Record Name: <c:out value="${record.get('title')}" />
-                        <img src="${ record.get('img_file_path') }" alt="" class="img-responsive" />
-                    </li>
-                </c:forEach>
-        </div>
+        <c:forEach items="${artistsRecords}" var="record">
+            <div class="col-sm-6">
+                <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
+                    <div class="titleImage">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/></h2>
+
+                        </div>
+                        <div class="imagepart"
+                             style="background-image: url(' ${ record.get('img_file_path') } ')"></div>
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Aenan convallis.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            View Updates
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </c:forEach>
     </div>
 
 
@@ -34,4 +53,3 @@
 
 </div>
 
-<jsp:include page="include/footinclude.jsp"/>

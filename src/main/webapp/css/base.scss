@@ -12,6 +12,7 @@
 @import "partials/fontStuff";
 @import "partials/customerLoginForm";
 @import "partials/signupForms";
+@import "partials/cards";
 
 body {
   font-family: 'Roboto', serif;
@@ -25,5 +26,9 @@ body {
   top: 0;
   padding-top: 172px;
   min-height: 100vh;
+}
+
+.notIndex {
+  padding-top: 172px;
 }
 
