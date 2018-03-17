@@ -1,4 +1,5 @@
 package servlet.adminServlets;
+
 import model.Artist;
 import model.Record;
 import org.apache.commons.fileupload.FileItem;
@@ -36,7 +37,7 @@ public class AddRecord extends HttpServlet {
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         String artistId = req.getParameter("artist_id");
         Artist a = Artist.findFirst("id = ?", artistId);
-        req.setAttribute("artistName", a.get("artist_name"));
+        req.setAttribute("artist", a);
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         Base.close();
         rd.forward(req, resp);
@@ -53,10 +54,8 @@ public class AddRecord extends HttpServlet {
         
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        
         // Sets the size threshold beyond which files are written directly to// disk.
         factory.setSizeThreshold(MAX_MEMORY_SIZE);
-        
         // Sets the directory used to temporarily store files that are larger
         // than the configured size threshold. We use temporary directory for
         // java
@@ -68,32 +67,35 @@ public class AddRecord extends HttpServlet {
         String filename = "";
         //List of file items from the upload:
         String artistName = "";
+        String recordName = "";
+        String recordLabel = "";
+        String artistId = "";
+        
         try {
             List<FileItem> items = upload.parseRequest(request);
             
             Iterator ItemIter = items.iterator();
             while (ItemIter.hasNext()) {
-                FileItem i = (FileItem)ItemIter.next();
+                FileItem i = (FileItem) ItemIter.next();
                 
-                if(i.isFormField()) {
-                    //TODO: process form field here:
-                    if (i.getFieldName().equals("createRecord__artistName")) {
-                        artistName = i.getString();
+                if (i.isFormField()) {
+                    if (i.getFieldName().equals("createRecord__recordName")) {
+                        recordName = i.getString();
                     }
-                    System.out.println("form field name name: " + i.getFieldName() + "value : " + i.getString());
-                    
+                    if (i.getFieldName().equals("createRecord__recordLabel")) {
+                        recordLabel = i.getString();
+                    }
+                    if(i.getFieldName().equals("createRecord__artistId")) {
+                        artistId = i.getString();
+                    }
                 } else {
                     //this is the file
                     filename = i.getName();
-                    long sizeInBytes = i.getSize();
-                    System.out.println("located the file:" + sizeInBytes + "(size) " + filename);
                     
-                  
                     File uploadedFile = new File(getServletContext().getRealPath("uploadFiles/recordImages") + "/" + filename);
-    
+                    
                     try {
                         i.write(uploadedFile);
-                        System.out.println("wrote file to: + " + uploadedFile.getAbsolutePath());
                     } catch (Exception e) {
                         e.printStackTrace();
                         System.out.println("error trying to write fule");
@@ -104,28 +106,24 @@ public class AddRecord extends HttpServlet {
             e.printStackTrace();
         }
         
-        //initialize the string values for the record properties
-        String artistAlias = "";
-        String recordName = "";
-        String recordLabel = "";
+     
+        
         String embedurl = "/webapp/uploadFiles/recordImages/" + filename;
         
         try {
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        Artist a = Artist.findFirst("artist_name = ?", artistName);
+            Artist a = Artist.findFirst("id = ?", artistId);
             
             //locate the id of the artist from the database to make the fk
             try {
-                int artistId = (Integer) a.get("id"); //artist id as an int
-                
                 Record.createIt("artist_id", artistId,
                                 "title", recordName,
                                 "label", recordLabel,
                                 "img_file_path", embedurl);
                 
                 request.setAttribute("recordName", recordName);
-                System.out.println("added record with : " + artistAlias + " " + recordLabel + " " + recordName);
+                System.out.println("added record with : " + a.get("artist_name") + " " + recordLabel + " " + recordName);
                 
             } catch (Exception e) {
                 //the corresponding artist couldn't be found
@@ -137,8 +135,7 @@ public class AddRecord extends HttpServlet {
             Base.close();
             
             // displays done.jsp page after upload finished
-            getServletContext().getRequestDispatcher("/recordSuccessfullyAdded.jsp").forward(
-                    request, resp);
+            getServletContext().getRequestDispatcher("/recordSuccessfullyAdded.jsp").forward(request, resp);
             
         } catch (Exception ex) {
             throw new ServletException(ex);

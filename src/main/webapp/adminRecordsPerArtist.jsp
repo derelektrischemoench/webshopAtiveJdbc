@@ -15,7 +15,7 @@
             <c:forEach items="${artistsRecords}" var="record">
                     <li>
                         Record Name: <c:out value="${record.get('title')}" />
-                        <img src="${ record.get('img_file_path') }" alt="">
+                        <img src="${ record.get('img_file_path') }" alt="" class="img-responsive" />
                     </li>
                 </c:forEach>
         </div>

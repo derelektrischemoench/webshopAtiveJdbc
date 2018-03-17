@@ -5,7 +5,7 @@
 <div class="container main">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Add record for ${artistName}</h1>
+            <h1>Add record for ${artist.get('artist_name')}</h1>
             <h2></h2>
         </div>
     </div>
@@ -15,7 +15,7 @@
                   method="post"
                   enctype="multipart/form-data">
 
-                <input id="artistName" type="hidden" name="createRecord__artistName" value="${artistName}">
+                <input id="artistId" type="hidden" name="createRecord__artistId" value="${artist.get('id')}">
 
 
                 <div class="form-group">
