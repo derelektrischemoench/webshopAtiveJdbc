@@ -85,15 +85,15 @@ public class AddArtist extends HttpServlet {
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (item.isFormField()) {
-                    System.out.println(item.getFieldName() + " " + item.getString());
+                    
                     
                     String fieldname = item.getFieldName();
                     
                     if (fieldname.equals("artistAlias")) {
                         artistAlias = item.getString();
-                    } else if (fieldname.equals("artistFirstName")) {
+                    } else if (fieldname.equals("artistFirstname")) {
                         artistFirstName = item.getString();
-                    } else if (fieldname.equals("artistLastName")) {
+                    } else if (fieldname.equals("artistLastname")) {
                         artistLastName = item.getString();
                     } else if (fieldname.equals("artistLabel")) {
                         artistLabel = item.getString();
@@ -123,6 +123,8 @@ public class AddArtist extends HttpServlet {
             
             //open db connection
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+    
+            System.out.println("creating artist: alias: " + artistAlias + " first_name: " + artistFirstName + " last name: " + artistLastName + " label: " + artistLabel);
             
             Artist.createIt("artist_name", artistAlias,
                             "first_name", artistFirstName,
