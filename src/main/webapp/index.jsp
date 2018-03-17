@@ -48,10 +48,10 @@
 <div class="container-fluid">
     <div class="row search">
         <div class="col-sm-12">
-            <form action="#">
+            <form action="searchRecords" method="post">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample3">
-                    <label class="mdl-textfield__label" for="sample3">Search for records</label>
+                    <input class="mdl-textfield__input" type="text" id="sample3" name="index__searchRecord">
+                    <label class="mdl-textfield__label" for="sample3">Search for records / Artists</label>
                 </div>
 
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">

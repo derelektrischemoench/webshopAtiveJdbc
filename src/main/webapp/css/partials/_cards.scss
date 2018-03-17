@@ -10,7 +10,7 @@
     height: 150px;
 
     .mdl-card__title {
-      flex:2;
+      flex: 2;
 
       .mdl-card__title-text {
         align-self: flex-start;
@@ -19,7 +19,31 @@
 
     .imagepart {
       width: 150px;
-      background-size:cover;
+      background-size: cover;
+    }
+  }
+
+  //Styles for record search result item cards:
+  &__searchResultRecord {
+    width: 160px !important;
+    height: 160px !important;
+
+    .titleImage {
+      flex: 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+
+      .mdl-card__title {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    .mdl-card__actions {
+      display: flex;
+      justify-content: center;
     }
   }
 

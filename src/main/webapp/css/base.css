@@ -284,6 +284,21 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     .itemCard .titleImage .imagepart {
       width: 150px;
       background-size: cover; }
+  .itemCard__searchResultRecord {
+    width: 160px !important;
+    height: 160px !important; }
+    .itemCard__searchResultRecord .titleImage {
+      flex: 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column; }
+      .itemCard__searchResultRecord .titleImage .mdl-card__title {
+        flex-direction: column;
+        justify-content: space-between; }
+    .itemCard__searchResultRecord .mdl-card__actions {
+      display: flex;
+      justify-content: center; }
 
 .mdl-textfield__label:after {
   bottom: 13px !important; }
@@ -317,5 +332,8 @@ body {
 
 h1, h2, h3, h4, h5, h6, p, span {
   color: #5d5d5d; }
+
+.searchResults {
+  margin-bottom: 100px; }
 
 /*# sourceMappingURL=base.css.map */

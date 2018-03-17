@@ -105,6 +105,18 @@
         <url-pattern>/registerUser</url-pattern>
     </servlet-mapping>
 
+    <!-- general servlets: -->
+
+    <servlet>
+        <servlet-name>SearchRecords</servlet-name>
+        <servlet-class>servlet.SearchRecords</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchRecords</servlet-name>
+        <url-pattern>/searchRecords</url-pattern>
+    </servlet-mapping>
+
+
     <listener>
         <listener-class>utils.InitContextListener</listener-class>
     </listener>
