@@ -18,20 +18,39 @@
                 <input id="artistId" type="hidden" name="createRecord__artistId" value="${artist.get('id')}">
 
 
-                <div class="form-group">
-                    <label for="recordName">Name of the record:</label><br>
-                    <input id="recordName" type="text" name="createRecord__recordName">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="createRecord__recordName"
+                           name="createRecord__recordName">
+                    <label class="mdl-textfield__label" for="createRecord__recordName">Name of the record:</label>
                 </div>
 
-                <div class="form-group">
-                    <label for="recordLabel">Record published by label::</label><br>
-                    <input id="recordLabel" type="text" name="createRecord__recordLabel">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="createRecord__recordLabel"
+                           name="createRecord__recordLabel">
+                    <label class="mdl-textfield__label" for="createRecord__recordLabel">Record published by
+                        label:</label>
                 </div>
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="recordImage">Upload record image</label><br>
                     <input id="recordImage" name="createRecord__recordImage" type="file" size="50" accept="image/*"
-                           class="btn btn-outline-secondary">
+                           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                </div> -->
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                    <input class="mdl-textfield__input" placeholder="No file chosen" type="text" id="recordImage" readonly/>
+                    <div class="mdl-button mdl-button--icon mdl-button--file">
+                        <i class="material-icons">attach_file</i>
+                        <input type="file" name="createRecord__recordImage" id="ID"
+                               onchange="document.getElementById('recordImage').value=this.files[0].name;"/>
+                    </div>
+                </div>
+
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="number" step="0.01" id="createRecord__price"
+                           name="createRecord__price">
+                    <label class="mdl-textfield__label" for="createRecord__price">Price</label>
                 </div>
 
 

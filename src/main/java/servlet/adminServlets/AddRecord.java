@@ -70,6 +70,7 @@ public class AddRecord extends HttpServlet {
         String recordName = "";
         String recordLabel = "";
         String artistId = "";
+        float recordPrice = 0;
         
         try {
             List<FileItem> items = upload.parseRequest(request);
@@ -87,6 +88,16 @@ public class AddRecord extends HttpServlet {
                     }
                     if(i.getFieldName().equals("createRecord__artistId")) {
                         artistId = i.getString();
+                    }
+                    if(i.getFieldName().equals("createRecord__price")) {
+                        
+                        String formContent = i.getString();
+                        if(formContent.contains(",")) {
+                            formContent = formContent.replace(",", ".");
+                        }
+                        
+                        recordPrice = Float.parseFloat(formContent);
+                        System.out.println("parsed float value: " + recordPrice);
                     }
                 } else {
                     //this is the file
@@ -120,10 +131,11 @@ public class AddRecord extends HttpServlet {
                 Record.createIt("artist_id", artistId,
                                 "title", recordName,
                                 "label", recordLabel,
-                                "img_file_path", embedurl);
+                                "img_file_path", embedurl,
+                                "price", recordPrice);
                 
                 request.setAttribute("recordName", recordName);
-                System.out.println("added record with : " + a.get("artist_name") + " " + recordLabel + " " + recordName);
+                System.out.println("added record with : " + a.get("artist_name") + " Record price:  " + recordPrice );
                 
             } catch (Exception e) {
                 //the corresponding artist couldn't be found
