@@ -117,6 +117,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>TestManytoMany</servlet-name>
+        <servlet-class>servlet.TestManytoMany</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestManytoMany</servlet-name>
+        <url-pattern>/testmanytomany</url-pattern>
+    </servlet-mapping>
+
+
+
     <listener>
         <listener-class>utils.InitContextListener</listener-class>
     </listener>
