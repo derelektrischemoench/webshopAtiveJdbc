@@ -29,6 +29,15 @@ public class SearchRecords extends HttpServlet {
         System.out.println("Found num records: " + resultSetRecords.size());
         System.out.println("Found num artists: " + resultSetArtists.size() );
         
+        List<Artist> asdasd = Artist.findBySQL("select artists.* from artists where soundex('artist_name') = soundex(?)", searchQuery);
+        System.out.println(asdasd.size());
+        Iterator<Artist> fuzzyArt = asdasd.iterator();
+        while (fuzzyArt.hasNext()) {
+            Artist a  = fuzzyArt.next();
+            System.out.println("fuzzysearch found something: " + a.get("artist_name"));
+            
+        }
+        
         
         Iterator<Record> recordIter = resultSetRecords.iterator();
         
