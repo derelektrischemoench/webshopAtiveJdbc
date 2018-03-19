@@ -930,10 +930,10 @@
     <table id="235" parent="10" name="orders">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="236" parent="10" name="record_shoppingcart">
+    <table id="236" parent="10" name="records">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="237" parent="10" name="records">
+    <table id="237" parent="10" name="records_shoppingcarts">
       <Engine>InnoDB</Engine>
     </table>
     <table id="238" parent="10" name="shoppingcarts">
@@ -1082,77 +1082,84 @@
       <ColNames>id</ColNames>
       <RefSchemaName>wpr_webshop</RefSchemaName>
       <RefTableName>records</RefTableName>
-      <RefColNames>record_id</RefColNames>
+      <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="266" parent="236" name="record_id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="267" parent="236" name="shoppingcart_id">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="268" parent="237" name="record_id">
+    <column id="266" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="237" name="title">
+    <column id="267" parent="236" name="title">
       <Position>2</Position>
       <DataType>varchar(512)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="237" name="label">
+    <column id="268" parent="236" name="label">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="237" name="img_file_path">
+    <column id="269" parent="236" name="img_file_path">
       <Position>4</Position>
       <DataType>varchar(512)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="237" name="artist_id">
+    <column id="270" parent="236" name="artist_id">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="237" name="price">
+    <column id="271" parent="236" name="price">
       <Position>6</Position>
       <DataType>float|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="274" parent="237" name="records_id_uindex">
-      <ColNames>record_id</ColNames>
+    <index id="272" parent="236" name="records_id_uindex">
+      <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="275" parent="237" name="PRIMARY">
+    <key id="273" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>record_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="276" parent="237" name="records_id_uindex">
-      <ColNames>record_id</ColNames>
+    <key id="274" parent="236" name="records_id_uindex">
+      <ColNames>id</ColNames>
       <UnderlyingIndexName>records_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="277" parent="238" name="record_id">
+    <column id="275" parent="237" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="238" name="id">
+    <column id="276" parent="237" name="shoppingcart_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+    <column id="277" parent="237" name="record_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="238" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="279" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
