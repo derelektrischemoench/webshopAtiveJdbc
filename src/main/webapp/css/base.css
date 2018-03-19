@@ -231,8 +231,8 @@ h2 {
 .customerLoginForm {
   position: absolute;
   background: #2b4251;
-  color: #91b3bc;
-  z-index: 1000;
+  color: #fff;
+  z-index: 3000;
   padding: 10px;
   height: 100vh;
   width: 280px;
@@ -243,8 +243,12 @@ h2 {
   box-shadow: 3px 0px 5px -2px rgba(0, 0, 0, 0.75); }
   .customerLoginForm.active {
     left: 0; }
-  .customerLoginForm a {
-    color: #91b3bc; }
+  .customerLoginForm a, .customerLoginForm h3 {
+    color: #fff; }
+  .customerLoginForm .mdl-textfield .mdl-textfield__label {
+    color: #fff; }
+  .customerLoginForm .mdl-textfield.is-focused label {
+    color: #fff; }
 
 .passwordErrorMessage {
   color: red; }

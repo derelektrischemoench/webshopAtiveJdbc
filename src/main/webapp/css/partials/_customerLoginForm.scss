@@ -2,7 +2,7 @@
   position: absolute;
   background: $loginMenuBackground;
   color: $loginMenuFontColor;
-  z-index: 1000;
+  z-index: 3000;
   padding: 10px;
   height: 100vh;
   width: 280px;
@@ -17,7 +17,18 @@
     left: 0;
   }
 
-  a {
-  color: $loginMenuFontColor;
+  a, h3 {
+    color: $loginMenuFontColor;
   }
+
+  .mdl-textfield {
+    .mdl-textfield__label {
+      color: $loginMenuFontColor;
+    }
+
+    &.is-focused label {
+      color: #fff;
+    }
+  }
+
 }

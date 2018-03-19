@@ -88,7 +88,7 @@ CREATE TABLE `orders` (
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `orders_id_uindex` (`id`),
-  CONSTRAINT `orders_accounts_id_fk` FOREIGN KEY (`id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `orders_accounts_id_fk` FOREIGN KEY (`id`) REFERENCES `accounts` (account_id) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orders_records_id_fk` FOREIGN KEY (`id`) REFERENCES `records` (record_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
