@@ -29,9 +29,7 @@ public class TestManytoMany extends HttpServlet {
             Shoppingcart shoppingcart = Shoppingcart.createIt(); //gets an autoid
             
             System.out.println("adding record to shoppingcart");
-            shoppingcart.add(record);/*
-            //System.out.println("associating account with shoppingcart");
-            //shoppingcart.add(a);*/
+            shoppingcart.add(record);
             
         } catch (Exception e) {
             e.printStackTrace();
