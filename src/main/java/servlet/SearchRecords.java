@@ -25,8 +25,13 @@ public class SearchRecords extends HttpServlet {
     
         List<Record> resultSetRecords = Record.where("title = ?", searchQuery);
         List<Artist> resultSetArtists = Artist.where("artist_name = ?", searchQuery);
+    
+        System.out.println("Found num records: " + resultSetRecords.size());
+        System.out.println("Found num artists: " + resultSetArtists.size() );
+        
         
         Iterator<Record> recordIter = resultSetRecords.iterator();
+        
         Iterator<Artist> artistIter = resultSetArtists.iterator();
         
         
@@ -42,10 +47,13 @@ public class SearchRecords extends HttpServlet {
             System.out.println("found Artist for searchquery:" + searchQuery + a.get("artist_name"));
         }
         
+        req.setAttribute("searchQuery" , searchQuery);
         req.setAttribute("artists", resultSetArtists);
         req.setAttribute("records", resultSetRecords);
+        
+        
     
-        RequestDispatcher rd = req.getRequestDispatcher("/searchResults.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/customerSearchResults.jsp");
         rd.forward(req, resp);
         
         

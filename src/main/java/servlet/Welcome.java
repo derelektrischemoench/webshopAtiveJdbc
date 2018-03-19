@@ -23,7 +23,7 @@ public class Welcome extends HttpServlet {
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         //query most recent records, put them in the slider
-        List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("record_id asc");
+        List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
         
         
         for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
