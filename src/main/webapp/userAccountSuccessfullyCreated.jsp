@@ -10,9 +10,6 @@
         </div>
     </div>
     <div class="row">
-        <div class="h3">Username: ${username}</div>
+        <h3>Username: ${username}</h3>
     </div>
-
-
-
 </div>

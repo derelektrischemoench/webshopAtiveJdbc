@@ -24,16 +24,17 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>AdminLogin</servlet-name>
-        <servlet-class>servlet.adminServlets.AdminLogin</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.adminServlets.LoginServlet</servlet-class>
         <init-param>
             <param-name>adminAccSalt</param-name>
             <param-value>6usrq7D5VYRtYgHSPCjZfU8SPWe8BMFn668fhFYM7JcmvudA</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AdminLogin</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/adminLogin</url-pattern>
+        <url-pattern>/loginUser</url-pattern>
     </servlet-mapping>
 
     <servlet>

@@ -9,10 +9,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class AdminLogin extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //if the user is not signed in render signinform else redirect to adminloginSuccessful
@@ -34,9 +35,12 @@ public class AdminLogin extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("adminligon dopost");
-        String username = req.getParameter("adminLogin__username");
-        String inputPassword = req.getParameter("adminLogin__password");
+        System.out.println("LoginServlet dopost");
+        String username = req.getParameter("login__username");
+        String inputPassword = req.getParameter("login__password");
+        
+        System.out.println("LoginServlet dopost with: " + username + " " + inputPassword) ;
+
         
         //open db connection:
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
@@ -55,22 +59,31 @@ public class AdminLogin extends HttpServlet {
         } else {
             if (BCrypt.checkpw(inputPassword, a.get("hashed_password").toString())) {
                 System.out.println("Hashed passwords matched");
-                
                 HttpSession session = req.getSession();
                 session.setAttribute("username", username);
-                session.setAttribute("isAdmin", "true");
                 session.setMaxInactiveInterval(30 * 60);
-                
                 Cookie loginCookie = new Cookie("username", username);
                 loginCookie.setMaxAge(30 * 60);
                 resp.addCookie(loginCookie);
-                RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
+                
+                boolean isAdmin = a.getBoolean("is_admin");
+                System.out.println("state value : " + isAdmin );
+                
+                if(isAdmin) {
+                    System.out.println("is adminaccount");
+                    session.setAttribute("isAdmin", "true");
+                    RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
+                    rd.forward(req, resp);
+                    
+                } else {
+                    System.out.println("is useracc");
+                    req.setAttribute("signinSuccessMessage", "Your signin was successful.");
+                    RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+                    rd.forward(req, resp);
+                }
+                
                 Base.close();
-                
-                rd.forward(req, resp);
-                //close database connection
-                
-                return;
+                System.out.println("db connection closed");
                 
             } else {
                 System.out.println("Wrong passwords");

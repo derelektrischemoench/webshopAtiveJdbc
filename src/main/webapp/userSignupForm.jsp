@@ -6,38 +6,38 @@
 <div class="container adminLogin main">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Register new account</h1>
+            <h1>Signup for new account</h1>
         </div>
     </div>
 
     <form action="registerUser" method="post">
-        <div class="form-group">
-            <label for="registerUser__userName">Username</label>
-            <input type="text" class="form-control" id="registerUser__userName" aria-describedby="emailHelp"
-                   placeholder="Enter username" name="registerUser__userName">
 
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3" name="customerSignup__email">
+            <label class="mdl-textfield__label" for="sample3">Email- Address</label>
+            <span class="mdl-textfield__error">${errorMsg}</span>
         </div>
-        <div class="form-group">
-            <label for="registerUser__email">Email</label>
-            <input type="text" class="form-control" id="registerUser__email" aria-describedby="emailHelp"
-                   placeholder="Email" name="registerUser__email">
-
+        <br>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="customerSignup__password1" name="customerSignup__password1">
+            <label class="mdl-textfield__label" for="customerSignup__password1">Password</label>
         </div>
-        <div class="form-group">
-            <label for="registerUser__password1">Password</label>
-            <input type="password" class="form-control" id="registerUser__password1" placeholder="Password"
-                   name="registerUser__password1">
-            <span class="passwordErrorMessage">${errorMsg}</span>
+        <br>
 
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="customerSignup__password2" name="customerSignup__password2">
+            <label class="mdl-textfield__label" for="customerSignup__password2">Password, repeat</label>
+            <span class="mdl-textfield__error">${errorMsg}</span>
         </div>
-        <div class="form-group">
-            <label for="registerUser__password2">Password, repeat</label>
-            <input type="password" class="form-control" id="registerUser__password2" placeholder="Password"
-                   name="registerUser__password2">
-        </div>
+        <br>
 
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Submit
+        </button>
+        <br>
     </form>
 
 </div>
+

@@ -22,10 +22,9 @@ public class RegisterUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("doPost in registerUser");
-        String username = req.getParameter("registerUser__userName");
-        String email = req.getParameter("registerUser__email");
-        String password1 = req.getParameter("registerUser__password1");
-        String password2 = req.getParameter("registerUser__password2");
+        String email = req.getParameter("customerSignup__email");
+        String password1 = req.getParameter("customerSignup__password1");
+        String password2 = req.getParameter("customerSignup__password2");
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
@@ -39,17 +38,17 @@ public class RegisterUser extends HttpServlet {
             //passwords matched, proceed with the account generation
             String hashedPassword = BCrypt.hashpw(password1, BCrypt.gensalt());
             //check if name is available:
-            Account a = Account.findFirst("user_name = ?", username);
+            Account a = Account.findFirst("user_name = ?", email);
             if (a == null) {
                 //the account is available, continue adding the user
                 Account.createIt("first_name", "",
                                  "last_name", "",
-                                 "user_name", username,
+                                 "user_name", email,
                                  "hashed_password", hashedPassword,
                                  "is_admin", 0);
                 System.out.println("successfully created account");
                 
-                req.setAttribute("username", username);
+                req.setAttribute("username", email);
                 
                 //TODO: optional: send email
                 RequestDispatcher rd = req.getRequestDispatcher("userAccountSuccessfullyCreated.jsp");

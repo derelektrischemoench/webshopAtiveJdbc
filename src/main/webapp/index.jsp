@@ -16,6 +16,12 @@
             </h2>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>${signinSuccessMessage}</h2>
+        </div>
+    </div>
 </div>
 <div class="container-fluid">
     <div class="slider row index" data-slick='{"slidesToShow": 2, "slidesToScroll": 1}'>
