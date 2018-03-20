@@ -79,9 +79,11 @@ public class LoginServlet extends HttpServlet {
                     
                 } else if (!isAdmin) {
                     System.out.println("is useracc");
+                    session.setAttribute("username", a.get("user_name"));
                     req.setAttribute("signinSuccessMessage", "Your signin was successful.");
                     RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
                     rd.forward(req, resp);
+                    //TODO: sessions and cookies also: shopping cart
                 }
                 
                 Base.close();
