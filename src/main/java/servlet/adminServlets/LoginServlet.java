@@ -39,12 +39,13 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("login__username");
         String inputPassword = req.getParameter("login__password");
         
-        System.out.println("LoginServlet dopost with: " + username + " " + inputPassword) ;
-
+        System.out.println("LoginServlet dopost with: " + username + " " + inputPassword);
+        
         
         //open db connection:
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         Account a = Account.findFirst("user_name = ?", username);
+        
         if (a == null) {
             //account does not exist
             String errorMsg = "No such account.";
@@ -57,6 +58,9 @@ public class LoginServlet extends HttpServlet {
             return;
             
         } else {
+            boolean isAdmin = a.getBoolean("is_admin");
+            //check pws
+            
             if (BCrypt.checkpw(inputPassword, a.get("hashed_password").toString())) {
                 System.out.println("Hashed passwords matched");
                 HttpSession session = req.getSession();
@@ -65,17 +69,15 @@ public class LoginServlet extends HttpServlet {
                 Cookie loginCookie = new Cookie("username", username);
                 loginCookie.setMaxAge(30 * 60);
                 resp.addCookie(loginCookie);
+                System.out.println("state value : " + isAdmin);
                 
-                boolean isAdmin = a.getBoolean("is_admin");
-                System.out.println("state value : " + isAdmin );
-                
-                if(isAdmin) {
+                if (isAdmin) {
                     System.out.println("is adminaccount");
                     session.setAttribute("isAdmin", "true");
                     RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
                     rd.forward(req, resp);
                     
-                } else {
+                } else if (!isAdmin) {
                     System.out.println("is useracc");
                     req.setAttribute("signinSuccessMessage", "Your signin was successful.");
                     RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
@@ -84,16 +86,31 @@ public class LoginServlet extends HttpServlet {
                 
                 Base.close();
                 System.out.println("db connection closed");
+                return;
                 
             } else {
+                //passwords didnt match
                 System.out.println("Wrong passwords");
                 String errorMsg = "Wrong password";
                 req.setAttribute("errorMsg", errorMsg);
-                RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
-                //close database connection
-                Base.close();
-                rd.forward(req, resp);
-                return;
+                
+                if (isAdmin) {
+                    System.out.println("is adminaccount");
+                    
+                    RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
+                    rd.forward(req, resp);
+                    Base.close();
+                    return;
+                    
+                } else {
+                    System.out.println("is useracc");
+                    req.setAttribute("signinSuccessMessage", "Your signin was successful.");
+                    RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+                    rd.forward(req, resp);
+                    Base.close();
+                    return;
+                }
+                
             }
         }
     }

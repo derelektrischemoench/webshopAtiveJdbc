@@ -12,14 +12,14 @@
 
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3" name="adminLogin__username">
-            <label class="mdl-textfield__label" for="sample3">Username</label>
+            <input class="mdl-textfield__input" type="text" id="login__username" name="login__username">
+            <label class="mdl-textfield__label" for="login__username">Username</label>
             <span class="mdl-textfield__error">${errorMsg}</span>
         </div>
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="adminLogin__password" name="adminLogin__password">
-            <label class="mdl-textfield__label" for="adminLogin__password">Password</label>
+            <input class="mdl-textfield__input" type="text" id="login__password" name="login__password">
+            <label class="mdl-textfield__label" for="login__password">Password</label>
             <!--<span class="mdl-textfield__error">${errorMsg}</span>-->
         </div>
 
