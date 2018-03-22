@@ -52,8 +52,8 @@ public class LoginServlet extends HttpServlet {
         
         if (a == null) {
             //account does not exist
-            String errorMsg = "No such account.";
-            req.setAttribute("errorMsg", errorMsg);
+            String signinFail = "No such account.";
+            req.setAttribute("signinFail", signinFail);
             RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
             Base.close();
             rd.forward(req, resp);
@@ -104,9 +104,9 @@ public class LoginServlet extends HttpServlet {
                 
             } else {
                 //passwords didnt match
-                System.out.println("Wrong passwords");
-                String errorMsg = "Wrong password";
-                req.setAttribute("errorMsg", errorMsg);
+                System.out.println("Wrong password");
+                String errorMsg = "Shit went wrong, yo";
+                req.setAttribute("signinFail", errorMsg);
                 
                 if (isAdmin) {
                     System.out.println("is adminaccount");
@@ -118,7 +118,7 @@ public class LoginServlet extends HttpServlet {
                     
                 } else {
                     System.out.println("is useracc");
-                    req.setAttribute("signinSuccessMessage", "Your signin was successful.");
+                   
                     RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
                     rd.forward(req, resp);
                     Base.close();
