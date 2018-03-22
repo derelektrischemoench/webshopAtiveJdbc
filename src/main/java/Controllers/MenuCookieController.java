@@ -25,19 +25,16 @@ public class MenuCookieController {
                     if (cookieVal.equals("true")) {
                         System.out.println("set cookie to false");
                         c.setValue("false");
+                        res.addCookie(c);
                     } else if (cookieVal.equals("false")) {
                         System.out.println("set cookie to true");
                         c.setValue("true");
+                        res.addCookie(c);
                     } else {
                         throw new IllegalStateException("cookie value is invalid");
                     }
                 }
             }
-        }
-        
-        for (Iterator<Cookie> cIter = cookieList.iterator(); cIter.hasNext(); ) {
-            Cookie coo = cIter.next();
-            //res.addCookie(coo);
         }
         
         return res;
