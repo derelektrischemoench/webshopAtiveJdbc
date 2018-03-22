@@ -7,15 +7,15 @@
   background-image: url("imgs/recordHeaderImage.jpeg");
   background-size: cover;
   background-position-x: 10%;
-  height: 172px;
+  height: 225px;
   overflow-x: hidden;
   position: fixed;
   z-index: 200;
 
   h4.login {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+    padding: 0;
+    margin: 0;
+    font-size:16px;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     -ms-transition: all .35s;
@@ -41,22 +41,9 @@
   }
 
   h2 {
-    font-size: 4em;
+    font-size: 2em;
     z-index: 1000;
-    position: absolute;
-    top: 0;
-    width: 50%;
-
-    &.right {
-      line-height: 25px;
-      font-size: 2em;
-      top: 88px;
-      right: -20;
-    }
-
-    &.left {
-      left: 0;
-    }
+    margin: 10px 0 0 0;
   }
 
   div.col-xs-6.right {
@@ -99,6 +86,13 @@
   div.col-xs-6.left {
     width: 50%;
     border-bottom: 5px solid #fff;
+  }
+
+  .itemCard {
+    min-height: auto;
+    h6 {
+      font-size: 14px;
+    }
   }
 }
 

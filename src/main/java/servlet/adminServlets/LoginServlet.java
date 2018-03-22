@@ -85,6 +85,7 @@ public class LoginServlet extends HttpServlet {
                 if (isAdmin) {
                     System.out.println("is adminaccount");
                     session.setAttribute("isAdmin", "true");
+                    session.setAttribute("username", a.get("user_name"));
                     RequestDispatcher rd = req.getRequestDispatcher("/adminLoginSuccessful.jsp");
                     rd.forward(req, resp);
                     

@@ -1,12 +1,41 @@
 <div class="container-fluid header">
+    <div class="row justify-content-between">
+        <div class="col-5">
+            <h2>WEL<br>COME</h2>
+            <h5>Tight shit records</h5>
+        </div>
+        <div class="col-7">
+            <div class="row justify-content-end">
 
-    <h2 class="left">WEL<br>COME</h2>
-    <h2 class="right">Tight shit records</h2>
-    <h4 class="right login">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login">
+                        Login
+                    </button>
 
-        <span>login / register</span>
+            </div>
 
-    </h4>
+
+            <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
+                <div class="mdl-card__title mdl-card--expand">
+                    <h6 class="mdl-card__title-text">Shopping cart:</h6>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
+                       data-upgraded=",MaterialButton,MaterialRipple">
+                        View cart
+                        <span class="mdl-button__ripple-container">
+                            <span class="mdl-ripple">
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </div>
 
 <div class="customerLoginForm">
@@ -74,7 +103,7 @@
             //menu is open; set to closed
             console.log("cookie says menu is opeb");
             setCookie("menuOpen", "false", 30);
-        } else  if (checkCookie() === false) {
+        } else if (checkCookie() === false) {
             console.log("cookie says menu is closed");
             setCookie("menuOpen", "true", 30)
         }
@@ -93,7 +122,7 @@
         console.log("menustate: " + menuState);
         if (menuState === "true") {
             return true;
-        } else if (menuState === "false"){
+        } else if (menuState === "false") {
             return false;
         }
     }
