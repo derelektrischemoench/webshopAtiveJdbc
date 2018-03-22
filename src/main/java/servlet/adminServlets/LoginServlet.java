@@ -1,5 +1,6 @@
 package servlet.adminServlets;
 
+import Controllers.MenuCookieController;
 import model.Account;
 import org.javalite.activejdbc.Base;
 import org.javalite.common.Base64;
@@ -12,6 +13,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.CollationKey;
+import java.util.Arrays;
+import java.util.List;
+
+import static Controllers.MenuCookieController.toggleMenuStateCookie;
 
 public class LoginServlet extends HttpServlet {
     @Override
@@ -26,7 +32,6 @@ public class LoginServlet extends HttpServlet {
             return;
         } else {
             //render signup form
-            System.out.println("doget in admindlogin");
             RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
             rd.forward(req, resp);
         }
@@ -35,7 +40,6 @@ public class LoginServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("LoginServlet dopost");
         String username = req.getParameter("login__username");
         String inputPassword = req.getParameter("login__password");
         
@@ -67,9 +71,16 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("username", username);
                 session.setMaxInactiveInterval(30 * 60);
                 Cookie loginCookie = new Cookie("username", username);
+                
+                //invalidatemenuopenCookie
+                
                 loginCookie.setMaxAge(30 * 60);
                 resp.addCookie(loginCookie);
+                
                 System.out.println("state value : " + isAdmin);
+                
+                //call the cookie controller to set the menustate
+                MenuCookieController.toggleMenuStateCookie(req, resp);
                 
                 if (isAdmin) {
                     System.out.println("is adminaccount");
@@ -85,6 +96,7 @@ public class LoginServlet extends HttpServlet {
                     rd.forward(req, resp);
                     //TODO: sessions and cookies also: shopping cart
                 }
+    
                 
                 Base.close();
                 System.out.println("db connection closed");
@@ -112,7 +124,6 @@ public class LoginServlet extends HttpServlet {
                     Base.close();
                     return;
                 }
-                
             }
         }
     }
