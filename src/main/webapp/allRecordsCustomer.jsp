@@ -9,20 +9,34 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container-fluid main">
+<div class="container main">
     <div class="row">
         <div class="col-sm-12">
             <h1>All available records:</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm">
-             <c:forEach items="${foundRecords}" var="record">
-                 <c:out value="${record.get('title')}"/>
-             </c:forEach>
+        <div class="col-sm-12">
+            <c:forEach items="${allRecordsCustomer}" var="record">
+                <div class="slider-card mdl-card mdl-shadow--2dp"
+                     style="background-image: url(' ${ record.get('img_file_path') } ')">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text"><mytaglib:getArtistForRecord
+                                inputArtist="${record.get('artist_id')}"/> - <c:out
+                                value="${record.get('title')}"/>
+                        </h2>
+                    </div>
+                </div>
+            </c:forEach>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 pagination">
+            <a href="<c:out value="${pageContext.request.contextPath}/mostRecentRecords?pageNo=${newPageno}" />">Next Page</a>
+
         </div>
     </div>
 </div>
 
-
-<jsp:include page="include/footinclude.jsp"/>

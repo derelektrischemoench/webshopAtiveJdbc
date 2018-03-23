@@ -18,7 +18,8 @@ import java.util.List;
 public class Welcome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+    
+        System.out.println("doget in welcome");
         RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
@@ -30,6 +31,13 @@ public class Welcome extends HttpServlet {
             //TODO: use custom tag, pass record to function called in custom tag
             Record r = (Record) i.next();
             Artist a = r.parent(Artist.class);
+        }
+        
+        try {
+            Base.close();
+            System.out.println("connection closed");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         
         Base.close();

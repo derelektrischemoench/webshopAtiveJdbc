@@ -1,6 +1,5 @@
 package servlet;
 
-import model.Page;
 import model.Record;
 import org.javalite.activejdbc.Base;
 import org.javalite.activejdbc.LazyList;
@@ -18,22 +17,28 @@ public class MostRecentRecords extends HttpServlet {
     /*This shows the most recent records*/
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doget in mostRecent records");
+        System.out.println("doget in modddstRecent records");
         int pageNo = Integer.parseInt(req.getParameter("pageNo"));
         int offset = pageNo * 10;
+        //for pagination
+        int newOffset = pageNo+1;
+        
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        System.out.println("opened connection");
         
-        
-        List<Record> foundRecords = Record.findAll().limit(10).offset(offset)   ;
-        for(Record r:foundRecords) {
+        List<Record> allRecordsCustomer = Record.findAll().limit(10000).offset(offset).orderBy("id asc");
+        for(Record r : allRecordsCustomer) {
             System.out.println(r.get("title"));
         }
-        req.setAttribute("foundRecords", foundRecords);
+        
+        
+        Base.close();
+        req.setAttribute("allRecordsCustomer", allRecordsCustomer);
+        req.setAttribute("newPageno", newOffset);
         
         RequestDispatcher rd = req.getRequestDispatcher("allRecordsCustomer.jsp");
         rd.forward(req, resp);
         
-        Base.close();
     }
 }
