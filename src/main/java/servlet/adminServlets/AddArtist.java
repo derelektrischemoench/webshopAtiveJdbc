@@ -90,13 +90,13 @@ public class AddArtist extends HttpServlet {
                     String fieldname = item.getFieldName();
                     
                     if (fieldname.equals("artistAlias")) {
-                        artistAlias = item.getString();
+                        artistAlias = item.getString("UTF-8");
                     } else if (fieldname.equals("artistFirstname")) {
-                        artistFirstName = item.getString();
+                        artistFirstName = item.getString("UTF-8");
                     } else if (fieldname.equals("artistLastname")) {
-                        artistLastName = item.getString();
+                        artistLastName = item.getString("UTF-8");
                     } else if (fieldname.equals("artistLabel")) {
-                        artistLabel = item.getString();
+                        artistLabel = item.getString("UTF-8");
                     }
                 }
                 

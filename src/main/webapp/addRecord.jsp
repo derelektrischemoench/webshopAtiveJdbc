@@ -13,7 +13,8 @@
         <div class="col-sm-10">
             <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord" />"
                   method="post"
-                  enctype="multipart/form-data">
+                  enctype="multipart/form-data"
+                  acceptcharset="UTF-8">
 
                 <input id="artistId" type="hidden" name="createRecord__artistId" value="${artist.get('id')}">
 
@@ -38,7 +39,8 @@
                 </div> -->
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-                    <input class="mdl-textfield__input" placeholder="No file chosen" type="text" id="recordImage" readonly/>
+                    <input class="mdl-textfield__input" placeholder="No file chosen" type="text" id="recordImage"
+                           readonly/>
                     <div class="mdl-button mdl-button--icon mdl-button--file">
                         <i class="material-icons">attach_file</i>
                         <input type="file" name="createRecord__recordImage" id="ID"

@@ -81,13 +81,13 @@ public class AddRecord extends HttpServlet {
                 
                 if (i.isFormField()) {
                     if (i.getFieldName().equals("createRecord__recordName")) {
-                        recordName = i.getString();
+                        recordName = i.getString("UTF-8");
                     }
                     if (i.getFieldName().equals("createRecord__recordLabel")) {
-                        recordLabel = i.getString();
+                        recordLabel = i.getString("UTF-8");
                     }
                     if(i.getFieldName().equals("createRecord__artistId")) {
-                        artistId = i.getString();
+                        artistId = i.getString("UTF-8");
                     }
                     if(i.getFieldName().equals("createRecord__price")) {
                         
