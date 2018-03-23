@@ -19,7 +19,7 @@
                     <h6 class="mdl-card__title-text">Shopping cart:</h6>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    Lorem
+                    Your cart contains
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""

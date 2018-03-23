@@ -41,9 +41,8 @@
 
     <div class="row">
         <div class="col-sm-12 text-center">
-            <a href="asdasd">
+            <a href="mostRecentRecords?pageNo=1">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-
                     <span>See more tight new shit</span><span class="ion-arrow-right-b"></span>
                 </button>
             </a>
@@ -68,9 +67,6 @@
 
         </div>
     </div>
-</div>
-
-
 </div>
 
 <script>

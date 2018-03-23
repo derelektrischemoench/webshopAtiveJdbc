@@ -126,6 +126,15 @@
         <servlet-name>TestManytoMany</servlet-name>
         <url-pattern>/testmanytomany</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MostRecentRecords</servlet-name>
+        <servlet-class>servlet.MostRecentRecords</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MostRecentRecords</servlet-name>
+        <url-pattern>/mostRecentRecords</url-pattern>
+    </servlet-mapping>
 
 
 
