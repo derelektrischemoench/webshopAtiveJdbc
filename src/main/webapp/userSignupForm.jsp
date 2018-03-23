@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
+
 
 <jsp:include page="include/headinclude.jsp"/>
 <div class="container adminLogin main">
@@ -10,7 +12,7 @@
         </div>
     </div>
 
-    <form action="registerUser" method="post">
+    <form action="registerUser" method="post"  accept-charset="UTF-8">
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="sample3" name="customerSignup__email">

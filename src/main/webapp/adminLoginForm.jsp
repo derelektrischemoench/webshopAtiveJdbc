@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
+
 
 <jsp:include page="include/headinclude.jsp"/>
 
@@ -8,7 +10,7 @@
             <h1>Login</h1>
         </div>
     </div>
-    <form action="adminLogin" method="post">
+    <form action="adminLogin" method="post" accept-charset="UTF-8">
 
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

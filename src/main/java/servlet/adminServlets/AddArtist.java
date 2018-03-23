@@ -39,7 +39,8 @@ public class AddArtist extends HttpServlet {
        
         // Check that we have a file upload request
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-        
+        request.setCharacterEncoding("UTF-8");
+
         if (!isMultipart) {
             return;
         }
@@ -107,13 +108,11 @@ public class AddArtist extends HttpServlet {
                     String filenameSpacesTruncated = fileName.replace(" ", "");
                     String filePath = uploadFolder + File.separator + filenameSpacesTruncated;
                     File uploadedFile = new File(filePath);
-                    System.out.println(DEBUGTAG + "Filepath of uploaded file: " + filePath);
                     // saves the file to upload directory
                     item.write(uploadedFile);
                     imageFilePath = uploadedFile.getPath();
                     //DATA_DIRECTORY = uploadFiles/artistImages
                     String embedurl = request.getContextPath() + File.separator + DATA_DIRECTORY + File.separator + fileName;
-                    System.out.println(DEBUGTAG + "final constructed embed path: " + embedurl);
                 }
             }
             

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <jsp:include page="include/headinclude.jsp"/>
 
@@ -8,7 +9,7 @@
             <h1>Create admin account</h1>
         </div>
     </div>
-    <form action="createAdminAccount" method="post">
+    <form action="createAdminAccount" method="post"  accept-charset="UTF-8">
         <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"

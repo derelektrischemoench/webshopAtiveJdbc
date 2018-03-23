@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
+
 
 <jsp:include page="include/headinclude.jsp"/>
 <div class="container main">
@@ -10,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
-            <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview/addArtist" />" method="post" enctype="multipart/form-data" acceptcharset="UTF-8">
+            <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview/addArtist" />" method="post" enctype="multipart/form-data"  accept-charset="UTF-8">
                 <!-- IMPORTANT ! DO NOT CHANGE FORM NAMES OR VALS-->
                 <div class="form-group">
                     <label for="artistAlias">Artist alias</label><br>

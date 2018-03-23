@@ -47,6 +47,7 @@ public class AddRecord extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         // Check that we have a file upload request
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+        request.setCharacterEncoding("UTF-8");
         
         if (!isMultipart) {
             return;
@@ -87,7 +88,7 @@ public class AddRecord extends HttpServlet {
                         recordLabel = i.getString("UTF-8");
                     }
                     if(i.getFieldName().equals("createRecord__artistId")) {
-                        artistId = i.getString("UTF-8");
+                        artistId = i.getString("UTF-8"); //THIS IS WHY WE CANT HAVE NICE THINGS... fucking ascii
                     }
                     if(i.getFieldName().equals("createRecord__price")) {
                         
@@ -97,7 +98,6 @@ public class AddRecord extends HttpServlet {
                         }
                         
                         recordPrice = Float.parseFloat(formContent);
-                        System.out.println("parsed float value: " + recordPrice);
                     }
                 } else {
                     //this is the file
