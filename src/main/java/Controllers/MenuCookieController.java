@@ -25,11 +25,11 @@ public class MenuCookieController {
                     if (cookieVal.equals("true")) {
                         System.out.println("set cookie to false");
                         c.setValue("false");
-                        res.addCookie(c);
+                        //res.addCookie(c);
                     } else if (cookieVal.equals("false")) {
                         System.out.println("set cookie to true");
                         c.setValue("true");
-                        res.addCookie(c);
+                        //res.addCookie(c);
                     } else {
                         throw new IllegalStateException("cookie value is invalid");
                     }

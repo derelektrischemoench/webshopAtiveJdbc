@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container-fluid header">
     <div class="row justify-content-between">
         <div class="col-5">
@@ -6,33 +7,31 @@
         </div>
         <div class="col-7">
             <div class="row justify-content-end">
-
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login">
-                        Login
-                    </button>
-
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login">
+                    Login
+                </button>
             </div>
+            <c:if test="${cookie.username.value ne null}">
 
-
-            <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h6 class="mdl-card__title-text">Shopping cart:</h6>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Your cart contains
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
-                       data-upgraded=",MaterialButton,MaterialRipple">
-                        View cart
-                        <span class="mdl-button__ripple-container">
+                <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h6 class="mdl-card__title-text">Shopping cart:</h6>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Your cart contains
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
+                           data-upgraded=",MaterialButton,MaterialRipple">
+                            View cart
+                            <span class="mdl-button__ripple-container">
                             <span class="mdl-ripple">
                             </span>
                         </span>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
+            </c:if>
 
         </div>
     </div>
@@ -41,7 +40,6 @@
 <div class="customerLoginForm">
     <h3>Login</h3>
     <form action="loginUser" method="post">
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="login__username" name="login__username">
             <label class="mdl-textfield__label" for="login__username">Username</label>
