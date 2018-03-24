@@ -58,14 +58,20 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="login__username" name="login__username">
             <label class="mdl-textfield__label" for="login__username">Username</label>
-            <span class="mdl-textfield__error">${errorMsg}</span>
+            <span class="mdl-textfield__error" style="visibility: <c:out value="${requestScope.visibility}" /> ">
+                ${requestScope.uem}
+            </span>
         </div>
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="login__password" name="login__password">
             <label class="mdl-textfield__label" for="login__password">Password</label>
-            <span class="mdl-textfield__error">${signinFail}</span>
+            <span class="mdl-textfield__error" style="visibility: <c:out value="${requestScope.visibility}" />">
+                ${requestScope.pem}
+            </span>
         </div>
+
+        value of visibility: <c:out value="${requestScope.visibility}" />
 
         <button type="submit"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

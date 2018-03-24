@@ -233,6 +233,7 @@ h2 {
   font-size: 64px; }
 
 .customerLoginForm {
+  top: 0;
   position: absolute;
   background: #2b4251;
   color: #fff;

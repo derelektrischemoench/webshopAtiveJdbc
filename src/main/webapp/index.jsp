@@ -9,7 +9,19 @@
 <%@ page pageEncoding="UTF-8" %>
 
 
-<jsp:include page="include/headinclude.jsp"/>
+<c:set var="vis" value="${visibility}" scope="request" />
+<c:set var="pem" value="${passwordErrorMsg}" scope="request" />
+<c:set var="uem" value="${usernameErrorMsg}" scope="request" />
+
+<c:out value="value of visibility in template passing this to the include ${vis}"></c:out>
+
+<jsp:include page="include/headinclude.jsp">
+    <jsp:param name="visibility" value="${vis}" />
+    <jsp:param name="passwordErrorMsg" value="${pem}" />
+    <jsp:param name="usernameErrorMsg" value="${uem}" />
+</jsp:include>
+
+
 <div class="container-fluid main">
     <div class="row">
         <div class="col-sm-12">

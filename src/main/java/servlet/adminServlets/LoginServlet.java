@@ -43,22 +43,19 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("login__username");
         String inputPassword = req.getParameter("login__password");
         
-        System.out.println("LoginServlet dopost with: " + username + " " + inputPassword);
-        
-        
         //open db connection:
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         Account a = Account.findFirst("user_name = ?", username);
+        Base.close();
+        
+        //TODO: usernameerror message doesnt work yet.
         
         if (a == null) {
             //account does not exist
-            String signinFail = "No such account.";
-            req.setAttribute("signinFail", signinFail);
-            RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
-            Base.close();
+            String usernameErrorMsg = "No such account.";
+            req.setAttribute("usernameErrorMsg", usernameErrorMsg);
+            RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
             rd.forward(req, resp);
-            
-            System.out.println("closed db connection");
             return;
             
         } else {
@@ -73,11 +70,8 @@ public class LoginServlet extends HttpServlet {
                 Cookie loginCookie = new Cookie("username", username);
                 
                 //invalidatemenuopenCookie
-                
                 loginCookie.setMaxAge(30 * 60);
                 resp.addCookie(loginCookie);
-                
-                System.out.println("state value : " + isAdmin);
                 
                 //call the cookie controller to set the menustate
                 MenuCookieController.toggleMenuStateCookie(req, resp);
@@ -97,34 +91,17 @@ public class LoginServlet extends HttpServlet {
                     rd.forward(req, resp);
                     //TODO: sessions and cookies also: shopping cart
                 }
-    
                 
-                Base.close();
-                System.out.println("db connection closed");
                 return;
                 
             } else {
                 //passwords didnt match
                 System.out.println("Wrong password");
-                String errorMsg = "Shit went wrong, yo";
-                req.setAttribute("signinFail", errorMsg);
-                
-                if (isAdmin) {
-                    System.out.println("is adminaccount");
-                    
-                    RequestDispatcher rd = req.getRequestDispatcher("/adminLoginForm.jsp");
-                    rd.forward(req, resp);
-                    Base.close();
-                    return;
-                    
-                } else {
-                    System.out.println("is useracc");
-                   
-                    RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-                    rd.forward(req, resp);
-                    Base.close();
-                    return;
-                }
+                String errorMsg = "Wrong password";
+                req.setAttribute("passwordErrorMsg", errorMsg);
+                req.setAttribute("visibility", "visible");
+                RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+                rd.forward(req, resp);
             }
         }
     }
