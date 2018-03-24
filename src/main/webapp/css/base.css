@@ -113,6 +113,15 @@ $color5: #351f39;*/
     z-index: 2000;
     color: transparent;
     font-size: 30px; }
+    .slick-slider .slick-arrow::before {
+      font-family: Ionicons;
+      color: #000;
+      background: #fff;
+      padding: 10px;
+      border-radius: 20px;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
   .slick-slider .slick-prev {
     left: 20px;
     top: 40%;
@@ -120,8 +129,7 @@ $color5: #351f39;*/
     background: transparent; }
     .slick-slider .slick-prev::before {
       content: "\f2ca";
-      font-family: Ionicons;
-      color: #000; }
+      float: left; }
   .slick-slider .slick-next {
     right: 20px;
     top: 40%;
@@ -129,8 +137,6 @@ $color5: #351f39;*/
     background: transparent; }
     .slick-slider .slick-next::before {
       content: "\f30f";
-      font-family: Ionicons;
-      color: #000;
       float: right; }
   .slick-slider .slick-slide {
     color: #fff; }
@@ -307,6 +313,9 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   height: 200px; }
   .mdl-card.customerRecordDetailCard > .mdl-card__title {
     background-size: cover; }
+
+.cardArtist {
+  color: #3f51b5; }
 
 .mdl-textfield__label:after {
   bottom: 13px !important; }

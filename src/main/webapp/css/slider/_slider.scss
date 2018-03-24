@@ -13,6 +13,17 @@
     color: transparent;
     font-size: 30px;
 
+    &::before {
+      font-family: Ionicons;
+      color: #000;
+      background: #fff;
+      padding: 10px;
+      border-radius: 20px;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+      -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    }
+
   }
   .slick-prev {
     left: 20px;
@@ -22,8 +33,7 @@
 
     &::before {
       content: "\f2ca";
-      font-family: Ionicons;
-      color: #000;
+      float: left;
     }
   }
 
@@ -35,8 +45,6 @@
 
     &::before {
       content: "\f30f";
-      font-family: Ionicons;
-      color: #000;
       float: right;
     }
   }

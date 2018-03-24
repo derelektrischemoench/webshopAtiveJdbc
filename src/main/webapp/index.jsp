@@ -6,7 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" %>
 
 
 <jsp:include page="include/headinclude.jsp"/>
@@ -32,9 +32,12 @@
             <div class="slider-card mdl-card mdl-shadow--2dp"
                  style="background-image: url(' ${ record.get('img_file_path') } ')">
                 <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text"><mytaglib:getArtistForRecord
-                            inputArtist="${record.get('artist_id')}"/> - <c:out
-                            value="${record.get('title')}"/>
+                    <h2 class="mdl-card__title-text flex-column">
+                        <span class="cardArtist">
+                            <mytaglib:getArtistForRecord inputArtist="${record.get('artist_id')}"/>
+                        </span>
+                        <br>
+                        <span><c:out value="${record.get('title')}"/></span>
                     </h2>
                 </div>
             </div>
