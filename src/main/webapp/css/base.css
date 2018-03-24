@@ -305,6 +305,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .mdl-textfield__error {
   visibility: visible; }
 
+a.mdl-button--colored {
+  color: #fff !important; }
+  a.mdl-button--colored:hover {
+    text-decoration: none; }
+
 .search {
   margin-top: 50px;
   text-align: center; }
@@ -315,6 +320,9 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     top: 40px; }
   .search .mdl-textfield .mdl-textfield__label {
     color: #5b7d87; }
+
+.paginationRow {
+  margin: 20px 5px; }
 
 body {
   font-family: 'Roboto', serif;

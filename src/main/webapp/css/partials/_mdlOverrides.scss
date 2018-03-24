@@ -5,3 +5,11 @@
 .mdl-textfield__error {
   visibility: visible;
 }
+
+a.mdl-button--colored {
+  color: #fff !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

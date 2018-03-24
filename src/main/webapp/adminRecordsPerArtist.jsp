@@ -13,13 +13,13 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
         <c:forEach items="${artistsRecords}" var="record">
-            <div class="col-sm-6">
+            <div class="col-8">
                 <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
                     <div class="titleImage">
                         <div class="mdl-card__title mdl-card--expand">
-                            <h2 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/></h2>
+                            <h4 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/></h4>
 
                         </div>
                         <div class="imagepart"
@@ -35,7 +35,7 @@
                         href="">
                             Edit record
                         </a>
-                        <a class="mdl-button mdl-button--delete mdl-js-button mdl-js-ripple-effect">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                             Delete record
                         </a>
 
