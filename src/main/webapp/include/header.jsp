@@ -1,37 +1,52 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container-fluid header">
-    <div class="row justify-content-between">
-        <div class="col-5">
+    <div class="row justify-content-between headerInner">
+        <div class="col-3">
             <h2>WEL<br>COME</h2>
             <h5>Tight shit records</h5>
         </div>
-        <div class="col-7">
-            <div class="row justify-content-end">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login">
-                    Login
-                </button>
-            </div>
-            <c:if test="${cookie.username.value ne null}">
+        <div class="col-9 justify-content-end">
 
-                <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
-                    <div class="mdl-card__title mdl-card--expand">
-                        <h6 class="mdl-card__title-text">Shopping cart:</h6>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Your cart contains
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
-                           data-upgraded=",MaterialButton,MaterialRipple">
-                            View cart
-                            <span class="mdl-button__ripple-container">
-                            <span class="mdl-ripple">
-                            </span>
-                        </span>
-                        </a>
-                    </div>
+            <div class="container">
+                <div class="row justify-content-end">
+
+                    <c:if test="${cookie.username.value eq null}">
+                        <div class="col-auto">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
+                                Login
+                            </button>
+                        </div>
+                    </c:if>
+
+                    <c:if test="${cookie.username.value ne null}">
+                        <div class="col-auto">
+
+                            <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard shoppingCart">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <h6 class="mdl-card__title-text justify-content-between"><p>Shopping cart: </p>
+                                        <p><span class="ion-chevron-down"></span></p></h6>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Your cart contains
+                                </div>
+                                <div class="mdl-card__actions mdl-card--border">
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
+                                       data-upgraded=",MaterialButton,MaterialRipple">
+                                        View cart
+                                        <span class="mdl-button__ripple-container">
+                                            <span class="mdl-ripple">
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </c:if>
+
                 </div>
-            </c:if>
+            </div>
+
 
         </div>
     </div>
@@ -131,5 +146,13 @@
             loginForm.toggleClass('active');
         }
     });
+
+    //shopping card expand
+    var shoppingCart = $('.shoppingCart');
+    var arrow = $('span.ion-chevron-down');
+    shoppingCart.click(function () {
+        $(this).toggleClass('visible');
+        arrow.toggleClass('upsideDown');
+    })
 
 </script>

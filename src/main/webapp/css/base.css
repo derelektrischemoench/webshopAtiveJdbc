@@ -21,10 +21,12 @@ $color5: #351f39;*/
   background-image: url("imgs/recordHeaderImage.jpeg");
   background-size: cover;
   background-position-x: 10%;
-  height: 225px;
+  min-height: 225px;
   overflow-x: hidden;
-  position: fixed;
+  position: relative;
   z-index: 200; }
+  .header .headerInner {
+    padding-top: 20px; }
   .header h4.login {
     padding: 0;
     margin: 0;
@@ -80,7 +82,8 @@ $color5: #351f39;*/
   .header .itemCard {
     min-height: auto; }
     .header .itemCard h6 {
-      font-size: 14px; }
+      font-size: 14px;
+      width: 100%; }
 
 .logo {
   font-family: 'Mina', sans-serif;
@@ -168,7 +171,7 @@ $color5: #351f39;*/
 
 .footer {
   font-family: 'Mina', sans-serif;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 100px;
   background: #91b3bc;
@@ -330,6 +333,27 @@ a.mdl-button--colored {
 .paginationRow {
   margin: 20px 5px; }
 
+.mdl-card.shoppingCart {
+  overflow: hidden;
+  width: 150px !important;
+  height: 58px;
+  -webkit-transition: height .35s, width .45s;
+  -moz-transition: height .35s, width .45s;
+  -ms-transition: height .35s, width .45s;
+  -o-transition: height .35s, width .45s;
+  transition: height .35s, width .45s; }
+  .mdl-card.shoppingCart.visible {
+    height: 200px;
+    width: 300px !important; }
+  .mdl-card.shoppingCart .mdl-card__title {
+    flex-grow: 0; }
+    .mdl-card.shoppingCart .mdl-card__title p {
+      margin: 0; }
+    .mdl-card.shoppingCart .mdl-card__title .ion-chevron-down:before {
+      margin-top: 4px; }
+    .mdl-card.shoppingCart .mdl-card__title .upsideDown::before {
+      transform: rotate(180deg); }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
@@ -338,7 +362,7 @@ body {
 .main {
   z-index: 100;
   top: 0;
-  padding-top: 240px; }
+  position: static; }
 
 .notIndex {
   padding-top: 225px; }

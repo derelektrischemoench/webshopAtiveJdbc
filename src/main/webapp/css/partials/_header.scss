@@ -7,15 +7,19 @@
   background-image: url("imgs/recordHeaderImage.jpeg");
   background-size: cover;
   background-position-x: 10%;
-  height: 225px;
+  min-height: 225px;
   overflow-x: hidden;
-  position: fixed;
+  position: relative;
   z-index: 200;
+
+  .headerInner {
+    padding-top: 20px;
+  }
 
   h4.login {
     padding: 0;
     margin: 0;
-    font-size:16px;
+    font-size: 16px;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     -ms-transition: all .35s;
@@ -32,7 +36,6 @@
       border-color: #1c67cc;
     }
   }
-
 
   .left {
 
@@ -92,6 +95,7 @@
     min-height: auto;
     h6 {
       font-size: 14px;
+      width: 100%;
     }
   }
 }
@@ -117,7 +121,7 @@
 
 }
 
-@media all and (min-width: 428px){
+@media all and (min-width: 428px) {
   .header {
     .right {
       right: 0;
