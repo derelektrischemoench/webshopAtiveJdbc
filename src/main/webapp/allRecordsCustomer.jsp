@@ -27,7 +27,7 @@
                                 inputArtist="${record.get('artist_id')}"/> - <c:out
                                 value="${record.get('title')}"/>
                         </h2>
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" href="<c:out value="${pageContext.request.contextPath}/recordDetail?recordId=${record.get('id')}" />" >
                             View
                         </a>
                     </div>

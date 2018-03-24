@@ -136,6 +136,17 @@
         <url-pattern>/mostRecentRecords</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RecordDetailServlet</servlet-name>
+        <servlet-class>servlet.RecordDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecordDetailServlet</servlet-name>
+        <url-pattern>/recordDetail</url-pattern>
+    </servlet-mapping>
+
+
+
 
 
     <listener>

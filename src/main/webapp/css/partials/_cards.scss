@@ -48,3 +48,11 @@
   }
 
 }
+
+.mdl-card.customerRecordDetailCard {
+  width: 200px;
+  height: 200px;
+  > .mdl-card__title {
+    background-size: cover;
+  }
+}
