@@ -932,6 +932,7 @@
     </table>
     <table id="236" parent="10" name="records">
       <Engine>InnoDB</Engine>
+      <Collation>utf8mb4_bin</Collation>
     </table>
     <table id="237" parent="10" name="records_shoppingcarts">
       <Engine>InnoDB</Engine>
