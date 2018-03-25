@@ -71,6 +71,7 @@ public class AddRecord extends HttpServlet {
         String recordName = "";
         String recordLabel = "";
         String artistId = "";
+        String trackList = "";
         float recordPrice = 0;
         
         try {
@@ -87,18 +88,24 @@ public class AddRecord extends HttpServlet {
                     if (i.getFieldName().equals("createRecord__recordLabel")) {
                         recordLabel = i.getString("UTF-8");
                     }
-                    if(i.getFieldName().equals("createRecord__artistId")) {
+                    if (i.getFieldName().equals("createRecord__artistId")) {
                         artistId = i.getString("UTF-8"); //THIS IS WHY WE CANT HAVE NICE THINGS... fucking ascii
                     }
-                    if(i.getFieldName().equals("createRecord__price")) {
+                    if (i.getFieldName().equals("createRecord__tracklist")) {
+                        trackList = i.getString("UTF-8");
+                    }
+                    
+                    if (i.getFieldName().equals("createRecord__price")) {
                         
                         String formContent = i.getString();
-                        if(formContent.contains(",")) {
+                        if (formContent.contains(",")) {
                             formContent = formContent.replace(",", ".");
                         }
                         
                         recordPrice = Float.parseFloat(formContent);
                     }
+                    
+                    
                 } else {
                     //this is the file
                     filename = i.getName();
@@ -117,7 +124,6 @@ public class AddRecord extends HttpServlet {
             e.printStackTrace();
         }
         
-     
         
         String embedurl = "/webapp/uploadFiles/recordImages/" + filename;
         
@@ -134,8 +140,24 @@ public class AddRecord extends HttpServlet {
                                 "img_file_path", embedurl,
                                 "price", recordPrice);
                 
+                
+                //create Tracklist:
+                List<String> tracklist = Arrays.asList(trackList.split(";"));
+                
+                Iterator tracklistIterator = tracklist.iterator();
+    
+                System.out.println("read the following tracks:");
+                
+                while (tracklistIterator.hasNext()) {
+                    // create track objects
+                    //TODO: finish this!!!!
+                    String track = tracklistIterator.next().toString();
+                    System.out.println(track);
+                }
+                
+                
                 request.setAttribute("recordName", recordName);
-                System.out.println("added record with : " + a.get("artist_name") + " Record price:  " + recordPrice );
+                System.out.println("added record with : " + a.get("artist_name") + " Record price:  " + recordPrice);
                 
             } catch (Exception e) {
                 //the corresponding artist couldn't be found

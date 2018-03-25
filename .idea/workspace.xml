@@ -7,7 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" afterPath="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,6 +74,13 @@
         <item name="wpr_webshop: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="records: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wpr_webshop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wpr_webshop: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="tracks: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -80,16 +92,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminRecordsPerArtist.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="34" column="154" lean-forward="false" selection-start-line="34" selection-start-column="154" selection-end-line="34" selection-end-column="154" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditRecordServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java">
+      <file leaf-file-name="AddRecord.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+            <state relative-caret-position="428">
+              <caret line="152" column="43" lean-forward="false" selection-start-line="152" selection-start-column="43" selection-end-line="152" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,31 +114,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addRecord.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/addRecord.jsp">
+      <file leaf-file-name="Track.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Track.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="20" column="73" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="73" />
+            <state relative-caret-position="90">
+              <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
+      <file leaf-file-name="Record.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="107" column="25" lean-forward="false" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+            <state relative-caret-position="180">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddArtist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddArtist.java">
+      <file leaf-file-name="EditRecordServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="123" column="101" lean-forward="false" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="101" />
+            <state relative-caret-position="470">
+              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recordDetailCustomer.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -147,6 +161,26 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addRecord.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/addRecord.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminRecordsOverview.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminRecordsOverview.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,6 +214,8 @@
       <find>shit</find>
       <find>passing</find>
       <find>edit</find>
+      <find>choo</find>
+      <find>parse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +234,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/searchRecordsResults.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/searchRecordsResults.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/searchRecordsServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/searchRecords.java" />
@@ -206,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/main/java/model/ShoppingcarsRecords.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ShoppingcartRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ShoppingcartsRecords.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/variables/_variables.scss" />
         <option value="$PROJECT_DIR$/src/main/java/model/RecordsShoppingcarts.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TestManytoMany.java" />
@@ -225,7 +259,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/addArtist.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddArtist.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_pagination.scss" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/MenuCookieController.java" />
@@ -247,8 +280,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/base.scss" />
         <option value="$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Track.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java" />
       </list>
     </option>
   </component>
@@ -305,10 +341,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="751" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="625" />
     <option name="y" value="27" />
-    <option name="width" value="1169" />
+    <option name="width" value="1295" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -373,6 +409,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -419,8 +463,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -507,6 +551,7 @@
     <configuration name="Glassfish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.01" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="webshop:war exploded">
           <settings />
@@ -740,14 +785,8 @@
       <workItem from="1521900630482" duration="2697000" />
       <workItem from="1521904413941" duration="16919000" />
       <workItem from="1521928089733" duration="33000" />
-      <workItem from="1521968076672" duration="1406000" />
-    </task>
-    <task id="LOCAL-00006" summary="admin account creation and duplicate verification">
-      <created>1520153038706</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1520153038706</updated>
+      <workItem from="1521968076672" duration="1448000" />
+      <workItem from="1521970786085" duration="6269000" />
     </task>
     <task id="LOCAL-00007" summary="session and cookie settings wip">
       <created>1520159203110</created>
@@ -1085,11 +1124,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521969480699</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add editdRecordServlet for the post part of the record edit">
+      <created>1521969504370</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1521969504370</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341760000" />
+    <option name="totallyTimeSpent" value="348071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1101,7 +1147,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="751" y="27" width="1169" height="1053" extended-state="4" />
+    <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1111,7 +1157,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31255564" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31211954" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1123,10 +1169,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23060344" sideWeight="0.49529606" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33943966" sideWeight="0.49661955" order="21" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33512932" sideWeight="0.49529606" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22090517" sideWeight="0.49661955" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20747997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19037078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1219,7 +1265,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="user account creation works" />
     <MESSAGE value="artist getRecord finished" />
     <MESSAGE value="mdl integration" />
     <MESSAGE value="fix form labels" />
@@ -1244,11 +1289,12 @@
     <MESSAGE value="details for the slider" />
     <MESSAGE value="db stuffs" />
     <MESSAGE value="editRecord by using addRecordServlet wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="editRecord by using addRecordServlet wip" />
+    <MESSAGE value="add editdRecordServlet for the post part of the record edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="add editdRecordServlet for the post part of the record edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1257,36 +1303,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://src:table:/1b6c8af/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.accounts" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="68" lean-forward="false" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/SearchRecords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Page.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminAvailableArtists.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/TestManytoMany.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1299,13 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginSuccessful.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="105" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="105" />
         </state>
       </provider>
     </entry>
@@ -1349,13 +1358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/createAdminAccount.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/RecordDetailServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1375,13 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1496,6 +1491,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="34" column="154" lean-forward="false" selection-start-line="34" selection-start-column="154" selection-end-line="34" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginSuccessful.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" column="72" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1508,33 +1526,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/b17b9a4a/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.records">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminAvailableArtists.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="34" column="154" lean-forward="false" selection-start-line="34" selection-start-column="154" selection-end-line="34" selection-end-column="154" />
+        <state relative-caret-position="482">
+          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/createAdminAccount.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="95" column="98" lean-forward="false" selection-start-line="95" selection-start-column="98" selection-end-line="95" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="107" column="25" lean-forward="false" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+        <state relative-caret-position="702">
+          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1547,18 +1550,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/addRecord.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminRecordsOverview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="73" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="73" />
+        <state relative-caret-position="72">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="95" column="98" lean-forward="false" selection-start-line="95" selection-start-column="98" selection-end-line="95" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecordServlet.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/b17b9a4a/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.records">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/addRecord.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Shoppingcart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Track.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AddRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="152" column="43" lean-forward="false" selection-start-line="152" selection-start-column="43" selection-end-line="152" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

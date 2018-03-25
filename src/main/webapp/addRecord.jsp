@@ -56,6 +56,11 @@
                     <label class="mdl-textfield__label" for="createRecord__price">Price</label>
                 </div>
 
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="createRecord__tracklist"
+                           name="createRecord__tracklist">
+                    <label class="mdl-textfield__label" for="createRecord__tracklist">Tracklist, semicolon separated</label>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

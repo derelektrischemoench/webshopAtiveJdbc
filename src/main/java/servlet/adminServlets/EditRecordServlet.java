@@ -25,6 +25,7 @@ public class EditRecordServlet extends HttpServlet {
     
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         req.setAttribute("isEdit", true);
+        req.setAttribute("record", r);
         req.setAttribute("editRecordId", r.get("id"));
         rd.forward(req, resp);
         
