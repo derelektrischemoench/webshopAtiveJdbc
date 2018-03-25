@@ -34,6 +34,23 @@ public class AddRecord extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        
+        String recordId = req.getParameter("recordId");
+        System.out.println("record id for record to edit: " + recordId);
+        
+        if (recordId.length() > 0) {
+            System.out.println("this is an edit");
+            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+            
+            Record r = Record.findById(recordId);
+            System.out.println("found record for edit: " + r.getString("title"));
+            Base.close();
+            
+            req.setAttribute("isEdit", "true");
+            req.setAttribute("record", r);
+        }
+        
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         String artistId = req.getParameter("artist_id");
         Artist a = Artist.findFirst("id = ?", artistId);
@@ -46,6 +63,8 @@ public class AddRecord extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         // Check that we have a file upload request
+        
+        System.out.println("This is a new record");
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         request.setCharacterEncoding("UTF-8");
         
@@ -145,7 +164,7 @@ public class AddRecord extends HttpServlet {
                 List<String> tracklist = Arrays.asList(trackList.split(";"));
                 
                 Iterator tracklistIterator = tracklist.iterator();
-    
+                
                 System.out.println("read the following tracks:");
                 
                 while (tracklistIterator.hasNext()) {
@@ -174,5 +193,10 @@ public class AddRecord extends HttpServlet {
         } catch (Exception ex) {
             throw new ServletException(ex);
         }
+        
+        
     }
+    
+    
 }
+

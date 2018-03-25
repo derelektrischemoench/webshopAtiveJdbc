@@ -94,16 +94,9 @@
     <servlet-mapping>
         <servlet-name>AddRecord</servlet-name>
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>EditRecordServlet</servlet-name>
-        <servlet-class>servlet.adminServlets.EditRecordServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>EditRecordServlet</servlet-name>
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord</url-pattern>
     </servlet-mapping>
+
 
 
     <!-- USER servlets -->
