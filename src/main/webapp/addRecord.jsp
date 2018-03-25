@@ -17,6 +17,8 @@
                   enctype="multipart/form-data" accept-charset="UTF-8">
 
                 <input id="artistId" type="hidden" name="createRecord__artistId" value="${artist.get('id')}">
+                <input type="hidden" id="isEdit" name="isEdit" value="${isEdit}" />
+                <input type="hidden" id="editRecordId" name="editRecordId" value="${editRecordId}" />
 
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

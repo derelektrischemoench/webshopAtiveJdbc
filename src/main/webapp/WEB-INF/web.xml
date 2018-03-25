@@ -96,6 +96,16 @@
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>EditRecordServlet</servlet-name>
+        <servlet-class>servlet.adminServlets.EditRecordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditRecordServlet</servlet-name>
+        <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord</url-pattern>
+    </servlet-mapping>
+
+
     <!-- USER servlets -->
     <servlet>
         <servlet-name>RegisterUser</servlet-name>
@@ -144,8 +154,6 @@
         <servlet-name>RecordDetailServlet</servlet-name>
         <url-pattern>/recordDetail</url-pattern>
     </servlet-mapping>
-
-
 
 
 

@@ -32,7 +32,7 @@
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                        href="">
+                        href="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord?recordId=${record.get('id')}">
                             Edit record
                         </a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
