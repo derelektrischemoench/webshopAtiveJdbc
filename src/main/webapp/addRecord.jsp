@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <c:choose>
                 <c:when test="${isEdit eq true}">
-                    <h1>Edit record for ${artist.get('artist_name')}</h1>
+                    <h1>Edit record <br> <span class="colorBlue">${record.get('title')}</span> </h1>
                 </c:when>
 
                 <c:otherwise>
