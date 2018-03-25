@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -743,14 +740,7 @@
       <workItem from="1521900630482" duration="2697000" />
       <workItem from="1521904413941" duration="16919000" />
       <workItem from="1521928089733" duration="33000" />
-      <workItem from="1521968076672" duration="1376000" />
-    </task>
-    <task id="LOCAL-00005" summary="admin account creation works">
-      <created>1520149963725</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1520149963725</updated>
+      <workItem from="1521968076672" duration="1406000" />
     </task>
     <task id="LOCAL-00006" summary="admin account creation and duplicate verification">
       <created>1520153038706</created>
@@ -1088,11 +1078,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521927389477</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="editRecord by using addRecordServlet wip">
+      <created>1521969480697</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1521969480699</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341730000" />
+    <option name="totallyTimeSpent" value="341760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1118,7 +1115,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24353448" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24353448" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23599137" sideWeight="0.49584946" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1222,7 +1219,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="tons of styles, customer login form created" />
     <MESSAGE value="user account creation works" />
     <MESSAGE value="artist getRecord finished" />
     <MESSAGE value="mdl integration" />
@@ -1247,7 +1243,8 @@
     <MESSAGE value="footer, header, shoppingcart styles and whatnot" />
     <MESSAGE value="details for the slider" />
     <MESSAGE value="db stuffs" />
-    <option name="LAST_COMMIT_MESSAGE" value="db stuffs" />
+    <MESSAGE value="editRecord by using addRecordServlet wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="editRecord by using addRecordServlet wip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
