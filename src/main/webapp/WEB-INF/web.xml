@@ -156,6 +156,17 @@
         <url-pattern>/recordDetail</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddToCart</servlet-name>
+        <servlet-class>servlet.AddToCart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddToCart</servlet-name>
+        <url-pattern>/recordDetail/addToCart</url-pattern>
+    </servlet-mapping>
+
+
+
 
 
     <listener>

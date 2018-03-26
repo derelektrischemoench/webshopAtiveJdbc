@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
 
@@ -29,6 +30,15 @@
                 <li class="mdl-list__item">asdasd</li>
                 <li class="mdl-list__item">asdasd</li>
             </ul>
+
+            <a href="<c:out value="${pageContext.request.contextPath}/recordDetail/addToCart?recordId=${record.get('id')}" />">
+                <button type="submit"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Add to cart
+                </button>
+            </a>
+
+
         </div>
     </div>
 </div>
