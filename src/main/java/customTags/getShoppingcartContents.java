@@ -1,8 +1,10 @@
 package customTags;
 
+import model.Artist;
 import model.Record;
 import model.Shoppingcart;
 import org.javalite.activejdbc.Base;
+import org.javalite.activejdbc.DB;
 
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
@@ -17,28 +19,31 @@ public class getShoppingcartContents extends SimpleTagSupport {
     
     @Override
     public void doTag() throws JspException, IOException {
+        HttpSession s = this.session;
         
         try {
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            HttpSession s = this.session;
-            
             if (s.getAttribute("shoppingCart") != null) {
+                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
                 Shoppingcart shopCart = (Shoppingcart) s.getAttribute("shoppingCart");
+                Iterator<Record> rIter = shopCart.getAll(Record.class).iterator();
+                
+                
                 final JspWriter out = getJspContext().getOut();
                 
-                Iterator<Record> a = shopCart.getAll(Record.class).iterator();
-                while (a.hasNext()) {
-                    Record r = a.next();
+                while (rIter.hasNext()) {
+                    Record r = rIter.next();
+                    Artist a = r.parent(Artist.class);
                     System.out.println(r.getString("title"));
-                    out.write(r.getString("title"));
+                    out.write(a.getString("artist_name") + " - " + r.getString("title"));
                 }
+                
+                Base.close();
+                
             }
-            
-        } finally {
-            Base.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("error in shoppingcartRecodstag");
         }
-        
-        
     }
     
     public HttpSession getSession() {

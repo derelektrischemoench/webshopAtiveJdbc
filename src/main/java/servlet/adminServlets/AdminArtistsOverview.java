@@ -31,7 +31,5 @@ public class AdminArtistsOverview extends HttpServlet {
         }
         
         Base.close();
-        
-        /*rd.forward(req, resp);*/
     }
 }

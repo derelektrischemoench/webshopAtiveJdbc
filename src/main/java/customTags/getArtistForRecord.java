@@ -16,7 +16,6 @@ public class getArtistForRecord extends SimpleTagSupport {
         //SET:        this.inputArtist = "daskdja";
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-       
         
         Artist a = Artist.findById(this.inputArtistId);
         final JspWriter out = getJspContext().getOut();

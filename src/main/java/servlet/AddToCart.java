@@ -4,6 +4,7 @@ import model.Record;
 import model.Shoppingcart;
 import org.glassfish.grizzly.asyncqueue.RecordReadResult;
 import org.javalite.activejdbc.Base;
+import org.javalite.activejdbc.DB;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -21,18 +22,23 @@ public class AddToCart extends HttpServlet {
         System.out.println(RecordId);
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-    
         Record r = Record.findById(RecordId);
+        Base.close();
         
+        //todo: if shoppingcart exists, add new record instead of creating new shoppingcart
+        
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         Shoppingcart s = Shoppingcart.createIt();
         s.add(r);
-    
+        Base.close();
+        
         HttpSession session = req.getSession();
         System.out.println("added shoppingcart to session");
         session.setAttribute("shoppingCart", s);
     
         System.out.println("added records to shoppingcart");
         
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         List<Record> recordsInShoppingCart = s.getAll(Record.class);
         System.out.println("size of records in shoppingkarts: " + recordsInShoppingCart.size());
     
@@ -41,7 +47,6 @@ public class AddToCart extends HttpServlet {
             Record rec = shiter.next();
             System.out.println("Record in scarkt: " + rec.getString("title"));
         }
-        
         Base.close();
 
     }
