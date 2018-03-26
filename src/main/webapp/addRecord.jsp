@@ -50,7 +50,7 @@
                 </div> -->
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-                    <input class="mdl-textfield__input" placeholder="No file chosen" type="text" id="recordImage"
+                    <input class="mdl-textfield__input" placeholder="Image, required" type="text" id="recordImage"
                            readonly/>
                     <div class="mdl-button mdl-button--icon mdl-button--file">
                         <i class="material-icons">attach_file</i>
@@ -72,6 +72,7 @@
                     <label class="mdl-textfield__label" for="createRecord__tracklist">Tracklist, semicolon
                         separated</label>
                 </div>
+
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -56,6 +56,9 @@ public class AddRecord extends HttpServlet {
         if (!isMultipart) {
             return;
         }
+        
+        //in case this is a new record:
+        
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(MAX_MEMORY_SIZE);
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));

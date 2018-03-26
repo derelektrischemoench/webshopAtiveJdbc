@@ -28,26 +28,8 @@ public class RecordCrud {
     String embedUrl;
     String recordName;
     float recordPrice;
-    boolean isEdit;
-    
-    
-    public void separateData() throws UnsupportedEncodingException {
-        //Separate form files from text data
-        Iterator itemIterator = this.formData.iterator();
-        System.out.println("form datda length: " + this.formData.size()); //data is av
-        
-        while (itemIterator.hasNext()) { //all instances of apache.commons.DiskFileItem
-            DiskFileItem dfi = (DiskFileItem) itemIterator.next();
-            System.out.println(dfi.isFormField());
-            
-            if (dfi.isFormField()) {
-                System.out.println(dfi.getString("UTF-8"));
-                this.extractedTextStrings.add(dfi);
-            } else {
-                this.dfi = dfi;
-            }
-        }
-    }
+    boolean isEdit = false;
+    FileItem imageFile;
     
     
     public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
@@ -85,7 +67,7 @@ public class RecordCrud {
                 
                 if (f.getFieldName().equals("editRecordId")) {
                     this.recordID = f.getString("UTF-8");
-                    System.out.println("recordcrud contructor recordID: " +  this.recordID);
+                    System.out.println("recordcrud contructor recordID: " + this.recordID);
                 }
                 
                 if (f.getFieldName().equals("isEdit")) {
@@ -95,7 +77,8 @@ public class RecordCrud {
                     }
                 }
             } else {
-                this.writeImage(f);
+                System.out.println("assigned image file item to crudder");
+                this.imageFile = f;
                 System.out.println("crudder wrote image on creation");
             }
         }
@@ -103,13 +86,36 @@ public class RecordCrud {
     
     
     public void createRecord() {
-        Record.createIt(
-                "artist_id", this.artistId,
-                "title", this.recordName,
-                "label", this.recordLabel,
-                "img_file_path", this.embedUrl,
-                "price", this.recordPrice
-        );
+        if (!this.isEdit) {
+            
+            System.out.println("crudder creates new record.");
+            writeImage(this.imageFile); //writes the image currently present in the crudder to disk and assigns a path
+            
+            Record.createIt(
+                    "artist_id", this.artistId,
+                    "title", this.recordName,
+                    "label", this.recordLabel,
+                    "img_file_path", this.embedUrl,
+                    "price", this.recordPrice
+            );
+        } else {
+            System.out.println("Crudder update situation");
+            Record r = Record.findById(this.recordID);
+            System.out.println("crudder updater record update results: " + r.getString("title")); //FUCKING HELL YEAS OO FTW BIATCH!
+            
+            //todo: check which fields have changed and modify only those in the db
+            //if the image has changed, reupload and adjust url
+            writeImage(this.imageFile);
+            
+            
+            r.set("artist_id", this.artistId,
+                  "title", this.recordName,
+                  "label", this.recordLabel,
+                  "img_file_path", this.embedUrl,
+                  "price", this.recordPrice).saveIt();
+            
+        }
+        
     }
     
     public void writeImage(FileItem f) {
@@ -119,7 +125,7 @@ public class RecordCrud {
         File uploadedImage = new File(this.servletContext.getRealPath(("uploadFiles/recordImages") + "/" + filename));
         
         this.embedUrl = "/webapp/uploadFiles/recordImages/" + filename;
-        System.out.println("wrote this path for the image into crudder " + this.embedUrl );
+        System.out.println("wrote this path for the image into crudder " + this.embedUrl);
         
         try {
             f.write(uploadedImage);
@@ -131,8 +137,6 @@ public class RecordCrud {
         System.out.println("abspath incl filename" + uploadedImage.getAbsolutePath());
         
     }
-    
-    
     
     
     public String getArtistName() {
