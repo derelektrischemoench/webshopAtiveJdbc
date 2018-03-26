@@ -79,34 +79,8 @@ public class AddRecord extends HttpServlet {
             System.out.println("label: " + crudder.getRecordLabel());
             
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            Artist a = Artist.findFirst("id = ?", crudder.getArtistId());
             
-            try {
-                Record.createIt("artist_id", crudder.getArtistId(),
-                                "title", crudder.getRecordName(),
-                                "label", crudder.getRecordLabel(),
-                                "img_file_path", crudder.getEmbedUrl(),
-                                "price", crudder.getRecordPrice());
-                
-                //create Tracklist:
-                //List<String> tracklist = Arrays.asList(trackList.split(";"));
-                //Iterator tracklistIterator = tracklist.iterator();
-                
-                //while (tracklistIterator.hasNext()) {
-                    // create track objects
-                    //TODO: finish this!!!!
-                 //   String track = tracklistIterator.next().toString();
-                //}
-                
-                request.setAttribute("recordName", crudder.getRecordName());
-                
-            } catch (Exception e) {
-                //the corresponding artist couldn't be found
-                String errormsg = "Artist not found";
-                request.setAttribute("errormsg", errormsg);
-                e.printStackTrace();
-            }
-            
+            crudder.createRecord();
             Base.close();
             
             

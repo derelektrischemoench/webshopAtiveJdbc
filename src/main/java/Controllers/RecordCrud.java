@@ -50,6 +50,58 @@ public class RecordCrud {
     }
     
     
+    public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
+        this.servletContext = servletContext;
+        this.extractedTextStrings = new ArrayList<>();
+        
+        for (FileItem f : formData) {
+            
+            if (f.isFormField()) {
+                if (f.getFieldName().equals("createRecord__recordName")) {
+                    this.recordName = f.getString("UTF-8");
+                    System.out.println("rcordcrud constructor recordname: " + this.recordName);
+                }
+                if (f.getFieldName().equals("createRecord__recordLabel")) {
+                    this.recordLabel = f.getString("UTF-8");
+                    System.out.println("recordcrud constructor recordlabel: " + this.recordLabel);
+                }
+                if (f.getFieldName().equals("createRecord__artistId")) {
+                    this.artistId = f.getString("UTF-8");
+                    System.out.println("recordcrud constructor artistId: " + this.artistId);
+                    
+                }
+                if (f.getFieldName().equals("createRecord__tracklist")) {
+                    this.trackList = f.getString("UTF-8");
+                }
+                
+                if (f.getFieldName().equals("createRecord__price")) {
+                    String formContent = f.getString();
+                    if (formContent.contains(",")) {
+                        formContent = formContent.replace(",", ".");
+                    }
+                    this.recordPrice = Float.parseFloat(formContent);
+                    System.out.println("record price in recordcrudder: " + this.recordPrice);
+                }
+                
+                if (f.getFieldName().equals("editRecordId")) {
+                    this.recordID = f.getString("UTF-8");
+                    System.out.println("recordcrud contructor recordID: " +  this.recordID);
+                }
+                
+                if (f.getFieldName().equals("isEdit")) {
+                    String isEditString = f.getString();
+                    if (isEditString.equals("true")) {
+                        this.isEdit = true;
+                    }
+                }
+            } else {
+                this.writeImage(f);
+                System.out.println("crudder wrote image on creation");
+            }
+        }
+    }
+    
+    
     public void createRecord() {
         Record.createIt(
                 "artist_id", this.artistId,
@@ -66,7 +118,7 @@ public class RecordCrud {
         System.out.println("servlet context realpath: " + this.servletContext.getRealPath("uploadFiles/recordImages"));
         File uploadedImage = new File(this.servletContext.getRealPath(("uploadFiles/recordImages") + "/" + filename));
         
-        this.embedUrl = uploadedImage.getPath();
+        this.embedUrl = "/webapp/uploadFiles/recordImages/" + filename;
         System.out.println("wrote this path for the image into crudder " + this.embedUrl );
         
         try {
@@ -80,50 +132,7 @@ public class RecordCrud {
         
     }
     
-    public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
-        this.servletContext = servletContext;
-        this.extractedTextStrings = new ArrayList<>();
-        
-        for (FileItem f : formData) {
-            
-            if (f.isFormField()) {
-                if (f.getFieldName().equals("createRecord__recordName")) {
-                    this.recordName = f.getString("UTF-8");
-                }
-                if (f.getFieldName().equals("createRecord__recordLabel")) {
-                    this.recordLabel = f.getString("UTF-8");
-                }
-                if (f.getFieldName().equals("createRecord__artistId")) {
-                    this.artistId = f.getString("UTF-8"); //THIS IS WHY WE CANT HAVE NICE THINGS... fucking ascii
-                }
-                if (f.getFieldName().equals("createRecord__tracklist")) {
-                    this.trackList = f.getString("UTF-8");
-                }
-                
-                if (f.getFieldName().equals("createRecord__price")) {
-                    String formContent = f.getString();
-                    if (formContent.contains(",")) {
-                        formContent = formContent.replace(",", ".");
-                    }
-                    this.recordPrice = Float.parseFloat(formContent);
-                }
-                
-                if (f.getFieldName().equals("editRecordId")) {
-                    this.recordID = f.getString();
-                }
-                
-                if (f.getFieldName().equals("isEdit")) {
-                    String isEditString = f.getString();
-                    if (isEditString.equals("true")) {
-                        this.isEdit = true;
-                    }
-                }
-            } else {
-                this.writeImage(f);
-                System.out.println("crudder wrote image on creation");
-            }
-        }
-    }
+    
     
     
     public String getArtistName() {
