@@ -352,17 +352,27 @@ a.mdl-button--colored {
   -ms-transition: height .35s, width .45s;
   -o-transition: height .35s, width .45s;
   transition: height .35s, width .45s; }
-  .mdl-card.shoppingCart.visible {
-    height: 200px;
-    width: 300px !important; }
   .mdl-card.shoppingCart .mdl-card__title {
-    flex-grow: 0; }
+    flex-grow: 0;
+    position: relative;
+    top: 20px;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    -ms-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s; }
     .mdl-card.shoppingCart .mdl-card__title p {
       margin: 0; }
     .mdl-card.shoppingCart .mdl-card__title .ion-chevron-down:before {
       margin-top: 4px; }
     .mdl-card.shoppingCart .mdl-card__title .upsideDown::before {
       transform: rotate(180deg); }
+  .mdl-card.shoppingCart.visible {
+    border-top-width: 20px;
+    height: 200px;
+    width: 300px !important; }
+    .mdl-card.shoppingCart.visible .mdl-card__title {
+      top: 0; }
 
 .colorBlue {
   color: #3f51b5; }

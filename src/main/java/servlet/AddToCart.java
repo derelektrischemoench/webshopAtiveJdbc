@@ -6,10 +6,10 @@ import org.glassfish.grizzly.asyncqueue.RecordReadResult;
 import org.javalite.activejdbc.Base;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,13 +19,17 @@ public class AddToCart extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int RecordId = Integer.parseInt(req.getParameter("recordId"));
         System.out.println(RecordId);
-    
+        
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
     
         Record r = Record.findById(RecordId);
         
         Shoppingcart s = Shoppingcart.createIt();
         s.add(r);
+    
+        HttpSession session = req.getSession();
+        System.out.println("added shoppingcart to session");
+        session.setAttribute("shoppingCart", s);
     
         System.out.println("added records to shoppingcart");
         
@@ -37,6 +41,8 @@ public class AddToCart extends HttpServlet {
             Record rec = shiter.next();
             System.out.println("Record in scarkt: " + rec.getString("title"));
         }
+        
+        Base.close();
 
     }
 }

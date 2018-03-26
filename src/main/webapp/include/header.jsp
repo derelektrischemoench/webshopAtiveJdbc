@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
+
 <div class="container-fluid header">
     <div class="row justify-content-between headerInner">
         <div class="col-3">
@@ -27,7 +29,8 @@
                                         <p><span class="ion-chevron-down"></span></p></h6>
                                 </div>
                                 <div class="mdl-card__supporting-text">
-                                    Your cart contains
+                                    Your cart contains: <br>
+                                    <mytaglib:getShoppingcartContents session="${pageContext.session}"/>
                                 </div>
                                 <div class="mdl-card__actions mdl-card--border">
                                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""

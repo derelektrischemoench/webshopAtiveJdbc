@@ -2,20 +2,22 @@
   overflow: hidden;
   width: 150px !important;
   height: 58px;
+
   -webkit-transition: height .35s, width .45s;
   -moz-transition: height .35s, width .45s;
   -ms-transition: height .35s, width .45s;
   -o-transition: height .35s, width .45s;
   transition: height .35s, width .45s;
 
-  &.visible {
-    height: 200px;
-    width: 300px !important;
-  }
-
-
   .mdl-card__title {
     flex-grow: 0;
+    position: relative;
+    top: 20px;
+    -webkit-transition: all .35s;
+      -moz-transition: all .35s;
+      -ms-transition: all .35s;
+      -o-transition: all .35s;
+      transition: all .35s;
 
     p {
       margin: 0;
@@ -29,6 +31,17 @@
 
     .upsideDown::before {
       transform: rotate(180deg);
+
+    }
+  }
+
+  &.visible {
+    border-top-width: 20px;
+    height: 200px;
+    width: 300px !important;
+
+    .mdl-card__title {
+      top: 0;
 
     }
   }
