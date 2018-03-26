@@ -19,20 +19,13 @@ public class EditRecord extends HttpServlet {
         String artistId = req.getParameter("artistId");
         String recordId = req.getParameter("recordId");
     
-        System.out.println("recordId " + recordId);
-        System.out.println("ArtistId " + artistId);
-        
-        
         //render the form
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
         
         Record r = Record.findById(recordId);
         Artist a = r.parent(Artist.class);
-        
-        
-        System.out.println("Found artist: " + a.getId());
-        System.out.println("Found record: " + r.getId());
+       
         req.setAttribute("artist", a);
         req.setAttribute("record", r);
         req.setAttribute("isEdit", true);

@@ -15,9 +15,7 @@ import java.util.List;
 public class AdminRecordsOverview extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("adminrecordsoverview doget");
         String artistIdGetParam = req.getParameter("artistId");
-        System.out.println("artistId from getParam " + artistIdGetParam);
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
         try {

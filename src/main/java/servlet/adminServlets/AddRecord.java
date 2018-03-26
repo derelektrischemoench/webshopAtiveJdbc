@@ -1,5 +1,6 @@
 package servlet.adminServlets;
 
+import Controllers.RecordCrud;
 import model.Artist;
 import model.Record;
 import org.apache.commons.fileupload.FileItem;
@@ -10,6 +11,7 @@ import org.javalite.activejdbc.Base;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -48,129 +50,55 @@ public class AddRecord extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-        
-        System.out.println("This is a new record");
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         request.setCharacterEncoding("UTF-8");
         
         if (!isMultipart) {
             return;
         }
-        
-        // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        // Sets the size threshold beyond which files are written directly to// disk.
         factory.setSizeThreshold(MAX_MEMORY_SIZE);
-        // Sets the directory used to temporarily store files that are larger
-        // than the configured size threshold. We use temporary directory for
-        // java
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
         
-        // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
-        String filename = "";
-        //List of file items from the upload:
-        String artistName = "";
-        String recordName = "";
-        String recordLabel = "";
-        String artistId = "";
-        String trackList = "";
-        float recordPrice = 0;
-        boolean isEdit = false;
-        String recordID = "";
         
         try {
             List<FileItem> items = upload.parseRequest(request);
+            System.out.println("number of items: " + items.size());
+            ServletContext sc = getServletContext();
+            //init a crudder, this automatically saves imaegson creation
+            RecordCrud crudder = new RecordCrud(sc, items);
             
-            Iterator ItemIter = items.iterator();
-            while (ItemIter.hasNext()) {
-                FileItem i = (FileItem) ItemIter.next();
-                
-                if (i.isFormField()) {
-                    if (i.getFieldName().equals("createRecord__recordName")) {
-                        recordName = i.getString("UTF-8");
-                    }
-                    if (i.getFieldName().equals("createRecord__recordLabel")) {
-                        recordLabel = i.getString("UTF-8");
-                    }
-                    if (i.getFieldName().equals("createRecord__artistId")) {
-                        artistId = i.getString("UTF-8"); //THIS IS WHY WE CANT HAVE NICE THINGS... fucking ascii
-                    }
-                    if (i.getFieldName().equals("createRecord__tracklist")) {
-                        trackList = i.getString("UTF-8");
-                    }
-                    
-                    if (i.getFieldName().equals("createRecord__price")) {
-                        String formContent = i.getString();
-                        if (formContent.contains(",")) {
-                            formContent = formContent.replace(",", ".");
-                        }
-                        recordPrice = Float.parseFloat(formContent);
-                    }
-                    
-                    if (i.getFieldName().equals("editRecordId")) {
-                        recordID = i.getString();
-                    }
-                    
-                    if (i.getFieldName().equals("isEdit")) {
-                        String isEditString = i.getString();
-                        if (isEditString.equals("true")) {
-                            isEdit = true;
-                            recordID = request.getParameter("recordId");
-                            System.out.println("we have an edit in doPost for recor: " + recordID);
-                        }
-                    }
-                    
-                } else {
-                    //this is the file
-                    filename = i.getName();
-                    
-                    File uploadedFile = new File(getServletContext().getRealPath("uploadFiles/recordImages") + "/" + filename);
-                    
-                    try {
-                        i.write(uploadedFile);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("error trying to write file");
-                    }
-                }
-            }
-        } catch (FileUploadException e) {
-            e.printStackTrace();
-        }
-        
-        
-        String embedurl = "/webapp/uploadFiles/recordImages/" + filename;
-        
-        
-        //open db connection
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        Artist a = Artist.findFirst("id = ?", artistId);
-        
-        //locate the id of the artist from the database to make the fk
-        
-        if (!isEdit) {
+            //check the crudder's capabilities:
+            System.out.println("crudders data:");
+            System.out.println("ArtistID" + crudder.getArtistId());
+            System.out.println("Artistname: " + crudder.getArtistName());
+            System.out.println("embedurl" + crudder.getEmbedUrl());
+            System.out.println("recordId " + crudder.getRecordID());
+            System.out.println("recordName" + crudder.getRecordName());
+            System.out.println("label: " + crudder.getRecordLabel());
+            
+            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+            Artist a = Artist.findFirst("id = ?", crudder.getArtistId());
+            
             try {
-                Record.createIt("artist_id", artistId,
-                                "title", recordName,
-                                "label", recordLabel,
-                                "img_file_path", embedurl,
-                                "price", recordPrice);
+                Record.createIt("artist_id", crudder.getArtistId(),
+                                "title", crudder.getRecordName(),
+                                "label", crudder.getRecordLabel(),
+                                "img_file_path", crudder.getEmbedUrl(),
+                                "price", crudder.getRecordPrice());
                 
                 //create Tracklist:
-                List<String> tracklist = Arrays.asList(trackList.split(";"));
-                Iterator tracklistIterator = tracklist.iterator();
-                System.out.println("read the following tracks:");
+                //List<String> tracklist = Arrays.asList(trackList.split(";"));
+                //Iterator tracklistIterator = tracklist.iterator();
                 
-                while (tracklistIterator.hasNext()) {
+                //while (tracklistIterator.hasNext()) {
                     // create track objects
                     //TODO: finish this!!!!
-                    String track = tracklistIterator.next().toString();
-                    System.out.println(track);
-                }
+                 //   String track = tracklistIterator.next().toString();
+                //}
                 
-                request.setAttribute("recordName", recordName);
-                System.out.println("added record with : " + a.get("artist_name") + " Record price:  " + recordPrice);
+                request.setAttribute("recordName", crudder.getRecordName());
                 
             } catch (Exception e) {
                 //the corresponding artist couldn't be found
@@ -178,49 +106,14 @@ public class AddRecord extends HttpServlet {
                 request.setAttribute("errormsg", errormsg);
                 e.printStackTrace();
             }
-        } else {
-            System.out.println("this is an edit for record with id: " + recordID);
-    
-            System.out.println("values of required fields:" + recordID + recordLabel + recordPrice);
-            
-            Record r = Record.findById(recordID);
-            r.set("title", recordName).set("label", recordLabel).set("price", recordPrice);
-            System.out.println("record " + r.getString("title") + " shouldve been updated");
-            
-            try {
-                List<FileItem> items = upload.parseRequest(request);
-                
-                Iterator ItemIter = items.iterator();
-                while (ItemIter.hasNext()) {
-                    FileItem i = (FileItem) ItemIter.next();
-                    
-                    if (i.isFormField()) {
-                        if (i.getFieldName().equals("createRecord__recordName")) {
-                            recordName = i.getString("UTF-8");
-                        }
-                        if (i.getFieldName().equals("createRecord__recordLabel")) {
-                            recordLabel = i.getString("UTF-8");
-                        }
-                        if (i.getFieldName().equals("createRecord__recordPrice")) {
-                            recordPrice = Float.parseFloat(i.getString("UTF-8"));
-                        }
-                        
-                    }
-                }
-            } catch (FileUploadException e) {
-                e.printStackTrace();
-                System.out.println("exception in fileupload");
-            }
-            
             
             Base.close();
             
-            // displays done.jsp page after upload finished
-            getServletContext().getRequestDispatcher("/recordSuccessfullyAdded.jsp").forward(request, resp);
             
+        } catch (FileUploadException e) {
+            e.printStackTrace();
         }
         
         
     }
 }
-
