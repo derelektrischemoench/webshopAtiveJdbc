@@ -2,6 +2,7 @@ package Controllers;
 
 import com.sun.corba.se.spi.ior.IORTemplate;
 import model.Record;
+import model.Track;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.bouncycastle.jcajce.provider.symmetric.XSalsa20;
@@ -37,6 +38,9 @@ public class RecordCrud {
     
     
     public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
+        
+        /*This takes the form field values and assigns them to the crudder object for later record assignment*/
+        
         this.servletContext = servletContext;
         this.extractedTextStrings = new ArrayList<>();
         
@@ -83,18 +87,42 @@ public class RecordCrud {
     
     public void createRecord() {
         if (!this.isEdit) {
+            //this creates a new record
             System.out.println("crudder creates new record.");
             writeImage(this.imageFile); //writes the image currently present in the crudder to disk and assigns a path
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            Record.createIt(
+            Record  r = Record.create(
                     "artist_id", this.artistId,
                     "title", this.recordName,
                     "label", this.recordLabel,
                     "img_file_path", this.embedUrl,
                     "price", this.recordPrice
             );
+            r.saveIt();
+            
             Base.close();
+            
+            //reopen to be able to get the record that was created;
+            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+            
+            try {
+                //Record re = Record.findById(this.recordID);
+                System.out.println("found record for track insertion: " + r.get("title") + "with id: " + r.get("id"));
+                
+                
+                long id = (long)r.get("id");
+                
+                for (String s : this.trackList.split(";")) {
+                    Track.createIt("name", s, "record_id", id);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("error on creating the tracks");
+            }
+            
+            
         } else {
+            //this updates an existing record
             System.out.println("Crudder update situation");
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             Record r = Record.findById(this.recordID);
@@ -106,7 +134,7 @@ public class RecordCrud {
             writeImage(this.imageFile);
             
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-
+            
             r.set("artist_id", this.artistId,
                   "title", this.recordName,
                   "label", this.recordLabel,
@@ -122,16 +150,17 @@ public class RecordCrud {
         //TODO: be uploaded..... what the fuck, java
         String filename = f.getName();
         System.out.println("Filename in writeImage " + filename);
+        
+        //filename = filename.replace(" ", "");
+        //filename = filename.replace("-", "");
+        
+        
         System.out.println("servlet context realpath: " + this.servletContext.getRealPath("uploadFiles/recordImages/"));
-        File uploadedImage = new File(this.servletContext.getRealPath(("uploadFiles/recordImages/")+filename));
-        if(!uploadedImage.exists()) {
+        File uploadedImage = new File(this.servletContext.getRealPath(("uploadFiles/recordImages/") + filename));
+        if (!uploadedImage.exists()) {
             uploadedImage.mkdir();
         }
-        System.out.println("1");
         this.embedUrl = "/webapp/uploadFiles/recordImages/" + filename;
-        System.out.println("2");
-        System.out.println("wrote this path for the image into crudder " + this.embedUrl);
-        System.out.println("3");
         try {
             System.out.println("4");
             f.write(uploadedImage);
@@ -140,8 +169,7 @@ public class RecordCrud {
             e.printStackTrace();
             System.out.println("error trying to write image");
         }
-        System.out.println("6");
-        System.out.println("abspath incl filename" + uploadedImage.getAbsolutePath());
+        
     }
     
     

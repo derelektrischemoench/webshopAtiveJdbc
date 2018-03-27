@@ -1183,10 +1183,9 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="239" name="duration">
+    <column id="284" parent="239" name="record_id">
       <Position>3</Position>
-      <DataType>float|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="285" parent="239" name="PRIMARY">
@@ -1194,13 +1193,5 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="286" parent="239" name="tracks_records_id_fk">
-      <ColNames>id</ColNames>
-      <RefSchemaName>wpr_webshop</RefSchemaName>
-      <RefTableName>records</RefTableName>
-      <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
   </database-model>
 </dataSource>
