@@ -15,7 +15,9 @@
     <div class="row">
         <div class="col-sm-6 col-md-3">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminRecordsOverview/addRecord" />">
-                <button class='btn btn-outline-primary'>Add Record</button>
+                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                    Add Record
+                </button>
             </a>
         </div>
     </div>

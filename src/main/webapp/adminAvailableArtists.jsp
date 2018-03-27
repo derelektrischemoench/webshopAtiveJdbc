@@ -51,8 +51,11 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-3">
+
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview/addArtist" />">
-                <button class='btn btn-outline-primary'>Add Artist</button>
+                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                    Add Artist
+                </button>
             </a>
         </div>
     </div>

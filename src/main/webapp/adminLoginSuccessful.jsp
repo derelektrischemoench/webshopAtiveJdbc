@@ -19,7 +19,10 @@
     <div class="row">
         <div class="col-sm-6 col-md-3">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview" />">
-                <button class='btn btn-outline-primary'>Artists</button>
+                <button type="submit"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Artists
+                </button>
             </a>
         </div>
     </div>
