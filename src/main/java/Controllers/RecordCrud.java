@@ -118,7 +118,7 @@ public class RecordCrud {
     }
     
     public void writeImage(FileItem f) {
-        //TODO: somewher in here is a bug that prvents some images from working e.g. the things falling apart cant
+        //TODO: somewhere in here is a bug that prvents some images from working e.g. the things falling apart cant
         //TODO: be uploaded..... what the fuck, java
         String filename = f.getName();
         System.out.println("Filename in writeImage " + filename);

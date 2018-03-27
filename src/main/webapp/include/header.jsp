@@ -29,7 +29,6 @@
                                         <p><span class="ion-chevron-down"></span></p></h6>
                                 </div>
                                 <div class="mdl-card__supporting-text">
-                                    Your cart contains: <br>
                                     <mytaglib:getShoppingcartContents session="${pageContext.session}"/>
                                 </div>
                                 <div class="mdl-card__actions mdl-card--border">
@@ -73,9 +72,6 @@
                 ${requestScope.pem}
             </span>
         </div>
-
-        value of visibility: <c:out value="${requestScope.visibility}" />
-
         <button type="submit"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Submit

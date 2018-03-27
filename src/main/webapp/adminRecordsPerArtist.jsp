@@ -5,7 +5,7 @@
 
 <jsp:include page="include/headinclude.jsp"/>
 
-<div class="container notIndex">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
             <h1>Available Records for <c:out value="${artist.get('artist_name')}"/>:</h1>
