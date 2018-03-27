@@ -9,10 +9,7 @@ import org.javalite.activejdbc.DB;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class AddToCart extends HttpServlet {
     
@@ -20,34 +17,47 @@ public class AddToCart extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int RecordId = Integer.parseInt(req.getParameter("recordId"));
         System.out.println(RecordId);
+        HttpSession session = req.getSession();
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         Record r = Record.findById(RecordId);
         Base.close();
         
-        //todo: if shoppingcart exists, add new record instead of creating new shoppingcart
-        
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        Shoppingcart s = Shoppingcart.createIt();
+        
+        Shoppingcart s;
+        //the user needs a new kart:
+        if (session.getAttribute("shoppingCart") == null) {
+            System.out.println("created new shoppingkart for user");
+            s = Shoppingcart.createIt();
+        } else {
+            Shoppingcart sc = (Shoppingcart) session.getAttribute("shoppingCart");
+            if (sc == null) {
+                System.out.println("sc was null on retrieval, created it");
+                s = new Shoppingcart();
+                session.setAttribute("shoppingCart", s);
+            } else {
+                System.out.println("found old shoppingkart");
+                s = (Shoppingcart) session.getAttribute("shoppingCart");
+                System.out.println("Retrieved old shoppingkart of user");
+            }
+        }
+        
         s.add(r);
         Base.close();
         
-        HttpSession session = req.getSession();
-        System.out.println("added shoppingcart to session");
         session.setAttribute("shoppingCart", s);
-    
-        System.out.println("added records to shoppingcart");
+        session.setAttribute("shoppingCart", s);
         
         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         List<Record> recordsInShoppingCart = s.getAll(Record.class);
-        System.out.println("size of records in shoppingkarts: " + recordsInShoppingCart.size());
-    
+        
         Iterator<Record> shiter = recordsInShoppingCart.iterator();
         while (shiter.hasNext()) {
             Record rec = shiter.next();
             System.out.println("Record in scarkt: " + rec.getString("title"));
         }
         Base.close();
-
+        
     }
 }

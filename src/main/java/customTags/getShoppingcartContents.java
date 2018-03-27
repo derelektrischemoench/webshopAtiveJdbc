@@ -14,12 +14,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
 
-public class getShoppingcartContents extends SimpleTagSupport {
+public class getShoppingcartContents extends SimpleTagSupport{
     HttpSession session;
     
     @Override
     public void doTag() throws JspException, IOException {
         HttpSession s = this.session;
+        
+        //todo: do this on a separate thread to avoid this connection.base mess
         
         try {
             if (s.getAttribute("shoppingCart") != null) {
