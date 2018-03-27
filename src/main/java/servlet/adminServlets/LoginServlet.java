@@ -2,6 +2,7 @@ package servlet.adminServlets;
 
 import Controllers.MenuCookieController;
 import model.Account;
+import model.Shoppingcart;
 import org.javalite.activejdbc.Base;
 import org.javalite.common.Base64;
 import org.mindrot.jbcrypt.BCrypt;
@@ -89,7 +90,21 @@ public class LoginServlet extends HttpServlet {
                     req.setAttribute("signinSuccessMessage", "Your signin was successful.");
                     RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
                     rd.forward(req, resp);
-                    //TODO: sessions and cookies also: shopping cart
+                    //TODO: assign shoppingkart of session to user
+                    //account a is in scope
+                    int accountId = a.getInteger("id");
+                    
+                    if (session.getAttribute("shoppingCart") == null) {
+                        System.out.println("User has logged in w/o a cart, assigned a new one");
+                        Shoppingcart s = new Shoppingcart();
+                        s.set("id", accountId);
+                        System.out.println("assigned the user id " + accountId + " to the new shoppingkart");
+                        
+                    } else {
+                        System.out.println("user already has a shoppingcart, assigned this to session and user account after signin");
+                        Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
+                        s.set("id", accountId);
+                    }
                 }
                 
                 return;

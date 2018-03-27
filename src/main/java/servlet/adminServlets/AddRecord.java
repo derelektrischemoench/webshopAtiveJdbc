@@ -67,25 +67,10 @@ public class AddRecord extends HttpServlet {
         
         try {
             List<FileItem> items = upload.parseRequest(request);
-            System.out.println("number of items: " + items.size());
             ServletContext sc = getServletContext();
             //init a crudder, this automatically saves imaegson creation
             RecordCrud crudder = new RecordCrud(sc, items);
-            
-            //check the crudder's capabilities:
-            System.out.println("crudders data:");
-            System.out.println("ArtistID" + crudder.getArtistId());
-            System.out.println("Artistname: " + crudder.getArtistName());
-            System.out.println("embedurl" + crudder.getEmbedUrl());
-            System.out.println("recordId " + crudder.getRecordID());
-            System.out.println("recordName" + crudder.getRecordName());
-            System.out.println("label: " + crudder.getRecordLabel());
-            
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            
             crudder.createRecord();
-            Base.close();
-            
             
         } catch (FileUploadException e) {
             e.printStackTrace();
