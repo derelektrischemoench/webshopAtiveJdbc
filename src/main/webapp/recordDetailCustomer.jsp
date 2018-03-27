@@ -22,13 +22,13 @@
         <div class="col-sm">
             <h4>Tracklist:</h4>
             <ul class='mdl-list'>
-                <li class="mdl-list__item">
+                <c:forEach items="${tracksOfRecord}" var="track">
+                    <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
-                        Bryan Cranston
+                        ${track.get('name')}
                     </span>
-                </li>
-                <li class="mdl-list__item">asdasd</li>
-                <li class="mdl-list__item">asdasd</li>
+                    </li>
+                </c:forEach>
             </ul>
 
             <a href="<c:out value="${pageContext.request.contextPath}/recordDetail/addToCart?recordId=${record.get('id')}" />">

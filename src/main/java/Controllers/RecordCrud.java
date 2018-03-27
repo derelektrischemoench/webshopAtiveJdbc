@@ -106,10 +106,6 @@ public class RecordCrud {
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             
             try {
-                //Record re = Record.findById(this.recordID);
-                System.out.println("found record for track insertion: " + r.get("title") + "with id: " + r.get("id"));
-                
-                
                 long id = (long)r.get("id");
                 
                 for (String s : this.trackList.split(";")) {
@@ -119,7 +115,6 @@ public class RecordCrud {
                 e.printStackTrace();
                 System.out.println("error on creating the tracks");
             }
-            
             
         } else {
             //this updates an existing record
