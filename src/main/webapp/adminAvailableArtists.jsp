@@ -40,10 +40,7 @@
                                 </a>
                             </div>
                         </div>
-
-
                     </div>
-
                 </c:forEach>
             </ul>
         </div>

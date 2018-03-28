@@ -18,24 +18,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm">
-            <c:forEach items="${allRecordsCustomer}" var="record">
+        <c:forEach items="${allRecordsCustomer}" var="record">
+            <div class="col-sm-6">
+
                 <div class="slider-card mdl-card mdl-shadow--2dp"
                      style="background-image: url(' ${ record.get('img_file_path') } ')">
-                    <div class="mdl-card__title">
+                    <div class="mdl-card__title d-flex justify-content-between">
                         <h2 class="mdl-card__title-text"><mytaglib:getArtistForRecord
                                 inputArtist="${record.get('artist_id')}"/> - <c:out
                                 value="${record.get('title')}"/>
                         </h2>
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" href="<c:out value="${pageContext.request.contextPath}/recordDetail?recordId=${record.get('id')}" />" >
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                           href="<c:out value="${pageContext.request.contextPath}/recordDetail?recordId=${record.get('id')}" />">
                             View
                         </a>
                     </div>
                 </div>
-            </c:forEach>
-
-
-        </div>
+            </div>
+        </c:forEach>
     </div>
     <div class="row paginationRow">
         <div class="col-sm pagination">
