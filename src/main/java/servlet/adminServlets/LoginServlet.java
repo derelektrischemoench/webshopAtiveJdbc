@@ -2,6 +2,8 @@ package servlet.adminServlets;
 
 import Controllers.MenuCookieController;
 import model.Account;
+import model.Artist;
+import model.Record;
 import model.Shoppingcart;
 import org.javalite.activejdbc.Base;
 import org.javalite.common.Base64;
@@ -16,6 +18,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.CollationKey;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static Controllers.MenuCookieController.toggleMenuStateCookie;
@@ -49,7 +52,26 @@ public class LoginServlet extends HttpServlet {
         Account a = Account.findFirst("user_name = ?", username);
         Base.close();
         
-        //TODO: usernameerror message doesnt work yet.
+         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+        //query most recent records, put them in the slider
+        List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
+        
+        
+        for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
+            //TODO: use custom tag, pass record to function called in custom tag
+            Record r = (Record) i.next();
+            Artist artist = r.parent(Artist.class);
+        }
+        
+        try {
+            Base.close();
+            System.out.println("connection closed");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        Base.close();
+        req.setAttribute("mostRecentRecords", mostRecentRecords);
         
         if (a == null) {
             //account does not exist
@@ -87,9 +109,7 @@ public class LoginServlet extends HttpServlet {
                 } else if (!isAdmin) {
                     System.out.println("is useracc");
                     session.setAttribute("username", a.get("user_name"));
-                    req.setAttribute("signinSuccessMessage", "Your signin was successful.");
-                    RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-                    rd.forward(req, resp);
+                    
                     //TODO: assign shoppingkart of session to user
                     //account a is in scope
                     int accountId = a.getInteger("id");
@@ -105,6 +125,10 @@ public class LoginServlet extends HttpServlet {
                         Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
                         s.set("id", accountId);
                     }
+                    
+                    req.setAttribute("signinSuccessMessage", "Your signin was successful.");
+                    RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
+                    rd.forward(req, resp);
                 }
                 
                 return;

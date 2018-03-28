@@ -13,8 +13,6 @@
 <c:set var="pem" value="${passwordErrorMsg}" scope="request" />
 <c:set var="uem" value="${usernameErrorMsg}" scope="request" />
 
-<c:out value="value of visibility in template passing this to the include ${vis}"></c:out>
-
 <jsp:include page="include/headinclude.jsp">
     <jsp:param name="visibility" value="${vis}" />
     <jsp:param name="passwordErrorMsg" value="${pem}" />

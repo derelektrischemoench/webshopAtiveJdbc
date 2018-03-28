@@ -49,15 +49,9 @@ public class AddToCart extends HttpServlet {
             s.add(r);
             session.setAttribute("shoppingCart", s);
             
-            //Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            List<Record> recordsInShoppingCart = s.getAll(Record.class);
-            
-            Iterator<Record> shiter = recordsInShoppingCart.iterator();
-            while (shiter.hasNext()) {
-                Record rec = shiter.next();
-                System.out.println("Record in scarkt: " + rec.getString("title"));
-            }
-            
+            RequestDispatcher rd = req.getRequestDispatcher("/recordDetailCustomer.jsp");
+            req.setAttribute("successMessage", "assddasdd");
+            rd.forward(req, resp);
             
         } finally {
             DB.closeAllConnections();

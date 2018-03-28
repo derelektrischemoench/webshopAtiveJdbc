@@ -346,33 +346,58 @@ a.mdl-button--colored {
 .mdl-card.shoppingCart {
   overflow: hidden;
   width: 150px !important;
-  height: 58px;
-  -webkit-transition: height .35s, width .45s;
-  -moz-transition: height .35s, width .45s;
-  -ms-transition: height .35s, width .45s;
-  -o-transition: height .35s, width .45s;
-  transition: height .35s, width .45s; }
+  max-height: 58px;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -ms-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
+  -webkit-transition: max-height 1.35s, width 1.45s;
+  -moz-transition: max-height 1.35s, width 1.45s;
+  -ms-transition: max-height 1.35s, width 1.45s;
+  -o-transition: max-height 1.35s, width 1.45s;
+  transition: max-height 1.35s, width 1.45s; }
   .mdl-card.shoppingCart .mdl-card__title {
     flex-grow: 0;
     position: relative;
     top: 20px;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    -ms-transition: all .35s;
-    -o-transition: all .35s;
-    transition: all .35s; }
+    -webkit-transition: all 1.35s;
+    -moz-transition: all 1.35s;
+    -ms-transition: all 1.35s;
+    -o-transition: all 1.35s;
+    transition: all 1.35s;
+    padding-bottom: 0 !important; }
     .mdl-card.shoppingCart .mdl-card__title p {
       margin: 0; }
     .mdl-card.shoppingCart .mdl-card__title .ion-chevron-down:before {
       margin-top: 4px; }
     .mdl-card.shoppingCart .mdl-card__title .upsideDown::before {
       transform: rotate(180deg); }
+  .mdl-card.shoppingCart .mdl-card__supporting-text {
+    opacity: 0;
+    -webkit-transition: all .5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s; }
   .mdl-card.shoppingCart.visible {
     border-top-width: 20px;
-    height: 200px;
-    width: 300px !important; }
+    max-height: 701px;
+    width: 300px !important;
+    -webkit-transition: max-height 1.35s, width 1.45s;
+    -moz-transition: max-height 1.35s, width 1.45s;
+    -ms-transition: max-height 1.35s, width 1.45s;
+    -o-transition: max-height 1.35s, width 1.45s;
+    transition: max-height 1.35s, width 1.45s; }
     .mdl-card.shoppingCart.visible .mdl-card__title {
-      top: 0; }
+      top: 0;
+      -webkit-transition: all 1.5s;
+      -moz-transition: all 1.5s;
+      -ms-transition: all 1.5s;
+      -o-transition: all 1.5s;
+      transition: all 1.5s; }
+    .mdl-card.shoppingCart.visible .mdl-card__supporting-text {
+      opacity: 1; }
 
 .colorBlue {
   color: #3f51b5; }

@@ -31,10 +31,12 @@ public class getShoppingcartContents extends SimpleTagSupport {
 
                 if (rIter.hasNext()) {
                     int shoppingCartTotal = 0;
+                    out.write("<div class='shoppingcartcontents'>Your cart contains:<br>");
+                    
                     while (rIter.hasNext()) {
                         Record r = rIter.next();
                         Artist a = r.parent(Artist.class);
-                        out.write("Your cart contains:<br>");
+                        
                         out.write(a.getString("artist_name") + " - " + r.getString("title") + "<br />");
                         shoppingCartTotal += r.getInteger("price");
                     }
@@ -45,9 +47,10 @@ public class getShoppingcartContents extends SimpleTagSupport {
                     out.write("<div class='col-sm'><hr /></div>");
                     
                     out.write("Total: "+shoppingCartTotal);
+                    out.write("</div>");
                     
                 } else {
-                    out.write("Your shoppingcart is empty");
+                    out.write("Your shoppingcart is empty</div>");
                 }
                 
             } catch (Exception e) {
