@@ -16,18 +16,13 @@ public class ActiveJdbcFilter implements Filter {
     
     @Override
     public void init(FilterConfig config) throws ServletException {
-        System.out.println("webfilter init");
     }
     
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
         long before = System.currentTimeMillis();
-    
-        System.out.println("filter doing filtering");
-        
         try {
             Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            System.out.println("opened base connection in activejdbc filter");
             Base.openTransaction();
             chain.doFilter(req, resp);
             Base.commitTransaction();
@@ -40,7 +35,6 @@ public class ActiveJdbcFilter implements Filter {
         } finally {
             
             Base.close();
-            System.out.println("closed connection");
         }
         LOGGER.info("Processing took: {} milliseconds", System.currentTimeMillis() - before);
     }
