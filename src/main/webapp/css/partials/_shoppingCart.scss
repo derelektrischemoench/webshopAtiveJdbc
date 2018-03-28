@@ -1,7 +1,7 @@
 .mdl-card.shoppingCart {
   overflow: hidden;
   width: 150px !important;
-  height: 58px;
+  max-height: 58px;
 
   -webkit-transition: height .35s, width .45s;
   -moz-transition: height .35s, width .45s;
@@ -38,7 +38,7 @@
 
   &.visible {
     border-top-width: 20px;
-    height: 200px;
+    max-height: 500px;
     width: 300px !important;
 
     .mdl-card__title {
