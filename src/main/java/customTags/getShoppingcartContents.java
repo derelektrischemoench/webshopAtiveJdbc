@@ -20,6 +20,7 @@ public class getShoppingcartContents extends SimpleTagSupport {
         HttpSession s = this.session;
         final JspWriter out = getJspContext().getOut();
         
+        
         if (s.getAttribute("shoppingCart") != null) {
             try {
                 Shoppingcart shopCart = (Shoppingcart) s.getAttribute("shoppingCart");

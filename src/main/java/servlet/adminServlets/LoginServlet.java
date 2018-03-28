@@ -105,13 +105,15 @@ public class LoginServlet extends HttpServlet {
                     
                     int accountId = a.getInteger("id");
                     
+                    //TODO: der usercookie erhält die falsche shoppingcart id; fix it
                     if (session.getAttribute("shoppingCart") == null) {
                         System.out.println("User has logged in w/o a cart, assigned a new one");
-                        Shoppingcart s = new Shoppingcart();
-                        s.set("id", accountId);
+                        Shoppingcart s = Shoppingcart.createIt();
+                        int shoppingcartid = s.getInteger("id");
                         System.out.println("assigned the user id " + accountId + " to the new shoppingkart");
-                        Cookie c = new Cookie("shoppingCartId", ""+accountId);
+                        Cookie c = new Cookie("shoppingCartId", ""+shoppingcartid);
                         c.setMaxAge(3600*24);
+                        session.setAttribute("shoppingCart", s);
                         resp.addCookie(c);
                         
                     } else {

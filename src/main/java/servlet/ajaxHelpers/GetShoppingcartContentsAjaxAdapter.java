@@ -20,7 +20,7 @@ public class GetShoppingcartContentsAjaxAdapter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         int shoppingCartId = Integer.parseInt(request.getParameter("shoppingCartId"));
-    
+        //TODO: this is receiving the wrong shoppingcartid
         System.out.println("doget parsed following id: " + shoppingCartId);
         
         String uri = request.getScheme() + "://" +
@@ -40,7 +40,7 @@ public class GetShoppingcartContentsAjaxAdapter extends HttpServlet {
         
         StringBuilder recordsAsString = new StringBuilder();
     
-        System.out.println("records in shoppingcart found by adapter: ");
+        System.out.println("records in shoppingcart found by adapter: " + recordsInShoppingcart.size());
         for(Record r : recordsInShoppingcart) {
             System.out.println(r.get("title"));
             recordsAsString.append(r.get("title"));
