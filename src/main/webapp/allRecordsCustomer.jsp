@@ -21,7 +21,7 @@
         <c:forEach items="${allRecordsCustomer}" var="record">
             <div class="col-sm-6">
 
-                <div class="slider-card mdl-card mdl-shadow--2dp"
+                <div class="slider-card mdl-card mdl-shadow--2dp customerRecordOverview"
                      style="background-image: url(' ${ record.get('img_file_path') } ')">
                     <div class="mdl-card__title d-flex justify-content-between">
                         <h2 class="mdl-card__title-text"><mytaglib:getArtistForRecord

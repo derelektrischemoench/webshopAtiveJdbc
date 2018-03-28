@@ -318,6 +318,9 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .cardArtist {
   color: #3f51b5; }
 
+.mdl-card.customerRecordOverview {
+  margin: 15px auto; }
+
 .mdl-textfield__label:after {
   bottom: 13px !important; }
 
@@ -357,6 +360,13 @@ a.mdl-button--colored {
   -ms-transition: max-height 1.35s, width 1.45s;
   -o-transition: max-height 1.35s, width 1.45s;
   transition: max-height 1.35s, width 1.45s; }
+  .mdl-card.shoppingCart .mdl-card__actions {
+    max-height: 0;
+    -webkit-transition: max-height 1.35s, width 1.55s;
+    -moz-transition: max-height 1.35s, width 1.55s;
+    -ms-transition: max-height 1.35s, width 1.55s;
+    -o-transition: max-height 1.35s, width 1.55s;
+    transition: max-height 1.35s, width 1.55s; }
   .mdl-card.shoppingCart .mdl-card__title {
     flex-grow: 0;
     position: relative;
@@ -396,6 +406,14 @@ a.mdl-button--colored {
       -ms-transition: all 1.5s;
       -o-transition: all 1.5s;
       transition: all 1.5s; }
+    .mdl-card.shoppingCart.visible .mdl-card__actions {
+      height: auto;
+      max-height: 700px;
+      -webkit-transition: max-height 1.35s, width 1.45s;
+      -moz-transition: max-height 1.35s, width 1.45s;
+      -ms-transition: max-height 1.35s, width 1.45s;
+      -o-transition: max-height 1.35s, width 1.45s;
+      transition: max-height 1.35s, width 1.45s; }
     .mdl-card.shoppingCart.visible .mdl-card__supporting-text {
       opacity: 1; }
 

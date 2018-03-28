@@ -46,7 +46,7 @@ public class getShoppingcartContents extends SimpleTagSupport {
                     
                     out.write("<div class='col-sm'><hr /></div>");
                     
-                    out.write("Total: "+shoppingCartTotal);
+                    out.write("<p style='text-align: right; margin-bottom: 0; font-size: 44px;'>Total: "+shoppingCartTotal + " €</p>");
                     out.write("</div>");
                     
                 } else {
