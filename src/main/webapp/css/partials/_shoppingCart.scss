@@ -14,10 +14,11 @@
     position: relative;
     top: 20px;
     -webkit-transition: all .35s;
-      -moz-transition: all .35s;
-      -ms-transition: all .35s;
-      -o-transition: all .35s;
-      transition: all .35s;
+    -moz-transition: all .35s;
+    -ms-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+    padding-bottom: 0 !important;
 
     p {
       margin: 0;

@@ -28,20 +28,30 @@ public class getShoppingcartContents extends SimpleTagSupport {
                 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
                 Iterator<Record> rIter = shopCart.getAll(Record.class).iterator();
                 
+
                 if (rIter.hasNext()) {
+                    int shoppingCartTotal = 0;
                     while (rIter.hasNext()) {
                         Record r = rIter.next();
                         Artist a = r.parent(Artist.class);
-                        out.write("Your cart contains:");
+                        out.write("Your cart contains:<br>");
                         out.write(a.getString("artist_name") + " - " + r.getString("title") + "<br />");
+                        shoppingCartTotal += r.getInteger("price");
                     }
+                    Base.close();
+    
+                    System.out.println("Sum of items in shcart " + shoppingCartTotal);
+                    
+                    out.write("<div class='col-sm'><hr /></div>");
+                    
+                    out.write("Total: "+shoppingCartTotal);
+                    
                 } else {
                     out.write("Your shoppingcart is empty");
                 }
-                Base.close();
                 
             } catch (Exception e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         } else {
             //The current user has no shoppingcart in his session:
