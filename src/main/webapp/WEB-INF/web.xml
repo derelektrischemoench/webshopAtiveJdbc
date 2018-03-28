@@ -164,6 +164,15 @@
         <url-pattern>/recordDetail/addToCart</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetShoppingCartContentsAjaxAdapter</servlet-name>
+        <servlet-class>servlet.ajaxHelpers.GetShoppingcartContentsAjaxAdapter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetShoppingCartContentsAjaxAdapter</servlet-name>
+        <url-pattern>/getShoppingCartContentsAjaxAdapter</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>ActiveJdbcFilter</filter-name>
         <filter-class>filters.ActiveJdbcFilter</filter-class>

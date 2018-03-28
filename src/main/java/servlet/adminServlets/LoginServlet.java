@@ -103,8 +103,6 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("is useracc");
                     session.setAttribute("username", a.get("user_name"));
                     
-                    //TODO: assign shoppingkart of session to user
-                    //account a is in scope
                     int accountId = a.getInteger("id");
                     
                     if (session.getAttribute("shoppingCart") == null) {
@@ -112,11 +110,17 @@ public class LoginServlet extends HttpServlet {
                         Shoppingcart s = new Shoppingcart();
                         s.set("id", accountId);
                         System.out.println("assigned the user id " + accountId + " to the new shoppingkart");
+                        Cookie c = new Cookie("shoppingCartId", ""+accountId);
+                        c.setMaxAge(3600*24);
+                        resp.addCookie(c);
                         
                     } else {
                         System.out.println("user already has a shoppingcart, assigned this to session and user account after signin");
                         Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
                         s.set("id", accountId);
+                        Cookie c = new Cookie("shoppingCartId", ""+accountId);
+                        c.setMaxAge(3600*24);
+                        resp.addCookie(c);
                     }
                     
                     req.setAttribute("signinSuccessMessage", "Your signin was successful.");

@@ -41,7 +41,6 @@
             <!--</a>-->
         </div>
     </div>
-
     <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button type="button" class="mdl-snackbar__action"></button>
@@ -52,12 +51,15 @@
     //ajax function to add a record to the cart to prevent multiple additions via requests
     //if finished this should reload the cart and display a message on bottom confirming the addition
     // of the record
-
-    $(".addToCart").click(function () {
-        moep();
+    $(document).ready(function () {
+        refreshShoppingCartContents();
     });
 
-    var moep = function () {
+    $(".addToCart").click(function () {
+        addToCart();
+    });
+
+    var addToCart = function () {
         $.get("/webapp/recordDetail/addToCart?recordId=${record.get('id')}", function () {
             //$(".mdl-list").text("asdkdalksjddlaksjd");
             //add a callback here to do shit e.g. update the shoppingkart
@@ -76,6 +78,22 @@
             timeout: 10000
         };
         notification.MaterialSnackbar.showSnackbar(data);
+    };
+
+    var refreshShoppingCartContents = function () {
+        console.log("called ajaxhelper in js");
+        //eigentlich muss hier nur ein get mit der shoppingcartid abgesetzt werden
+        //var shoppingkartid = ${pageContext.request.session.getAttribute('shoppingCart').get('id')};
+        //this sucks; save shoppingcartid in cookie, take values from there
+        var cookie = getCookie("shoppingCartId");
+        console.log("cookie:  " + cookie);
+        var shoppingcartId = cookie;
+        console.log("shoppingcartid from cookie: " + shoppingcartId);
+
+        var shoppingcartAjaxResult = $.get("http://localhost:8080/webapp/getShoppingCartContentsAjaxAdapter?shoppingCartId="+shoppingcartId);
+
+        console.log("Response of the ajax call: " + shoppingcartAjaxResult);
+
     }
 </script>
 

@@ -113,7 +113,7 @@
         //set initally:
 
         var cookie = getCookie("menuOpen");
-        console.log("value of getCookie: " + cookie);
+        //console.log("value of getCookie: " + cookie);
         if (cookie == null) {
             //no cookie, create:
             setCookie("menuOpen", "true", 30)
