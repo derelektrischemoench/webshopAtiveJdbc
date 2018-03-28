@@ -54,7 +54,7 @@ public class getShoppingcartContents extends SimpleTagSupport {
                 }
                 
             } catch (Exception e) {
-                //e.printStackTrace();
+                e.printStackTrace();
             }
         } else {
             //The current user has no shoppingcart in his session:
