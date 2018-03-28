@@ -18,29 +18,15 @@ import java.util.List;
 public class Welcome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
         System.out.println("doget in welcome");
         RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
-        
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        //query most recent records, put them in the slider
         List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
-        
         
         for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
             //TODO: use custom tag, pass record to function called in custom tag
             Record r = (Record) i.next();
             Artist a = r.parent(Artist.class);
         }
-        
-        try {
-            Base.close();
-            System.out.println("connection closed");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        Base.close();
         req.setAttribute("mostRecentRecords", mostRecentRecords);
         rd.forward(req, resp);
     }

@@ -2,7 +2,6 @@ package servlet;
 
 import model.Artist;
 import model.Record;
-import org.javalite.activejdbc.Base;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,8 +20,6 @@ public class SearchRecords extends HttpServlet {
         
         System.out.println("#####search record dopost got record query: " + searchQuery);
         
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-    
         List<Record> resultSetRecords = Record.where("title = ?", searchQuery);
         List<Artist> resultSetArtists = Artist.where("artist_name = ?", searchQuery);
     
@@ -34,39 +31,24 @@ public class SearchRecords extends HttpServlet {
         Iterator<Artist> fuzzyArt = asdasd.iterator();
         while (fuzzyArt.hasNext()) {
             Artist a  = fuzzyArt.next();
-            System.out.println("fuzzysearch found something: " + a.get("artist_name"));
-            
         }
-        
         
         Iterator<Record> recordIter = resultSetRecords.iterator();
-        
         Iterator<Artist> artistIter = resultSetArtists.iterator();
         
-        
-        System.out.println("Results in Records:");
         while (recordIter.hasNext()) {
             Record r = recordIter.next();
-            System.out.println("found record for searchquery:: " + searchQuery + r.get("title"));
         }
-        
         
         while (artistIter.hasNext()) {
             Artist a = artistIter.next();
-            System.out.println("found Artist for searchquery:" + searchQuery + a.get("artist_name"));
         }
         
         req.setAttribute("searchQuery" , searchQuery);
         req.setAttribute("artists", resultSetArtists);
         req.setAttribute("records", resultSetRecords);
         
-        
-    
         RequestDispatcher rd = req.getRequestDispatcher("/customerSearchResults.jsp");
         rd.forward(req, resp);
-        
-        
-        Base.close();
-        
     }
 }

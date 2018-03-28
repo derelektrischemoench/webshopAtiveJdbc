@@ -3,8 +3,6 @@ package customTags;
 import model.Artist;
 import model.Record;
 import model.Shoppingcart;
-import org.javalite.activejdbc.Base;
-import org.javalite.activejdbc.DB;
 
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
@@ -25,7 +23,6 @@ public class getShoppingcartContents extends SimpleTagSupport {
         if (s.getAttribute("shoppingCart") != null) {
             try {
                 Shoppingcart shopCart = (Shoppingcart) s.getAttribute("shoppingCart");
-                Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
                 Iterator<Record> rIter = shopCart.getAll(Record.class).iterator();
                 
 
@@ -40,12 +37,8 @@ public class getShoppingcartContents extends SimpleTagSupport {
                         out.write(a.getString("artist_name") + " - " + r.getString("title") + "<br />");
                         shoppingCartTotal += r.getInteger("price");
                     }
-                    Base.close();
-    
-                    System.out.println("Sum of items in shcart " + shoppingCartTotal);
                     
                     out.write("<div class='col-sm'><hr /></div>");
-                    
                     out.write("<p style='text-align: right; margin-bottom: 0; font-size: 44px;'>Total: "+shoppingCartTotal + " €</p>");
                     out.write("</div>");
                     

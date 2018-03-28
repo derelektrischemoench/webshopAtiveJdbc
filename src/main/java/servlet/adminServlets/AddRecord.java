@@ -7,7 +7,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.javalite.activejdbc.Base;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -37,12 +36,10 @@ public class AddRecord extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //This renders the add record form
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         String artistId = req.getParameter("artist_id");
         Artist a = Artist.findFirst("id = ?", artistId);
         req.setAttribute("artist", a);
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
-        Base.close();
         rd.forward(req, resp);
         
         //TODO: the form rendering of the edit has to be done by a different servlet

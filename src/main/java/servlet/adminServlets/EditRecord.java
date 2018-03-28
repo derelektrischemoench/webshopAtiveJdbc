@@ -18,10 +18,6 @@ public class EditRecord extends HttpServlet {
         System.out.println("do get in Edit record");
         String artistId = req.getParameter("artistId");
         String recordId = req.getParameter("recordId");
-    
-        //render the form
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        
         
         Record r = Record.findById(recordId);
         Artist a = r.parent(Artist.class);
@@ -32,7 +28,6 @@ public class EditRecord extends HttpServlet {
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         //todo: render the values into the form
         //todo: the artists id is missing here
-        Base.close();
         rd.forward(req, resp);
         
     }

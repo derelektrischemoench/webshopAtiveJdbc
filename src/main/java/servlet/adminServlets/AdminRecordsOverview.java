@@ -2,8 +2,6 @@ package servlet.adminServlets;
 
 import model.Artist;
 import model.Record;
-import org.javalite.activejdbc.Base;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +14,6 @@ public class AdminRecordsOverview extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String artistIdGetParam = req.getParameter("artistId");
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
         try {
             Artist a = Artist.findFirst("id=?", artistIdGetParam);
@@ -32,8 +29,6 @@ public class AdminRecordsOverview extends HttpServlet {
             e.printStackTrace();
             System.out.println("artist not found");
         }
-        
-        Base.close();
         RequestDispatcher rd = req.getRequestDispatcher("/adminRecordsPerArtist.jsp");
         rd.forward(req, resp);
     }

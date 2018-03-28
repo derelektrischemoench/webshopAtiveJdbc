@@ -5,8 +5,6 @@ import model.Account;
 import model.Artist;
 import model.Record;
 import model.Shoppingcart;
-import org.javalite.activejdbc.Base;
-import org.javalite.common.Base64;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.RequestDispatcher;
@@ -47,12 +45,9 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("login__username");
         String inputPassword = req.getParameter("login__password");
         
-        //open db connection:
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         Account a = Account.findFirst("user_name = ?", username);
-        Base.close();
         
-         Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
+      
         //query most recent records, put them in the slider
         List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
         
@@ -64,13 +59,11 @@ public class LoginServlet extends HttpServlet {
         }
         
         try {
-            Base.close();
             System.out.println("connection closed");
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        Base.close();
         req.setAttribute("mostRecentRecords", mostRecentRecords);
         
         if (a == null) {

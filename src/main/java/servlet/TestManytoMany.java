@@ -17,28 +17,16 @@ public class TestManytoMany extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("doget in testmanytomany");
-    
         
         
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        try {
-            System.out.println("creating record");
-            Record record = Record.createIt("title", "testTitle", "label", "testLabel", "artist_id", "1", "price", "21.99");
-            
-            System.out.println("creating shoppingcart");
-            Shoppingcart shoppingcart = Shoppingcart.createIt(); //gets an autoid
-            
-            System.out.println("adding record to shoppingcart");
-            shoppingcart.add(record);
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("closing connection");
-            Base.close();
-        }
+        System.out.println("creating record");
+        Record record = Record.createIt("title", "testTitle", "label", "testLabel", "artist_id", "1", "price", "21.99");
         
+        System.out.println("creating shoppingcart");
+        Shoppingcart shoppingcart = Shoppingcart.createIt(); //gets an autoid
         
+        System.out.println("adding record to shoppingcart");
+        shoppingcart.add(record);
     }
     
 }

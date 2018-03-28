@@ -19,7 +19,6 @@ public class RecordDetailServlet extends HttpServlet{
         System.out.println("doget in record detail");
         int recordID = Integer.parseInt(req.getParameter("recordId"));
         try {
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             Record r  = Record.findFirst("id=?", recordID);
             List<Track> tracksOfRecord = r.getAll(Track.class);
             
@@ -27,12 +26,10 @@ public class RecordDetailServlet extends HttpServlet{
             req.setAttribute("tracksOfRecord", tracksOfRecord);
             RequestDispatcher rd = req.getRequestDispatcher("recordDetailCustomer.jsp");
             rd.forward(req, resp);
-            Base.close();
         } catch (Exception e ) {
             e.printStackTrace();
             System.err.println("Record not found");
         }
-        
         
     }
 }

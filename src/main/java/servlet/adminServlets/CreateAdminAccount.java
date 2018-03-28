@@ -25,9 +25,7 @@ public class CreateAdminAccount extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //connect to database:
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-        
+      
         String username = req.getParameter("adminSignup__username");
         String password = req.getParameter("adminSignup__password1");
         String password2 = req.getParameter("adminSignup__password2");
@@ -62,8 +60,7 @@ public class CreateAdminAccount extends HttpServlet {
         }
         
         
-        //close connection
-        Base.close();
+        
         
     }
 }

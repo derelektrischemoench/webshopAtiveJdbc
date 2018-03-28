@@ -15,7 +15,6 @@ public class getArtistForRecord extends SimpleTagSupport {
         //Parameter sind implizit vorhanden können über this.inputArtist accessed werden
         //SET:        this.inputArtist = "daskdja";
         
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
         Artist a = Artist.findById(this.inputArtistId);
         final JspWriter out = getJspContext().getOut();
@@ -26,9 +25,6 @@ public class getArtistForRecord extends SimpleTagSupport {
         } else {
             out.println("couldnt find artist");
         }
-        
-        Base.close();
-        
     }
     
     public void setInputArtist(String inputArtistId) {

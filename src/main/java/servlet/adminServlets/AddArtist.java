@@ -121,9 +121,6 @@ public class AddArtist extends HttpServlet {
             }
             
             //open db connection
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-    
-            System.out.println("creating artist: alias: " + artistAlias + " first_name: " + artistFirstName + " last name: " + artistLastName + " label: " + artistLabel);
             
             Artist.createIt("artist_name", artistAlias,
                             "first_name", artistFirstName,
@@ -131,7 +128,6 @@ public class AddArtist extends HttpServlet {
                             "label", "placeholder in artistCreateIt in AddArtist",
                             "artist_img_path", imageFilePath);
             
-            Base.close();
             request.setAttribute("artistName", artistAlias);
             
             // displays done.jsp page after upload finished

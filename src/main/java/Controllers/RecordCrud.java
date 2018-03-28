@@ -4,7 +4,6 @@ import model.Record;
 import model.Track;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItem;
-import org.javalite.activejdbc.Base;
 import javax.servlet.ServletContext;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -81,7 +80,6 @@ public class RecordCrud {
             //this creates a new record
             System.out.println("crudder creates new record.");
             writeImage(this.imageFile); //writes the image currently present in the crudder to disk and assigns a path
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             Record  r = Record.create(
                     "artist_id", this.artistId,
                     "title", this.recordName,
@@ -90,11 +88,6 @@ public class RecordCrud {
                     "price", this.recordPrice
             );
             r.saveIt();
-            
-            Base.close();
-            
-            //reopen to be able to get the record that was created;
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             
             try {
                 long id = (long)r.get("id");
@@ -110,23 +103,17 @@ public class RecordCrud {
         } else {
             //this updates an existing record
             System.out.println("Crudder update situation");
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
             Record r = Record.findById(this.recordID);
-            Base.close();
             System.out.println("crudder updater record update results: " + r.getString("title")); //FUCKING HELL YEAS OO FTW BIATCH!
             
             //todo: check which fields have changed and modify only those in the db
             //if the image has changed, reupload and adjust url
             writeImage(this.imageFile);
-            
-            Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
-            
             r.set("artist_id", this.artistId,
                   "title", this.recordName,
                   "label", this.recordLabel,
                   "img_file_path", this.embedUrl,
                   "price", this.recordPrice).saveIt();
-            Base.close();
         }
         
     }

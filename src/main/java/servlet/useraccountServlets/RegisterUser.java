@@ -1,7 +1,6 @@
 package servlet.useraccountServlets;
 
 import model.Account;
-import org.javalite.activejdbc.Base;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.RequestDispatcher;
@@ -25,8 +24,6 @@ public class RegisterUser extends HttpServlet {
         String email = req.getParameter("customerSignup__email");
         String password1 = req.getParameter("customerSignup__password1");
         String password2 = req.getParameter("customerSignup__password2");
-        
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/wpr_webshop", "root", "root");
         
         if (!password1.equals(password2)) {
             System.out.println("password mismatch");
@@ -62,7 +59,5 @@ public class RegisterUser extends HttpServlet {
                 rd.forward(req, resp);
             }
         }
-        
-        Base.close();
     }
 }
