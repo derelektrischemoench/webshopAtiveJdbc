@@ -105,22 +105,23 @@ public class LoginServlet extends HttpServlet {
                     
                     int accountId = a.getInteger("id");
                     
-                    //TODO: der usercookie erhält die falsche shoppingcart id; fix it
                     if (session.getAttribute("shoppingCart") == null) {
                         System.out.println("User has logged in w/o a cart, assigned a new one");
-                        Shoppingcart s = Shoppingcart.createIt();
-                        int shoppingcartid = s.getInteger("id");
-                        System.out.println("assigned the user id " + accountId + " to the new shoppingkart");
+                        Shoppingcart shoppingcart = Shoppingcart.createIt();
+                        int shoppingcartid = shoppingcart.getInteger("id");
+                        session.setAttribute("shoppingCartId", shoppingcartid);
+                        System.out.println("assigned id " + shoppingcartid + "to the session");
                         Cookie c = new Cookie("shoppingCartId", ""+shoppingcartid);
                         c.setMaxAge(3600*24);
-                        session.setAttribute("shoppingCart", s);
+                        session.setAttribute("shoppingCart", shoppingcart);
                         resp.addCookie(c);
                         
                     } else {
                         System.out.println("user already has a shoppingcart, assigned this to session and user account after signin");
-                        Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
-                        s.set("id", accountId);
-                        Cookie c = new Cookie("shoppingCartId", ""+accountId);
+                        Shoppingcart shoppingCart = (Shoppingcart)session.getAttribute("shoppingCart");
+                        int shoppingCartId = shoppingCart.getInteger("id");
+                        shoppingCart.set("id", shoppingCartId);
+                        Cookie c = new Cookie("shoppingCartId", ""+shoppingCartId);
                         c.setMaxAge(3600*24);
                         resp.addCookie(c);
                     }

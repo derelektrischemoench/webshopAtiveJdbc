@@ -13,7 +13,8 @@
     <script src="<c:out value="${pageContext.request.contextPath}/js/jQuery/jquery-3.3.1.min.js" />"></script>
     <!-- slick stylesheet-->
     <script type="text/javascript" src="js/slick/slick/slick.min.js"></script>
-    <script type="text/javascript" src="js/slick/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/jsCookie/jsCookie.js"></script>
+    <script type="text/javascript" src="js/jsonq/jsonq.min.js"></script>
     <link rel="stylesheet" href="css/slick.css" />
     <script type="text/javascript" src="<c:out value="${pageContext.request.contextPath}/css/mdl/material.min.js" />"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

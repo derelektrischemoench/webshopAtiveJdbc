@@ -30,17 +30,19 @@
                                 </div>
                                 <div class="mdl-card__supporting-text" style="padding-top: 0">
                                     <mytaglib:getShoppingcartContents session="${pageContext.session}"/>
-                                </div>
-                                <div class="mdl-card__actions mdl-card--border">
-                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=""
-                                       data-upgraded=",MaterialButton,MaterialRipple">
-                                        View cart
-                                        <span class="mdl-button__ripple-container">
+                                    <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                                           href=""
+                                           data-upgraded=",MaterialButton,MaterialRipple">
+                                            View cart
+                                            <span class="mdl-button__ripple-container">
                                             <span class="mdl-ripple">
                                             </span>
                                         </span>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
+
                             </div>
 
                         </div>
@@ -60,7 +62,8 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="login__username" name="login__username">
             <label class="mdl-textfield__label" for="login__username">Username</label>
-            <span class="mdl-textfield__error" style="visibility: <c:out value="${requestScope.visibility}" /> ">
+            <span class="mdl-textfield__error" style="visibility:
+            <c:out value="${requestScope.visibility}"/> ">
                 ${requestScope.uem}
             </span>
         </div>

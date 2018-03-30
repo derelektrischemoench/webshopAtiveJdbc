@@ -1,5 +1,6 @@
 package servlet;
 
+import model.Artist;
 import model.Record;
 import model.Shoppingcart;
 import org.glassfish.grizzly.asyncqueue.RecordReadResult;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class AddToCart extends HttpServlet {
-    
+    //TODO: this has to be done via session because otherwise the shoppingcart doesnt work
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int RecordId = Integer.parseInt(req.getParameter("recordId"));
@@ -36,10 +37,5 @@ public class AddToCart extends HttpServlet {
         s.add(r);
         
         session.setAttribute("shoppingCart", s);
-        
-        RequestDispatcher rd = req.getRequestDispatcher("/recordDetailCustomer.jsp");
-        req.setAttribute("successMessage", "assddasdd");
-        rd.forward(req, resp);
-        
     }
 }

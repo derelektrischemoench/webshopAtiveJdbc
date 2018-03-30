@@ -33,12 +33,18 @@
         <div class="col-sm">
             <span>Price</span>
             <h3>${record.get('price')} €</h3>
-            <!--<a href="<c:out value="${pageContext.request.contextPath}/recordDetail/addToCart?recordId=${record.get('id')}" />">-->
-            <button type="submit"
-                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent addToCart">
-                Add to cart
-            </button>
-            <!--</a>-->
+
+            <c:choose>
+                <c:when test="${sessionScope.username eq null}">
+                    Please login to add this record to your cart
+                </c:when>
+                <c:otherwise>
+                    <button type="submit"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent addToCart">
+                        Add to cart
+                    </button>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
     <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
@@ -57,13 +63,13 @@
 
     $(".addToCart").click(function () {
         addToCart();
+
     });
 
     var addToCart = function () {
         $.get("/webapp/recordDetail/addToCart?recordId=${record.get('id')}", function () {
-            //$(".mdl-list").text("asdkdalksjddlaksjd");
-            //add a callback here to do shit e.g. update the shoppingkart
             showSnackbar();
+            refreshShoppingCartContents();
         });
 
     };
@@ -82,18 +88,29 @@
 
     var refreshShoppingCartContents = function () {
         console.log("called ajaxhelper in js");
-        //eigentlich muss hier nur ein get mit der shoppingcartid abgesetzt werden
-        //var shoppingkartid = ${pageContext.request.session.getAttribute('shoppingCart').get('id')};
-        //this sucks; save shoppingcartid in cookie, take values from there
-        var cookie = getCookie("shoppingCartId");
-        console.log("cookie:  " + cookie);
-        var shoppingcartId = cookie;
-        console.log("shoppingcartid from cookie: " + shoppingcartId);
+        var shoppingCart = $('shoppingCart');
+        var cookieVal = Cookies.get("shoppingCartId");
+        var shoppingcartId = cookieVal;
+        var shoppingCartContents = $(".shoppingcartcontents");
+        targetUrl = "http://localhost:8080/webapp/getShoppingCartContentsAjaxAdapter?shoppingCartId=" + shoppingcartId;
 
-        var shoppingcartAjaxResult = $.get("http://localhost:8080/webapp/getShoppingCartContentsAjaxAdapter?shoppingCartId="+shoppingcartId);
+        //TODO: this works the first time after server restart, not afterwards
+        $.get(targetUrl, function (data) {
+            //console.log("get done; data: " + data);
+            var resultJson = jsonQ(data);
 
-        console.log("Response of the ajax call: " + shoppingcartAjaxResult);
+            var ArtistName = resultJson.find('artist_name').value().toString();
+            //var recordName = resultJson.find('title').value().toString();
+            //var recordPrice = resultJson.find('price').value().toString();
+            console.log(ArtistName);
+            shoppingCartContents.css('background-color', 'fuchsia');
+            shoppingCartContents.append(ArtistName + " " + recordName + " " + recordPrice);
+        })
 
-    }
+
+        //console.log("Response of the ajax calldddd: " + shoppingcartAjaxResult);
+
+    };
+
 </script>
 
