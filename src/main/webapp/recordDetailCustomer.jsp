@@ -35,7 +35,7 @@
             <h3>${record.get('price')} €</h3>
 
             <c:choose>
-                <c:when test="${sessionScope.username eq null}">
+                <c:when test="${cookie.username eq null}">
                     Please login to add this record to your cart
                 </c:when>
                 <c:otherwise>
@@ -58,7 +58,7 @@
     //if finished this should reload the cart and display a message on bottom confirming the addition
     // of the record
     $(document).ready(function () {
-        refreshShoppingCartContents();
+        //refreshShoppingCartContents();
     });
 
     $(".addToCart").click(function () {
@@ -69,7 +69,7 @@
     var addToCart = function () {
         $.get("/webapp/recordDetail/addToCart?recordId=${record.get('id')}", function () {
             showSnackbar();
-            refreshShoppingCartContents();
+            //refreshShoppingCartContents();
         });
 
     };
@@ -86,6 +86,7 @@
         notification.MaterialSnackbar.showSnackbar(data);
     };
 
+    /* TODO: fix this some time:
     var refreshShoppingCartContents = function () {
         console.log("called ajaxhelper in js");
         var shoppingCart = $('shoppingCart');
@@ -98,19 +99,22 @@
         $.get(targetUrl, function (data) {
             //console.log("get done; data: " + data);
             var resultJson = jsonQ(data);
-
             var ArtistName = resultJson.find('artist_name').value().toString();
             //var recordName = resultJson.find('title').value().toString();
             //var recordPrice = resultJson.find('price').value().toString();
             console.log(ArtistName);
-            shoppingCartContents.css('background-color', 'fuchsia');
-            shoppingCartContents.append(ArtistName + " " + recordName + " " + recordPrice);
-        })
+        });
+
+        str = "asdasd";
+        str.insertAfter(shoppingCartContents);
+
+        (ArtistName + " " + recordName + " " + recordPrice).insertAfter(shoppingCartContents);
+        //shoppingCartContents.insertAfter("asdasdasd");
 
 
         //console.log("Response of the ajax calldddd: " + shoppingcartAjaxResult);
 
     };
-
+*/
 </script>
 

@@ -8,10 +8,8 @@
             <h5>Tight shit records</h5>
         </div>
         <div class="col-9 justify-content-end">
-
             <div class="container">
                 <div class="row justify-content-end">
-
                     <c:if test="${cookie.username.value eq null}">
                         <div class="col-auto">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
@@ -19,10 +17,8 @@
                             </button>
                         </div>
                     </c:if>
-
                     <c:if test="${cookie.username.value ne null}">
                         <div class="col-auto">
-
                             <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard shoppingCart">
                                 <div class="mdl-card__title mdl-card--expand">
                                     <h6 class="mdl-card__title-text justify-content-between"><p>Shopping cart: </p>
@@ -32,7 +28,7 @@
                                     <mytaglib:getShoppingcartContents session="${pageContext.session}"/>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                                           href=""
+                                           href="shoppingCartDetail?shoppingCartId=${cookie.shoppingCartId.value}"
                                            data-upgraded=",MaterialButton,MaterialRipple">
                                             View cart
                                             <span class="mdl-button__ripple-container">
@@ -42,16 +38,11 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </c:if>
-
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

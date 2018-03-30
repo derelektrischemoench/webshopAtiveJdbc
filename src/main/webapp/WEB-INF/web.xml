@@ -173,6 +173,15 @@
         <url-pattern>/getShoppingCartContentsAjaxAdapter</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShoppingCartDetail</servlet-name>
+        <servlet-class>servlet.ShoppingCartDetail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShoppingCartDetail</servlet-name>
+        <url-pattern>/shoppingCartDetail</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>ActiveJdbcFilter</filter-name>
         <filter-class>filters.ActiveJdbcFilter</filter-class>

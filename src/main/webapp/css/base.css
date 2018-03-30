@@ -420,6 +420,9 @@ a.mdl-button--colored {
 .colorBlue {
   color: #3f51b5; }
 
+.shoppingCartItem .titleImage {
+  max-height: 120px; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;

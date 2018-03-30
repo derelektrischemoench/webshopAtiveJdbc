@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page pageEncoding="UTF-8"%>
+<%@ page pageEncoding="UTF-8" %>
 
 
 <jsp:include page="include/headinclude.jsp"/>
@@ -19,7 +19,8 @@
                 <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
                     <div class="titleImage">
                         <div class="mdl-card__title mdl-card--expand">
-                            <h4 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/></h4>
+                            <h4 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/>
+                            </h4>
 
                         </div>
                         <div class="imagepart"
@@ -32,7 +33,7 @@
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                        href="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord?artistId=${artist.get('id')}&recordId=${record.get('id')}">
+                           href="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord?artistId=${artist.get('id')}&recordId=${record.get('id')}">
                             Edit record
                         </a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">

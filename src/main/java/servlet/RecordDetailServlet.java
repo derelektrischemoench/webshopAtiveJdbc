@@ -16,7 +16,6 @@ import java.util.NoSuchElementException;
 public class RecordDetailServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doget in record detail");
         int recordID = Integer.parseInt(req.getParameter("recordId"));
         try {
             Record r  = Record.findFirst("id=?", recordID);
