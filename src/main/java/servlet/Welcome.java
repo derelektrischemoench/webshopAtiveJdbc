@@ -18,12 +18,10 @@ import java.util.List;
 public class Welcome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doget in welcome");
         RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
         List<Record> mostRecentRecords = Record.findAll().limit(10).orderBy("id asc");
         
         for (Iterator i = mostRecentRecords.iterator(); i.hasNext(); ) {
-            //TODO: use custom tag, pass record to function called in custom tag
             Record r = (Record) i.next();
             Artist a = r.parent(Artist.class);
         }

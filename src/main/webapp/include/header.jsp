@@ -1,3 +1,4 @@
+<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
 
@@ -16,9 +17,10 @@
                                 Login
                             </button>
                         </div>
-                    </c:if><c:out value="${session.getAttribute('numItemsShoppingCart')} "></c:out>
+                    </c:if>
                     <c:if test="${cookie.username.value ne null}">
-                        <span class="mdl-badge shoppingCart__numItemsBadge" data-badge="${session.getAttribute('numItemsShoppingCart')}">
+                        <span class="mdl-badge shoppingCart__numItemsBadge"
+                              data-badge="${session.getAttribute('numItemsShoppingCart')}">
                             <div class="col-auto">
                                 <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard shoppingCart">
                                     <div class="mdl-card__title mdl-card--expand">

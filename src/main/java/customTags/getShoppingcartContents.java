@@ -38,8 +38,6 @@ public class getShoppingcartContents extends SimpleTagSupport {
                         shoppingCartTotal += r.getInteger("price");
                     }
                     
-                    s.setAttribute("numItemsShoppingCart", shoppingCartTotal);
-                    
                     out.write("<div class='col-sm'><hr /></div>");
                     out.write("<p style='text-align: right; margin-bottom: 0; font-size: 44px;'>Total: "+shoppingCartTotal + " €</p>");
                     out.write("</div>");
