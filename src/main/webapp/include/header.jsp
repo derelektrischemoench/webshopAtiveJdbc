@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
 
+
 <div class="container-fluid header">
     <div class="row justify-content-between headerInner">
         <div class="col-3">
@@ -20,7 +21,7 @@
                     </c:if>
                     <c:if test="${cookie.username.value ne null}">
                         <span class="mdl-badge shoppingCart__numItemsBadge"
-                              data-badge="${session.getAttribute('numItemsShoppingCart')}">
+                              data-badge="<mytaglib:getAmountShoppingCartItems shoppingCartId="${cookie.shoppingCartId.value}" />">
                             <div class="col-auto">
                                 <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard shoppingCart">
                                     <div class="mdl-card__title mdl-card--expand">

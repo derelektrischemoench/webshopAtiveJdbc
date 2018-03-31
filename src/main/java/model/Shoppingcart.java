@@ -14,8 +14,4 @@ import java.util.List;
 @Table("shoppingcarts")
 @Many2Many(other = Record.class, join = "record_shoppingcart", sourceFKName = "id", targetFKName = "id")
 public class Shoppingcart extends Model {
-    
-    public int getNumberItemsInShoppingcart() {
-        return this.getAll(Record.class).size();
-    }
 }

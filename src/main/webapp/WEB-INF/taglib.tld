@@ -24,4 +24,15 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>getAmountShoppingCartItems</name>
+        <tag-class>customTags.getAmountShoppingCartItems</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>shoppingCartId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>
