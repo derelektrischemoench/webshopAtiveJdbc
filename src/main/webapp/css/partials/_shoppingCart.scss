@@ -4,26 +4,26 @@
   max-height: 58px;
 
 
-  -webkit-transition: all 1.5s;
-  -moz-transition: all 1.5s;
-  -ms-transition: all 1.5s;
-  -o-transition: all 1.5s;
-  transition: all 1.5s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 
-  -webkit-transition: max-height 1.35s, width 1.45s;
-  -moz-transition: max-height 1.35s, width 1.45s;
-  -ms-transition: max-height 1.35s, width 1.45s;
-  -o-transition: max-height 1.35s, width 1.45s;
-  transition: max-height 1.35s, width 1.45s;
+  -webkit-transition: max-height 1.05s, width 1.15s;
+  -moz-transition: max-height 1.05s, width 1.15s;
+  -ms-transition: max-height 1.05s, width 1.15s;
+  -o-transition: max-height 1.05s, width 1.15s;
+  transition: max-height 1.05s, width 1.15s;
 
   .mdl-card__actions {
     max-height: 0;
 
-    -webkit-transition: max-height 1.35s, width 1.55s;
-  -moz-transition: max-height 1.35s, width 1.55s;
-  -ms-transition: max-height 1.35s, width 1.55s;
-  -o-transition: max-height 1.35s, width 1.55s;
-  transition: max-height 1.35s, width 1.55s;
+    -webkit-transition: max-height 1.05s, width 1.15s;
+  -moz-transition: max-height 1.05s, width 1.15s;
+  -ms-transition: max-height 1.05s, width 1.15s;
+  -o-transition: max-height 1.05s, width 1.15s;
+  transition: max-height 1.05s, width 1.15s;
 
   }
 

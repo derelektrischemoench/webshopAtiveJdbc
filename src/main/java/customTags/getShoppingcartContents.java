@@ -19,27 +19,25 @@ public class getShoppingcartContents extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         HttpSession s = this.session;
         final JspWriter out = getJspContext().getOut();
-        out.write("shoppingcart from session: " + s.getAttribute("shoppingCartId"));
-
         if (s.getAttribute("shoppingCart") != null) {
             try {
                 Shoppingcart shopCart = (Shoppingcart) s.getAttribute("shoppingCart");
                 Iterator<Record> rIter = shopCart.getAll(Record.class).iterator();
                 
-
                 if (rIter.hasNext()) {
-                    int shoppingCartTotal = 0;
+                    float shoppingCartTotal = 0;
                     out.write("<div class='shoppingcartcontents'>Your cart contains:<br>");
                     while (rIter.hasNext()) {
                         Record r = rIter.next();
                         Artist a = r.parent(Artist.class);
                         
                         out.write(a.getString("artist_name") + " - " + r.getString("title") + "<br />");
-                        shoppingCartTotal += r.getInteger("price");
+                        shoppingCartTotal += r.getFloat("price");
+    
+                        System.out.println("shoppingcarttotal in tag: " + shoppingCartTotal);
+                        
                     }
-                    
-                    out.write("<div class='col-sm'><hr /></div>");
-                    out.write("<p style='text-align: right; margin-bottom: 0; font-size: 44px;'>Total: "+shoppingCartTotal + " €</p>");
+                    out.write("<p style='text-align: right; margin-bottom: 0; font-size:22px;'>Total: " + shoppingCartTotal + " €</p>");
                     out.write("</div>");
                     
                 } else {

@@ -7,16 +7,16 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-12">
             <h1>Available Records for <c:out value="${artist.get('artist_name')}"/>:</h1>
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row justify-content-center">
+<div class="container">
+    <div class="row d-flex justify-content-start">
         <c:forEach items="${artistsRecords}" var="record">
-            <div class="col-8">
-                <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard mx-auto">
+            <div class="col-6">
+                <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard">
                     <div class="titleImage">
                         <div class="mdl-card__title mdl-card--expand">
                             <h4 class="mdl-card__title-text">Record Name: <br> <c:out value="${record.get('title')}"/>

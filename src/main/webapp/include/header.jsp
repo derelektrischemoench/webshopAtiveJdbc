@@ -26,7 +26,8 @@
                                 <div class="demo-card-square mdl-card mdl-shadow--2dp itemCard shoppingCart">
                                     <div class="mdl-card__title mdl-card--expand">
                                         <h6 class="mdl-card__title-text justify-content-between"><p>Shopping cart: </p>
-                                            <p><span class="ion-chevron-down"></span></p></h6>
+                                            <p><i class="material-icons">expand_more</i></p>
+                                        </h6>
                                     </div>
                                     <div class="mdl-card__supporting-text" style="padding-top: 0">
                                         <mytaglib:getShoppingcartContents session="${pageContext.session}"/>

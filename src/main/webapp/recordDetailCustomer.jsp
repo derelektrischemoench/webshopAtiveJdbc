@@ -20,19 +20,22 @@
         </div>
         <div class="col-sm">
             <h4 style="margin-top: 0">Tracklist:</h4>
-            <ul class='mdl-list'>
+            <ul class='mdl-list recordDetail__tracklist'>
+                <c:set var="count" value="1" scope="page" />
                 <c:forEach items="${tracksOfRecord}" var="track">
                     <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
-                            ${track.get('name')}
+                    <c:out value="${count} ${track.get('name')}" />
                     </span>
                     </li>
+
+                    <c:set var="count" value="${count + 1}" />
                 </c:forEach>
             </ul>
         </div>
         <div class="col-sm">
-            <span>Price</span>
-            <h3>${record.get('price')} €</h3>
+
+            <h3>${record.get('price')} <i class="material-icons">euro_symbol</i></h3>
 
             <c:choose>
                 <c:when test="${cookie.username eq null}">
