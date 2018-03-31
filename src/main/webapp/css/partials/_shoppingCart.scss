@@ -98,3 +98,15 @@
     }
   }
 }
+
+.shoppingCart__numItemsBadge {
+  position: relative;
+  z-index: 1000;
+  right: 20px;
+
+  >.col-auto {
+    position: relative;
+    right: -28px;
+    z-index: 0;
+  }
+}

@@ -416,6 +416,15 @@ a.mdl-button--colored {
     .mdl-card.shoppingCart.visible .mdl-card__supporting-text {
       opacity: 1; }
 
+.shoppingCart__numItemsBadge {
+  position: relative;
+  z-index: 1000;
+  right: 20px; }
+  .shoppingCart__numItemsBadge > .col-auto {
+    position: relative;
+    right: -28px;
+    z-index: 0; }
+
 .colorBlue {
   color: #3f51b5; }
 
