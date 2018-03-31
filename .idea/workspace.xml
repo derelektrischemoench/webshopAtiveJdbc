@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,7 +80,29 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="getAmountShoppingCartItems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MostRecentRecords.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/CreateAdminAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/useraccountServlets/RegisterUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/SearchRecords.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/TestManytoMany.java" />
         <option value="$PROJECT_DIR$/src/main/java/filters/ActiveJdbcFilter.java" />
@@ -189,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/include/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" />
       </list>
     </option>
   </component>
@@ -656,14 +676,8 @@
       <workItem from="1522485881449" duration="971000" />
       <workItem from="1522499702202" duration="5786000" />
       <workItem from="1522513319709" duration="48000" />
-      <workItem from="1522516072698" duration="3770000" />
-    </task>
-    <task id="LOCAL-00034" summary="form file input styles, some error handling">
-      <created>1521308287895</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1521308287895</updated>
+      <workItem from="1522516072698" duration="5071000" />
+      <workItem from="1522522223494" duration="821000" />
     </task>
     <task id="LOCAL-00035" summary="styles for the index site">
       <created>1521324383967</created>
@@ -1001,11 +1015,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522518693548</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="custom tag to get the amount of items in  a shoppingcart">
+      <created>1522519870494</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1522519870494</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473615000" />
+    <option name="totallyTimeSpent" value="475737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1018,11 +1039,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1050" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50581074" side_tool="true" weight="0.27105832" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3297414" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.09284952" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.09284952" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32937366" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
@@ -1033,19 +1055,19 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.24239245" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49584946" weight="0.23504722" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32843652" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.28121722" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" visible="true" weight="0.21406086" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.28121722" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.3095488" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22945571" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.3297414" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22678763" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49584946" weight="0.23504722" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.4969563" weight="0.24973767" />
@@ -1069,7 +1091,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50235295" side_tool="true" weight="0.30064654" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.23814656" />
+      <window_info anchor="bottom" id="Statistic" order="14" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Problems" order="15" weight="0.3297414" />
@@ -1078,11 +1100,11 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3297414" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.14997233" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19756502" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.23814656" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.28389597" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Statistic" order="14" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -1135,7 +1157,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="edit record passing form values to form works, delete editRecordServlet" />
     <MESSAGE value="some progress on the record crud" />
     <MESSAGE value="record creation works again thanks to the crudder" />
     <MESSAGE value="record update modifications" />
@@ -1160,7 +1181,8 @@
     <MESSAGE value="changed footer position" />
     <MESSAGE value="wip badge" />
     <MESSAGE value="wrote function to get amount of items in shoppingcart; todo: implement this as a tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote function to get amount of items in shoppingcart; todo: implement this as a tag" />
+    <MESSAGE value="custom tag to get the amount of items in  a shoppingcart" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom tag to get the amount of items in  a shoppingcart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1218,13 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1508,20 +1523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -1533,6 +1534,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="23" column="128" selection-start-line="23" selection-start-column="128" selection-end-line="23" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>

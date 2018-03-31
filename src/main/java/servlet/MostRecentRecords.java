@@ -23,9 +23,6 @@ public class MostRecentRecords extends HttpServlet {
         int newOffset = pageNo+1;
         
         List<Record> allRecordsCustomer = Record.findAll().limit(10000).offset(offset).orderBy("id asc");
-        for(Record r : allRecordsCustomer) {
-            System.out.println(r.get("title"));
-        }
         
         req.setAttribute("allRecordsCustomer", allRecordsCustomer);
         req.setAttribute("newPageno", newOffset);
