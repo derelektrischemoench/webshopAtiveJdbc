@@ -441,6 +441,16 @@ a.mdl-button--colored {
   padding: 4px 2px;
   min-height: auto; }
 
+.table tr:hover a {
+  color: #3f51b5; }
+.table td {
+  padding: 0 !important; }
+.table a {
+  display: block;
+  padding: 10px; }
+  .table a:hover {
+    text-decoration: none; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;
