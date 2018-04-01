@@ -124,10 +124,6 @@ public class RecordCrud {
         String filename = f.getName();
         System.out.println("Filename in writeImage " + filename);
         
-        //filename = filename.replace(" ", "");
-        //filename = filename.replace("-", "");
-        
-        
         System.out.println("servlet context realpath: " + this.servletContext.getRealPath("uploadFiles/recordImages/"));
         File uploadedImage = new File(this.servletContext.getRealPath(("uploadFiles/recordImages/") + filename));
         if (!uploadedImage.exists()) {
@@ -142,7 +138,6 @@ public class RecordCrud {
             e.printStackTrace();
             System.out.println("error trying to write image");
         }
-        
     }
     
     
