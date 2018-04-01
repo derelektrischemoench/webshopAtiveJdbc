@@ -105,6 +105,24 @@
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>deleteRecordConfirm</servlet-name>
+        <jsp-file>recordDelete.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteRecordConfirm</servlet-name>
+        <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/deleteRecordConfirm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteRecord</servlet-name>
+        <servlet-class>servlet.adminServlets.DeleteRecord</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteRecord</servlet-name>
+        <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/deleteRecordFinally</url-pattern>
+    </servlet-mapping>
+
 
     <!-- USER servlets -->
     <servlet>

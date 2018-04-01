@@ -15,14 +15,15 @@ import java.io.IOException;
 public class DeleteRecord extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doGet in DeleteRecordFinally");
         String RecordIdGetParam = req.getParameter("recordId");
         
-        //TODO: use the crudder, luke
-        RecordCrud rd = new RecordCrud()
+        RecordCrud rc = new RecordCrud(RecordIdGetParam);
+        String delete = rc.deleteRecord();
+    
+        System.out.println("return of the crudder delete: " + delete);
         
-        Record r = Record.findById(RecordIdGetParam);
-        r.deleteCascadeShallow();
-        
-        RequestDispatcher rd = req.getRequestDispatcher("");
+        RequestDispatcher rd = req.getRequestDispatcher("/recordDeleteSuccess.jsp");
+        rd.forward(req, resp);
     }
 }

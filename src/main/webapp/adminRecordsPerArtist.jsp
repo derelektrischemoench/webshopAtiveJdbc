@@ -36,7 +36,7 @@
                            href="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord?artistId=${artist.get('id')}&recordId=${record.get('id')}">
                             Edit record
                         </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/deleteRecordConfirm?recordId=${record.get('id')}">
                             Delete record
                         </a>
 

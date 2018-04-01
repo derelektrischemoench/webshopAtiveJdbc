@@ -35,4 +35,16 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>getRecordNameById</name>
+        <tag-class>customTags.getRecordNameById</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>inputRecordId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>

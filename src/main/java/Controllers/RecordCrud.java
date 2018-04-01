@@ -27,6 +27,10 @@ public class RecordCrud {
     boolean isEdit = false;
     FileItem imageFile;
     
+    public RecordCrud(String recordId) {
+        // constr for recordDeletes since we require less information there
+        this.recordID = recordId;
+    }
     
     public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
         
@@ -144,6 +148,14 @@ public class RecordCrud {
             e.printStackTrace();
             System.out.println("error trying to write image");
         }
+    }
+    
+    public String deleteRecord() {
+        Record r = Record.findById(this.recordID);
+        String RecordName = r.getString("title");
+        r.deleteCascade();
+        System.out.println("deleted record in Recordcrudder");
+        return RecordName;
     }
     
     
