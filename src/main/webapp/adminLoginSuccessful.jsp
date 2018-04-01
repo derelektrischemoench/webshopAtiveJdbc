@@ -17,11 +17,19 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview" />">
                 <button type="submit"
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Artists
+                </button>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a href="">
+                <button type="submit"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Orders
                 </button>
             </a>
         </div>
