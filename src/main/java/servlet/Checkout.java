@@ -12,19 +12,17 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
 
+
+
 public class Checkout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doget in checkout");
-        
-        //render customer credentials form:
         RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
         rd.forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("dopost in checkout");
         //TODO: create order instance via shoppingkart, send confirmation email
         
         HttpSession s = req.getSession();
@@ -50,6 +48,9 @@ public class Checkout extends HttpServlet {
         );
         
         o.saveIt();
+        
+        RequestDispatcher rd = req.getRequestDispatcher("/orderSuccessfullyPlaced.jsp");
+        rd.forward(req, resp);
         
     }
 }
