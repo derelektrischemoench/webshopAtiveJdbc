@@ -106,7 +106,6 @@ public class LoginServlet extends HttpServlet {
                     int accountId = a.getInteger("id");
                     
                     if (session.getAttribute("shoppingCart") == null) {
-                        System.out.println("User has logged in w/o a cart, assigned a new one");
                         Shoppingcart shoppingcart = Shoppingcart.createIt();
                         int shoppingcartid = shoppingcart.getInteger("id");
                         session.setAttribute("shoppingCartId", shoppingcartid);
@@ -117,7 +116,6 @@ public class LoginServlet extends HttpServlet {
                         resp.addCookie(c);
                         
                     } else {
-                        System.out.println("user already has a shoppingcart, assigned this to session and user account after signin");
                         Shoppingcart shoppingCart = (Shoppingcart)session.getAttribute("shoppingCart");
                         int shoppingCartId = shoppingCart.getInteger("id");
                         shoppingCart.set("id", shoppingCartId);

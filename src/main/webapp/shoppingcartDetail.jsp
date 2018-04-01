@@ -60,9 +60,10 @@
         </div>
     </div>
     <div class="d-flex justify-content-end">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            <i class="material-icons">payment</i>Proceed to checkout
-        </button>
+        <a href="<c:out value="${pageContext.request.contextPath}/shoppingCartDetail/checkout" />">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <i class="material-icons">payment</i>Proceed to checkout
+            </button>
+        </a>
     </div>
 </div>
-<jsp:include page="include/footinclude.jsp"/>

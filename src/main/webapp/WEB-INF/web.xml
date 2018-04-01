@@ -144,8 +144,6 @@
         <servlet-name>SearchRecords</servlet-name>
         <url-pattern>/searchRecords</url-pattern>
     </servlet-mapping>
-
-
     <servlet>
         <servlet-name>TestManytoMany</servlet-name>
         <servlet-class>servlet.TestManytoMany</servlet-class>
@@ -198,6 +196,15 @@
     <servlet-mapping>
         <servlet-name>ShoppingCartDetail</servlet-name>
         <url-pattern>/shoppingCartDetail</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Checkout</servlet-name>
+        <servlet-class>servlet.Checkout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Checkout</servlet-name>
+        <url-pattern>/shoppingCartDetail/checkout</url-pattern>
     </servlet-mapping>
 
     <filter>
