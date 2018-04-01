@@ -25,6 +25,9 @@ public class Checkout extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //TODO: create order instance via shoppingkart, send confirmation email
         
+        //TODO: http://www.codejava.net/java-ee/jsp/sending-e-mail-with-jsp-servlet-and-javamail
+        //TODO: catch this with mailcatcher
+        
         HttpSession s = req.getSession();
         int shoppingCartId = (int)s.getAttribute("shoppingCartId");
         String customerFirstname = req.getParameter("customerCheckout__firstName");
