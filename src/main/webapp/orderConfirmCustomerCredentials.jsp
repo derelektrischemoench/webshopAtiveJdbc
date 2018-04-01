@@ -32,6 +32,12 @@
                     <label class="mdl-textfield__label" for="customerCheckout__lastName">Last name:</label>
                 </div>
 
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="customerCheckout__emailAddress"
+                           name="customerCheckout__emailAddress">
+                    <label class="mdl-textfield__label" for="customerCheckout__emailAddress">EmailAddress</label>
+                </div>
+
                 <div class="row">
                     <div class="col-sm-10">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">

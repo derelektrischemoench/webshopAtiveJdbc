@@ -6,9 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
+    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="add todo item">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webshop_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/webshop_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -118,20 +124,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orderConfirmCustomerCredentials.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1404">
-              <caret line="77" column="30" selection-start-line="77" selection-end-line="77" selection-end-column="45" />
+            <state relative-caret-position="468">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checkout.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Checkout.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Checkout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="269">
+              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,9 +145,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="MailSender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MailSender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="701">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SMTPAuthenticator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/SMTPAuthenticator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -150,8 +177,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -200,8 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminArtistsOverview.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminRecordsOverview.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/CreateAdminAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/useraccountServlets/RegisterUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/SearchRecords.java" />
@@ -210,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/jQuery/jquery-3.2.1.min.js" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/CookieController.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/AddToCart.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/jsCookie/jsCookie.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/jsonq/jsonq.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/include/headinclude.jsp" />
@@ -244,13 +268,16 @@
         <option value="$PROJECT_DIR$/src/main/webapp/recordDelete.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/RecordCrud.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/RecordsShoppingcarts.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/model/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/orderSuccessfullyPlaced.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/SMTPAuthenticator.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/MailSender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" />
       </list>
     </option>
   </component>
@@ -291,10 +318,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="24" />
-    <option name="y" value="1087" />
-    <option name="width" value="1590" />
-    <option name="height" value="761" />
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="985" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -304,7 +331,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,14 +378,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -389,6 +407,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -405,7 +424,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,7 +480,7 @@
     <configuration name="Glassfish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.01" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="webshop:war exploded">
           <settings />
@@ -715,21 +734,8 @@
       <workItem from="1522529049271" duration="6848000" />
       <workItem from="1522566342866" duration="582000" />
       <workItem from="1522567052075" duration="12221000" />
-      <workItem from="1522583459366" duration="8778000" />
-    </task>
-    <task id="LOCAL-00041" summary="made cookie based menu state, made admin and user logins work, need to set cookies and sessions and error messages">
-      <created>1521568348712</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1521568348712</updated>
-    </task>
-    <task id="LOCAL-00042" summary="add todo">
-      <created>1521570390558</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1521570390558</updated>
+      <workItem from="1522583459366" duration="9165000" />
+      <workItem from="1522599458840" duration="5478000" />
     </task>
     <task id="LOCAL-00043" summary="menustate logincookie works">
       <created>1521734146811</created>
@@ -1060,11 +1066,25 @@
       <option name="project" value="LOCAL" />
       <updated>1522590993739</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="order creation and database save works; do confirm email etc">
+      <created>1522592370374</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1522592370374</updated>
+    </task>
+    <task id="LOCAL-00091" summary="add todo item">
+      <created>1522592591759</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1522592591759</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504426000" />
+    <option name="totallyTimeSpent" value="510291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1076,40 +1096,40 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="1050" width="1920" height="1080" extended-state="6" />
+    <frame x="67" y="27" width="985" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50581074" side_tool="true" weight="0.27105832" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3297414" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.09284952" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18926397" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32937366" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.32937366" />
-      <window_info anchor="right" id="Database" order="4" weight="0.2171825" />
+      <window_info anchor="right" id="Database" order="4" weight="0.21693414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.24239245" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.24190065" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49584946" weight="0.23504722" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49584946" weight="0.23434125" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.28121722" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.28077754" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32843652" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.33683106" />
-      <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.4969563" weight="0.24973767" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.33585313" />
+      <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.4969563" weight="0.24946004" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.3297414" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20651014" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20586608" />
       <window_info id="Web" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.32948583" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32948583" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1160,8 +1180,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="wip on fileupload again" />
-    <MESSAGE value="fileupload fixed, wip on the shoppingcart" />
     <MESSAGE value="track creation, insertion and assignment to record works" />
     <MESSAGE value="track creation works, assignment to record dito" />
     <MESSAGE value="changed some buttons" />
@@ -1185,7 +1203,9 @@
     <MESSAGE value="jesus saves" />
     <MESSAGE value="wip delete record, cannot use cascade because the id in the model is wrong" />
     <MESSAGE value="create order model, checkout view, order creation works and is registered in the backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="create order model, checkout view, order creation works and is registered in the backend" />
+    <MESSAGE value="order creation and database save works; do confirm email etc" />
+    <MESSAGE value="add todo item" />
+    <option name="LAST_COMMIT_MESSAGE" value="add todo item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1197,13 +1217,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/ajaxHelpers/GetShoppingcartContentsAjaxAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1471,22 +1484,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminAvailableRecords.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminRecordsPerArtist.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1523,6 +1526,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/orderSuccessfullyPlaced.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="137" column="11" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/SMTPAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/orders">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1532,30 +1585,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Checkout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="269">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="77" column="30" selection-start-line="77" selection-end-line="77" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/orderSuccessfullyPlaced.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
