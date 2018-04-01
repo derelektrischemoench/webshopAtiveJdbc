@@ -4,6 +4,7 @@ import model.Record;
 import model.Track;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItem;
+
 import javax.servlet.ServletContext;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -80,7 +81,7 @@ public class RecordCrud {
             //this creates a new record
             System.out.println("crudder creates new record.");
             writeImage(this.imageFile); //writes the image currently present in the crudder to disk and assigns a path
-            Record  r = Record.create(
+            Record r = Record.create(
                     "artist_id", this.artistId,
                     "title", this.recordName,
                     "label", this.recordLabel,
@@ -90,8 +91,7 @@ public class RecordCrud {
             r.saveIt();
             
             try {
-                long id = (long)r.get("id");
-                
+                long id = (long) r.get("id");
                 for (String s : this.trackList.split(";")) {
                     Track.createIt("name", s, "record_id", id);
                 }
@@ -104,18 +104,24 @@ public class RecordCrud {
             //this updates an existing record
             System.out.println("Crudder update situation");
             Record r = Record.findById(this.recordID);
-            System.out.println("crudder updater record update results: " + r.getString("title")); //FUCKING HELL YEAS OO FTW BIATCH!
             
-            //todo: check which fields have changed and modify only those in the db
-            //if the image has changed, reupload and adjust url
-            writeImage(this.imageFile);
-            r.set("artist_id", this.artistId,
-                  "title", this.recordName,
-                  "label", this.recordLabel,
-                  "img_file_path", this.embedUrl,
-                  "price", this.recordPrice).saveIt();
+            if (this.imageFile != null) {
+                System.out.println("image was changed");
+                writeImage(this.imageFile);
+                r.set("artist_id", this.artistId,
+                      "title", this.recordName,
+                      "label", this.recordLabel,
+                      "img_file_path", this.embedUrl,
+                      "price", this.recordPrice).saveIt();
+                
+            } else {
+                System.out.println("image stayed the same");
+                r.set("artist_id", this.artistId,
+                      "title", this.recordName,
+                      "label", this.recordLabel,
+                      "price", this.recordPrice).saveIt();
+            }
         }
-        
     }
     
     public void writeImage(FileItem f) {

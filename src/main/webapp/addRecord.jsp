@@ -19,16 +19,15 @@
             <h2></h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-10">
+    <div class="row justify-content-center">
+        <div class="col-6">
             <form action="<c:out value="${pageContext.request.contextPath}/adminLogin/adminArtistsOverview/adminRecordsOverview/addRecord" />"
                   method="post"
-                  enctype="multipart/form-data" accept-charset="UTF-8">
+                  enctype="multipart/form-data" accept-charset="UTF-8" class="d-flex flex-column justify-content-center recordCrudForm">
 
                 <input id="artistId" type="hidden" name="createRecord__artistId" value="${artist.get('id')}">
                 <input type="hidden" id="isEdit" name="isEdit" value="${isEdit}"/>
                 <input type="hidden" id="editRecordId" name="editRecordId" value="${record.get('id')}"/>
-
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" id="createRecord__recordName"
@@ -39,7 +38,7 @@
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" id="createRecord__recordLabel"
                            name="createRecord__recordLabel" value="${record.get('label')}">
-                    <label class="mdl-textfield__label" for="createRecord__recordLabel">Record published by
+                    <label class="mdl-textfield__label" for="createRecord__recordLabel">Record puggggblished by
                         label:</label>
                 </div>
 
@@ -72,9 +71,7 @@
                     <label class="mdl-textfield__label" for="createRecord__tracklist">Tracklist, semicolon
                         separated</label>
                 </div>
-
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Submit</button>
             </form>
         </div>
     </div>
