@@ -451,6 +451,9 @@ a.mdl-button--colored {
   .table a:hover {
     text-decoration: none; }
 
+.adminOrderTable td {
+  padding: 10px !important; }
+
 body {
   font-family: 'Roboto', serif;
   font-weight: 400;

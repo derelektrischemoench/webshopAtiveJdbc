@@ -23,20 +23,19 @@
         <c:forEach items="${allOrders}" var="order">
             <tr>
                 <td>
-                    <a href="superExcitingOrderDetailView">
+                    <a href="adminOrdersOverview/adminDetail?orderId=${order.get('id')}">
                         <c:set var = "orderDate" scope="session" value="${order.get('date')}" />
                         <c:out value="${fn:substring(orderDate, 0, 10)}"/>
                     </a>
                 </td>
                 <td>
-                    <a href="superExcitingOrderDetailView">
+                    <a href="adminOrdersOverview/adminDetail?orderId=${order.get('id')}">
                         <c:out value="${order.get('first_name')}"/>
                     </a>
                 </td>
                 <td>
-                    <a href="superExcitasd">
+                    <a href="adminOrdersOverview/adminDetail?orderId=${order.get('id')}">
                         <c:out value="${order.get('last_name')}"/>
-
                     </a>
                 </td>
             </tr>

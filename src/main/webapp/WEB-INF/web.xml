@@ -152,6 +152,15 @@
         <url-pattern>/adminLogin/adminOrdersOverview</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminOrderDetail</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminOrderDetailView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminOrderDetail</servlet-name>
+        <url-pattern>/adminLogin/adminOrdersOverview/adminDetail</url-pattern>
+    </servlet-mapping>
+
 
     <!-- USER servlets -->
     <servlet>

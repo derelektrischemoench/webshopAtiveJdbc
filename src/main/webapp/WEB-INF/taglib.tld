@@ -47,4 +47,15 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>dateFormatter</name>
+        <tag-class>customTags.dateFormatter</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>dateString</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>

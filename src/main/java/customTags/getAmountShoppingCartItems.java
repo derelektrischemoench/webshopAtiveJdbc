@@ -16,16 +16,14 @@ public class getAmountShoppingCartItems extends SimpleTagSupport {
         
         try {
             Shoppingcart s = Shoppingcart.findById(this.shoppingCartId);
-        int numRecords = s.getAll(Record.class).size();
-        
-        final JspWriter out = getJspContext().getOut();
-        out.println(numRecords);
+            int numRecords = s.getAll(Record.class).size();
+            
+            final JspWriter out = getJspContext().getOut();
+            out.println(numRecords);
         } catch (NullPointerException e) {
             //TODO: this is probably fishy; atm this is thrown when the admin clicks on artists in his backend and a user has a session this is caused by the getnumrecordsinshoppingcart tag
             e.printStackTrace();
         }
-        
-        
     }
     
     public int getShoppingCartId() {
