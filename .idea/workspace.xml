@@ -8,14 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminOrders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -115,24 +108,21 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminOrderDetail.jsp" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="adminOrderDetail.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+            <state relative-caret-position="396">
+              <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminOrderDetailView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminOrderDetailView.java">
+      <file leaf-file-name="getArtistForRecord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -242,8 +232,8 @@
         <option value="$PROJECT_DIR$/src/main/java/customTags/dateFormatter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_tables.scss" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminOrderDetailView.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp" />
       </list>
     </option>
   </component>
@@ -298,6 +288,23 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
+              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
+              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -413,23 +420,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
-              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
-              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
             </path>
           </expand>
           <select />
@@ -747,14 +737,9 @@
       <workItem from="1522583459366" duration="9165000" />
       <workItem from="1522599458840" duration="6947000" />
       <workItem from="1522624225045" duration="2265000" />
-      <workItem from="1522735972264" duration="7270000" />
-    </task>
-    <task id="LOCAL-00046" summary="record retrieval and pagination wip">
-      <created>1521795382852</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1521795382853</updated>
+      <workItem from="1522735972264" duration="7859000" />
+      <workItem from="1522756395212" duration="262000" />
+      <workItem from="1522759995561" duration="693000" />
     </task>
     <task id="LOCAL-00047" summary="yey no more utf shit">
       <created>1521844952722</created>
@@ -1092,11 +1077,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522626342946</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="admin order overview works">
+      <created>1522743344661</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1522743344662</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521295000" />
+    <option name="totallyTimeSpent" value="522839000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1119,7 +1111,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.32937366" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.21693414" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.21693414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -1131,9 +1123,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32843652" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.27969763" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.27969763" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.3347732" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1765357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18096292" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.3297414" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -1192,7 +1184,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="wip tracks display" />
     <MESSAGE value="some styles" />
     <MESSAGE value="wip on shopping cart detail" />
     <MESSAGE value="styles" />
@@ -1217,7 +1208,8 @@
     <MESSAGE value="sendmail works for confirmation" />
     <MESSAGE value="admin order overview wip" />
     <MESSAGE value="admin order list overview done" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin order list overview done" />
+    <MESSAGE value="admin order overview works" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin order overview works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,24 +1319,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getRecordNameById.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="30" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1477,9 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,24 +1514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="48" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/customTags/dateFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1598,20 +1559,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminOrderDetailView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="23" column="129" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
         </state>
       </provider>
     </entry>

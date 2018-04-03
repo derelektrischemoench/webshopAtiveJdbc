@@ -18,24 +18,24 @@
     <div class="row">
         <table class="table hover table-hover adminOrderTable">
             <thead>
-                <tr>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">No</th>
-                    <th scope="col">Zip</th>
-                    <th scope="col">City</th>
-                </tr>
+            <tr>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Address</th>
+                <th scope="col">No</th>
+                <th scope="col">Zip</th>
+                <th scope="col">City</th>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>${order.get('first_name')}</td>
-                    <td>${order.get('last_name')}</td>
-                    <td>${order.get('address')}</td>
-                    <td>${order.get('house_number')}</td>
-                    <td>${order.get('zip')}</td>
-                    <td>${order.get('city')}</td>
-                </tr>
+            <tr>
+                <td>${order.get('first_name')}</td>
+                <td>${order.get('last_name')}</td>
+                <td>${order.get('address')}</td>
+                <td>${order.get('house_number')}</td>
+                <td>${order.get('zip')}</td>
+                <td>${order.get('city')}</td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -45,9 +45,15 @@
             <h2>Items in order:</h2>
         </div>
         <div class="col-sm">
-            <c:forEach items="${records}" var="record">
-                <c:out value="${record.get('title')}" />
-            </c:forEach>
+            <ul class="mdl-list">
+                <c:forEach items="${records}" var="record">
+                    <li class="mdl-list__item">
+                        <mytaglib:getArtistForRecord inputArtist="${record.get('artist_id')}" /> -
+                        <c:out value="${record.get('title')}" />
+                    </li>
+                </c:forEach>
+            </ul>
+
         </div>
     </div>
 
