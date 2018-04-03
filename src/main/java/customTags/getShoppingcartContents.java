@@ -10,6 +10,7 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.Iterator;
 
 public class getShoppingcartContents extends SimpleTagSupport {
@@ -26,18 +27,17 @@ public class getShoppingcartContents extends SimpleTagSupport {
                 
                 if (rIter.hasNext()) {
                     float shoppingCartTotal = 0;
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    
                     out.write("<div class='shoppingcartcontents'>Your cart contains:<br>");
                     while (rIter.hasNext()) {
                         Record r = rIter.next();
                         Artist a = r.parent(Artist.class);
-                        
                         out.write(a.getString("artist_name") + " - " + r.getString("title") + "<br />");
                         shoppingCartTotal += r.getFloat("price");
-    
-                        System.out.println("shoppingcarttotal in tag: " + shoppingCartTotal);
-                        
                     }
-                    out.write("<p style='text-align: right; margin-bottom: 0; font-size:22px;'>Total: " + shoppingCartTotal + " €</p>");
+                    
+                    out.write("<p style='text-align: right; margin-bottom: 0; font-size:22px;'>Total: " + df.format(shoppingCartTotal) + " €</p>");
                     out.write("</div>");
                     
                 } else {

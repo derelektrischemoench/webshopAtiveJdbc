@@ -436,6 +436,8 @@ a.mdl-button--colored {
 
 .shoppingCartRecord {
   justify-content: flex-end; }
+  .shoppingCartRecord h6 {
+    color: #fff; }
 
 .recordDetail__tracklist .mdl-list__item {
   padding: 4px 2px;

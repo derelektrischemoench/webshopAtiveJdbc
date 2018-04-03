@@ -235,6 +235,15 @@
         <servlet-name>ShoppingCartDetail</servlet-name>
         <url-pattern>/shoppingCartDetail</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteFromShoppingCart</servlet-name>
+        <jsp-file>deleteFromShoppingCartConfirm.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteFromShoppingCart</servlet-name>
+        <url-pattern>/shoppingCartDetail/deleteFromShoppingCartConfirm</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>Checkout</servlet-name>

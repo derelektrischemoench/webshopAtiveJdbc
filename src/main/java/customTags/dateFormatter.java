@@ -9,6 +9,9 @@ import java.util.Date;
 import java.time.*;
 
 public class dateFormatter extends SimpleTagSupport {
+    /*this takes a java.time date, cuts of the hours and separates the years months and days*/
+    
+    
     String dateString;
     
     @Override

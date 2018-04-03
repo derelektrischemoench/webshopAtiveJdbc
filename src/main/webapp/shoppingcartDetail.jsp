@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="d-flex flex-row">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="shoppingCartDetail/deleteFromShoppingCartConfirm?recordId=${record.get('id')}">
                                 Delete from shoppingcart
                             </a>
                         </div>
