@@ -13,7 +13,6 @@ public class dateFormatter extends SimpleTagSupport {
     
     @Override
     public void doTag() throws JspException, IOException {
-        System.out.println("dotag in dateFormatter");
         String[] truncatedDate = this.dateString.substring(0,10).split("-");
         
         String year = truncatedDate[0];
