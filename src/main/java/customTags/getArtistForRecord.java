@@ -14,8 +14,6 @@ public class getArtistForRecord extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         //Parameter sind implizit vorhanden können über this.inputArtist accessed werden
         //SET:        this.inputArtist = "daskdja";
-        
-        
         Artist a = Artist.findById(this.inputArtistId);
         final JspWriter out = getJspContext().getOut();
         

@@ -58,4 +58,10 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>getTenMostRecentRecordsForSlider</name>
+        <tag-class>customTags.getTenMostRecentRecordsForSlider</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
 </taglib>

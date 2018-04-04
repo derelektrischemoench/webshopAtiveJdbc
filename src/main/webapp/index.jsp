@@ -37,21 +37,7 @@
 </div>
 <div class="container-fluid">
     <div class="slider row index" data-slick='{"slidesToShow": 2, "slidesToScroll": 1}'>
-        <c:forEach items="${mostRecentRecords}" var="record">
-
-            <div class="slider-card mdl-card mdl-shadow--2dp"
-                 style="background-image: url(' ${ record.get('img_file_path') } ')">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text flex-column">
-                        <span class="cardArtist">
-                            <mytaglib:getArtistForRecord inputArtist="${record.get('artist_id')}"/>
-                        </span>
-                        <br>
-                        <span><c:out value="${record.get('title')}"/></span>
-                    </h2>
-                </div>
-            </div>
-        </c:forEach>
+        <mytaglib:getTenMostRecentRecordsForSlider />
     </div>
 
     <div class="row">

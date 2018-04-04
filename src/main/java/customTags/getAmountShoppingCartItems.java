@@ -16,8 +16,8 @@ public class getAmountShoppingCartItems extends SimpleTagSupport {
         
         try {
             Shoppingcart s = Shoppingcart.findById(this.shoppingCartId);
-            int numRecords = s.getAll(Record.class).size();
-            
+            int numRecords = 0;
+            numRecords = s.getAll(Record.class).size();
             final JspWriter out = getJspContext().getOut();
             out.println(numRecords);
         } catch (NullPointerException e) {
