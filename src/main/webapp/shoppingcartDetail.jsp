@@ -131,6 +131,7 @@
 
             success: function (response) {
                 //Do Something
+                location.reload();
             },
             error: function (xhr) {
                 //Do Something to handle error

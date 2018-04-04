@@ -79,11 +79,16 @@
 
     var showSnackbar = function () {
         var notification = document.querySelector('.mdl-js-snackbar');
+        var shoppingCartHref = "View Shoppingcart";
+        var shoppingcartId = getCookie("shoppingCartId");
+        console.log("shoppingcartid from cookie: " + shoppingcartId);
         var data = {
             message: 'Record added to cart',
             actionHandler: function (event) {
+                console.log("moepulart");
+                window.location.replace("http://localhost:8080/webapp/shoppingCartDetail?shoppingCartId=" + shoppingcartId);
             },
-            actionText: 'Undo',
+            actionText: shoppingCartHref,
             timeout: 10000
         };
         notification.MaterialSnackbar.showSnackbar(data);

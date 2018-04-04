@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.*;
 
 public class AddToCart extends HttpServlet {
-    //TODO: this has to be done via session because otherwise the shoppingcart doesnt work
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int RecordId = Integer.parseInt(req.getParameter("recordId"));
