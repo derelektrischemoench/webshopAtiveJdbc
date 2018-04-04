@@ -8,12 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
             </state>
           </provider>
         </entry>
@@ -120,7 +114,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find />
+      <find>see me</find>
       <find>getString</find>
       <find>itemca</find>
       <find>header</find>
@@ -696,14 +690,7 @@
       <workItem from="1522759995561" duration="913000" />
       <workItem from="1522784728387" duration="3749000" />
       <workItem from="1522827349911" duration="9904000" />
-      <workItem from="1522842748508" duration="8334000" />
-    </task>
-    <task id="LOCAL-00051" summary="footer, header, shoppingcart styles and whatnot">
-      <created>1521916457992</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1521916457992</updated>
+      <workItem from="1522842748508" duration="8715000" />
     </task>
     <task id="LOCAL-00052" summary="details for the slider">
       <created>1521919781099</created>
@@ -1041,11 +1028,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522837718378</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="ajax delete from shoppingcart works">
+      <created>1522851297243</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1522851297249</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="545046000" />
+    <option name="totallyTimeSpent" value="545427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1068,11 +1062,11 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.32937366" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.21693414" />
+      <window_info anchor="right" id="Database" order="4" weight="0.21693414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.24082074" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.24082074" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49584946" weight="0.23326133" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -1080,7 +1074,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32843652" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.27969763" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.27969763" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.38793105" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.3297414" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24626453" />
@@ -1141,7 +1135,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add filter, jquery, made ajax add record, add addrecord notification" />
     <MESSAGE value="ajax shoppingcart update wip" />
     <MESSAGE value="wip shoppingcartidclusterfuck" />
     <MESSAGE value="js json stuff, ajax wip" />
@@ -1166,7 +1159,8 @@
     <MESSAGE value="date format stuff and work in progress delete from shoppingcart" />
     <MESSAGE value="wip delete from shoppingcart" />
     <MESSAGE value="custom tags for slider and such" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom tags for slider and such" />
+    <MESSAGE value="ajax delete from shoppingcart works" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajax delete from shoppingcart works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1547,7 +1541,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
     </entry>
