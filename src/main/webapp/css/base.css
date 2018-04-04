@@ -334,6 +334,9 @@ a.mdl-button--colored {
 .recordCrudForm .mdl-textfield {
   width: auto; }
 
+dialog:not([open]) {
+  display: none; }
+
 .search {
   margin-top: 50px;
   text-align: center; }

@@ -6,13 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="wip delete from shoppingcart">
+    <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,6 +61,20 @@
         <item name="wpr_webshop: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="records: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wpr_webshop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wpr_webshop: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="records_shoppingcarts: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="wpr_webshop@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wpr_webshop: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="shoppingcarts: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -72,20 +86,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="deleteFromShoppingCartConfirm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartConfirm.jsp">
+      <file leaf-file-name="shoppingcartDetail.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="360">
+              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
+      <file leaf-file-name="DeleteFromShoppingcart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/DeleteFromShoppingcart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+            <state relative-caret-position="432">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,14 +113,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>see me</find>
+      <find />
       <find>getString</find>
       <find>itemca</find>
       <find>header</find>
@@ -130,9 +147,9 @@
       <find>open</find>
       <find>Edit</find>
       <find>edit</find>
-      <find>delete</find>
       <find>Order</find>
       <find>jsp</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/Shoppingcart.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/MostRecentRecords.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_shoppingCart.scss" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_recordDetail.scss" />
@@ -154,7 +170,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/adminAvailableArtists.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/include/footinclude.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecord.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" />
         <option value="$PROJECT_DIR$/src/main/webapp/addRecord.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/recordDelete.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/recordDeleteSuccess.jsp" />
@@ -185,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/main/java/customTags/dateFormatter.java" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getShoppingcartContents.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_shoppingCartDetail.scss" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartConfirm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java" />
@@ -195,8 +209,11 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getTenMostRecentRecordsForSlider.java" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/include/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/servlet/DeleteFromShoppingcart.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" />
       </list>
     </option>
   </component>
@@ -250,7 +267,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
+              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
+              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,7 +322,41 @@
               <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="adminServlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webshop_javalite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webshop_javalite" type="b2602c69:ProjectViewProjectNode" />
@@ -311,23 +378,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
-              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="webshop_javalite" type="1abcf292:AndroidViewProjectNode" />
-              <item name="webshop" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,7 +434,7 @@
     <configuration name="Glassfish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.01" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="webshop:war exploded">
           <settings />
@@ -644,14 +695,8 @@
       <workItem from="1522756395212" duration="262000" />
       <workItem from="1522759995561" duration="913000" />
       <workItem from="1522784728387" duration="3749000" />
-      <workItem from="1522827349911" duration="9793000" />
-    </task>
-    <task id="LOCAL-00050" summary="record detail wip">
-      <created>1521910142645</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1521910142646</updated>
+      <workItem from="1522827349911" duration="9904000" />
+      <workItem from="1522842748508" duration="8334000" />
     </task>
     <task id="LOCAL-00051" summary="footer, header, shoppingcart styles and whatnot">
       <created>1521916457992</created>
@@ -989,11 +1034,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522829200928</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="custom tags for slider and such">
+      <created>1522837718378</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1522837718378</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="536601000" />
+    <option name="totallyTimeSpent" value="545046000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1016,7 +1068,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.32937366" />
-      <window_info anchor="right" id="Database" order="4" weight="0.21693414" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.21693414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -1028,10 +1080,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32843652" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.27969763" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" visible="true" weight="0.3887689" />
+      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.27969763" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.38793105" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.3297414" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2434975" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24626453" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -1089,7 +1141,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed all instances of database connecting from servlets and let them be handled by a webfilter on each request" />
     <MESSAGE value="add filter, jquery, made ajax add record, add addrecord notification" />
     <MESSAGE value="ajax shoppingcart update wip" />
     <MESSAGE value="wip shoppingcartidclusterfuck" />
@@ -1114,7 +1165,8 @@
     <MESSAGE value="admin order overview progress" />
     <MESSAGE value="date format stuff and work in progress delete from shoppingcart" />
     <MESSAGE value="wip delete from shoppingcart" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip delete from shoppingcart" />
+    <MESSAGE value="custom tags for slider and such" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom tags for slider and such" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1126,20 +1178,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/EditRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminRecordsOverview.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1369,20 +1407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="240" column="37" selection-start-line="240" selection-start-column="37" selection-end-line="240" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminOrderDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -1390,13 +1414,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tagPartials/sliderPartial.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tagPartials/sliderPartial.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1425,24 +1443,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/b17b9a4a/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.records">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MenuCookieController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
@@ -1481,24 +1485,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="-1775">
+          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartConfirm.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="396">
           <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+        <state relative-caret-position="492">
+          <caret line="114" column="58" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/b17b9a4a/a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/wpr_webshop.records">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="244" column="63" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/DeleteFromShoppingcart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
         </state>
       </provider>
     </entry>

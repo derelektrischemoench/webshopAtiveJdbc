@@ -19,3 +19,7 @@ a.mdl-button--colored {
     width: auto;
   }
 }
+
+dialog:not([open]) {
+    display: none;
+}

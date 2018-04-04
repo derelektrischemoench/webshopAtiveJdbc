@@ -34,10 +34,11 @@
                                 </div>
 
                                 <div class="d-flex flex-row">
-                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                                       href="shoppingCartDetail/deleteFromShoppingCartConfirm?recordId=${record.get('id')}">
+                                    <btn class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-modal"
+                                         data-id="${record.get('id')}">
+                                        <!--href="shoppingCartDetail/deleteFromShoppingCartConfirm?recordId=${record.get('id')}"-->
                                         Delete from shoppingcart
-                                    </a>
+                                    </btn>
                                 </div>
                             </div>
                         </div>
@@ -74,3 +75,68 @@
         </div>
     </c:if>
 </div>
+
+<!-- DELETE confirm dialog -->
+
+<dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">You sure you want to delete this?</h4>
+    <!--<div class="mdl-dialog__content">
+        <p> Are you sure you want to delete this record from the shoppigcart?</p>
+    </div>-->
+    <input type="hidden" name="fuckthis" class="fuckthis" value=""/>
+
+    <div class="mdl-dialog__actions">
+
+            <input type="submit" class="mdl-button delete"/>
+
+        <button type="button" class="mdl-button close">Nope</button>
+    </div>
+</dialog>
+
+<script>
+    var dialog = document.querySelector('dialog');
+    var showModalButton = $('.show-modal');
+    if (!dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
+
+    showModalButton.each(function () {
+        $(this).click(function () {
+            var dataValue = $(this).attr("data-id");
+            $('.fuckthis').val(dataValue);
+            dialog.showModal();
+        })
+    });
+
+    dialog.querySelector('.close').addEventListener('click', function () {
+        dialog.close();
+    });
+
+    dialog.querySelector('.delete').addEventListener('click', function () {
+        deleteFromShoppingcart($(this));
+    });
+
+
+    var deleteFromShoppingcart = function () {
+        var recordId = $('.fuckthis').val();
+        console.log("recordIdvalue in request: " + recordId);
+
+        $.ajax({
+            url: "/webapp/shoppingCartDetail/deleteFromShoppingCart",
+            type: "get",
+
+            data: {
+                recordId: recordId
+            },
+
+            success: function (response) {
+                //Do Something
+            },
+            error: function (xhr) {
+                //Do Something to handle error
+            }
+        })
+    };
+
+
+</script>

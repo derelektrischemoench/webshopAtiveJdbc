@@ -237,12 +237,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>DeleteFromShoppingCart</servlet-name>
-        <jsp-file>deleteFromShoppingCartConfirm.jsp</jsp-file>
+        <servlet-name>DeleteFromShoppingcart</servlet-name>
+        <servlet-class>servlet.DeleteFromShoppingcart</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteFromShoppingCart</servlet-name>
-        <url-pattern>/shoppingCartDetail/deleteFromShoppingCartConfirm</url-pattern>
+        <servlet-name>DeleteFromShoppingcart</servlet-name>
+        <url-pattern>/shoppingCartDetail/deleteFromShoppingCart</url-pattern>
     </servlet-mapping>
     
     <servlet>
