@@ -11,7 +11,7 @@
 <jsp:include page="/include/headinclude.jsp"/>
 
 
-<div class="container-fluid main">
+<div class="container main">
     <div class="row">
         <div class="col-sm">
             <h2>
@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-sm">
-            Are you sure you want to delete?
+            <h3>Are you sure you want to delete this item from your shoppingcart?</h3>
         </div>
     </div>
     <div class="row">
