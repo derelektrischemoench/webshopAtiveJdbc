@@ -178,6 +178,15 @@
         <servlet-name>AdminShowOrdersPerCustomer</servlet-name>
         <url-pattern>/adminLogin/adminCustomersOverview/showOrdersPerCustomer</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdminInvoiceView</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminInvoiceView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminInvoiceView</servlet-name>
+        <url-pattern>/adminLogin/adminCustomersOverview/showOrdersPerCustomer/invoice</url-pattern>
+    </servlet-mapping>
 
 
     <!-- USER servlets -->

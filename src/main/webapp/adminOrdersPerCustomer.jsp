@@ -37,9 +37,19 @@
                 </td>
                 <td>
                     <c:out value="${order.get('means_of_payment')}"/>
+
+                </td>
+                <td>
+                    <a href="showOrdersPerCustomer/invoice?orderId=${order.get('id')}">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                            Invoice
+                        </button>
+                    </a>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
+
+
 </div>
