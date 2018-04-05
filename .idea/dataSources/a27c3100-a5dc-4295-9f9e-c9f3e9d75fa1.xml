@@ -4,28 +4,28 @@
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="adressen_st">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="3" parent="1" name="information_schema">
+    <schema id="2" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="4" parent="1" name="mysql">
+    <schema id="3" parent="1" name="mysql">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="performance_schema">
+    <schema id="4" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="6" parent="1" name="sys">
+    <schema id="5" parent="1" name="sys">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="7" parent="1" name="tuminello">
+    <schema id="6" parent="1" name="tuminello">
+      <Collation>utf8mb4_general_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="wordpress">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="8" parent="1" name="wordpress">
+    <schema id="8" parent="1" name="wordpress2">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="9" parent="1" name="wordpress2">
+    <schema id="9" parent="1" name="wpr">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="10" parent="1" name="wpr_webshop">
@@ -1101,118 +1101,123 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="270" parent="235" name="orders_id_uindex">
+    <column id="270" parent="235" name="means_of_payment">
+      <Position>11</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="271" parent="235" name="orders_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="271" parent="235" name="PRIMARY">
+    <key id="272" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="272" parent="235" name="orders_id_uindex">
+    <key id="273" parent="235" name="orders_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>orders_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="273" parent="236" name="id">
+    <column id="274" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="236" name="title">
+    <column id="275" parent="236" name="title">
       <Position>2</Position>
       <DataType>varchar(512)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="236" name="label">
+    <column id="276" parent="236" name="label">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="236" name="img_file_path">
+    <column id="277" parent="236" name="img_file_path">
       <Position>4</Position>
       <DataType>varchar(512)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="236" name="artist_id">
+    <column id="278" parent="236" name="artist_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="236" name="price">
+    <column id="279" parent="236" name="price">
       <Position>6</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="279" parent="236" name="records_id_uindex">
+    <index id="280" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="280" parent="236" name="PRIMARY">
+    <key id="281" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="281" parent="236" name="records_id_uindex">
+    <key id="282" parent="236" name="records_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>records_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="282" parent="237" name="id">
+    <column id="283" parent="237" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="237" name="shoppingcart_id">
+    <column id="284" parent="237" name="shoppingcart_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="237" name="record_id">
+    <column id="285" parent="237" name="record_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="238" name="id">
+    <column id="286" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="238" name="account_id">
+    <column id="287" parent="238" name="account_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="238" name="PRIMARY">
+    <key id="288" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="239" name="id">
+    <column id="289" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="239" name="name">
+    <column id="290" parent="239" name="name">
       <Position>2</Position>
       <DataType>varchar(512)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="239" name="record_id">
+    <column id="291" parent="239" name="record_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="291" parent="239" name="PRIMARY">
+    <key id="292" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

@@ -38,6 +38,7 @@ public class Checkout extends HttpServlet {
         String emailAddress = req.getParameter("customerCheckout__emailAddress");
         String emailSubject = "Your order";
         String message = "Your order has been successful. Thank you for shopping @ tightshitrecords.";
+        String meansOfPayment = req.getParameter("customerCheckout__meansOfPayment");
         java.sql.Date orderDate = new java.sql.Date(System.currentTimeMillis());
         
         Order o = new Order(); //https://www.youtube.com/watch?v=MPhHl2DpD4E
@@ -50,13 +51,14 @@ public class Checkout extends HttpServlet {
                 "house_number", houseNo,
                 "zip", zip,
                 "city", city,
-                "email_address", emailAddress
+                "email_address", emailAddress,
+                "means_of_payment", meansOfPayment
         );
         
         o.saveIt();
         
-        //SEND MAIL
-        try {
+        //TODO: SEND MAIL for real
+        /*try {
             MailSender mailsender = new MailSender(
                     "tightshitrecords@gmx.de",
                     emailAddress,
@@ -72,7 +74,7 @@ public class Checkout extends HttpServlet {
         } catch (MessagingException e) {
             e.printStackTrace();
             System.err.println("error sending mail");
-        }
+        }*/
         
         RequestDispatcher rd = req.getRequestDispatcher("/orderSuccessfullyPlaced.jsp");
         rd.forward(req, resp);

@@ -15,7 +15,7 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-12">
             <form action=""
                   method="post"
                   class="d-flex flex-column justify-content-center recordCrudForm">
@@ -72,10 +72,25 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                            <input type="text" value="" class="mdl-textfield__input" id="customerCheckout__meansOfPayment" readonly>
+                            <input type="hidden" value="" name="customerCheckout__meansOfPayment">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                            <label for="customerCheckout__meansOfPayment" class="mdl-textfield__label">Means of payment</label>
+                            <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item" data-val="Wire transfer">Wire transfer</li>
+                                <li class="mdl-menu__item" data-val="Paypal">Paypal</li>
+                                <li class="mdl-menu__item" data-val="Wads of cash">Check</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <button type="submit"
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                    Submit
+                    Place order
                 </button>
             </form>
         </div>

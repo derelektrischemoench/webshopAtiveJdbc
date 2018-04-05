@@ -25,6 +25,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Zip</th>
                 <th scope="col">City</th>
+                <th scope="col">Means of payment</th>
             </tr>
             </thead>
             <tbody>
@@ -35,6 +36,7 @@
                 <td>${order.get('house_number')}</td>
                 <td>${order.get('zip')}</td>
                 <td>${order.get('city')}</td>
+                <td>${order.get('means_of_payment')}</td>
             </tr>
             </tbody>
         </table>
