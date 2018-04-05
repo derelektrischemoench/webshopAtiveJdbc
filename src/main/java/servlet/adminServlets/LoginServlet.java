@@ -79,7 +79,6 @@ public class LoginServlet extends HttpServlet {
             //check pws
             
             if (BCrypt.checkpw(inputPassword, a.get("hashed_password").toString())) {
-                System.out.println("Hashed passwords matched");
                 HttpSession session = req.getSession();
                 session.setAttribute("username", username);
                 session.setMaxInactiveInterval(30 * 60);
@@ -104,6 +103,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("username", a.get("user_name"));
                     
                     int accountId = a.getInteger("id");
+                    session.setAttribute("accountId", accountId);
                     
                     if (session.getAttribute("shoppingCart") == null) {
                         Shoppingcart shoppingcart = Shoppingcart.createIt();

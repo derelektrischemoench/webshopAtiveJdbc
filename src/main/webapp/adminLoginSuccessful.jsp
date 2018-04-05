@@ -26,6 +26,13 @@
             </a>
         </div>
         <div class="col-sm">
+            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminCustomersOverview" />">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Customers
+                </button>
+            </a>
+        </div>
+        <div class="col-sm">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminOrdersOverview" />">
                 <button type="submit"
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

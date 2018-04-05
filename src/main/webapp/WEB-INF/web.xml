@@ -161,6 +161,24 @@
         <url-pattern>/adminLogin/adminOrdersOverview/adminDetail</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminCustomersOverview</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminCustomersOverview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminCustomersOverview</servlet-name>
+        <url-pattern>/adminLogin/adminCustomersOverview</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminShowOrdersPerCustomer</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminShowOrdersPerCustomer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowOrdersPerCustomer</servlet-name>
+        <url-pattern>/adminLogin/adminCustomersOverview/showOrdersPerCustomer</url-pattern>
+    </servlet-mapping>
+
 
     <!-- USER servlets -->
     <servlet>

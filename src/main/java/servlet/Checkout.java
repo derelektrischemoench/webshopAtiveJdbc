@@ -1,6 +1,7 @@
 package servlet;
 
 import Controllers.MailSender;
+import model.Account;
 import model.Order;
 
 import javax.mail.MessagingException;
@@ -29,6 +30,7 @@ public class Checkout extends HttpServlet {
         
         HttpSession s = req.getSession();
         int shoppingCartId = (int) s.getAttribute("shoppingCartId");
+        int userAccountId = (int) s.getAttribute("accountId");
         String customerFirstname = req.getParameter("customerCheckout__firstName");
         String customerLastName = req.getParameter("customerCheckout__lastName");
         String street = req.getParameter("customerCheckout__street");
@@ -52,10 +54,22 @@ public class Checkout extends HttpServlet {
                 "zip", zip,
                 "city", city,
                 "email_address", emailAddress,
-                "means_of_payment", meansOfPayment
+                "means_of_payment", meansOfPayment,
+                "account_id", userAccountId
         );
         
         o.saveIt();
+        
+        //update missing data in accounts table
+        Account a = Account.findById(userAccountId);
+        a.set(
+            "first_name", customerFirstname,
+            "last_name", customerLastName,
+            "street", street,
+            "house_number", houseNo,
+            "zip", zip,
+            "city", city
+        ).saveIt();
         
         //TODO: SEND MAIL for real
         /*try {
