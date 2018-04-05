@@ -14,6 +14,7 @@
     <table class="table hover table-hover adminOrderTable">
         <thead>
         <tr>
+            <th scope="col">Order id</th>
             <th scope="col">Order date</th>
             <th scope="col">Recipient first name</th>
             <th scope="col">Recipient last name</th>
@@ -23,6 +24,7 @@
         <tbody>
         <c:forEach items="${orders}" var="order">
             <tr>
+                <td><c:out value="${order.get('id')}"/></td>
                 <td>
                     <c:set var="orderDate" scope="session" value="${order.get('date')}"/>
                     <c:out value="${fn:substring(orderDate, 0, 10)}"/>
