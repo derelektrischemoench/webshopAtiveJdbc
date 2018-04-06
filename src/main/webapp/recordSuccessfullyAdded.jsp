@@ -7,9 +7,8 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>Successfully added record <br>
-            <span class="colorBlue">${record.get('name')}</span></h1>
-
-
+                <span class="colorBlue">${record.get('title')}</span>
+            </h1>
         </div>
     </div>
 </div>

@@ -17,10 +17,16 @@
         <div class="col-sm">
             <c:choose>
                 <c:when test="${fn:length(recordsInShoppingcart) gt 0}">
+                        <c:if test="${fn:length(errorMsgArray) gt 0}">
+                            <!-- some of the items are out of stock -->
+                            <c:forEach items="${errorMsgArray}" var="error">
+                                ${error}
+                            </c:forEach>
+                        </c:if>
                     <c:set var="total" value="${0}"/>
                     <c:set var="iterCount" value="${0}"/>
                     <form action="<c:out value="${pageContext.request.contextPath}/shoppingCartDetail/checkout" />"
-                          class="updateShoppingCartAmount">
+                          class="updateShoppingCartAmount" method="post">
                         <c:forEach items="${recordsInShoppingcart}" var="record">
 
                             <div class="shoppingCartRecord mdl-card mdl-shadow--2dp itemCard shoppingCartItem mx-auto"
@@ -34,17 +40,22 @@
                                             <c:out value="${record.get('title')}"/>
                                         </h6>
                                         <p class="price" style="color: #fff">Price: <c:out
-                                                value="${record.getFloat('price')} "/> €</p>
+                                                value="${record.getFloat('price')} "/> €
+
+                                            <br>
+                                            Amount left in stock: ${record.get('amount_in_stock')}
+                                        </p>
                                     </div>
 
                                     <div class="d-flex flex-row">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text"
+                                            <input class="mdl-textfield__input" type="text" name="amount"
                                                    pattern="-?[0-9]*(\.[0-9]+)?"
                                                    id="sample4" value="1">
                                             <label class="mdl-textfield__label" for="sample4">Amount <i
                                                     class="material-icons">mode_edit</i></label>
                                             <span class="mdl-textfield__error">Input is not a number!</span>
+                                            <input type="hidden" name="recordId" value="${record.get('id')}">
                                         </div>
                                         <btn class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-modal"
                                              data-id="${record.get('id')}">

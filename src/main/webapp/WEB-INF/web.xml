@@ -271,15 +271,24 @@
         <servlet-name>DeleteFromShoppingcart</servlet-name>
         <url-pattern>/shoppingCartDetail/deleteFromShoppingCart</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
+        <servlet-name>PreCheckoutCollectItemsOfOrder</servlet-name>
+        <servlet-class>servlet.PreCheckoutCollectItemsOfOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PreCheckoutCollectItemsOfOrder</servlet-name>
+        <url-pattern>/shoppingCartDetail/checkout</url-pattern>
+    </servlet-mapping>
+    
+    <!--<servlet>
         <servlet-name>Checkout</servlet-name>
         <servlet-class>servlet.Checkout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Checkout</servlet-name>
         <url-pattern>/shoppingCartDetail/checkout</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <filter>
         <filter-name>ActiveJdbcFilter</filter-name>

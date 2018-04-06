@@ -17,11 +17,6 @@ import java.util.Map;
 
 
 public class Checkout extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
-        rd.forward(req, resp);
-    }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
