@@ -1,17 +1,17 @@
 package servlet;
 
 import model.Record;
+import model.RecordsShoppingcarts;
+import model.Shoppingcart;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
     /*this collect the items of the order and the amount of records*/
@@ -21,7 +21,7 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
         
         List<String> RecordIds = Arrays.asList(req.getParameterValues("recordId"));
         List<String> amounts = Arrays.asList(req.getParameterValues("amount"));
-        ArrayList<Record> recordsInShoppingcart = new ArrayList<>();
+        HashMap<Record, Integer> recordsInShoppingcart = new HashMap<>();
         Iterator<String> recordIdsIter = RecordIds.iterator();
         int counter = 0;
         ArrayList<String> missingRecordsErrorMsg = new ArrayList<>();
@@ -46,9 +46,13 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                 itemsOutOfStock = true;
             }
             
-            recordsInShoppingcart.add(r);
+            recordsInShoppingcart.put(r,amount); //record-amount pairing
+    
+            System.out.println("updated record amount hashmap with: " + r + " " + amount);
+            
             counter++;
         }
+        
         //error, items missing
         if (itemsOutOfStock) {
             RequestDispatcher rd = req.getRequestDispatcher("/shoppingcartDetail.jsp");
@@ -59,6 +63,20 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
         } else {
             //all items are in stock
             //SUCCESS
+            HttpSession session = req.getSession();
+            Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
+            
+            for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
+                Record rec = entry.getKey();
+                int amount = entry.getValue();
+    
+                System.out.println("record: " + rec.getString("title") + " amount " + amount);
+                
+                //update the number of records in the join table
+                rec.set(Shoppingcart.class, "record_amount = ?", amount );
+            }
+            
+            
             RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
             rd.forward(req, resp);
         }

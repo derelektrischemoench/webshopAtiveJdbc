@@ -26,6 +26,11 @@ public class ShoppingCartDetail extends HttpServlet {
         }
     
         List<Record> recordsInShoppingCart = s.getAll(Record.class);
+    
+        System.out.println("records in shoppingcart: ");
+        for(Record r : recordsInShoppingCart) {
+            System.out.println(r.getString("title"));
+        }
         
         req.setAttribute("recordsInShoppingcart", recordsInShoppingCart);
         RequestDispatcher rd = req.getRequestDispatcher("shoppingcartDetail.jsp");
