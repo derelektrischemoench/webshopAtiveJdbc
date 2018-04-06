@@ -17,8 +17,6 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
     /*this collect the items of the order and the amount of records*/
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("dopost in precheckoutcollectitemsoforder");
-        
         List<String> RecordIds = Arrays.asList(req.getParameterValues("recordId"));
         List<String> amounts = Arrays.asList(req.getParameterValues("amount"));
         HashMap<Record, Integer> recordsInShoppingcart = new HashMap<>();
@@ -32,11 +30,7 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             String recordId = recordIdsIter.next();
             Record r = Record.findById(recordId);
             int oldStockAmount = r.getInteger("amount_in_stock");
-            System.out.println("Record:" + r.get("title"));
             int amount = Integer.parseInt(amounts.get(counter));
-            System.out.println("amount of record in shoppingcart: " + amount);
-            System.out.println("amount of record in stock: " + oldStockAmount);
-            
             int newStockAmount = oldStockAmount - amount;
             
             if (newStockAmount < 0) {
@@ -47,9 +41,6 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             }
             
             recordsInShoppingcart.put(r,amount); //record-amount pairing
-    
-            System.out.println("updated record amount hashmap with: " + r + " " + amount);
-            
             counter++;
         }
         
@@ -65,22 +56,24 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             //SUCCESS
             HttpSession session = req.getSession();
             Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
-            
+            int shoppingCartId = s.getInteger("id");
+     
             for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
                 Record rec = entry.getKey();
                 int amount = entry.getValue();
-    
-                System.out.println("record: " + rec.getString("title") + " amount " + amount);
-                
                 //update the number of records in the join table
-                rec.set(Shoppingcart.class, "record_amount = ?", amount );
+                System.out.println("value of shoppingcartid: " + shoppingCartId);
+                List<RecordsShoppingcarts> target = RecordsShoppingcarts.where("shoppingcart_id = ?", shoppingCartId);
+    
+                System.out.println("target length: " + target.size());
+                RecordsShoppingcarts entr = target.get(0);
+                System.out.println(entr.getInteger("shoppingCart_id"));
+                entr.set("record_amount", amount).saveIt();
             }
-            
             
             RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
             rd.forward(req, resp);
         }
-        
         
     }
 }
