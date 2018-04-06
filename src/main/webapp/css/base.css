@@ -438,9 +438,17 @@ dialog:not([open]) {
   max-height: 120px; }
 
 .shoppingCartRecord {
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  position: relative;
+  overflow: visible !important; }
   .shoppingCartRecord h6 {
     color: #fff; }
+  .shoppingCartRecord input {
+    color: #fff; }
+  .shoppingCartRecord label {
+    color: #fff !important; }
+    .shoppingCartRecord label i {
+      font-size: 12px; }
 
 .recordDetail__tracklist .mdl-list__item {
   padding: 4px 2px;

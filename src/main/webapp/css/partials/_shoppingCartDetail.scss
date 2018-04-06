@@ -1,14 +1,29 @@
 .shoppingCartItem {
-  .titleImage{
-      max-height: 120px;
+  .titleImage {
+    max-height: 120px;
 
   }
 }
 
 .shoppingCartRecord {
   justify-content: flex-end;
+  position: relative;
+  overflow: visible !important;
 
   h6 {
     color: #fff;
   }
+
+  input {
+    color: #fff;
+  }
+
+  label {
+    color: #fff !important;
+
+    i {
+      font-size: 12px;
+    }
+  }
+
 }

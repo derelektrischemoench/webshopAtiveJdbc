@@ -6,8 +6,9 @@
 <div class="container main">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Successfully added record</h1>
-            ${errormsg}
+            <h1>Successfully added record <br>
+            <span class="colorBlue">${record.get('name')}</span></h1>
+
 
         </div>
     </div>

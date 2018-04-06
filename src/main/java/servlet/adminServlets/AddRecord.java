@@ -41,9 +41,7 @@ public class AddRecord extends HttpServlet {
         req.setAttribute("artist", a);
         RequestDispatcher rd = req.getRequestDispatcher("/addRecord.jsp");
         rd.forward(req, resp);
-        
-        //TODO: the form rendering of the edit has to be done by a different servlet
-    }
+        }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,8 +52,6 @@ public class AddRecord extends HttpServlet {
             return;
         }
         
-        //in case this is a new record:
-        
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(MAX_MEMORY_SIZE);
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
@@ -65,9 +61,14 @@ public class AddRecord extends HttpServlet {
         try {
             List<FileItem> items = upload.parseRequest(request);
             ServletContext sc = getServletContext();
-            //init a crudder, this automatically saves imaegson creation
+            //init a crudder, this automatically saves images creation
             RecordCrud crudder = new RecordCrud(sc, items);
-            crudder.createRecord();
+            Record r  = crudder.createRecord();
+            System.out.println("crudder created record, returned record instance " + r.get("title"));
+            request.setAttribute("record", r);
+            
+            RequestDispatcher rd = request.getRequestDispatcher("/recordSuccessfullyAdded.jsp");
+            rd.forward(request, resp);
             
         } catch (FileUploadException e) {
             e.printStackTrace();

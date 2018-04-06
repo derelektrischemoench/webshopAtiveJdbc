@@ -24,6 +24,7 @@ public class RecordCrud {
     String embedUrl;
     String recordName;
     float recordPrice;
+    String initialAmountInStock;
     boolean isEdit = false;
     FileItem imageFile;
     
@@ -33,7 +34,6 @@ public class RecordCrud {
     }
     
     public RecordCrud(ServletContext servletContext, List<FileItem> formData) throws UnsupportedEncodingException {
-        
         /*This takes the form field values and assigns them to the crudder object for later record assignment*/
         
         this.servletContext = servletContext;
@@ -55,7 +55,9 @@ public class RecordCrud {
                 if (f.getFieldName().equals("createRecord__tracklist")) {
                     this.trackList = f.getString("UTF-8");
                 }
-                
+                if (f.getFieldName().equals("createRecord__initialAmountInStock")) {
+                    this.initialAmountInStock = f.getString("UTF-8");
+                }
                 if (f.getFieldName().equals("createRecord__price")) {
                     String formContent = f.getString();
                     if (formContent.contains(",")) {
@@ -80,17 +82,17 @@ public class RecordCrud {
         }
     }
     
-    public void createRecord() {
+    public Record createRecord() {
         if (!this.isEdit) {
             //this creates a new record
-            System.out.println("crudder creates new record.");
             writeImage(this.imageFile); //writes the image currently present in the crudder to disk and assigns a path
             Record r = Record.create(
                     "artist_id", this.artistId,
                     "title", this.recordName,
                     "label", this.recordLabel,
                     "img_file_path", this.embedUrl,
-                    "price", this.recordPrice
+                    "price", this.recordPrice,
+                    "amount_in_stock", this.initialAmountInStock
             );
             r.saveIt();
             
@@ -104,9 +106,10 @@ public class RecordCrud {
                 System.out.println("error on creating the tracks");
             }
             
+            return r;
+            
         } else {
             //this updates an existing record
-            System.out.println("Crudder update situation");
             Record r = Record.findById(this.recordID);
             
             if (this.imageFile != null) {
@@ -125,6 +128,8 @@ public class RecordCrud {
                       "label", this.recordLabel,
                       "price", this.recordPrice).saveIt();
             }
+            
+            return r;
         }
     }
     
@@ -141,10 +146,8 @@ public class RecordCrud {
         }
         this.embedUrl = "/webapp/uploadFiles/recordImages/" + filename;
         try {
-            System.out.println("4");
             f.write(uploadedImage);
         } catch (Exception e) {
-            System.out.println("5");
             e.printStackTrace();
             System.out.println("error trying to write image");
         }
