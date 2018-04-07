@@ -12,6 +12,7 @@
         <div class="col-9 justify-content-end">
             <div class="container">
                 <div class="row justify-content-end">
+
                     <c:if test="${cookie.username.value eq null}">
                         <div class="col-auto">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
@@ -19,7 +20,7 @@
                             </button>
                         </div>
                     </c:if>
-                    <c:if test="${cookie.username.value ne null}">
+                    <c:if test="${cookie.username.value ne null and sessionScope.isAdmin ne true}">
                         <span class="mdl-badge shoppingCart__numItemsBadge"
                               data-badge="<mytaglib:getAmountShoppingCartItems shoppingCartId="${cookie.shoppingCartId.value}" />">
                             <div class="col-auto">

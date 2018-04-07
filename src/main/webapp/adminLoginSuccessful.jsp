@@ -17,23 +17,19 @@
     </div>
 
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm d-flex justify-content-around">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/AdminArtistsOverview" />">
                 <button type="submit"
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Artists
                 </button>
             </a>
-        </div>
-        <div class="col-sm">
             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminCustomersOverview" />">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Customers
                 </button>
             </a>
-        </div>
-        <div class="col-sm">
-            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminOrdersOverview" />">
+             <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminOrdersOverview" />">
                 <button type="submit"
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Orders
@@ -41,8 +37,6 @@
             </a>
         </div>
     </div>
-
-
 </div>
 
 <script>
