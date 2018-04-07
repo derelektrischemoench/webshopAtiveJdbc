@@ -19,6 +19,7 @@
             <th scope="col">Recipient first name</th>
             <th scope="col">Recipient last name</th>
             <th scope="col">Recipient means of payment</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>

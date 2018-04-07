@@ -39,7 +39,6 @@ public class AdminOrderDetailView extends HttpServlet {
         Iterator<Map.Entry<Record, Integer>> iter = recordAndAmount.entrySet().iterator();
         while (iter.hasNext()) {
             Map.Entry<Record, Integer> entrySet = iter.next();
-            System.out.println("record: " + entrySet.getKey().getString("title") + " amount: " + entrySet.getValue());
         }
         
         req.setAttribute("order", o);
