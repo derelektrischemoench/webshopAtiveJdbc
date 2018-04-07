@@ -34,13 +34,14 @@ public class getTenMostRecentRecordsForSlider extends SimpleTagSupport {
                     "<div class=\"slider-card mdl-card mdl-shadow--2dp\"\n" +
                             "                 style=\"background-image: url('" + record.get("img_file_path") +  "')\">\n" +
                             "                <div class=\"mdl-card__title\">\n" +
+                            "                   <a href=/webapp/recordDetail?recordId=" + record.get("id") +">" +
                             "                    <h2 class=\"mdl-card__title-text flex-column\">\n" +
                             "                        <span class=\"cardArtist\">\n" +
                                                         artistName +
                             "                        </span>\n" +
                             "                        <br>\n" +
                             "                        <span>"+  RecordTitle  +"</span>\n" +
-                            "                    </h2>\n" +
+                            "                    </h2></a>\n" +
                             "                </div>\n" +
                             "            </div>"
             );
