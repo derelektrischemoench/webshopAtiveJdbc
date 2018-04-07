@@ -48,12 +48,27 @@
         </div>
         <div class="col-sm">
             <ul class="mdl-list">
-                <c:forEach items="${records}" var="record">
-                    <li class="mdl-list__item">
-                        <mytaglib:getArtistForRecord inputArtist="${record.get('artist_id')}" /> -
-                        <c:out value="${record.get('title')}" />
-                    </li>
-                </c:forEach>
+
+                <table class="table hover table-hover adminOrderTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Artist</th>
+                        <th scope="col">Record</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${recordAndAmount}" var="recordAndAmount">
+                        <tr>
+                            <td>
+                                <mytaglib:getArtistForRecord inputArtist="${recordAndAmount.key.get('artist_id')}"/>
+                            </td>
+                            <td><c:out value="${recordAndAmount.key.get('title')}"/></td>
+                            <td><c:out value="${recordAndAmount.value}"/></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </ul>
 
         </div>
