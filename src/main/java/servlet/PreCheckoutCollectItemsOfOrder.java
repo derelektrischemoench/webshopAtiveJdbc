@@ -68,9 +68,13 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                 );
                 
                 RecordsShoppingcarts targetTuple = target.get(0);
-                
-                
                 targetTuple.set("record_amount", amount).saveIt();
+                
+                //reduce stock amount:
+                int amountInStock = rec.getInteger("amount_in_stock");
+                System.out.println("amount in stock pre: " + amountInStock);
+                rec.set("amount_in_stock", amountInStock-amount).saveIt();
+                System.out.println("amount in stock afterwards: " + rec.getInteger("amount_in_stock"));
             }
             
             RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");

@@ -66,7 +66,7 @@ public class Checkout extends HttpServlet {
         ).saveIt();
         
         //TODO: SEND MAIL for real
-        try {
+        /*try {
             MailSender mailsender = new MailSender(
                     "chris_bader@gmx.net",
                     emailAddress,
@@ -82,7 +82,7 @@ public class Checkout extends HttpServlet {
         } catch (MessagingException e) {
             e.printStackTrace();
             System.err.println("error sending mail");
-        }
+        }*/
         
         RequestDispatcher rd = req.getRequestDispatcher("/orderSuccessfullyPlaced.jsp");
         rd.forward(req, resp);
