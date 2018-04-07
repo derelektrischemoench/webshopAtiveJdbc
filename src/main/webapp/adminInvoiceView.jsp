@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
 
@@ -25,32 +25,44 @@
         </thead>
         <tbody>
         <c:set var="recordPriceTotal" value="0" scope="page"/>
+        <c:set var="rowSum" value="0" scope="page"/>
+
         <c:forEach items="${recordAndAmount}" var="recordAndAmount">
-            <c:set var="recordAmount" value="${recordAndAmount.value}" />
-            <c:set var="recordPrice" value="${recordAndAmount.key.get('price')}" />
+            <c:set var="recordAmount" value="${recordAndAmount.value}"/>
+            <c:set var="recordPrice" value="${recordAndAmount.key.get('price')}"/>
 
             <tr>
                 <td>
                     <mytaglib:getArtistForRecord inputArtist="${recordAndAmount.key.get('artist_id')}"/>
-                     - <c:out value="${recordAndAmount.key.get('title')}"/>
+                    - <c:out value="${recordAndAmount.key.get('title')}"/>
                 </td>
                 <td><c:out value="${recordPrice}"/> €</td>
                 <td><c:out value="${recordAmount}"/></td>
-                <td>
-                    <c:set var="recordProduct" value="${recordPrice * recordAmount}" />
-                    <fmt:formatNumber type = "number" groupingUsed = "false" value = "${recordProduct}" /> €
+                <td style="text-align: right">
+                    <c:set var="rowSum" value="${recordPrice * recordAmount}"/>
+                    <fmt:formatNumber type="number" groupingUsed="false" value="${rowSum}"/> €
+                    <c:set var="recordPriceTotal" value="${recordPriceTotal + rowSum}"/>
                 </td>
             </tr>
 
         </c:forEach>
         <tr></tr>
-
-            <tr>
-                <td>Total</td>
-                <td></td>
-                <td></td>
-                <td><c:out value="${recordPriceProduct}" /></td>
-            </tr>
+        <tr>
+            <td class="colorBlue"><strong>Total</strong></td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right" class="colorBlue">
+                <strong>
+                    <mytaglib:priceSumFormatter price="${recordPriceTotal}"/> €
+                </strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: 10px">Including 19% taxes:</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-size: 10px"><mytaglib:germanVatCalc inputAmount="${recordPriceTotal}" /> €</td>
+        </tr>
         </tbody>
     </table>
 </div>

@@ -64,4 +64,26 @@
         <body-content>empty</body-content>
     </tag>
 
+    <tag>
+        <name>priceSumFormatter</name>
+        <tag-class>customTags.priceSumFormatter</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>price</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>germanVatCalc</name>
+        <tag-class>customTags.germanVatCalc</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>inputAmount</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>
