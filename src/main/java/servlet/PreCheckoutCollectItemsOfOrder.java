@@ -40,7 +40,7 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                 itemsOutOfStock = true;
             }
             
-            recordsInShoppingcart.put(r,amount); //record-amount pairing
+            recordsInShoppingcart.put(r, amount); //record-amount pairing
             counter++;
         }
         
@@ -55,9 +55,9 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             //all items are in stock
             //SUCCESS
             HttpSession session = req.getSession();
-            Shoppingcart s = (Shoppingcart)session.getAttribute("shoppingCart");
+            Shoppingcart s = (Shoppingcart) session.getAttribute("shoppingCart");
             int shoppingCartId = s.getInteger("id");
-     
+            
             for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
                 Record rec = entry.getKey();
                 int recordID = rec.getInteger("id");
@@ -72,13 +72,26 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                 
                 //reduce stock amount:
                 int amountInStock = rec.getInteger("amount_in_stock");
-                System.out.println("amount in stock pre: " + amountInStock);
-                rec.set("amount_in_stock", amountInStock-amount).saveIt();
-                System.out.println("amount in stock afterwards: " + rec.getInteger("amount_in_stock"));
+                
+                if (amountInStock - amount >= 0) {
+                    rec.set("amount_in_stock", amountInStock - amount).saveIt();
+                    RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
+                    rd.forward(req, resp);
+                } else {
+                    //not enough in stock
+                    try {
+                    System.out.println("not enough in stock");
+                    } catch (Exception e) {
+                        //WHATTHEFUCK
+                        e.printStackTrace();
+                        System.out.println("not enough in stock w exception");
+                    }
+                }
+                
+                
             }
             
-            RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
-            rd.forward(req, resp);
+            
         }
         
     }
