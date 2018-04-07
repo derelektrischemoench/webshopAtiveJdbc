@@ -57,6 +57,7 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             HttpSession session = req.getSession();
             Shoppingcart s = (Shoppingcart) session.getAttribute("shoppingCart");
             int shoppingCartId = s.getInteger("id");
+            ArrayList<Record> notEnoughAvailable = new ArrayList<>();
             
             for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
                 Record rec = entry.getKey();
@@ -77,20 +78,20 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                     rec.set("amount_in_stock", amountInStock - amount).saveIt();
                     RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
                     rd.forward(req, resp);
+                    return;
                 } else {
                     //not enough in stock
                     try {
                     System.out.println("not enough in stock");
                     } catch (Exception e) {
-                        //WHATTHEFUCK
+                        //WHATTHEFUCK TODO: fix this shit
                         e.printStackTrace();
                         System.out.println("not enough in stock w exception");
+                        notEnoughAvailable.add(rec);
                     }
                 }
                 
-                
             }
-            
             
         }
         
