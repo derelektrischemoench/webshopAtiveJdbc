@@ -36,9 +36,9 @@ public class MailSender extends HttpServlet {
         try {
             Authenticator auth = new SMTPAuthenticator(login, password);
             this.props.setProperty("mail.host", "mail.gmx.net");
-            this.props.setProperty("mail.smtp.port", "587");
+            this.props.setProperty("mail.smtp.port", "465");
             this.props.setProperty("mail.smtp.auth", "true");
-            this.props.setProperty("mail.smtp.starttls.enable", "true");
+            this.props.setProperty("mail.smtp.starttls.enable", "false");
             this.session = Session.getInstance(this.props, auth);
         
             MimeMessage msg = new MimeMessage(this.session);

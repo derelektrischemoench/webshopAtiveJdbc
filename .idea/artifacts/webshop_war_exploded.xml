@@ -35,7 +35,7 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.9.2" />
           <element id="library" level="project" name="Maven: com.sun.jersey.contribs:jersey-multipart:1.19.4" />
           <element id="library" level="project" name="Maven: org.jvnet.mimepull:mimepull:1.9.3" />
-          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.6.1" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
