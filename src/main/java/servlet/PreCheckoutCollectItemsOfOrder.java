@@ -60,15 +60,17 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
      
             for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
                 Record rec = entry.getKey();
+                int recordID = rec.getInteger("id");
                 int amount = entry.getValue();
                 //update the number of records in the join table
-                System.out.println("value of shoppingcartid: " + shoppingCartId);
-                List<RecordsShoppingcarts> target = RecordsShoppingcarts.where("shoppingcart_id = ?", shoppingCartId);
-    
-                System.out.println("target length: " + target.size());
-                RecordsShoppingcarts entr = target.get(0);
-                System.out.println(entr.getInteger("shoppingCart_id"));
-                entr.set("record_amount", amount).saveIt();
+                List<RecordsShoppingcarts> target = RecordsShoppingcarts.where(
+                        "shoppingcart_id = ? and record_id=? ", shoppingCartId, recordID
+                );
+                
+                RecordsShoppingcarts targetTuple = target.get(0);
+                
+                
+                targetTuple.set("record_amount", amount).saveIt();
             }
             
             RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");

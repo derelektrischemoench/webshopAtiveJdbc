@@ -281,14 +281,14 @@
         <url-pattern>/shoppingCartDetail/checkout</url-pattern>
     </servlet-mapping>
     
-    <!--<servlet>
+    <servlet>
         <servlet-name>Checkout</servlet-name>
         <servlet-class>servlet.Checkout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Checkout</servlet-name>
-        <url-pattern>/shoppingCartDetail/checkout</url-pattern>
-    </servlet-mapping>-->
+        <url-pattern>/shoppingCartDetail/checkout/checkoutConclude</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>ActiveJdbcFilter</filter-name>

@@ -16,7 +16,7 @@
 
     <div class="row justify-content-center">
         <div class="col-12">
-            <form action=""
+            <form action="<c:out value="${pageContext.request.contextPath}/shoppingCartDetail/checkout/checkoutConclude" />"
                   method="post"
                   class="d-flex flex-column justify-content-center recordCrudForm">
 

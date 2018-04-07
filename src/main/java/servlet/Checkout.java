@@ -20,9 +20,8 @@ public class Checkout extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        System.out.println("dopostCheckoutConclude");
         req.setCharacterEncoding("UTF-8");
-        
         HttpSession s = req.getSession();
         int shoppingCartId = (int) s.getAttribute("shoppingCartId");
         int userAccountId = (int) s.getAttribute("accountId");
