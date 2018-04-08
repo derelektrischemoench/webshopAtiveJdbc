@@ -65,24 +65,19 @@ public class Checkout extends HttpServlet {
             "city", city
         ).saveIt();
         
-        //TODO: SEND MAIL for real
-        /*try {
+        try {
             MailSender mailsender = new MailSender(
-                    "chris_bader@gmx.net",
                     emailAddress,
                     emailSubject,
-                    message,
-                    "chris_bader@gmx.net",
-                    "r2qAzV5W"
+                    message
             );
             
             mailsender.sendMail();
-            System.out.println("successfully sent mail");
             
-        } catch (MessagingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.err.println("error sending mail");
-        }*/
+        }
         
         RequestDispatcher rd = req.getRequestDispatcher("/orderSuccessfullyPlaced.jsp");
         rd.forward(req, resp);
