@@ -19,6 +19,7 @@ public class ContactServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         System.out.println("dopost in contact");
         
         String emailAddr = req.getParameter("contact__emailAddress");
@@ -29,6 +30,10 @@ public class ContactServlet extends HttpServlet {
     
         ContactInquiry.create("contact_email", emailAddr,
                               "message", message).saveIt();
+        
+        RequestDispatcher rd = req.getRequestDispatcher("/contactInquirySuccess.jsp");
+        
+        rd.forward(req,resp);
         
     }
 }

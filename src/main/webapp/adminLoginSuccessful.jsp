@@ -35,6 +35,13 @@
                     Orders
                 </button>
             </a>
+
+            <a href="<c:out value="${pageContext.request.contextPath}/adminLogin/adminContactInquiries" />">
+                <button type="submit"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Contact inquiries
+                </button>
+            </a>
         </div>
     </div>
 </div>

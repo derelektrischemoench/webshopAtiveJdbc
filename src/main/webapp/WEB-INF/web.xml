@@ -200,6 +200,16 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>AdminContactInquiries</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminContactInquiries</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminContactInquiries</servlet-name>
+        <url-pattern>/adminLogin/adminContactInquiries</url-pattern>
+    </servlet-mapping>
+
+
     <!-- USER servlets -->
     <servlet>
         <servlet-name>RegisterUser</servlet-name>
