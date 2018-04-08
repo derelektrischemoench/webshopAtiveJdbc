@@ -1,5 +1,7 @@
 package customTags;
 
+import org.sqlite.util.StringUtils;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
@@ -28,6 +30,7 @@ public class breadCrumbler extends SimpleTagSupport {
         
         while (pathPartIter.hasNext()) {
             String pathPart = pathPartIter.next();
+            pathPart = pathPart.split("\\?")[0];
             String reqPiece = pathPartsArrayList.subList(1, counter).toString();
             
             String modified = reqPiece.replace(",", "/")
