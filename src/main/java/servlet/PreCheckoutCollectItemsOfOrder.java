@@ -44,13 +44,14 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             recordsReqAv.put(r, demandSupply);    //Hashmap<Record, Hashmap<demand, supply>>
             
             
-            //validate:
+            //OUTER LOOP (Record)
             for (Map.Entry<Record, HashMap<Integer, Integer>> entry : recordsReqAv.entrySet()) {
                 Record recInCart = entry.getKey(); //k
                 HashMap<Integer, Integer> demandSuppl = entry.getValue();//v
                 System.out.println("Record: " + recInCart.getString("title"));
                 System.out.println("demand supply");
                 
+                //INNER LOOP (DEMAND, SUPPLY)
                 for (Map.Entry<Integer, Integer> innerShit : demandSuppl.entrySet()) {
                     int demand = innerShit.getKey();
                     int supply = innerShit.getValue();
@@ -60,10 +61,7 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                         String errorMessage = "You are requesting too much of " + r.getString("title");
                         missingRecordsErrorMsg.add(errorMessage);
                         itemsOutOfStock = true;
-                    } else {
-                        //todo:populate all the other shit and shit
                     }
-                    
                 }
                 
             }
@@ -71,25 +69,6 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             counter++;
         }
         
-        
-        //adjust stock levels
-        /*while (recordIdsIter.hasNext()) {
-            /*String recordId = recordIdsIter.next();
-            Record r = Record.findById(recordId);*/
-        /*    int oldStockAmount = r.getInteger("amount_in_stock");
-            int amount = Integer.parseInt(amounts.get(counter));
-            int newStockAmount = oldStockAmount - amount;
-            
-            if (newStockAmount < 0) {
-                System.out.println("not enough items in stock");
-                String errormsg = "Not enough items of " + r.getString("title") + " in stock. Amount left: " + oldStockAmount;
-                missingRecordsErrorMsg.add(errormsg);
-                itemsOutOfStock = true;
-            }
-            
-            recordsInShoppingcart.put(r, amount); //record-amount pairing
-            //counter++;
-        }*/
         
         //error, insufficient items in stock  render error message again
         if (itemsOutOfStock) {
@@ -109,28 +88,38 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             System.out.println("all items are in stock");
             int shoppingCartId = shoppingcart.getInteger("id");
             
-            for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
+            for (Map.Entry<Record, HashMap<Integer, Integer>> entry : recordsReqAv.entrySet()) {
                 Record rec = entry.getKey();
                 int recordID = rec.getInteger("id");
-                int amount = entry.getValue();
+                HashMap<Integer, Integer> supdem = entry.getValue();
+                int demand = 0;
+                
+                for (Map.Entry<Integer, Integer> innerShit : supdem.entrySet()) {
+                    demand = innerShit.getKey();
+                    System.out.println("overrode demand with: " + demand);
+                }
+                
+                
+                
                 //update the number of records in the join table
                 List<RecordsShoppingcarts> target = RecordsShoppingcarts.where(
                         "shoppingcart_id = ? and record_id=? ", shoppingCartId, recordID
                 );
                 
                 RecordsShoppingcarts targetTuple = target.get(0);
-                targetTuple.set("record_amount", amount).saveIt();
-                
+                System.out.println("demand of record: " + demand);
+                targetTuple.set("record_amount", demand).saveIt();
                 //reduce stock amount:
                 int amountInStock = rec.getInteger("amount_in_stock");
-                
-                rec.set("amount_in_stock", amountInStock - amount).saveIt();
-                
+                System.out.println("amount of record available:" + amountInStock);
+                System.out.println("amount requested: " + demand);
+                int reducedAmount = amountInStock - demand;
+                rec.set("amount_in_stock", reducedAmount).saveIt();
+                System.out.println("amount after checkout: " + rec.getString("amount_in_stock"));
             }
             
             RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
             rd.forward(req, resp);
-            
         }
         
     }

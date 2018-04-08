@@ -9,7 +9,6 @@
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/PreCheckoutCollectItemsOfOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/PreCheckoutCollectItemsOfOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,11 +84,29 @@
       <file leaf-file-name="PreCheckoutCollectItemsOfOrder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlet/PreCheckoutCollectItemsOfOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="128" column="13" lean-forward="true" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+            <state relative-caret-position="565">
+              <caret line="109" column="64" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orders" pinned="false" current-in-tab="false">
+        <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/orders">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="records" pinned="false" current-in-tab="false">
+        <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/records">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -142,7 +159,7 @@
       <find>added</find>
       <find>addRec</find>
       <find>delete</find>
-      <find />
+      <find>delete from</find>
       <find>order</find>
       <find>checkou</find>
       <find>mdl-card__ac</find>
@@ -153,7 +170,7 @@
       <find>adminLogin/adminAr</find>
       <find>invou</find>
       <find>shoppingCartDe</find>
-      <find />
+      <find>all item</find>
       <find>all</find>
     </findStrings>
   </component>
@@ -233,7 +250,7 @@
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="false" />
     <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" value="" />
+    <option name="CUSTOM_FILTER" value="deman" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -703,14 +720,7 @@
       <workItem from="1523058501379" duration="466000" />
       <workItem from="1523083202175" duration="17754000" />
       <workItem from="1523142065259" duration="1014000" />
-      <workItem from="1523163709652" duration="6725000" />
-    </task>
-    <task id="LOCAL-00068" summary="changed some buttons">
-      <created>1522192053550</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1522192053551</updated>
+      <workItem from="1523163709652" duration="9442000" />
     </task>
     <task id="LOCAL-00069" summary="wip tracks display">
       <created>1522227232488</created>
@@ -1048,11 +1058,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523139669529</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="record stock amount verification on order placement works">
+      <created>1523170502830</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1523170502830</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627764000" />
+    <option name="totallyTimeSpent" value="630481000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1070,11 +1087,11 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50581074" side_tool="true" weight="0.27105832" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3297414" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18734388" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18690214" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32937366" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="7" />
-      <window_info anchor="right" id="Database" order="4" weight="0.21348314" />
+      <window_info anchor="right" id="Database" order="4" weight="0.13465783" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -1086,8 +1103,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32829374" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.27969763" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.31425485" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.22138229" />
+      <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.4969563" weight="0.24946004" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24576895" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32937366" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -1095,7 +1113,6 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.4969563" weight="0.24946004" />
       <window_info anchor="bottom" id="Statistic" order="15" weight="0.32937366" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="2" />
@@ -1184,7 +1201,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="sendmail works for confirmation" />
     <MESSAGE value="admin order overview wip" />
     <MESSAGE value="admin order list overview done" />
     <MESSAGE value="admin order overview works" />
@@ -1209,7 +1225,8 @@
     <MESSAGE value="stock amount reduction after order confirm works" />
     <MESSAGE value="not so bad" />
     <MESSAGE value="hnggghggh record availability validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="hnggghggh record availability validation" />
+    <MESSAGE value="record stock amount verification on order placement works" />
+    <option name="LAST_COMMIT_MESSAGE" value="record stock amount verification on order placement works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1389,13 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminOrders.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1554,13 +1564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/records">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1575,10 +1578,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/orders">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a27c3100-a5dc-4295-9f9e-c9f3e9d75fa1/schema/wpr_webshop/table/records">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/PreCheckoutCollectItemsOfOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="128" column="13" lean-forward="true" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+        <state relative-caret-position="565">
+          <caret line="109" column="64" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
