@@ -30,7 +30,8 @@
                           class="updateShoppingCartAmount" method="post">
                         <c:forEach items="${recordsInShoppingcart}" var="record">
 
-                            <div class="shoppingCartRecord mdl-card mdl-shadow--2dp itemCard shoppingCartItem mx-auto"
+                            <div id="${record.get('id')}"
+                                 class="shoppingCartRecord mdl-card mdl-shadow--2dp itemCard shoppingCartItem mx-auto"
                                  style="background-image: url(' ${ record.get('img_file_path') } ')">
                                 <div class="mdl-card__actions mdl-card--border justify-content-end"
                                      style="background: rgba(0,0,0,.5)">

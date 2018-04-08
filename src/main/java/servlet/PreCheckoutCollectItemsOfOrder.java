@@ -99,8 +99,6 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                     System.out.println("overrode demand with: " + demand);
                 }
                 
-                
-                
                 //update the number of records in the join table
                 List<RecordsShoppingcarts> target = RecordsShoppingcarts.where(
                         "shoppingcart_id = ? and record_id=? ", shoppingCartId, recordID
