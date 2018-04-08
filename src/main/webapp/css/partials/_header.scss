@@ -131,9 +131,26 @@
 }
 
 .breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  justify-content: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+
   a {
+    display: block;
     &:nth-of-type(1),
-    &:nth-of-type(2) {
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  i {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3){
       display: none;
     }
   }

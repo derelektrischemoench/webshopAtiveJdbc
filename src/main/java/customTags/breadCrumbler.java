@@ -28,31 +28,34 @@ public class breadCrumbler extends SimpleTagSupport {
         
         while (pathPartIter.hasNext()) {
             String pathPart = pathPartIter.next();
-            String reqPiece = pathPartsArrayList.subList(1,counter).toString();
-            
-            System.out.println("reqpiece: " + reqPiece);
+            String reqPiece = pathPartsArrayList.subList(1, counter).toString();
             
             String modified = reqPiece.replace(",", "/")
                                       .replace(" ", "")
                                       .replace("[", "")
                                       .replace("]", "");
-            System.out.println("modified: " + modified);
             
             String[] parts = modified.split("/");
             List<String> partsArrayList = new ArrayList<>(Arrays.asList(parts));
             partsArrayList.remove(0);
             
             StringBuilder strbuild = new StringBuilder();
-            for(String s:partsArrayList) {
+            int size = partsArrayList.size();
+            int count=0;
+            for (String s : partsArrayList) {
+                
                 strbuild.append(s);
+                count++;
+                
+                if(count >= size){
+                    break; //prevent adding trailing slashes
+                }
                 strbuild.append("/");
             }
             
             String constructedPath = strbuild.toString();
-            
-            
-            out.write("<a href='" + constructedPath + "'>' "+constructedPath+" '</a>");
-            if(counter>pathPartsArrayList.size()-1) {
+            out.write("<a href=http://" + constructedPath + "> " + pathPart + " </a><i class=\"material-icons\">keyboard_arrow_right</i>");
+            if (counter > pathPartsArrayList.size() - 1) {
                 break;
             } else {
                 counter++;

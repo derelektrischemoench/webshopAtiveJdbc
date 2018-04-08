@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,36 +77,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminInvoiceView.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/adminInvoiceView.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="79" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="breadCrumbler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="breadCrumbler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/customTags/breadCrumbler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+            <state relative-caret-position="565">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1814#1815#0" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
-                <element signature="e#1906#1907#0" expanded="true" />
-                <element signature="e#1952#1953#0" expanded="true" />
+                <element signature="e#2388#2389#0" expanded="true" />
+                <element signature="e#2422#2423#0" expanded="true" />
+                <element signature="e#2480#2481#0" expanded="true" />
+                <element signature="e#2526#2527#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Welcome.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Welcome.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -121,20 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="133" column="5" lean-forward="true" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="taglib.tld" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="727">
-              <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+            <state relative-caret-position="367">
+              <caret line="136" column="29" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -243,9 +215,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/customTags/dateFormatter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld" />
-        <option value="$PROJECT_DIR$/src/main/java/customTags/breadCrumbler.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/include/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss" />
+        <option value="$PROJECT_DIR$/src/main/java/customTags/breadCrumbler.java" />
       </list>
     </option>
   </component>
@@ -286,9 +258,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="978" />
+    <option name="x" value="1062" />
     <option name="y" value="27" />
-    <option name="width" value="1582" />
+    <option name="width" value="1498" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -409,8 +381,12 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/js" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/css" />
+      <recent name="$PROJECT_DIR$/src/main/java/servlet" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/js/bootstrap" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/js/jQuery" />
@@ -419,12 +395,8 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp/css/variables" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/js" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/css" />
-      <recent name="$PROJECT_DIR$/src/main/java/servlet" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/js/bootstrap" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -722,14 +694,7 @@
       <workItem from="1523058501379" duration="466000" />
       <workItem from="1523083202175" duration="17754000" />
       <workItem from="1523142065259" duration="1014000" />
-      <workItem from="1523163709652" duration="40062000" />
-    </task>
-    <task id="LOCAL-00080" summary="changed footer position">
-      <created>1522489094207</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1522489094208</updated>
+      <workItem from="1523163709652" duration="44074000" />
     </task>
     <task id="LOCAL-00081" summary="wip badge">
       <created>1522505465593</created>
@@ -1067,11 +1032,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523205235043</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="breadcrumbler css fix">
+      <created>1523206720777</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1523206720777</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="661101000" />
+    <option name="totallyTimeSpent" value="665113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1083,13 +1055,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="978" y="27" width="1582" height="1053" extended-state="4" />
+    <frame x="1062" y="27" width="1498" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5058236" side_tool="true" weight="0.36825055" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3297414" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18601191" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.18595041" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32937366" />
       <window_info anchor="right" id="CDI" weight="0.3294509" />
       <window_info id="Capture Tool" order="2" />
@@ -1107,9 +1079,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32829374" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.32829374" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.32829374" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49417636" weight="0.36825055" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21028645" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2100551" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32937366" />
       <window_info anchor="right" id="Bean Validation" weight="0.3294509" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -1206,7 +1178,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="invoice wip" />
     <MESSAGE value="shoppingcart amountRecords stuff" />
     <MESSAGE value="jesus saves precheckout validation" />
     <MESSAGE value="pre-checkout record collection wip" />
@@ -1231,7 +1202,8 @@
     <MESSAGE value="js modal delete inqury shit wip" />
     <MESSAGE value="terms of service and whatnot" />
     <MESSAGE value="save work on breadcrumbler" />
-    <option name="LAST_COMMIT_MESSAGE" value="save work on breadcrumbler" />
+    <MESSAGE value="breadcrumbler css fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="breadcrumbler css fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1551,15 +1523,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminInvoiceView.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="79" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="79" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/headinclude.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Welcome.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1568,26 +1544,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/taglib.tld">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/breadCrumbler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1814#1815#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#1906#1907#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/headinclude.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1598,8 +1556,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="133" column="5" lean-forward="true" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+        <state relative-caret-position="367">
+          <caret line="136" column="29" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/customTags/breadCrumbler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2388#2389#0" expanded="true" />
+            <element signature="e#2422#2423#0" expanded="true" />
+            <element signature="e#2480#2481#0" expanded="true" />
+            <element signature="e#2526#2527#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
