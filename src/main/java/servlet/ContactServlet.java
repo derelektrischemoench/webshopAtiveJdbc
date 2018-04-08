@@ -14,4 +14,9 @@ public class ContactServlet extends HttpServlet {
         RequestDispatcher rd = req.getRequestDispatcher("/contactForm.jsp");
         rd.forward(req, resp);
     }
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("dopost in contact");
+    }
 }

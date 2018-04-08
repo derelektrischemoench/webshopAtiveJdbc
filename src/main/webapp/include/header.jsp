@@ -54,7 +54,7 @@
                 <div class="row justify-content-end">
                     <div class="col-auto">
                         <a href="contactUs">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent align-self-end">
                                 contact us
                             </button>
                             </a>
