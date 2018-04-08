@@ -144,6 +144,7 @@
     <servlet-mapping>
         <servlet-name>termsOfService</servlet-name>
         <url-pattern>/termsOfService</url-pattern>
+        <url-pattern>/someOtherStuff</url-pattern>
     </servlet-mapping>
 
 

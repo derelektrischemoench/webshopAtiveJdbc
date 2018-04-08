@@ -86,4 +86,15 @@
         </attribute>
     </tag>
 
+    <tag>
+        <name>breadCrumbler</name>
+        <tag-class>customTags.breadCrumbler</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>requestPath</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
 </taglib>
