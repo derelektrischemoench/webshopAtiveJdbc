@@ -24,12 +24,59 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
         int counter = 0;
         ArrayList<String> missingRecordsErrorMsg = new ArrayList<>();
         boolean itemsOutOfStock = false;
+        HttpSession s = req.getSession();
+        Shoppingcart shoppingcart = (Shoppingcart) s.getAttribute("shoppingCart");
+        
+        //create iterable data structure of records and amounts available
+        //first element = record instance, second elemt (inner hashmap = amount required, amount available)
+        HashMap<Record, HashMap<Integer, Integer>> recordsReqAv = new HashMap<>();
+        
+        while (recordIdsIter.hasNext()) {
+            String recId = recordIdsIter.next();
+            Record r = Record.findById(recId);
+            int amountRequested = Integer.parseInt(amounts.get(counter));
+            int amountAvailable = r.getInteger("amount_in_stock");
+            
+            HashMap<Integer, Integer> demandSupply = new HashMap<>();
+            demandSupply.put(amountRequested, amountAvailable); //inner hashmap
+            
+            //populate final hashmap:
+            recordsReqAv.put(r, demandSupply);    //Hashmap<Record, Hashmap<demand, supply>>
+            
+            
+            //validate:
+            for (Map.Entry<Record, HashMap<Integer, Integer>> entry : recordsReqAv.entrySet()) {
+                Record recInCart = entry.getKey(); //k
+                HashMap<Integer, Integer> demandSuppl = entry.getValue();//v
+                System.out.println("Record: " + recInCart.getString("title"));
+                System.out.println("demand supply");
+                
+                for (Map.Entry<Integer, Integer> innerShit : demandSuppl.entrySet()) {
+                    int demand = innerShit.getKey();
+                    int supply = innerShit.getValue();
+                    System.out.println(" demand: " + demand + " supply: " + supply);
+                    
+                    if (demand > supply) {
+                        String errorMessage = "You are requesting too much of " + r.getString("title");
+                        missingRecordsErrorMsg.add(errorMessage);
+                        itemsOutOfStock = true;
+                    } else {
+                        //todo:populate all the other shit and shit
+                    }
+                    
+                }
+                
+            }
+            
+            counter++;
+        }
+        
         
         //adjust stock levels
-        while (recordIdsIter.hasNext()) {
-            String recordId = recordIdsIter.next();
-            Record r = Record.findById(recordId);
-            int oldStockAmount = r.getInteger("amount_in_stock");
+        /*while (recordIdsIter.hasNext()) {
+            /*String recordId = recordIdsIter.next();
+            Record r = Record.findById(recordId);*/
+        /*    int oldStockAmount = r.getInteger("amount_in_stock");
             int amount = Integer.parseInt(amounts.get(counter));
             int newStockAmount = oldStockAmount - amount;
             
@@ -41,23 +88,26 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
             }
             
             recordsInShoppingcart.put(r, amount); //record-amount pairing
-            counter++;
-        }
+            //counter++;
+        }*/
         
-        //error, items missing
+        //error, insufficient items in stock  render error message again
         if (itemsOutOfStock) {
-            RequestDispatcher rd = req.getRequestDispatcher("/shoppingcartDetail.jsp");
-            req.setAttribute("recordsInShoppingcart", recordsInShoppingcart);
-            req.setAttribute("errorMsgArray", missingRecordsErrorMsg);
-            rd.forward(req, resp);
-            return;
+            System.out.println("items out of stock, error");
+            String queryString = "?shoppingCartId=" + shoppingcart.getInteger("id");
+            
+            s.setAttribute("missingRecordsErrorMsg", missingRecordsErrorMsg); //is an ArrayList
+            
+            String redirectString = req.getRequestURI() + queryString;
+            System.out.println("redirecting to: " + redirectString);
+            resp.sendRedirect("/webapp/shoppingCartDetail" + queryString);
+            itemsOutOfStock = false;
+            
         } else {
             //all items are in stock
             //SUCCESS
-            HttpSession session = req.getSession();
-            Shoppingcart s = (Shoppingcart) session.getAttribute("shoppingCart");
-            int shoppingCartId = s.getInteger("id");
-            ArrayList<Record> notEnoughAvailable = new ArrayList<>();
+            System.out.println("all items are in stock");
+            int shoppingCartId = shoppingcart.getInteger("id");
             
             for (Map.Entry<Record, Integer> entry : recordsInShoppingcart.entrySet()) {
                 Record rec = entry.getKey();
@@ -74,24 +124,12 @@ public class PreCheckoutCollectItemsOfOrder extends HttpServlet {
                 //reduce stock amount:
                 int amountInStock = rec.getInteger("amount_in_stock");
                 
-                if (amountInStock - amount >= 0) {
-                    rec.set("amount_in_stock", amountInStock - amount).saveIt();
-                    RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
-                    rd.forward(req, resp);
-                    return;
-                } else {
-                    //not enough in stock
-                    try {
-                    System.out.println("not enough in stock");
-                    } catch (Exception e) {
-                        //WHATTHEFUCK TODO: fix this shit
-                        e.printStackTrace();
-                        System.out.println("not enough in stock w exception");
-                        notEnoughAvailable.add(rec);
-                    }
-                }
+                rec.set("amount_in_stock", amountInStock - amount).saveIt();
                 
             }
+            
+            RequestDispatcher rd = req.getRequestDispatcher("/orderConfirmCustomerCredentials.jsp");
+            rd.forward(req, resp);
             
         }
         

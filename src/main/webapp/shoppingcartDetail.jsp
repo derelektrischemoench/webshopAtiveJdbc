@@ -17,10 +17,11 @@
         <div class="col-sm">
             <c:choose>
                 <c:when test="${fn:length(recordsInShoppingcart) gt 0}">
-                        <c:if test="${fn:length(errorMsgArray) gt 0}">
-                            <!-- some of the items are out of stock -->
-                            <c:forEach items="${errorMsgArray}" var="error">
-                                ${error}
+                        <c:if test="${fn:length(sessionScope.missingRecordsErrorMsg) gt 0}">
+                            <c:forEach items="${missingRecordsErrorMsg}" var="error">
+
+                                <c:out value="${error}" />
+
                             </c:forEach>
                         </c:if>
                     <c:set var="total" value="${0}"/>
