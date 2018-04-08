@@ -209,6 +209,14 @@
         <url-pattern>/adminLogin/adminContactInquiries</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AdminContactInquiryDelete</servlet-name>
+        <servlet-class>servlet.adminServlets.AdminContactInquiryDelete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminContactInquiryDelete</servlet-name>
+        <url-pattern>/adminLogin/adminContactInquiries/delete</url-pattern>
+    </servlet-mapping>
 
     <!-- USER servlets -->
     <servlet>

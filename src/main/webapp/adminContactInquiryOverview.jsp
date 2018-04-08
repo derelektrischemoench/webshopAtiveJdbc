@@ -17,7 +17,7 @@
         <tr>
             <th scope="col">email</th>
             <th scope="col">content</th>
-
+            <th scope="col"></th>
 
         </tr>
         </thead>
@@ -25,7 +25,18 @@
         <c:forEach items="${contactInquries}" var="contactInquiry">
             <tr>
                 <td>${contactInquiry.getString('contact_email')} </td>
-                <td> ${contactInquiry.getString('message')}
+                <td> ${contactInquiry.getString('message')}</td>
+                <td>
+
+
+
+                    <a href="
+                        <c:out value="${pageContext.request.contextPath}/adminLogin/adminContactInquiries/delete?id=${contactInquiry.getString('id')}" />
+">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            Delete
+                        </button>
+                    </a>
                 </td>
             </tr>
         </c:forEach>
