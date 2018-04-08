@@ -48,3 +48,6 @@
     </div>
 </div>
 
+
+<jsp:include page="include/footinclude.jsp"/>
+

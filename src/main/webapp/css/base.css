@@ -176,6 +176,7 @@ $color5: #351f39;*/
   margin-bottom: 25px; }
 
 .footer {
+  position: sticky;
   font-family: 'Mina', sans-serif;
   bottom: 0;
   height: 100px;

@@ -59,6 +59,9 @@
     </div>
 </div>
 
+<jsp:include page="include/footinclude.jsp"/>
+
+
 <script>
     //ajax function to add a record to the cart to prevent multiple additions via requests
     //if finished this should reload the cart and display a message on bottom confirming the addition

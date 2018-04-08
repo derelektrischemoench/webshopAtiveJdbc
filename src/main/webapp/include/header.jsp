@@ -10,18 +10,16 @@
             <h2>WEL<br>COME</h2>
             <h5>Tight shit records</h5>
         </div>
-        <div class="col-9 justify-content-end">
-            <div class="container">
-                <div class="row justify-content-end">
-
-                    <c:if test="${cookie.username.value eq null}">
-                        <div class="col-auto">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
-                                Login
-                            </button>
-                        </div>
-                    </c:if>
-                    <c:if test="${cookie.username.value ne null and sessionScope.isAdmin ne true}">
+        <div class="col-5 justify-content-end d-flex flex-column justify-content-between">
+            <div class="row justify-content-end">
+                <c:if test="${cookie.username.value eq null}">
+                    <div class="col-auto">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
+                            Login
+                        </button>
+                    </div>
+                </c:if>
+                <c:if test="${cookie.username.value ne null and sessionScope.isAdmin ne true}">
                         <span class="mdl-badge shoppingCart__numItemsBadge"
                               data-badge="<mytaglib:getAmountShoppingCartItems shoppingCartId="${cookie.shoppingCartId.value}" />">
                             <div class="col-auto">
@@ -47,18 +45,26 @@
                                 </div>
                             </div>
                         </span>
-                    </c:if>
-
-
-                </div>
-                <div class="row justify-content-end">
-                    <div class="col-auto">
-                        <a href="contactUs">
+                </c:if>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <a href="contactUs">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent align-self-end">
-                                contact us
-                            </button>
-                            </a>
-                    </div>
+                            contact us
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-end">
+                <div class="col-sm">
+                    <a href="<c:out value="${pageContext.request.contextPath}/termsOfService" />">Terms of service</a>
+                </div>
+                <div class="col-sm">
+                    <a href="<c:out value="${pageContext.request.contextPath}/someOtherStuff" />">
+                        Some other shit that no one will ever read
+                    </a>
                 </div>
             </div>
         </div>
@@ -95,12 +101,12 @@
     </form>
 </div>
 
-<c:set var="req" value="${pageContext.request}" />
-<c:set var="baseURL" value="${fn:replace(req.requestURL, req.requestURI, '')}" />
+<c:set var="req" value="${pageContext.request}"/>
+<c:set var="baseURL" value="${fn:replace(req.requestURL, req.requestURI, '')}"/>
 <c:set var="params" value="${requestScope['javax.servlet.forward.query_string']}"/>
 <c:set var="requestPath" value="${requestScope['javax.servlet.forward.request_uri']}"/>
 <c:set var="pageUrl" value="${ baseURL }${ requestPath }${ not empty params?'?'+=params:'' }"/>
-<c:out value="${pageUrl}" />
+<c:out value="${pageUrl}"/>
 
 <script>
     var button = $('.login');

@@ -8,7 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/allRecordsCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/allRecordsCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/footinclude.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/footinclude.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,11 +81,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminContactInquiryOverview.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp">
+      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            <state relative-caret-position="1404">
+              <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminInvoiceView.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/adminInvoiceView.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="763">
+              <caret line="93" column="45" lean-forward="true" selection-start-line="91" selection-end-line="93" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="144" column="36" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="termsOfService.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/termsOfService.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="19" column="928" selection-start-line="19" selection-start-column="928" selection-end-line="19" selection-end-column="928" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -89,16 +132,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tag</find>
-      <find>open</find>
-      <find>Edit</find>
       <find>edit</find>
       <find>Order</find>
       <find>jsp</find>
@@ -126,6 +166,9 @@
       <find>&lt;a</find>
       <find>delete</find>
       <find>contactI</find>
+      <find>col-</find>
+      <find>headerInn</find>
+      <find>jsp-fi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,11 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartConfirm.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/deleteFromShoppingCartFinally.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/customTags/getArtistForRecord.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/tagPartials/sliderPartial.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/customTags/getAmountShoppingCartItems.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_mdlOverrides.scss" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/DeleteFromShoppingcart.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/AddToCart.java" />
@@ -177,8 +215,6 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/Checkout.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/MailSender.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/include/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/model/ContactInquiry.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/contactForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/createAdminAccount.jsp" />
@@ -187,9 +223,16 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiries.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ContactServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/adminContactInquiryDelete.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiryDelete.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/allRecordsCustomer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss" />
+        <option value="$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/include/footinclude.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/termsOfService.jdp.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/include/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/termsOfService.jsp" />
       </list>
     </option>
   </component>
@@ -293,6 +336,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wpr-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wpr-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wpr-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -650,14 +701,7 @@
       <workItem from="1523058501379" duration="466000" />
       <workItem from="1523083202175" duration="17754000" />
       <workItem from="1523142065259" duration="1014000" />
-      <workItem from="1523163709652" duration="30101000" />
-    </task>
-    <task id="LOCAL-00077" summary="wip shoppingcartidclusterfuck">
-      <created>1522277082709</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1522277082711</updated>
+      <workItem from="1523163709652" duration="32876000" />
     </task>
     <task id="LOCAL-00078" summary="js json stuff, ajax wip">
       <created>1522405409577</created>
@@ -995,11 +1039,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523193574391</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="js modal delete inqury shit wip">
+      <created>1523196870616</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1523196870617</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="651140000" />
+    <option name="totallyTimeSpent" value="653915000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,6 +1063,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1312" y="27" width="1248" height="1053" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5058236" side_tool="true" weight="0.36825055" />
@@ -1036,7 +1088,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32829374" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.32829374" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49417636" weight="0.36825055" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27287853" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21048252" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32937366" />
       <window_info anchor="right" id="Bean Validation" weight="0.3294509" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -1133,7 +1185,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="choosing means of payment works" />
     <MESSAGE value="admin orders per customer" />
     <MESSAGE value="some order detail admin view shit" />
     <MESSAGE value="invoice wip" />
@@ -1158,7 +1209,8 @@
     <MESSAGE value="contact inquiry creation works" />
     <MESSAGE value="contact inquiry backend rendering works" />
     <MESSAGE value="contact inquiry deletion works" />
-    <option name="LAST_COMMIT_MESSAGE" value="contact inquiry deletion works" />
+    <MESSAGE value="js modal delete inqury shit wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="js modal delete inqury shit wip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,44 +1222,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2790">
-          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/headinclude.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/Checkout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/orderConfirmCustomerCredentials.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="98" column="45" lean-forward="true" selection-start-line="7" selection-end-line="98" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="56" column="123" selection-start-line="56" selection-start-column="123" selection-end-line="56" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MailSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1342,13 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/contactForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_dump.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1390,20 +1397,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminInvoiceView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -1490,25 +1483,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="208" column="54" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDelete.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDeleteSuccess.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1524,10 +1503,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/allRecordsCustomer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/footinclude.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/partials/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="745">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="144" column="36" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/contactForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/include/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminLoginForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="14" lean-forward="true" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminInvoiceView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="93" column="45" lean-forward="true" selection-start-line="91" selection-end-line="93" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/termsOfService.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="19" column="928" selection-start-line="19" selection-start-column="928" selection-end-line="19" selection-end-column="928" />
         </state>
       </provider>
     </entry>

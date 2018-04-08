@@ -136,6 +136,17 @@
         <url-pattern>/adminLogin/adminArtistsOverview/adminRecordsOverview/editRecord</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>termsOfService</servlet-name>
+        <jsp-file>termsOfService.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>termsOfService</servlet-name>
+        <url-pattern>/termsOfService</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>deleteRecordConfirm</servlet-name>
         <jsp-file>recordDelete.jsp</jsp-file>
