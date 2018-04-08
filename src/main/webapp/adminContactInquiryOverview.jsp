@@ -29,11 +29,10 @@
                 <td>
 
 
-
                     <a href="
                         <c:out value="${pageContext.request.contextPath}/adminLogin/adminContactInquiries/delete?id=${contactInquiry.getString('id')}" />
 ">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent show-modal">
                             Delete
                         </button>
                     </a>
@@ -42,9 +41,58 @@
         </c:forEach>
         </tbody>
     </table>
-
-
 </div>
 
+<dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Allow data collection?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+blablabla
+          btn
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Agree</button>
+      <button type="button" class="mdl-button close">Disagree</button>
+    </div>
+  </dialog>
+
+
+<script>
+    var dialog = document.querySelector('dialog');
+    var showModalButton = $('.show-modal');
+    if (!dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+    }
+
+    showModalButton.each(function () {
+        $(this).click(function (e) {
+            event.preventDefault();
+            var link = $(this).attr("href");
+            dialog.show({
+                clickOutsideToClose: true,
+                controllerAs: 'ctrl',
+                locals: {link: link},
+                controller: ['$scope', 'name', function ($scope, name) {
+                    $scope.name = name;
+                }]
+            });
+
+        })
+    });
+
+    dialog.querySelector('.close').addEventListener('click', function () {
+        dialog.close();
+    });
+
+    dialog.querySelector('.delete').addEventListener('click', function () {
+        deleteFromShoppingcart($(this));
+    });
+
+
+    var deleteFromShoppingcart = function () {
+
+    };
+</script>
 
 <jsp:include page="include/footinclude.jsp"/>

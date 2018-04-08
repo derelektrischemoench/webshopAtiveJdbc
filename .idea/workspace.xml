@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e20aa52b-7123-4f7b-937e-9b4b23708288" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,32 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminContactInquiryOverview.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminContactInquiryOverview.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="33" column="112" lean-forward="true" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="208" column="54" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminContactInquiryDelete.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiryDelete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="385">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -209,9 +187,9 @@
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiries.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/ContactServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/adminContactInquiryDelete.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiryDelete.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp" />
       </list>
     </option>
   </component>
@@ -252,9 +230,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="1170" />
+    <option name="x" value="1312" />
     <option name="y" value="27" />
-    <option name="width" value="1390" />
+    <option name="width" value="1248" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -672,14 +650,7 @@
       <workItem from="1523058501379" duration="466000" />
       <workItem from="1523083202175" duration="17754000" />
       <workItem from="1523142065259" duration="1014000" />
-      <workItem from="1523163709652" duration="26936000" />
-    </task>
-    <task id="LOCAL-00076" summary="ajax shoppingcart update wip">
-      <created>1522273491744</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1522273491745</updated>
+      <workItem from="1523163709652" duration="30101000" />
     </task>
     <task id="LOCAL-00077" summary="wip shoppingcartidclusterfuck">
       <created>1522277082709</created>
@@ -1017,11 +988,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523191961483</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="contact inquiry deletion works">
+      <created>1523193574391</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1523193574391</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="647975000" />
+    <option name="totallyTimeSpent" value="651140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1033,11 +1011,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1170" y="27" width="1390" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="1312" y="27" width="1248" height="1053" extended-state="4" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50581074" side_tool="true" weight="0.27105832" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5058236" side_tool="true" weight="0.36825055" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3297414" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.18601191" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32937366" />
@@ -1057,9 +1034,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32829374" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.49418926" visible="true" weight="0.32829374" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49661955" weight="0.16954644" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24404761" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49418926" weight="0.32829374" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49417636" weight="0.36825055" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27287853" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32937366" />
       <window_info anchor="right" id="Bean Validation" weight="0.3294509" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -1156,7 +1133,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ajax delete from shoppingcart works" />
     <MESSAGE value="choosing means of payment works" />
     <MESSAGE value="admin orders per customer" />
     <MESSAGE value="some order detail admin view shit" />
@@ -1181,11 +1157,12 @@
     <MESSAGE value="contact initials work" />
     <MESSAGE value="contact inquiry creation works" />
     <MESSAGE value="contact inquiry backend rendering works" />
-    <option name="LAST_COMMIT_MESSAGE" value="contact inquiry backend rendering works" />
+    <MESSAGE value="contact inquiry deletion works" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact inquiry deletion works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1193,34 +1170,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1386">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/SMTPAuthenticator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminArtistsOverview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/ActiveJdbcFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2790">
@@ -1235,13 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="45" column="25" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="45" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1538,10 +1480,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiryDelete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="33" column="112" lean-forward="true" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="112" />
+        <state relative-caret-position="414">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1552,13 +1497,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlet/adminServlets/AdminContactInquiryDelete.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDelete.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDeleteSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/recordDetailCustomer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="551">
+          <caret line="45" column="25" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/shoppingcartDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1253">
+          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="14657" column="4" selection-start-line="14657" selection-start-column="4" selection-end-line="14657" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminContactInquiryOverview.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
         </state>
       </provider>
     </entry>
