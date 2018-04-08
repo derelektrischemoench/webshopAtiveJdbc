@@ -5,6 +5,7 @@
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
 
@@ -18,6 +19,7 @@
     <jsp:param name="passwordErrorMsg" value="${pem}" />
     <jsp:param name="usernameErrorMsg" value="${uem}" />
 </jsp:include>
+
 
 
 <div class="container-fluid main">

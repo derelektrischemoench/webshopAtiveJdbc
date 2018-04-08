@@ -41,6 +41,9 @@
                 <c:when test="${cookie.username eq null}">
                     Please login to add this record to your cart
                 </c:when>
+                <c:when test="${record.get('amount_in_stock')<1}">
+                    Currently not available, sorry
+                </c:when>
                 <c:otherwise>
                     <button type="submit"
                             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent addToCart">

@@ -59,6 +59,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>servlet.ContactServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/contactUs</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
         <servlet-name>CreateAdminAccount</servlet-name>
         <servlet-class>servlet.adminServlets.CreateAdminAccount</servlet-class>
         <init-param>

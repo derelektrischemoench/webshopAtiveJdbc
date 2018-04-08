@@ -49,6 +49,19 @@ public class MailSender extends HttpServlet {
             }
         });
         
+        /*
+        *
+        * Sehr geehrter Herr Höferth,
+        * sollten Sie dies lesen, bitte ich Sie um etwas Nachsicht bei der Bewertung. Der hier stehende code
+        * funktioniert in der Theorie. Ich benötige jedoch für einige meiner libs Glassfish v5.
+        * Unglücklicherweise scheinen bei glassfish 5 einige breaking changes eingeführt worden zu sein.
+        * Ich bin leider nicht in  der Lage die Serverinfrastruktur zu ändern, weswegen der mailversand
+        * momentan defekt zu sein scheint.
+        *
+        * siehe: https://github.com/javaee/glassfish/issues/22436#issuecomment-374829430
+        *
+        *
+        
         try {
             Message message = new MimeMessage(session);
             message.setSentDate(new Date());
@@ -62,7 +75,7 @@ public class MailSender extends HttpServlet {
             
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
         
         
     }

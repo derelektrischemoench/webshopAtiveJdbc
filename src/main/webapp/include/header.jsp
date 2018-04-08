@@ -1,6 +1,7 @@
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="/WEB-INF/taglib.tld" prefix="mytaglib" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <div class="container-fluid header">
@@ -47,6 +48,17 @@
                             </div>
                         </span>
                     </c:if>
+
+
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <a href="contactUs">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login align-self-end">
+                                contact us
+                            </button>
+                            </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,6 +94,13 @@
 
     </form>
 </div>
+
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="baseURL" value="${fn:replace(req.requestURL, req.requestURI, '')}" />
+<c:set var="params" value="${requestScope['javax.servlet.forward.query_string']}"/>
+<c:set var="requestPath" value="${requestScope['javax.servlet.forward.request_uri']}"/>
+<c:set var="pageUrl" value="${ baseURL }${ requestPath }${ not empty params?'?'+=params:'' }"/>
+<c:out value="${pageUrl}" />
 
 <script>
     var button = $('.login');
