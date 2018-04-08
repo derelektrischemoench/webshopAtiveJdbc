@@ -101,6 +101,9 @@ $color5: #351f39;*/
 @media all and (min-width: 428px) {
   .header .right {
     right: 0; } }
+.breadcrumbs a:nth-of-type(1), .breadcrumbs a:nth-of-type(2) {
+  display: none; }
+
 .slick-list {
   padding-top: 25px !important;
   padding-bottom: 35px !important; }

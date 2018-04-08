@@ -28,7 +28,8 @@ public class breadCrumbler extends SimpleTagSupport {
         
         while (pathPartIter.hasNext()) {
             String pathPart = pathPartIter.next();
-            String reqPiece = pathPartsArrayList.subList(0,counter).toString();
+            String reqPiece = pathPartsArrayList.subList(1,counter).toString();
+            
             System.out.println("reqpiece: " + reqPiece);
             
             String modified = reqPiece.replace(",", "/")
@@ -37,8 +38,25 @@ public class breadCrumbler extends SimpleTagSupport {
                                       .replace("]", "");
             System.out.println("modified: " + modified);
             
-            out.write("<a href='" + modified + "'>' "+modified+" '</a>");
-            counter++;
+            String[] parts = modified.split("/");
+            List<String> partsArrayList = new ArrayList<>(Arrays.asList(parts));
+            partsArrayList.remove(0);
+            
+            StringBuilder strbuild = new StringBuilder();
+            for(String s:partsArrayList) {
+                strbuild.append(s);
+                strbuild.append("/");
+            }
+            
+            String constructedPath = strbuild.toString();
+            
+            
+            out.write("<a href='" + constructedPath + "'>' "+constructedPath+" '</a>");
+            if(counter>pathPartsArrayList.size()-1) {
+                break;
+            } else {
+                counter++;
+            }
         }
         
     }

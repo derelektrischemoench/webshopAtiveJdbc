@@ -106,7 +106,9 @@
 <c:set var="params" value="${requestScope['javax.servlet.forward.query_string']}"/>
 <c:set var="requestPath" value="${requestScope['javax.servlet.forward.request_uri']}"/>
 <c:set var="pageUrl" value="${ baseURL }${ requestPath }${ not empty params?'?'+=params:'' }"/>
-<mytaglib:breadCrumbler requestPath="${pageUrl}" />
+<div class="breadcrumbs">
+    <mytaglib:breadCrumbler requestPath="${pageUrl}" />
+</div>
 
 <script>
     var button = $('.login');
